@@ -3,6 +3,83 @@
 %% Štruktúra záverečnej práce %%
 %%                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Špecifikácia požiadaviek systému}
+Tento projekt predstavuje moderný prístup k priemyselnému internetu vecí, kde mobilná aplikácia slúži ako primárne rozhranie pre operátora, prepojené s riadiacim systémom cez edge computing zariadenie.
+
+\subsection{Funkcionálne požiadavky}
+Definujú konkrétne interakcie a správanie systému, ktoré musí byť implementované.
+
+\begin{description}
+    \item[FP1: Identifikácia zariadenia] - Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou časťou výrobnej linky.
+    \item[FP2: Riadenie v reálnom čase] - Používateľ musí mať možnosť odosielať riadiace príkazy a modifikovať prevádzkové parametre v riadenom systéme.
+    \item[FP3: Spätná väzba] - Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
+    \item[FP4: Monitorovanie procesných dát] - Zobrazovanie aktuálnych stavov z PLC.
+    \item[FP5: Inteligentný technický asistent] - Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy.
+    \item[FP6: Viacjazyčné rozhranie] - Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
+    \item[FP7: Cloudová synchronizácia a reporting] - Agregované štatistické dáta  musia byť periodicky zálohované z lokálnej databázy do cloudu pre potreby vzdialeného prístupu.
+\end{description}
+
+\subsection{Nefunkcionálne požiadavky}
+Definujú kvalitatívne atribúty, technologické obmedzenia a nároky na bezpečnosť.
+
+\begin{description}
+    \item[NFP1: Edge Computing architektúra] - Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustená na edge zariadení.
+    \item[NFP2: Spoľahlivosť komunikácie] - Prenos správ medzi mobilnou aplikáciou a edge zariadením musí prebiehať cez protokol MQTT s úrovňou kvality služieb QoS 1 (\textit{At least once}) alebo QoS 2.
+    \item[NFP3: Odozva systému] - Latencia riadiaceho cyklu nesmie presiahnuť 250~ms.
+    \item[NFP4: Integrita dát a AI] - Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
+    \item[NFP5: Odolnosť voči výpadku] - Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
+    \item[NFP6: Škálovateľnosť] - Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge uzly v rámci továrne.
+\end{description}
+
+\subsection{Doménové požiadavky}
+Požiadavky plynúce z priemyselného prostredia a použitých technológií.
+
+\begin{itemize}
+    \item[DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
+    \item[DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
+    \item[DP3:] Systém musí pracovať v hybridnom režime – plná funkčnosť ovládania v lokálnej sieti aj pri výpadku pripojenia k internetu.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Štruktúra záverečnej práce}\label{sec:StrukturaPrace}
 Za záverečnú prácu považujeme bakalársku, diplomovú
 a~dizertačnú prácu \cite{zakon1312002}.

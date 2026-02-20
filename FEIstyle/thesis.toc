@@ -1,60 +1,64 @@
 \babel@toc {slovak}{}\relax 
 \thispagestyle {plain}
 \contentsline {section}{\'{U}vod}{12}{section*.1}%
-\contentsline {section}{\numberline {1}Štruktúra záverečnej práce}{14}{section.3}%
-\contentsline {subsection}{\numberline {1.1}Úvodná časť práce}{15}{subsection.23}%
-\contentsline {subsubsection}{\numberline {1.1.1}Obálka, titulný list, zadanie}{15}{subsubsection.24}%
-\contentsline {subsubsection}{\numberline {1.1.2}Poďakovanie}{15}{subsubsection.25}%
-\contentsline {subsubsection}{\numberline {1.1.3}Slovenský a anglický abstrakt}{15}{subsubsection.26}%
-\contentsline {paragraph}{Účel a použitie abstraktov}{15}{subsubsection.26}%
-\contentsline {subsubsection}{\numberline {1.1.4}Obsah a zoznamy}{16}{subsubsection.27}%
-\contentsline {subsection}{\numberline {1.2}Hlavná textová časť}{18}{subsection.30}%
-\contentsline {subsubsection}{\numberline {1.2.1}Úvod}{18}{subsubsection.31}%
-\contentsline {subsubsection}{\numberline {1.2.2}Jadro}{19}{subsubsection.32}%
-\contentsline {subsubsection}{\numberline {1.2.3}Záver}{20}{subsubsection.33}%
-\contentsline {subsubsection}{\numberline {1.2.4}Zoznam použitej literatúry}{22}{subsubsection.36}%
-\contentsline {subsection}{\numberline {1.3}Záverečná časť}{22}{subsection.37}%
-\contentsline {section}{\numberline {2}Formát a jazyk}{24}{section.38}%
-\contentsline {subsection}{\numberline {2.1}Formát dokumentu}{24}{subsection.39}%
-\contentsline {subsection}{\numberline {2.2}Jazyk a gramatika}{25}{subsection.40}%
-\contentsline {subsubsection}{\numberline {2.2.1}Delenie slov}{25}{subsubsection.45}%
-\contentsline {subsubsection}{\numberline {2.2.2}Jednopísmenové predložky a spojky}{27}{subsubsection.46}%
-\contentsline {subsection}{\numberline {2.3}Štylistika}{27}{subsection.47}%
-\contentsline {subsection}{\numberline {2.4}Anglický jazyk}{28}{subsection.48}%
-\contentsline {subsection}{\numberline {2.5}Použitie umelej inteligencie}{29}{subsection.49}%
-\contentsline {section}{\numberline {3}Špeciálne a netextové objekty}{31}{section.50}%
-\contentsline {subsection}{\numberline {3.1}Matematické rovnice}{31}{subsection.51}%
-\contentsline {subsubsection}{\numberline {3.1.1}Rovnica v textovom riadku}{31}{subsubsection.52}%
-\contentsline {subsubsection}{\numberline {3.1.2}Zobrazená rovnica}{31}{subsubsection.53}%
-\contentsline {subsubsection}{\numberline {3.1.3}Zásady matematickej sadzby}{32}{subsubsection.55}%
-\contentsline {paragraph}{Dôležité pravidlá písania rovníc}{33}{table.caption.57}%
-\contentsline {subsection}{\numberline {3.2}Obrázky}{35}{subsection.60}%
-\contentsline {subsubsection}{\numberline {3.2.1}Umiestnenie obrázkov}{36}{subsubsection.62}%
-\contentsline {subsubsection}{\numberline {3.2.2}Označenie obrázku a text pod obrázkom}{37}{subsubsection.63}%
-\contentsline {subsubsection}{\numberline {3.2.3}Číslovanie a odkazy}{37}{subsubsection.64}%
-\contentsline {subsection}{\numberline {3.3}Grafy}{37}{subsection.65}%
-\contentsline {subsubsection}{\numberline {3.3.1}Formát súboru}{38}{subsubsection.67}%
-\contentsline {subsubsection}{\numberline {3.3.2}Písmo a hrúbka čiar}{38}{subsubsection.68}%
-\contentsline {subsubsection}{\numberline {3.3.3}Prvky grafu}{38}{subsubsection.69}%
-\contentsline {subsubsection}{\numberline {3.3.4}Označenie osí}{39}{subsubsection.70}%
-\contentsline {subsubsection}{\numberline {3.3.5}Viacero grafov v jednom obrázku}{39}{subsubsection.71}%
-\contentsline {subsection}{\numberline {3.4}Tabuľky}{39}{subsection.72}%
-\contentsline {subsubsection}{\numberline {3.4.1}Vzhľad tabuľky}{40}{subsubsection.74}%
-\contentsline {subsubsection}{\numberline {3.4.2}Obsah tabuľky}{41}{subsubsection.76}%
-\contentsline {subsection}{\numberline {3.5}Výpisy kódov programu a algoritmy}{41}{subsection.77}%
-\contentsline {section}{\numberline {4}Citovanie externých zdrojov}{43}{section.96}%
-\contentsline {subsection}{\numberline {4.1}Odkazy na citované diela}{43}{subsection.97}%
-\contentsline {subsection}{\numberline {4.2}Bibliografické záznamy}{44}{subsection.98}%
-\contentsline {subsubsection}{\numberline {4.2.1}Príklad záznamu v databázovom súbore .bib}{44}{subsubsection.100}%
-\contentsline {subsubsection}{\numberline {4.2.2}Prvky bibliografického záznamu}{45}{subsubsection.101}%
-\contentsline {subsection}{\numberline {4.3}Článok v odbornom periodiku}{47}{subsection.102}%
-\contentsline {subsection}{\numberline {4.4}Monografia a~kniha}{49}{subsection.106}%
-\contentsline {subsection}{\numberline {4.5}Záverečná a~vedecko\unhbox \voidb@x \kern \z@ \char `\-kvalifikačná práca, správa}{50}{subsection.109}%
-\contentsline {subsection}{\numberline {4.6}Príspevok v zborníku konferencie, časť knihy}{51}{subsection.112}%
-\contentsline {subsection}{\numberline {4.7}Webová stránka, sociálna sieť, video}{52}{subsection.115}%
-\contentsline {subsection}{\numberline {4.8}Ako citovať technické normy}{53}{subsection.118}%
-\contentsline {section}{Z\'{a}ver}{54}{section*.119}%
-\contentsline {section}{Literatúra}{56}{section*.120}%
+\contentsline {section}{\numberline {1}Špecifikácia požiadaviek systému}{14}{section.3}%
+\contentsline {subsection}{\numberline {1.1}Funkcionálne požiadavky}{14}{subsection.4}%
+\contentsline {subsection}{\numberline {1.2}Nefunkcionálne požiadavky}{14}{subsection.5}%
+\contentsline {subsection}{\numberline {1.3}Doménové požiadavky}{15}{subsection.6}%
+\contentsline {section}{\numberline {2}Štruktúra záverečnej práce}{16}{section.7}%
+\contentsline {subsection}{\numberline {2.1}Úvodná časť práce}{17}{subsection.27}%
+\contentsline {subsubsection}{\numberline {2.1.1}Obálka, titulný list, zadanie}{17}{subsubsection.28}%
+\contentsline {subsubsection}{\numberline {2.1.2}Poďakovanie}{17}{subsubsection.29}%
+\contentsline {subsubsection}{\numberline {2.1.3}Slovenský a anglický abstrakt}{17}{subsubsection.30}%
+\contentsline {paragraph}{Účel a použitie abstraktov}{17}{subsubsection.30}%
+\contentsline {subsubsection}{\numberline {2.1.4}Obsah a zoznamy}{18}{subsubsection.31}%
+\contentsline {subsection}{\numberline {2.2}Hlavná textová časť}{20}{subsection.34}%
+\contentsline {subsubsection}{\numberline {2.2.1}Úvod}{20}{subsubsection.35}%
+\contentsline {subsubsection}{\numberline {2.2.2}Jadro}{21}{subsubsection.36}%
+\contentsline {subsubsection}{\numberline {2.2.3}Záver}{22}{subsubsection.37}%
+\contentsline {subsubsection}{\numberline {2.2.4}Zoznam použitej literatúry}{24}{subsubsection.40}%
+\contentsline {subsection}{\numberline {2.3}Záverečná časť}{24}{subsection.41}%
+\contentsline {section}{\numberline {3}Formát a jazyk}{26}{section.42}%
+\contentsline {subsection}{\numberline {3.1}Formát dokumentu}{26}{subsection.43}%
+\contentsline {subsection}{\numberline {3.2}Jazyk a gramatika}{27}{subsection.44}%
+\contentsline {subsubsection}{\numberline {3.2.1}Delenie slov}{27}{subsubsection.49}%
+\contentsline {subsubsection}{\numberline {3.2.2}Jednopísmenové predložky a spojky}{29}{subsubsection.50}%
+\contentsline {subsection}{\numberline {3.3}Štylistika}{29}{subsection.51}%
+\contentsline {subsection}{\numberline {3.4}Anglický jazyk}{30}{subsection.52}%
+\contentsline {subsection}{\numberline {3.5}Použitie umelej inteligencie}{31}{subsection.53}%
+\contentsline {section}{\numberline {4}Špeciálne a netextové objekty}{33}{section.54}%
+\contentsline {subsection}{\numberline {4.1}Matematické rovnice}{33}{subsection.55}%
+\contentsline {subsubsection}{\numberline {4.1.1}Rovnica v textovom riadku}{33}{subsubsection.56}%
+\contentsline {subsubsection}{\numberline {4.1.2}Zobrazená rovnica}{33}{subsubsection.57}%
+\contentsline {subsubsection}{\numberline {4.1.3}Zásady matematickej sadzby}{34}{subsubsection.59}%
+\contentsline {paragraph}{Dôležité pravidlá písania rovníc}{35}{table.caption.61}%
+\contentsline {subsection}{\numberline {4.2}Obrázky}{37}{subsection.64}%
+\contentsline {subsubsection}{\numberline {4.2.1}Umiestnenie obrázkov}{38}{subsubsection.66}%
+\contentsline {subsubsection}{\numberline {4.2.2}Označenie obrázku a text pod obrázkom}{39}{subsubsection.67}%
+\contentsline {subsubsection}{\numberline {4.2.3}Číslovanie a odkazy}{39}{subsubsection.68}%
+\contentsline {subsection}{\numberline {4.3}Grafy}{39}{subsection.69}%
+\contentsline {subsubsection}{\numberline {4.3.1}Formát súboru}{40}{subsubsection.71}%
+\contentsline {subsubsection}{\numberline {4.3.2}Písmo a hrúbka čiar}{40}{subsubsection.72}%
+\contentsline {subsubsection}{\numberline {4.3.3}Prvky grafu}{40}{subsubsection.73}%
+\contentsline {subsubsection}{\numberline {4.3.4}Označenie osí}{41}{subsubsection.74}%
+\contentsline {subsubsection}{\numberline {4.3.5}Viacero grafov v jednom obrázku}{41}{subsubsection.75}%
+\contentsline {subsection}{\numberline {4.4}Tabuľky}{41}{subsection.76}%
+\contentsline {subsubsection}{\numberline {4.4.1}Vzhľad tabuľky}{42}{subsubsection.78}%
+\contentsline {subsubsection}{\numberline {4.4.2}Obsah tabuľky}{43}{subsubsection.80}%
+\contentsline {subsection}{\numberline {4.5}Výpisy kódov programu a algoritmy}{43}{subsection.81}%
+\contentsline {section}{\numberline {5}Citovanie externých zdrojov}{45}{section.100}%
+\contentsline {subsection}{\numberline {5.1}Odkazy na citované diela}{45}{subsection.101}%
+\contentsline {subsection}{\numberline {5.2}Bibliografické záznamy}{46}{subsection.102}%
+\contentsline {subsubsection}{\numberline {5.2.1}Príklad záznamu v databázovom súbore .bib}{46}{subsubsection.104}%
+\contentsline {subsubsection}{\numberline {5.2.2}Prvky bibliografického záznamu}{47}{subsubsection.105}%
+\contentsline {subsection}{\numberline {5.3}Článok v odbornom periodiku}{49}{subsection.106}%
+\contentsline {subsection}{\numberline {5.4}Monografia a~kniha}{51}{subsection.110}%
+\contentsline {subsection}{\numberline {5.5}Záverečná a~vedecko\unhbox \voidb@x \kern \z@ \char `\-kvalifikačná práca, správa}{52}{subsection.113}%
+\contentsline {subsection}{\numberline {5.6}Príspevok v zborníku konferencie, časť knihy}{53}{subsection.116}%
+\contentsline {subsection}{\numberline {5.7}Webová stránka, sociálna sieť, video}{54}{subsection.119}%
+\contentsline {subsection}{\numberline {5.8}Ako citovať technické normy}{55}{subsection.122}%
+\contentsline {section}{Z\'{a}ver}{56}{section*.123}%
+\contentsline {section}{Literatúra}{58}{section*.124}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -93,7 +97,7 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{57}{section*.121}%
-\contentsline {section}{\numberline {A}Algoritmus}{58}{section.123}%
-\contentsline {section}{\numberline {B}Výpis dlhého kódu}{59}{section.144}%
-\contentsline {section}{\numberline {C}Slovníček pojmov}{63}{section.275}%
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{59}{section*.125}%
+\contentsline {section}{\numberline {A}Algoritmus}{60}{section.127}%
+\contentsline {section}{\numberline {B}Výpis dlhého kódu}{61}{section.148}%
+\contentsline {section}{\numberline {C}Slovníček pojmov}{65}{section.279}%
