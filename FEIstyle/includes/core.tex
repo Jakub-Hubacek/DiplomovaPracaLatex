@@ -18,6 +18,11 @@ Definujú konkrétne interakcie a správanie systému, ktoré musí byť impleme
     \item[FP5: Inteligentný technický asistent] - Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy.
     \item[FP6: Viacjazyčné rozhranie] - Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
     \item[FP7: Cloudová synchronizácia a reporting] - Agregované štatistické dáta  musia byť periodicky zálohované z lokálnej databázy do cloudu pre potreby vzdialeného prístupu.
+    \item[FP8: Správa relácie ovládania linky ] - Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej výrobnej linky. Po úspešnom prihlásení a spárovaní linky sa vytvorí aktívna relácia viazaná na používateľa. Relácia musí byť udržiavaná periodickým \textit{heartbeat} signálom a automaticky ukončená pri odhlásení alebo po prekročení časového limitu neaktivity.
+    \item[FP9: Riešenie konfliktu relácie a nútené prevzatie] - Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (identifikátor používateľa/rola). Systém musí umožniť odoslanie žiadosti o uvoľnenie relácie prihlásenému operátorovi. Nútené ukončenie alebo prevzatie relácie musí byť umožnené výhradne rolám \textit{manažér} alebo \textit{admin}.    
+    \item[FP10: Autentifikácia a autorizácia] - Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržba/programátor PLC, admin.
+    \item[FP11: Životný cyklus príkazu a stavové hlásenia] - Každý odoslaný riadiaci príkaz musí mať unikátny identifikátor (\textit{command\_id}) a systém musí poskytovať stav príkazu minimálne v úrovniach: \textit{queued}, \textit{sent}, \textit{acknowledged}, \textit{applied}, \textit{failed}, \textit{timeout}. Aplikácia musí tieto stavy používateľovi vizualizovať.
+    \item[FP12: Logovanie operácií a udalostí] - Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér} a \textit{admin}.
 \end{description}
 
 \subsection{Nefunkcionálne požiadavky}
@@ -25,11 +30,15 @@ Definujú kvalitatívne atribúty, technologické obmedzenia a nároky na bezpe�
 
 \begin{description}
     \item[NFP1: Edge Computing architektúra] - Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustená na edge zariadení.
-    \item[NFP2: Spoľahlivosť komunikácie] - Prenos správ medzi mobilnou aplikáciou a edge zariadením musí prebiehať cez protokol MQTT s úrovňou kvality služieb QoS 1 (\textit{At least once}) alebo QoS 2.
+    \item[NFP2: Spoľahlivosť komunikácie] - Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1 alebo QoS 2.
     \item[NFP3: Odozva systému] - Latencia riadiaceho cyklu nesmie presiahnuť 250~ms.
     \item[NFP4: Integrita dát a AI] - Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
     \item[NFP5: Odolnosť voči výpadku] - Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
     \item[NFP6: Škálovateľnosť] - Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge uzly v rámci továrne.
+    \item[NFP7: Idempotencia riadiacich príkazov] - Systém musí zabrániť viacnásobnému vykonaniu toho istého príkazu v prípade opakovaného doručenia správy. Každý príkaz musí obsahovať unikátny identifikátor a backend musí zabezpečiť, že príkaz s rovnakým identifikátorom bude spracovaný najviac raz.
+    \item[NFP8: Robustné spracovanie chýb a timeoutov] - Pri nedoručení potvrdenia (ACK) do 1{.}5~s musí aplikácia označiť príkaz ako \textit{timeout} a informovať používateľa o neúspechu vykonania s možnosťou opakovania požiadavky. Systém musí logovať dôvod zlyhania, ak je dostupný.
+    \item[NFP9: Prevádzkové obmedzenie riadenia mimo lokálnej siete] - Ovládacie príkazy z externých sietí mimo lokálnej siete závodu nesmú byť povolené. Vzdialený prístup (mimo LAN) môže byť použitý výhradne na prehliadanie agregovaných dát a reportov v cloude.
+    \item[NFP10: Observabilita a diagnostika] - Backendové služby musia poskytovať štruktúrované logy a základné prevádzkové metriky (napr. latencia riadiaceho cyklu, počet neúspešných príkazov, stav pripojenia k PLC) pre účely diagnostiky.
 \end{description}
 
 \subsection{Doménové požiadavky}
