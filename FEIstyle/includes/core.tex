@@ -5,50 +5,213 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Špecifikácia požiadaviek systému}
-Tento projekt predstavuje moderný prístup k priemyselnému internetu vecí, kde mobilná aplikácia slúži ako primárne rozhranie pre operátora, prepojené s riadiacim systémom cez edge computing zariadenie.
 
-\subsection{Funkcionálne požiadavky}
-Definujú konkrétne interakcie a správanie systému, ktoré musí byť implementované.
+Tento projekt predstavuje moderný prístup k priemyselnému internetu vecí (IIoT),
+kde mobilná aplikácia slúži ako primárne rozhranie pre obsluhu výrobnej linky,
+prepojené s riadiacim systémom prostredníctvom edge computing zariadenia umiestneného priamo v prevádzke.
+
+\subsection{Prehľad systému}
+
+V moderných priemyselných prevádzkach narastá tlak na flexibilitu a mobilitu obsluhy výrobných zariadení.
+Tradičné riešenia sú spravidla viazané na pevne umiestnené operátorské panely alebo stolové počítače,
+čo obmedzuje pohyblivosť obsluhy a~zvyšuje reakčný čas pri riešení prevádzkových udalostí.
+Mobilné zariadenia ponúkajú možnosť prístupu k výrobným systémom odkiaľkoľvek v rámci areálu závodu,
+pričom ich použitie v~kombinácii s~jednoznačnou identifikáciou zariadení otvára cestu
+k~bezpečnému a~intuitívnemu ovládaniu výrobnej linky.
+
+Kľúčovou výzvou pri takomto prístupe je spoľahlivé a~jednoznačné spárovanie mobilného zariadenia
+s~konkrétnou fyzickou časťou výrobnej linky.
+Skenovaním vizuálneho identifikátora umiestneného priamo pri zariadení operátor okamžite nadviaže spojenie a systém presne vie, kto a~ktoré zariadenie ovláda.
+Toto spojenie je základom pre bezpečné riadenie, auditovanie operácií
+a~správu prístupu viacerých používateľov k rovnakému zariadeniu.
+
+Ďalšou dôležitou oblasťou je správa prístupu pracovníkov s~rôznymi rolami.
+Operátor potrebuje priamy prístup k~riadeniu linky, manažér vyžaduje prehľad o~výkonnosti
+a~vyťaženosti, údržbár musí mať garantovaný exkluzívny, neprepisovateľný prístup pri servisnom zásahu
+a~administrátor spravuje celý systém vrátane registrácie nových používateľov.
+Bez jasne definovaného mechanizmu riadenia prístupu by mohlo dôjsť ku konfliktom príkazov
+alebo neoprávnenému zásahu do výrobného procesu.
+
+Celá komunikačná vrstva od PLC až po mobilnú aplikáciu prebieha cez štandardné priemyselné
+a~webové protokoly. Backendová infraštruktúra je plne kontajnerizovaná a
+to umožňuje rýchle nasadenie na ďalšie uzly v~rámci továrne.
+Ovládanie linky je obmedzené výhradne na lokálnu sieť továrne a~cloudová vrstva slúži len na vzdialený reporting a~zálohovanie agregovaných dát.
+
+Neoddeliteľnou súčasťou systému je inteligentný technický asistent.
+Asistent odpovedá na technické otázky obsluhy výhradne na základe dokumentácie a~manuálov
+nahratých pre konkrétne zariadenie, čím znižuje závislosť od papierových príručiek
+a~skracuje čas potrebný na riešenie prevádzkových problémov.
+
+\subsection{Popis používateľských rolí}
+
+Systém implementuje riadenie prístupu založené na rolách
+(\textit{Role-Based Access Control}, RBAC).
+Každý nový používateľ sa musí zaregistrovať a~pred prvým prihlásením čaká na schválenie
+administrátorom, ktorý mu zároveň priradí príslušnú rolu. Sú definované štyri roly:
 
 \begin{description}
-    \item[FP1: Identifikácia zariadenia] - Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou časťou výrobnej linky.
-    \item[FP2: Riadenie v reálnom čase] - Používateľ musí mať možnosť odosielať riadiace príkazy a modifikovať prevádzkové parametre v riadenom systéme.
-    \item[FP3: Spätná väzba] - Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
-    \item[FP4: Monitorovanie procesných dát] - Zobrazovanie aktuálnych stavov z PLC.
-    \item[FP5: Inteligentný technický asistent] - Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy.
-    \item[FP6: Viacjazyčné rozhranie] - Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
-    \item[FP7: Cloudová synchronizácia a reporting] - Agregované štatistické dáta  musia byť periodicky zálohované z lokálnej databázy do cloudu pre potreby vzdialeného prístupu.
-    \item[FP8: Správa relácie ovládania linky ] - Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej výrobnej linky. Po úspešnom prihlásení a spárovaní linky sa vytvorí aktívna relácia viazaná na používateľa. Relácia musí byť udržiavaná periodickým \textit{heartbeat} signálom a automaticky ukončená pri odhlásení alebo po prekročení časového limitu neaktivity.
-    \item[FP9: Riešenie konfliktu relácie a nútené prevzatie] - Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (identifikátor používateľa/rola). Systém musí umožniť odoslanie žiadosti o uvoľnenie relácie prihlásenému operátorovi. Nútené ukončenie alebo prevzatie relácie musí byť umožnené výhradne rolám \textit{manažér} alebo \textit{admin}.    
-    \item[FP10: Autentifikácia a autorizácia] - Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržba/programátor PLC, admin.
-    \item[FP11: Životný cyklus príkazu a stavové hlásenia] - Každý odoslaný riadiaci príkaz musí mať unikátny identifikátor (\textit{command\_id}) a systém musí poskytovať stav príkazu minimálne v úrovniach: \textit{queued}, \textit{sent}, \textit{acknowledged}, \textit{applied}, \textit{failed}, \textit{timeout}. Aplikácia musí tieto stavy používateľovi vizualizovať.
-    \item[FP12: Logovanie operácií a udalostí] - Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér} a \textit{admin}.
+    \item[Operátor:] Základná obsluha výrobnej linky. Prihlasuje sa na konkrétnu linku skenovaním
+    ArUco kódu, odosiela riadiace príkazy, upravuje prevádzkové parametre
+    a~sleduje aktuálny stav zariadenia v~reálnom čase.
+    Nemá prístup k~reportom, správe vedomostnej bázy ani správe používateľov. 
+    Môže v prípade potreby využiť AI asistenta.
+
+    \item[Manažér:] Zameriava sa na sledovanie výkonnostných ukazovateľov.
+    Má prístup k~histórii prihlásení jednotlivých operátorov,
+    dennému reportu o~vyťaženosti a~agregovaným štatistikám pre všetky zariadenia.
+    Linku priamo neovláda.
+
+    \item[Údržbár:] Má exkluzívnu ochranu relácie a žiadny iný používateľ ho nemôže
+    odhlásiť z~prihláseného zariadenia, čo zaručuje bezpečnosť počas servisného zásahu.
+    Spravuje vedomostnú bázu (KB) pre jednotlivé zariadenia,
+    pričom KB tvorí znalostný zdroj pre AI asistenta.
+
+    \item[Administrátor:] Spravuje celý systém, schvaľuje nové registrácie, priraďuje roly,
+    edituje a~odstraňuje používateľské kontá (s~výnimkou hlavného admina).
+    Má prístup ku všetkým logom a~taktiež spravuje vedomostnú bázu.
+\end{description}
+
+\subsection{Use-case scenáre}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-01: Registrácia a prihlásenie \\
+    \textbf{Aktér} & Všetky roly \\
+    \textbf{Popis} & Používateľ sa zaregistruje zadaním údajov. 
+    Kým administrátor neschváli konto, aplikácia zobrazí informáciu o~čakaní na schválenie. 
+    Po schválení sa používateľ prihlási a~získa JWT token. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-02: Skenovanie ArUco kódu a spárovanie linky \\
+    \textbf{Aktér} & Operátor, údržbár \\
+    \textbf{Popis} & Používateľ naskenuje ArUco kód pri zariadení. 
+    Ak je linka voľná, po potvrdení dialógu sa vytvorí relácia. 
+    Ak je obsadená, zobrazí sa identita a~rola prihláseného. 
+    Reláciu neprítomného operátora je možné prevziať; reláciu údržbára prevziať nie je povolené. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-03: Ovládanie linky v reálnom čase \\
+    \textbf{Aktér} & Operátor \\
+    \textbf{Popis} & Operátor odosiela príkazy z~ovládacieho panelu. 
+    Každý príkaz má unikátny identifikátor a~prechádza stavmi: \textit{queued~$\to$~sent~$\to$~acknowledged~$\to$~applied} (resp.\ \textit{failed} / \textit{timeout}). Pri \textit{timeout} aplikácia upozorní používateľa s~možnosťou opakovania príkazu. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-04: Monitorovanie stavu linky \\
+    \textbf{Aktér} & Operátor, manažér \\
+    \textbf{Popis} & Dashboard zobrazuje procesné dáta z~PLC v~reálnom čase cez WebSocket. Stavy sú farebne kódované podľa normy IEC\,60073. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-05: Prezeranie logov a reportov \\
+    \textbf{Aktér} & Manažér, admin \\
+    \textbf{Popis} & Po výbere zariadenia zo zoznamu sa zobrazí história prihlásení, denný report o~vyťaženosti operátorov a~prehľad udalostí. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-06: Správa vedomostnej bázy \\
+    \textbf{Aktér} & Údržbár, admin \\
+    \textbf{Popis} & Prostredníctvom CRUD rozhrania sa nahrávajú, upravujú a~odstraňujú dokumenty KB (texty a~obrázky) pre každé zariadenie.  \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-07: AI asistent (RAG chatbot) \\
+    \textbf{Aktér} & Všetky roly \\
+    \textbf{Popis} & Tlačidlom v~pravom hornom rohu každej obrazovky (okrem prihlasovacej) sa spustí chatbot. 
+    Odpovedá výhradne na základe KB daného zariadenia; ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-08: Správa používateľov \\
+    \textbf{Aktér} & Admin \\
+    \textbf{Popis} & Admin schvaľuje registrácie, priraďuje roly, upravuje a~odstraňuje kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-09: Nastavenia aplikácie \\
+    \textbf{Aktér} & Všetky roly \\
+    \textbf{Popis} & V~nastaveniach je možné zmeniť jazyk (SK\,/\,EN) a~vlastné heslo. Jazyk je dostupný aj na prihlasovacej obrazovke. \\
+    \bottomrule
+\end{tabularx}
+
+\vspace{6pt}\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \toprule
+    \textbf{ID} & UC-10: Cloudová synchronizácia \\
+    \textbf{Aktér} & Systém (automaticky) \\
+    \textbf{Popis} & Agregované dáta sú periodicky synchronizované do cloudu. 
+    Vzdialený prístup slúži výhradne na čítanie reportov a riadiace príkazy sú povolené iba v~lokálnej sieti závodu. \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Funkcionálne požiadavky}
+
+\begin{description}
+    \item [FP1:] Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou časťou výrobnej linky.
+    \item [FP2:] Používateľ musí mať možnosť odosielať riadiace príkazy a modifikovať prevádzkové parametre v riadenom systéme.
+    \item [FP3:] Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
+    \item [FP4:] Zobrazovanie aktuálnych stavov z PLC.
+    \item [FP5:] Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy.
+    \item [FP6:] Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
+    \item [FP7:] Agregované štatistické dáta  musia byť periodicky zálohované z lokálnej databázy do cloudu pre potreby vzdialeného prístupu.
+    \item [FP8:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej výrobnej linky. Po úspešnom prihlásení a spárovaní linky sa vytvorí aktívna relácia viazaná na používateľa. Relácia musí byť udržiavaná periodickým \textit{heartbeat} signálom a automaticky ukončená pri odhlásení alebo po prekročení časového limitu neaktivity.
+    \item [FP9:] Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (identifikátor používateľa/rola). Nútené ukončenie resp. prevzatie relácie musí byť umožnené v prípade neodhlásenia sa už neprítomnej obsluhy.
+    \item [FP10:] Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržbár, admin.
+    \item [FP11:] Každý odoslaný riadiaci príkaz musí mať unikátny identifikátor (\textit{command\_id}) a systém musí poskytovať stav príkazu minimálne v úrovniach: \textit{queued}, \textit{sent}, \textit{acknowledged}, \textit{applied}, \textit{failed}, \textit{timeout}. Aplikácia musí tieto stavy používateľovi vizualizovať.
+    \item [FP12:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér} a \textit{admin}.
 \end{description}
 
 \subsection{Nefunkcionálne požiadavky}
 Definujú kvalitatívne atribúty, technologické obmedzenia a nároky na bezpečnosť.
 
 \begin{description}
-    \item[NFP1: Edge Computing architektúra] - Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustená na edge zariadení.
-    \item[NFP2: Spoľahlivosť komunikácie] - Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1 alebo QoS 2.
-    \item[NFP3: Odozva systému] - Latencia riadiaceho cyklu nesmie presiahnuť 250~ms.
-    \item[NFP4: Integrita dát a AI] - Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
-    \item[NFP5: Odolnosť voči výpadku] - Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
-    \item[NFP6: Škálovateľnosť] - Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge uzly v rámci továrne.
-    \item[NFP7: Idempotencia riadiacich príkazov] - Systém musí zabrániť viacnásobnému vykonaniu toho istého príkazu v prípade opakovaného doručenia správy. Každý príkaz musí obsahovať unikátny identifikátor a backend musí zabezpečiť, že príkaz s rovnakým identifikátorom bude spracovaný najviac raz.
-    \item[NFP8: Robustné spracovanie chýb a timeoutov] - Pri nedoručení potvrdenia (ACK) do 1{.}5~s musí aplikácia označiť príkaz ako \textit{timeout} a informovať používateľa o neúspechu vykonania s možnosťou opakovania požiadavky. Systém musí logovať dôvod zlyhania, ak je dostupný.
-    \item[NFP9: Prevádzkové obmedzenie riadenia mimo lokálnej siete] - Ovládacie príkazy z externých sietí mimo lokálnej siete závodu nesmú byť povolené. Vzdialený prístup (mimo LAN) môže byť použitý výhradne na prehliadanie agregovaných dát a reportov v cloude.
-    \item[NFP10: Observabilita a diagnostika] - Backendové služby musia poskytovať štruktúrované logy a základné prevádzkové metriky (napr. latencia riadiaceho cyklu, počet neúspešných príkazov, stav pripojenia k PLC) pre účely diagnostiky.
+    \item [NFP1:] Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustená na edge zariadení.
+    \item [NFP2:] Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1 alebo QoS 2.
+    \item [NFP3:] Latencia riadiaceho cyklu nesmie presiahnuť 250~ms.
+    \item [NFP4:] Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
+    \item [NFP5:] Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
+    \item [NFP6:] Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge uzly v rámci továrne.
+    \item [NFP7:] Systém musí zabrániť viacnásobnému vykonaniu toho istého príkazu v prípade opakovaného doručenia správy. Každý príkaz musí obsahovať unikátny identifikátor a backend musí zabezpečiť, že príkaz s rovnakým identifikátorom bude spracovaný najviac raz.
+    \item [NFP8:] Pri nedoručení potvrdenia (ACK) do 1{.}5~s musí aplikácia označiť príkaz ako \textit{timeout} a informovať používateľa o neúspechu vykonania s možnosťou opakovania požiadavky. Systém musí logovať dôvod zlyhania, ak je dostupný.
+    \item [NFP9:] Ovládacie príkazy z externých sietí mimo lokálnej siete závodu nesmú byť povolené. Vzdialený prístup (mimo LAN) môže byť použitý výhradne na prehliadanie agregovaných dát a reportov v cloude.
+    \item [NFP10:] Backendové služby musia poskytovať štruktúrované logy a základné prevádzkové metriky (napr. latencia riadiaceho cyklu, počet neúspešných príkazov, stav pripojenia k PLC) pre účely diagnostiky.
 \end{description}
 
 \subsection{Doménové požiadavky}
 Požiadavky plynúce z priemyselného prostredia a použitých technológií.
 
-\begin{itemize}
-    \item[DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
-    \item[DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
-    \item[DP3:] Systém musí pracovať v hybridnom režime – plná funkčnosť ovládania v lokálnej sieti aj pri výpadku pripojenia k internetu.
-\end{itemize}
+\begin{description}
+    \item [DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
+    \item [DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
+    \item [DP3:] Systém musí pracovať v hybridnom režime – plná funkčnosť ovládania v lokálnej sieti aj pri výpadku pripojenia k internetu.
+\end{description}
 
 
 
