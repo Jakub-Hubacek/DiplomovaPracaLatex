@@ -539,11 +539,11 @@ INPUT .\includes\core.tex
 INPUT includes\core.tex
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr12.tfm
-INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmri12.tfm
 INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmri8.tfm

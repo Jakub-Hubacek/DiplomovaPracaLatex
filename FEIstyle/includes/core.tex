@@ -4,9 +4,219 @@
 %%                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\section{Prehľad technológií pre vývoj aplikácií a priemyselnú komunikáciu}
+
+Táto kapitola poskytuje teoretický prehľad technológií a frameworkov pre vývoj mobilných, webových a backendových aplikácií s dôrazom na ich integráciu do priemyselných riadiacich systémov. Výber technológií zohľadňuje požiadavky na výkon, škálovateľnosť a spoľahlivosť v prostredí Industry 4.0.
+
+\subsection{Frontendové technológie}
+
+Pri výbere frontendovej technológie pre priemyselné aplikácie je kľúčové zvážiť cieľovú platformu (operátorský panel, tablet v teréne, manažérsky dashboard) a požiadavky na odozvu rozhrania pri spracovaní real-time dát.
+
+\subsubsection{Natívny vývoj (Kotlin, Swift)}
+Natívny vývoj predstavuje prístup, kde je zdrojový kód písaný v jazyku a nástrojoch priamo podporovaných výrobcom operačného systému (Google pre Android, Apple pre iOS). Tento prístup využíva kompiláciu do strojového kódu danej architektúry (napr. ARM), čo umožňuje priamu interakciu s jadrom systému bez sprostredkovateľských vrstiev.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{Absolútna optimalizácia:} Prístup k nízkoúrovňovým API umožňuje efektívnu správu pamäte a minimálne oneskorenie pri náročných operáciách.
+        \item \textbf{Plná hardvérová integrácia:} Bezproblémové využitie senzorov, kamery pre rozšírenú realitu (AR) pri údržbe či technológií Bluetooth Low Energy (BLE) pre lokalizáciu v halách.
+        \item \textbf{Štandardizované UI:} Využitie systémových widgetov zaručuje konzistentnú používateľskú skúsenosť (UX).
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Fragmentácia vývoja:} Nutnosť paralelných tímov a duplicitná implementácia biznis logiky pre každú platformu zvyšuje TCO (Total Cost of Ownership).
+        \item \textbf{Náročná údržba:} Synchronizácia verzií a opráv chýb naprieč ekosystémami je časovo nákladná.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{React Native}
+React Native je multiplatformový framework od spoločnosti Meta, ktorý využíva paradigmu deklaratívneho programovania v jazyku JavaScript/TypeScript. Na rozdiel od hybridných webových aplikácií nevykresľuje rozhranie v prehliadači, ale cez špecializovanú vrstvu (Bridge alebo novšie JSI - JavaScript Interface) volá priamo natívne UI komponenty systému.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{Zdieľanie kódu:} Možnosť opätovného využitia až 90 \% kódovej základne medzi Androidom a iOS, čo dramaticky zrýchľuje proces Time-to-Market.
+        \item \textbf{Ekosystém NPM:} Prístup k tisícom knižníc pre správu stavu (Redux, Zustand) a vizualizáciu dát.
+        \item \textbf{Nová architektúra (JSI):} Odstránenie asynchrónneho bridge-u v prospech priameho volania C++ objektov výrazne zlepšilo odozvu pri interakcii s PLC dátami.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Abstrakčná réžia:} Komplexné animácie alebo masívny tok dát z PLC môžu naraziť na limity výkonu JavaScriptového vlákna.
+        \item \textbf{Zložitejšie ladenie:} Chyby sa môžu vyskytovať na rozhraní medzi JS a natívnou vrstvou, čo sťažuje diagnostiku.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Flutter}
+Flutter je moderný UI toolkit od spoločnosti Google určený na vývoj natívne kompilovaných aplikácií z jednotnej kódovej základne v jazyku Dart. Na rozdiel od iných frameworkov nevyužíva systémové komponenty, ale disponuje vlastným grafickým jadrom (Skia/Impeller), ktoré vykresľuje rozhranie pixel po pixeli priamo na GPU.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{Vizuálna identita:} Úplná kontrola nad každým pixelom zaručuje, že rozhranie bude vyzerať identicky na starom operátorskom paneli aj novom tablete.
+        \item \textbf{AOT kompilácia:} Zdrojový kód je dopredu kompilovaný do strojového kódu, čo eliminuje potrebu runtime interpretácie a zvyšuje výkon.
+        \item \textbf{Hot Reload:} Schopnosť injektovať zmeny kódu do bežiacej aplikácie bez straty stavu urýchľuje prototypovanie priemyselných HMI.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Veľkosť binárneho súboru:} Zahrnutie celého vykresľovacieho enginu do balíka aplikácie zvyšuje nároky na úložisko.
+        \item \textbf{Špecifickosť jazyka:} Dart nie je v priemyselnom IT tak etablovaný ako C~\# alebo JavaScript, čo môže ovplyvniť dostupnosť vývojárov.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Webové Single Page Applications (React, Angular, Vue)}
+Moderné webové frameworky umožňujú vytvárať komplexné klientske aplikácie, kde sa celá logika zobrazenia vykonáva v prehliadači používateľa. Využívajú techniku \textit{Virtual DOM} (React/Vue) alebo \textit{Incremental DOM} (Angular) na optimalizáciu prekresľovania len tých častí obrazovky, ktoré sa skutočne zmenili.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{Univerzálna dostupnosť:} Prístup k monitoringu cez akékoľvek zariadenie s moderným prehliadačom bez nutnosti inštalácie.
+        \item \textbf{PWA (Progressive Web Apps):} Možnosť lokálneho cachovania a obmedzeného offline režimu, čo je užitočné pri výpadkoch siete v priemyselných prevádzkach.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Bezpečnostný sandbox:} Prehliadač striktne obmedzuje prístup k súborovému systému a portom zariadenia, čo komplikuje priamu integráciu s lokálnym hardvérom.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Backendové technológie}
+
+Backend v priemyselnom kontexte funguje ako inteligentný middleware, ktorý sprostredkováva obojsmerný tok dát medzi deterministickým svetom PLC a dynamickým svetom používateľských aplikácií.
+
+\subsubsection{Node.js a NestJS}
+Node.js je behové prostredie postavené na engine V8, ktoré využíva neblokujúci, udalosťami riadený I/O model. NestJS nad ním buduje architektúru inšpirovanú Angularom (Dependency Injection, modulárnosť), čo prináša do JavaScriptového sveta poriadok potrebný pre enterprise systémy.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{I/O efektívnosť:} Ideálne pre aplikácie s vysokou frekvenciou krátkych správ, ako sú telemetry dáta z MQTT.
+        \item \textbf{Isomorfizmus:} Možnosť zdieľať validačné schémy (napodobeniny dát z PLC) medzi backendom a frontendom cez TypeScript.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Single-threaded limitácia:} CPU-intenzívne operácie (napr. komplexná analýza trendov) môžu zablokovať Event Loop a zvýšiť latenciu ostatných požiadaviek.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Python a FastAPI}
+Python je vďaka svojej syntaxi a obrovskej vedeckej základni dominantným jazykom pre prácu s dátami. FastAPI využíva moderné štandardy ako typové anotácie a ASGI (Asynchronous Server Gateway Interface) na dosiahnutie vysokého výkonu pri zachovaní jednoduchosti.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{AI/ML integrácia:} Priama cesta od zberu dát z PLC k prediktívnej údržbe pomocou knižníc Scikit-learn alebo PyTorch.
+        \item \textbf{Auto-dokumentácia:} Automatické generovanie interaktívnej dokumentácie (Swagger/OpenAPI), čo uľahčuje integráciu pre iných vývojárov.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Interpretovaný charakter:} Aj napriek optimalizáciám je Python pomalší pri čistých matematických výpočtoch oproti kompilovaným jazykom.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Go (Golang)}
+Go je kompilovaný, staticky typovaný jazyk navrhnutý v Google s dôrazom na jednoduchosť, bezpečnosť a masívny paralelizmus. Jeho kľúčovou vlastnosťou sú \textit{goroutines} – extrémne ľahké vlákna spravované runtime-om jazyka.
+
+\begin{itemize}
+    \item \textbf{Výhody:}
+    \begin{itemize}
+        \item \textbf{Statické binárky:} Výsledkom je jeden súbor obsahujúci všetky závislosti, čo je ideálne pre nasadenie na Edge brány bez potreby inštalovať runtime.
+        \item \textbf{Minimálna réžia:} Nízka spotreba RAM a CPU robí z Go favorita pre mikroslužby bežiace na limitovanom priemyselnom hardvéri.
+    \end{itemize}
+    \item \textbf{Nevýhody:}
+    \begin{itemize}
+        \item \textbf{Menej abstrakcie:} Chýbajúca podpora pre niektoré pokročilé programovacie vzory (hoci generiká už boli pridané) môže viesť k redundantnejšiemu kódu.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Kontajnerizácia a Edge architektúra}
+
+V ére Industry 4.0 sa spracovanie dát presúva z cloudu na \textbf{Edge} – k zdroju dát. Tento prístup znižuje latenciu, zvyšuje bezpečnosť (dáta neopúšťajú lokálnu sieť) a šetrí prenosové pásmo. 
+
+
+
+\subsubsection{Docker a Docker Compose}
+Docker využíva technológie jadra Linuxu (namespaces, cgroups) na izoláciu procesov do tzv. kontajnerov. Na rozdiel od virtuálnych strojov kontajnery nezahrňujú celý operačný systém, ale zdieľajú jadro hostiteľa, čo ich robí extrémne ľahkými.
+
+\begin{itemize}
+    \item \textbf{Kľúčový prínos pre priemysel:}
+    \begin{itemize}
+        \item \textbf{Prenositľnosť:} Docker balí aplikáciu aj s presnou verziou knižníc a systémových závislostí. To eliminuje problémy pri nasadzovaní na rôzne typy priemyselných PC (IPC).
+        \item \textbf{Layered File System:} Vrstvený súborový systém umožňuje rýchle aktualizácie – pri zmene kódu sa prenáša len malá vrstva, nie celý obraz, čo je kľúčové pri aktualizácii cez LTE/IoT linky.
+        \item \textbf{Docker Compose:} Umožňuje definovať celý aplikačný stack (napr. InfluxDB pre dáta, Mosquitto pre správy a FastAPI pre logiku) v jednom konfiguračnom súbore, čím sa orchestrácia Edge uzla stáva triviálnou.
+    \end{itemize}
+    \item \textbf{Výhody:} Rýchle nasadenie, jednoduchá horizontálna škálovateľnosť a izolácia porúch.
+    \item \textbf{Nevýhody:} Vyžaduje správu obrazov a pochopenie sieťových vrstiev (bridge vs. host networking) pre komunikáciu s PLC.
+\end{itemize}
+
+\subsection{Priemyselné komunikačné protokoly}
+
+\subsubsection{OPC UA (Open Platform Communications Unified Architecture)}
+OPC UA je platformovo nezávislý štandard, ktorý nahrádza staršie riešenia založené na Microsoft COM/DCOM. Definuje nielen transport, ale aj informačný model (uzly, objekty, premenné).
+
+\begin{itemize}
+    \item \textbf{Výhody:} Vstavaná kybernetická bezpečnosť (šifrovanie, certifikáty), sémantický popis dát a podpora pre zložité hierarchické štruktúry.
+    \item \textbf{Nevýhody:} Vysoká komplexnosť stacku a nároky na RAM/CPU v PLC.
+\end{itemize}
+
+\subsubsection{S7 Protokol}
+Ide o natívnu komunikáciu pre PLC Siemens. Využíva ISO on TCP (RFC 1006) a umožňuje nízkoúrovňový prístup k pamäťovým oblastiam automatu.
+
+\begin{itemize}
+    \item \textbf{Výhody:} Maximálna rýchlosť v ekosystéme Siemens bez nutnosti licencií pre OPC UA servery.
+    \item \textbf{Nevýhody:} Chýbajúci sémantický kontext (vývojár musí presne poznať adresy DB blokov) a slabšie natívne šifrovanie.
+\end{itemize}
+
+\subsubsection{MQTT (Message Queuing Telemetry Transport)}
+MQTT je ľahký binárny protokol typu publish-subscribe, optimalizovaný pre IoT. Správy sa neposielajú priamo, ale cez sprostredkovateľa (broker).
+
+\begin{itemize}
+    \item \textbf{Výhody:} Minimálna réžia hlavičiek (2 bajty), podpora stavu „Last Will and Testament“ a rôznych úrovní doručenia (QoS).
+    \item \textbf{Nevýhody:} Nutnosť udržiavať bežiaci broker ako centrálny bod zlyhania (Single Point of Failure).
+\end{itemize}
+
+\subsubsection{Modbus TCP}
+Najrozšírenejší "legacy" protokol založený na architektúre Client/Server. Pracuje s jednoduchým modelom registrov (Holding, Input) a cievok (Coils).
+
+\begin{itemize}
+    \item \textbf{Výhody:} Extrémna jednoduchosť implementácie na takmer každom mikrokontroléri alebo PLC.
+    \item \textbf{Nevýhody:} Žiadna bezpečnosť (všetko v plain-text) a obmedzené dátové typy (nutnosť manuálneho spájania 16-bitových registrov do float/int64).
+\end{itemize}
+
+
+\section{Typy identifikátorov a ich použitie}
+
+\subsection{QR kódy}
+QR kódy sú dvojrozmerné maticové identifikátory optimalizované pre rýchle čítanie a vysokú hustotu dát. V kontexte priemyselnej automatizácie sa využívajú najmä na statickú identifikáciu objektov, kde sa vyžaduje uloženie komplexnejších informácií napr. URL adresy, sériové čísla alebo konfiguračné parametre. Ich výhodou je silná korekcia chýba, ktorá umožňuje prečítať kód aj pri čiastočnom poškodení alebo znečistení povrchu.
+
+\subsection{Fiduciálne markery - AprilTag, ArUco, STag}
+Fiduciálne markery sú špeciálne navrhnuté pre potreby počítačového videnia a robotiky. Na rozdiel od QR kódov nie je ich primárnym cieľom prenos veľkého objemu dát, ale presná lokalizácia v 3D priestore. 
+
+Tieto identifikátory sa vyznačujú predovšetkým vysokou mierou interoperability s modernými robotickými riešeniami. Vďaka existujúcim knižniciam napr. OpenCV, ROS - Robot Operating System je ich integrácia štandardom pri vývoji:
+\begin{itemize}
+    \item \textbf{Autonómnych upratovacích robotov:} Kde markery umiestnené v prostredí slúžia ako pevné referenčné body pre rekalibráciu lokalizácie a elimináciu kumulatívnej chyby v mapách.
+    \item \textbf{Dronov v skladoch:} Kde umožňujú presné pristávanie na nabíjacích staniciach alebo navigáciu v priestoroch bez signálu GPS, pričom dron dokáže v reálnom čase určiť svoju polohu a náklon voči markeru.
+    \item \textbf{Kolaboratívnych robotov:} Pri navádzaní na presnú pozíciu.
+\end{itemize}
+Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a perspektívnemu skresleniu, zatiaľ čo STag (Stable Tag) prináša zvýšenú stabilitu a presnosť pri určovaní orientácie.
+
+\subsection{3D identifikátory}
+V prostrediach priemyselných podnikov a logistických reťazcov, kde sú si entity tvarovo a rozmerovo blízke, sa ako perspektívne riešenie javia unikátne 3D identifikátory. Na Fakulte elektrotechniky a informatiky STU bol vyvinutý systém programaticky generovaných 3D identifikátorov, ktoré sú optimalizované pre systémy zmiešanej a rozšírenej reality.
+
+\subsubsection{Princíp a štruktúra}
+Navrhnutý 3D identifikátor má tvar kocky, ktorá je vnútorne vyskladaná z menších, unikátnych geometrických elementov. Tieto elementy sú usporiadané v originálnej štruktúre, ktorá v sebe nesie zakódované informácie. 
+
+Hlavné technické výhody tohto riešenia sú:
+\begin{itemize}
+    \item \textbf{Všesmerová detekcia:} Na rozdiel od 2D QR kódov je možné tieto 3D objekty v systémoch zmiešanej reality spoľahlivo snímať z akéhokoľvek uhla.
+    \item \textbf{Odolnosť voči falšovaniu:} Vďaka komplexnej vnútornej členitosti a 3D geometrii sú tieto identifikátory výrazne náročnejšie na replikáciu než bežné 2D identifikátory.
+    \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
+\end{itemize}
+
+
+
 \section{Špecifikácia požiadaviek systému}
 
-Tento projekt predstavuje moderný prístup k priemyselnému internetu vecí (IIoT),
+Práca predstavuje moderný prístup k priemyselnému internetu vecí (IIoT),
 kde mobilná aplikácia slúži ako primárne rozhranie pre obsluhu výrobnej linky,
 prepojené s riadiacim systémom prostredníctvom edge computing zariadenia umiestneného priamo v prevádzke.
 
@@ -15,8 +225,8 @@ prepojené s riadiacim systémom prostredníctvom edge computing zariadenia umie
 V moderných priemyselných prevádzkach narastá tlak na flexibilitu a mobilitu obsluhy výrobných zariadení.
 Tradičné riešenia sú spravidla viazané na pevne umiestnené operátorské panely alebo stolové počítače,
 čo obmedzuje pohyblivosť obsluhy a~zvyšuje reakčný čas pri riešení prevádzkových udalostí.
-Mobilné zariadenia ponúkajú možnosť prístupu k výrobným systémom odkiaľkoľvek v rámci areálu závodu,
-pričom ich použitie v~kombinácii s~jednoznačnou identifikáciou zariadení otvára cestu
+Mobilné zariadenia ponúkajú možnosť prístupu k výrobným systémom odkiaľkoľvek v rámci areálu závodu.
+Ich použitie v~kombinácii s~jednoznačnou identifikáciou zariadení otvára cestu
 k~bezpečnému a~intuitívnemu ovládaniu výrobnej linky.
 
 Kľúčovou výzvou pri takomto prístupe je spoľahlivé a~jednoznačné spárovanie mobilného zariadenia
