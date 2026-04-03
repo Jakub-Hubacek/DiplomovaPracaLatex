@@ -1,0 +1,20 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'thesis.blg'
+[177] biber-MSWIN64:342> INFO - === 
+[215] Biber.pm:421> INFO - Reading 'thesis.bcf'
+[334] Biber.pm:1002> INFO - Found 19 citekeys in bib section 0
+[361] Biber.pm:4487> INFO - Processing section 0
+[376] Biber.pm:4678> INFO - Looking for bibtex file 'includes/bibliography.bib' for section 0
+[464] bibtex.pm:1713> INFO - LaTeX decoding ...
+[490] bibtex.pm:1519> INFO - Found BibTeX data source 'includes/bibliography.bib'
+[597] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[597] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[598] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sk-SK'
+[612] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[616] bbl.pm:779> INFO - Output to thesis.bbl
+[617] Biber.pm:132> WARN - I didn't find a database entry for 'ollama_llama32' (section 0)
+[617] Biber.pm:132> WARN - I didn't find a database entry for 'ollama_gemma2' (section 0)
+[617] Biber.pm:132> WARN - I didn't find a database entry for 'ollama_mistralnemo' (section 0)
+[617] Biber.pm:132> WARN - I didn't find a database entry for 'ollama_phi4' (section 0)
+[617] Biber.pm:132> WARN - I didn't find a database entry for 'ollama_mistralsmall' (section 0)
+[617] Biber.pm:134> INFO - WARNINGS: 5

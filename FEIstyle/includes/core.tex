@@ -7,7 +7,11 @@
 
 \section{Prehľad technológií pre vývoj aplikácií a priemyselnú komunikáciu}
 
-Táto kapitola poskytuje teoretický prehľad technológií a frameworkov pre vývoj mobilných, webových a backendových aplikácií s dôrazom na ich integráciu do priemyselných riadiacich systémov. Výber technológií zohľadňuje požiadavky na výkon, škálovateľnosť a spoľahlivosť v prostredí Industry 4.0.
+Moderné priemyselné aplikácie nestoja na jednej technológii. Sú výsledkom starostlivo zvolenej skladačky nástrojov, kde každá vrstva plní svoju úlohu: mobilné rozhranie reaguje na pokyny operátora a backendová vrstva spracúva množstvo súbežných udalostí z~výrobnej linky.
+
+Kľúčovou výzvou je pritom premostenie dvoch oddelených svetov. \textbf{OT} (Operational Technology) označuje svet priemyselného riadenia -- PLC automaty, senzory, pohony a výrobné linky, ktoré fyzicky ovládajú stroje v~reálnom čase. \textbf{IT} (Information Technology) je naopak svet softvéru, sietí a aplikácií určených na spracovanie a prenos informácií. Tieto dva svety dlho fungovali oddelene, každý s~vlastnými protokolmi a prioritami. Priemyselné aplikácie v~kontexte Industry~4.0 ich spájajú práve prostredníctvom komunikačnej vrstvy -- napríklad pomocou protokolov MQTT alebo OPC~UA.
+
+Nasledujúci prehľad mapuje najpouž\'{i}vanejšie technológie v~každej z~týchto vrstiev a ich typické uplatnenie v~priemyselnom prostredí.
 
 \subsection{Frontendové technológie}
 
@@ -37,8 +41,8 @@ React Native je multiplatformový framework od spoločnosti Meta, ktorý využí
     \item \textbf{Výhody:}
     \begin{itemize}
         \item \textbf{Zdieľanie kódu:} Možnosť opätovného využitia až 90 \% kódovej základne medzi Androidom a iOS, čo dramaticky zrýchľuje proces Time-to-Market.
-        \item \textbf{Ekosystém NPM:} Prístup k tisícom knižníc pre správu stavu (Redux, Zustand) a vizualizáciu dát.
-        \item \textbf{Nová architektúra (JSI):} Odstránenie asynchrónneho bridge-u v prospech priameho volania C++ objektov výrazne zlepšilo odozvu pri interakcii s PLC dátami.
+        \item \textbf{Ekosystém NPM:} Prístup k tisícom knižníc pre správu stavu a vizualizáciu dát.
+        \item \textbf{Nová architektúra (JSI):} Odstránenie asynchrónneho bridge-u v prospech priameho volania C++ objektov výrazne zlepšilo odozvu.
     \end{itemize}
     \item \textbf{Nevýhody:}
     \begin{itemize}
@@ -460,6 +464,221 @@ Požiadavky plynúce z priemyselného prostredia a použitých technológií.
 
 
 
+
+
+\section{Experimentálne porovnanie a výber jazykových modelov}
+
+\subsection{Popis testovaných modelov}
+
+Na účely porovnania bolo vybraných päť lokálne spustiteľných jazykových modelov
+dostupných prostredníctvom platformy Ollama. Modely boli zámerne zvolené tak,
+aby pokrývali tri veľkostné kategórie: modely do 10 miliárd parametrov,
+modely v rozsahu 10 až 15 miliárd parametrov a model s 24 miliardami parametrov.
+Cieľom tohto rozloženia bolo analyzovať vzťah medzi veľkosťou modelu,
+kvalitou odpovedí a časom odozvy.
+
+\begin{enumerate}
+
+  \item \textbf{llama3.2:3b} \\
+  Kompaktný model od spoločnosti Meta s~3 miliardami parametrov zo série Llama~3.2,
+  ktorá zahŕňa predtrénované aj inštrukčne doladené generatívne modely vo veľkostiach
+  1B a 3B parametrov. Inštrukčne doladené varianty sú optimalizované pre multijazyčné
+  konverzačné úlohy vrátane agentického vyhľadávania a sumarizácie.
+  Podľa oficiálnej dokumentácie model prekonáva modely Gemma~2 2.6B
+  a Phi~3.5-mini v~úlohách ako sledovanie inštrukcií, sumarizácia,
+  prepis promptov a používanie nástrojov~\cite{ollama_llama32}.
+  Do testovania bol zaradený ako zástupca najmenšej veľkostnej kategórie
+  s~predpokladom najrýchlejšej odozvy.
+
+  \item \textbf{gemma2:9b} \\
+  Model od spoločnosti Google s~9 miliardami parametrov zo série Gemma~2,
+  ktorá je dostupná v~troch veľkostiach: 2B, 9B a 27B parametrov.
+  Séria je postavená na novej architektúre navrhnutej pre špičkový výkon a efektivitu.
+  Podľa oficiálnej dokumentácie model vo veľkosti 27B prekonáva v~benchmarkoch modely
+  s~viac ako dvojnásobným počtom parametrov, čo sériu Gemma~2 radí medzi
+  najefektívnejšie otvorené modely~\cite{ollama_gemma2}.
+  Model nachádza uplatnenie v~oblasti generovania textu, konverzačných rozhraní,
+  sumarizácie, výskumu spracovania prirodzeného jazyka aj vzdelávacích nástrojov.
+  Do testovania bol zaradený ako zástupca strednej veľkostnej kategórie do 10 miliárd parametrov.
+
+  \item \textbf{mistral-nemo:12b} \\
+  Model s~12 miliardami parametrov vyvinutý spoločnosťami Mistral AI a NVIDIA.
+  Disponuje kontextovým oknom až 128\,000 tokenov a podľa oficiálnej dokumentácie
+  dosahuje v~svojej veľkostnej kategórii špičkové výsledky v~oblasti uvažovania,
+  znalosti sveta a presnosti generovania kódu. Vďaka štandardnej architektúre je
+  plnohodnotnou náhradou modelu Mistral~7B v~existujúcich systémoch~\cite{ollama_mistralnemo}.
+  Do testovania bol zaradený ako zástupca kategórie 10--20 miliárd parametrov.
+
+  \item \textbf{phi4:14b} \\
+  Model od spoločnosti Microsoft s~14 miliardami parametrov a kontextovým oknom
+  16\,000 tokenov. Je trénovaný na kombinácii syntetických dátových sád,
+  filtrovaných verejne dostupných webových zdrojov a akademických kníh
+  a dátových sád otázok a odpovedí. Prešiel procesom doladenia pomocou
+  supervised fine-tuningu a direct preference optimization s~dôrazom na presné
+  sledovanie inštrukcií a bezpečnosť. Podľa oficiálnej dokumentácie je určený
+  pre prostredia s~obmedzenými výpočtovými zdrojmi, scenáre s~požiadavkami
+  na nízku latenciu a úlohy vyžadujúce uvažovanie a logiku~\cite{ollama_phi4}.
+  Do testovania bol zaradený ako druhý zástupca kategórie 10--20 miliárd parametrov.
+
+  \item \textbf{mistral-small:24b} \\
+  Model od spoločnosti Mistral AI s~24 miliardami parametrov a kontextovým oknom
+  32\,000 tokenov, ktorý stanovuje nový benchmark v~kategórii modelov do 70B parametrov.
+  Podľa oficiálnej dokumentácie dosahuje výkon porovnateľný s~modelmi trojnásobnej
+  veľkosti a proprietárnym modelom GPT-4o mini naprieč úlohami v~oblasti kódu,
+  matematiky, všeobecných znalostí a sledovania inštrukcií~\cite{ollama_mistralsmall}.
+  Model vyniká multijazyčnou podporou, natívnym volaním funkcií, JSON výstupom
+  a silnou adherenciou k~systémovým promptom. Vďaka kompaktnej veľkosti je
+  nasaditeľný lokálne na bežnom spotrebiteľskom hardvéri a je licencovaný pod Apache~2.0.
+  V~rámci projektu PLEXO bol tento model používaný ako primárny model asistenta
+  pred spustením porovnávacieho testovania a v~tomto porovnaní slúži ako referenčná
+  hodnota maximálnej kvality lokálne spustiteľných riešení.
+
+\end{enumerate}
+
+% ------------------------------------------------------------
+
+\subsection{Metodika testovania}
+
+Testovanie prebiehalo formou automatizovaného benchmarku implementovaného
+v~jazyku Python s~využitím knižníc LangChain, ChromaDB a Ollama.
+Znalostná báza asistenta PLEXO vo formáte \texttt{.txt} bola rozdelená
+na dokumentové sekcie podľa markerov \texttt{--- DOKUMENT: ---}
+a uložená do vektorovej databázy ChromaDB s~využitím embedding modelu
+\texttt{nomic-embed-text}. Pre každú testovú otázku boli z~vektorovej
+databázy vytiahnuté tri najrelevantnejšie dokumenty, ktoré boli spolu
+s~otázkou odovzdané modelu ako kontext.
+
+Každý model bol otestovaný na sade 14 testovacích otázok rozdelených
+do troch kategórií:
+
+\begin{itemize}
+  \item \textbf{Faktické otázky} (10 otázok) -- odpoveď je priamo
+        obsiahnutá v~znalostnej báze. 6 otázok v~slovenskom
+        a 4 otázky v~anglickom jazyku.
+  \item \textbf{Syntézne otázky} (2 otázky) -- správna odpoveď
+        vyžaduje kombináciu informácií z~viacerých dokumentov
+        znalostnej bázy.
+  \item \textbf{Otázky mimo rozsahu} (2 otázky) -- otázky,
+        ktorých odpoveď sa v~znalostnej báze nenachádza a
+        model by mal odpovedať odmietnutím a odkazom na technika.
+\end{itemize}
+
+Na rozdiel od automatických metrík ako ROUGE, ktoré vykazujú nízku
+spoľahlivosť pri skloňovaných jazykoch ako slovenčina, bolo hodnotenie
+kvality realizované manuálne. Každá odpoveď bola ohodnotená
+podľa nasledujúcich kritérií:
+
+\begin{itemize}
+  \item \textbf{Relevancia} (škála 1--5) -- miera, do akej odpoveď
+        zodpovedá položenej otázke.
+  \item \textbf{Úplnosť} (škála 1--5) -- pokrytie všetkých
+        dôležitých informačných bodov správnej odpovede.
+  \item \textbf{Zrozumiteľnosť} (škála 1--5) -- jasnosť
+        a zrozumiteľnosť formulácie odpovede.
+  \item \textbf{Jazyková správnosť} (škála 1--3) -- či model
+        odpovedal v~rovnakom jazyku, v~akom bola položená otázka.
+  \item \textbf{Odmietnutie otázky mimo rozsahu} (áno/nie) --
+        či model správne odmietol odpovedať na otázku,
+        ktorá nie je pokrytá znalostnou bázou.
+\end{itemize}
+
+Celkové skóre bolo vypočítané ako vážený priemer jednotlivých kritérií:
+relevancia (30\,\%), úplnosť (25\,\%), zrozumiteľnosť (20\,\%)
+a jazyková správnosť (25\,\%).
+
+Okrem kvalitatívnych metrík bol pre každú odpoveď zaznamenaný
+čas odozvy v~milisekundách. Testovanie prebiehalo na notebookovom
+hardvéri (CPU AMD Ryzen 5 5600H, RAM 32\,GB, GPU NVIDIA RTX~3060 6\,GB VRAM).
+Keďže väčšina testovaných modelov presahuje kapacitu VRAM,
+modely bežali čiastočne alebo úplne na systémovej RAM,
+čo predstavuje hardvérovú limitáciu meraní.
+V~produkčnom nasadení na dedikovanom serveri s~dostatočnou VRAM
+by časy odozvy boli výrazne nižšie.
+
+% ------------------------------------------------------------
+
+\subsection{Výsledky porovnania}
+
+Výsledky hodnotenia všetkých piatich modelov sú zhrnuté
+v~tabuľke~\ref{tab:model_comparison}.
+
+\begin{table}[h]
+\centering
+\caption{Výsledky porovnania jazykových modelov}
+\label{tab:model_comparison}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lccccccc}
+\hline
+\textbf{Model} &
+\textbf{\shortstack{Priem.\\čas [ms]}} &
+\textbf{\shortstack{Relev.\\(1--5)}} &
+\textbf{\shortstack{Úplnosť\\(1--5)}} &
+\textbf{\shortstack{Zrozum.\\(1--5)}} &
+\textbf{\shortstack{Jazyk\\(1--3)}} &
+\textbf{\shortstack{OOS\\odmiet.}} &
+\textbf{\shortstack{Celk.\\skóre}} \\
+\hline
+llama3.2:3b      & 4\,536  & 2,29 & 2,21 & 2,50 & 2,14 & 100\,\% & 2,63 \\
+gemma2:9b        & 11\,165 & 4,86 & 4,86 & 5,00 & 3,00 & 100\,\% & \textbf{4,92} \\
+mistral-nemo:12b & 15\,217 & 4,07 & 4,07 & 4,29 & 2,86 & 100\,\% & 4,29 \\
+phi4:14b         & 20\,039 & 2,00 & 2,00 & 2,07 & 2,79 & 100\,\% & 2,68 \\
+mistral-small:24b& 35\,801 & 1,86 & 1,86 & 1,86 & 3,00 & 100\,\% & 2,65 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Priemerná relevancia podľa typu otázky a jazyka}
+\label{tab:model_detail}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Model} &
+\textbf{\shortstack{Faktická\\otázka}} &
+\textbf{Syntéza} &
+\textbf{\shortstack{Mimo\\rozsahu}} &
+\textbf{SK} &
+\textbf{EN} \\
+\hline
+llama3.2:3b       & 1,70 & 2,50 & 5,00 & 2,12 & 2,50 \\
+gemma2:9b         & 5,00 & 4,00 & 5,00 & 4,88 & 4,83 \\
+mistral-nemo:12b  & 4,20 & 2,50 & 5,00 & 4,62 & 3,33 \\
+phi4:14b          & 1,40 & 2,00 & 5,00 & 2,00 & 2,00 \\
+mistral-small:24b & 1,40 & 1,00 & 5,00 & 2,00 & 1,67 \\
+\hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+
+\subsection{Analýza výsledkov a výber modelu}
+
+Z~výsledkov testovania vyplýva, že model \textbf{gemma2:9b} dosiahol
+najvyššie celkové skóre 4,92/5,0 spomedzi všetkých testovaných modelov.
+Model vykazoval konzistentne vysokú kvalitu odpovedí naprieč všetkými
+typmi otázok aj oboma testovacími jazykmi, pričom jeho priemerný čas
+odozvy 11\,165\,ms je takmer trojnásobne nižší v~porovnaní
+s~modelom mistral-small:24b.
+
+Pozoruhodným zistením je skutočnosť, že modely phi4:14b
+a mistral-small:24b opakovane odmietali odpovedať na otázky,
+ktorých odpovede boli v~znalostnej báze jednoznačne obsiahnuté.
+Tento jav naznačuje, že retrieval pipeline nepodal týmto modelom
+dostatočne relevantný kontext, čo mohlo byť spôsobené odlišnou
+citlivosťou modelov na formát vstupného kontextu alebo
+prísnejším nastavením ich systémového promptu.
+
+Všetky testované modely dosiahli 100\,\% úspešnosť pri odmietaní
+otázok mimo rozsahu znalostnej bázy, čo potvrdzuje správne
+fungovanie systémového promptu z~hľadiska bezpečnosti systému.
+
+Na základe výsledkov testovania bol pre integráciu do mobilnej
+aplikácie vybraný model \textbf{gemma2:9b}. Tento model poskytuje
+najlepší pomer medzi kvalitou odpovedí a časom odozvy,
+je konzistentný v~slovenskom aj anglickom jazyku
+a jeho veľkosť 9 miliárd parametrov je vhodná pre nasadenie
+na serverovom hardvéri s~bežnou VRAM kapacitou.
 
 
 \section{Štruktúra záverečnej práce}\label{sec:StrukturaPrace}

@@ -48,8 +48,8 @@
       \field{year}{2003}
     \endentry
     \entry{zakon1312002}{report}{}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{title}{Zákon č. 131/2002 Z.~z. z~21. februára 2002 o~vysokých školách a~o~zmene a~doplnení niektorých zákonov}
       \field{urlday}{1}
@@ -65,8 +65,8 @@
       \endverb
     \endentry
     \entry{vyhlaska2332011}{report}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{title}{Vyhláška č.~233/2011 Z.~z. Ministerstva školstva, vedy, výskumu a~športu Slovenskej republiky z~1. júla 2011, ktorou sa vykonávajú niektoré ustanovenia zákona č. 131/2002 Z.~z. o~vysokých školách a~o~zmene a~doplnení niektorých zákonov v~znení neskorších predpisov}
       \field{urlday}{1}
@@ -82,8 +82,8 @@
       \endverb
     \endentry
     \entry{usmernenie562011}{report}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{title}{Metodické usmernenie Ministerstva školstva, vedy, výskumu a~športu SR č. 56/2011 o~náležitostiach záverečných prác, ich bibliografickej registrácii, kontrole originality, uchovávaní a~sprístupňovaní č. 2011-11513/31015:4-071}
       \field{urlday}{24}
@@ -105,8 +105,8 @@
       \list{publisher}{1}{%
         {Slovenský ústav technickej normalizácie}%
       }
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{subtitle}{Abstrakty (referáty) pre publikácie a~dokumentáciu}
       \field{title}{STN ISO 214: 1976. Dokumentácia}
@@ -119,8 +119,8 @@
       \list{publisher}{1}{%
         {Slovenský ústav technickej normalizácie}%
       }
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{subtitle}{Návod na tvorbu bibliografických odkazov na informačné pramene a~ich citovanie}
       \field{title}{STN ISO 690: 2022. Informácie a dokumentácia}
@@ -133,8 +133,8 @@
       \list{publisher}{1}{%
         {Slovenský ústav technickej normalizácie}%
       }
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{title}{STN 01 6910: 2023. Pravidlá písania a~úpravy písomností}
       \field{year}{2023}
@@ -146,8 +146,8 @@
       \list{publisher}{1}{%
         {Slovenský ústav technickej normalizácie}%
       }
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{subtitle}{Číslovanie oddielov a~pododdielov písaných dokumentov}
       \field{title}{STN ISO 2145: 1978. Dokumentácia}
@@ -256,8 +256,8 @@
       \strng{authornamehash}{11b8b839196747d07fcd95360dae5716}
       \strng{authorfullhash}{11b8b839196747d07fcd95360dae5716}
       \strng{authorfullhashraw}{11b8b839196747d07fcd95360dae5716}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ITlib. Informačné technológie a knižnice}
@@ -290,8 +290,8 @@
       \strng{authornamehash}{01af3637bd3cdaadb902d90f37d1b828}
       \strng{authorfullhash}{01af3637bd3cdaadb902d90f37d1b828}
       \strng{authorfullhashraw}{01af3637bd3cdaadb902d90f37d1b828}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{20}
@@ -312,6 +312,11 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{ollama_gemma2}
+  \missing{ollama_llama32}
+  \missing{ollama_mistralnemo}
+  \missing{ollama_mistralsmall}
+  \missing{ollama_phi4}
 \endrefsection
 \endinput
 
