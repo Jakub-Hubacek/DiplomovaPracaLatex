@@ -232,6 +232,729 @@ Pracuje s jednoduchým modelom registrov (Holding, Input) a cievok (Coils).
   \item \textbf{Nevýhody:} Žiadna bezpečnosť (všetko v plain-text) a obmedzené dátové typy (nutnosť manuálneho spájania 16-bitových registrov do float/int64).
 \end{itemize}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Prehľad existujúcich riešení pre priemyselné mobilné aplikácie}
+
+Trh s~priemyselnými softvérovými platformami ponúka viacero riešení umožňujúcich
+vizualizáciu a ovládanie výrobných zariadení. Väčšina z~nich vychádza z~tradičného
+modelu SCADA/HMI a postupne sa rozširuje o~mobilný prístup, cloudovú konektivitu
+a v~niektorých prípadoch aj o~prvky umelej inteligencie. Nasledujúci prehľad
+analyzuje štyri významné komerčné platformy z~pohľadu funkcionalít relevantných
+pre mobilné ovládanie priemyselných liniek: mobilný prístup k~zariadeniam,
+identifikácia fyzických zariadení, nasadenie na edge vrstvu, otvorenosť platformy
+a predovšetkým integrácia inteligentného asistenta schopného pracovať
+s~technickou dokumentáciou.
+
+\subsection{Siemens WinCC Unified}
+
+WinCC Unified je vizualizačná platforma od spoločnosti Siemens integrovaná
+do prostredia TIA Portal. Predstavuje natívne riešenie pre zariadenia radu
+SIMATIC a poskytuje webový HMI prístup prostredníctvom HTML5, čo umožňuje
+zobrazenie operátorských obrazoviek na mobilných zariadeniach cez webový
+prehliadač.
+
+Platforma disponuje hlbokou integráciou s~PLC radu S7-1200 a S7-1500 vrátane
+priameho prístupu k~dátovým blokom, alarmom a trendom. Runtime beží priamo
+na operátorských paneloch Siemens (Comfort, Unified) alebo na priemyselných PC.
+Webový server umožňuje vzdialený prístup z~mobilných zariadení, avšak rozhranie
+je primárne optimalizované pre pevné panely, nie pre mobilnú interakciu.
+
+\begin{itemize}
+    \item \textbf{Mobilný prístup:} Webové rozhranie prístupné cez prehliadač;
+          nie je natívna mobilná aplikácia.
+    \item \textbf{Identifikácia zariadení:} Nie je podporovaná -- operátor
+          naviguje cez menu alebo prepína medzi obrazovkami manuálne.
+    \item \textbf{Edge nasadenie:} Podporované cez SIMATIC Edge platformu,
+          avšak vyžaduje proprietárny hardvér a licencie.
+    \item \textbf{AI asistent:} Nie je súčasťou platformy. Siemens ponúka
+          AI funkcie v~rámci platformy Industrial Copilot, avšak ten je
+          zameraný na generovanie PLC kódu v~TIA Portal, nie na asistenta
+          pre obsluhu s~prístupom k~technickej dokumentácii zariadení.
+    \item \textbf{Licenčný model:} Proprietárny, viazaný na ekosystém Siemens.
+          Licencie sa účtujú podľa počtu tagov a runtime zariadení.
+\end{itemize}
+
+\subsection{Ignition Perspective (Inductive Automation)}
+
+Ignition je modulárna SCADA platforma od spoločnosti Inductive Automation,
+ktorá si v~posledných rokoch vybudovala silné postavenie vďaka flexibilnému
+licenčnému modelu a modernej architektúre. Modul Perspective poskytuje
+plnohodnotné mobilné rozhranie realizované ako webová aplikácia
+s~responzívnym dizajnom optimalizovaným pre tablety a smartfóny.
+
+Platforma komunikuje s~PLC prostredníctvom OPC~UA, Modbus TCP a ďalších
+priemyselných protokolov. Ignition Gateway beží na štandardnom serveri
+(Windows, Linux) a je škálovateľný od jedného zariadenia po celé podniky
+prostredníctvom architektúry hub-and-spoke.
+
+\begin{itemize}
+    \item \textbf{Mobilný prístup:} Modul Perspective poskytuje natívne
+          mobilné rozhranie; k~dispozícii je aj dedikovaná mobilná aplikácia
+          Ignition Perspective App.
+    \item \textbf{Identifikácia zariadení:} Nie je natívne podporovaná.
+          Je možné implementovať QR kód navigáciu pomocou vlastných skriptov,
+          avšak nejde o~štandardnú funkciu platformy.
+    \item \textbf{Edge nasadenie:} Ignition Edge je odľahčená verzia určená
+          pre nasadenie na edge zariadeniach s~obmedzenými zdrojmi.
+    \item \textbf{AI asistent:} Nie je súčasťou platformy. Ignition disponuje
+          výkonným skriptovacím rozhraním v~Pythone (Jython), cez ktoré
+          by bolo technicky možné integrovať volania na externé LLM API,
+          avšak platforma neponúka žiadnu vstavanú funkciu inteligentného
+          asistenta ani správu znalostnej bázy.
+    \item \textbf{Licenčný model:} Licencia na Gateway (server) bez obmedzenia
+          počtu klientov, čo je výrazne priaznivejšie oproti licenciám
+          na stanicu. Moduly (Perspective, Alarming, Reporting) sa licencujú
+          samostatne.
+\end{itemize}
+
+\subsection{Tulip}
+
+Tulip je cloudová no-code platforma pre výrobný sektor, ktorá umožňuje
+vytvárať priemyselné aplikácie prostredníctvom vizuálneho drag-and-drop
+editora bez nutnosti programovania. Platforma je orientovaná na digitalizáciu
+manuálnych výrobných procesov -- sledovanie výrobných krokov, zber dát
+z~pracovísk, kontrolu kvality a vizuálne pracovné inštrukcie.
+
+Tulip komunikuje s~priemyselnými zariadeniami prostredníctvom vlastného
+edge zariadenia (Tulip Edge MC alebo Tulip Player), ktoré podporuje
+OPC~UA, Modbus a HTTP integrácie. Aplikácie bežia vo webovom prehliadači
+na tabletoch umiestnených priamo na pracoviskách.
+
+\begin{itemize}
+    \item \textbf{Mobilný prístup:} Aplikácie sú webové a responzívne,
+          primárne navrhnuté pre tablety na pracoviskách.
+    \item \textbf{Identifikácia zariadení:} Podporuje skenovanie čiarových
+          kódov a QR kódov pre identifikáciu materiálov a produktov,
+          avšak nie pre identifikáciu a spárovanie so zariadeniami
+          výrobnej linky.
+    \item \textbf{Edge nasadenie:} Tulip Edge MC zabezpečuje lokálnu
+          komunikáciu so zariadeniami, avšak aplikačná logika
+          a dáta sú hostované v~cloude.
+    \item \textbf{AI asistent:} Tulip v~roku 2024 predstavil funkciu
+          Frontline Copilot, ktorá využíva generatívnu AI na asistovanie
+          operátorom. Podľa dostupných informácií sa jedná o~integráciu
+          s~cloudovými LLM službami zameranú na analýzu výrobných dát
+          a generovanie odporúčaní. Nejde však o~asistenta s~vlastnou
+          znalostnou bázou technickej dokumentácie -- funkcia pracuje
+          primárne s~dátami zozbieranými v~rámci platformy Tulip.
+    \item \textbf{Licenčný model:} SaaS model s~mesačnými platbami
+          na používateľa. Cloudová závislosť môže byť problematická
+          v~prostrediach s~prísnymi požiadavkami na lokalizáciu dát.
+\end{itemize}
+
+\subsection{AVEVA InTouch Edge HMI}
+
+AVEVA (predtým Wonderware) InTouch je jedna z~najdlhšie pôsobiacich
+HMI/SCADA platforiem na trhu. Verzia Edge HMI je odľahčeným variantom
+určeným pre nasadenie na priemyselných PC a edge zariadeniach. Platforma
+poskytuje vizualizáciu procesných dát, správu alarmov a historické trendy.
+
+InTouch Edge HMI komunikuje s~PLC prostredníctvom vlastného komunikačného
+servera (predtým SuiteLink/DASServer) a podporuje širokú škálu
+priemyselných protokolov. Vzdialený webový prístup je možný
+prostredníctvom doplnkového modulu AVEVA Insight alebo webového servera.
+
+\begin{itemize}
+    \item \textbf{Mobilný prístup:} Webový prístup cez AVEVA Insight
+          (cloudový portál) alebo lokálny webový server; nie je
+          natívna mobilná aplikácia pre priame ovládanie.
+    \item \textbf{Identifikácia zariadení:} Nie je podporovaná.
+    \item \textbf{Edge nasadenie:} Natívna podpora -- InTouch Edge HMI
+          je priamo navrhnutý pre beh na edge zariadeniach
+          s~minimálnymi hardvérovými nárokmi.
+    \item \textbf{AI asistent:} AVEVA ponúka platformu AVEVA~PI
+          (predtým OSIsoft~PI) s~analytickými funkciami a v~roku 2024
+          predstavila AVEVA Industrial AI Assistant. Ten je však
+          zameraný na analýzu procesných dát a prediktívnu údržbu
+          na podnikovej úrovni, nie na kontextovú asistenciu obsluhe
+          na základe technickej dokumentácie konkrétneho zariadenia.
+    \item \textbf{Licenčný model:} Proprietárny, licencie na inštanciu
+          a podľa počtu tagov.
+\end{itemize}
+
+\subsection{Zhrnutie porovnania}
+
+Tabuľka~\ref{tab:existing_solutions} sumarizuje kľúčové vlastnosti
+porovnávaných platforiem.
+
+\begin{table}[h]
+\centering
+\caption{Porovnanie existujúcich riešení}
+\label{tab:existing_solutions}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Vlastnosť} &
+\textbf{\shortstack{WinCC\\Unified}} &
+\textbf{\shortstack{Ignition\\Perspective}} &
+\textbf{Tulip} &
+\textbf{\shortstack{AVEVA\\InTouch}} \\
+\hline
+Natívna mobilná aplikácia    & Nie   & Áno   & Nie\textsuperscript{*} & Nie \\
+Identifikácia zariadení      & Nie   & Nie   & Čiastočne\textsuperscript{**} & Nie \\
+Edge nasadenie                & Áno   & Áno   & Čiastočne & Áno \\
+AI asistent s~vlastnou KB     & Nie   & Nie   & Nie   & Nie \\
+Otvorená platforma            & Nie   & Čiastočne & Nie & Nie \\
+\hline
+\end{tabular}
+\vspace{0.3em}
+
+\raggedright
+\footnotesize
+\textsuperscript{*} Webová aplikácia optimalizovaná pre tablety.
+\textsuperscript{**} QR/čiarové kódy pre materiály, nie pre zariadenia linky.
+\end{table}
+
+Z~porovnania vyplýva, že existujúce komerčné platformy poskytujú rôznu
+mieru mobilného prístupu k~priemyselným systémom, avšak ani jedna
+z~nich neintegruje inteligentného asistenta schopného odpovedať
+na otázky obsluhy na základe vlastnej znalostnej bázy technickej
+dokumentácie. Väčšina platforiem sa orientuje na vizualizáciu
+a vzdialený prístup k~procesným dátam, pričom kognitívna podpora
+operátora -- teda schopnosť systému aktívne pomáhať pri riešení
+prevádzkových situácií prostredníctvom práce s~dokumentáciou --
+zostáva nepokrytou oblasťou.
+
+Rovnako identifikácia fyzických zariadení prostredníctvom vizuálnych
+markerov (QR kód, NFC) s~automatickým načítaním kontextu pre dané
+zariadenie nie je štandardnou funkciou žiadnej z~analyzovaných platforiem.
+Operátori sú naďalej odkázaní na manuálnu navigáciu cez menu
+a obrazovky, čo spomaľuje prístup k~informáciám a zvyšuje
+pravdepodobnosť interakcie s~nesprávnym zariadením.
+
+Tieto identifikované medzery v~súčasnej ponuke komerčných riešení
+tvoria základ pre návrh systému prezentovaného v~ďalších kapitolách
+tejto práce.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Prehľad technológií pre inteligentných asistentov}
+
+Jedným z~cieľov tejto práce je integrácia inteligentného technického asistenta
+do mobilnej aplikácie pre obsluhu výrobnej linky. Asistent má byť schopný
+odpovedať na otázky operátorov na základe technickej dokumentácie konkrétnych
+zariadení, čím znižuje závislosť od papierových manuálov a skracuje čas
+potrebný na riešenie prevádzkových situácií. Realizácia tohto cieľa stojí
+na troch vzájomne prepojených pilieroch: veľkých jazykových modeloch (LLM),
+ktoré tvoria jadro generovania odpovedí; koncepte virtuálnych AI asistentov,
+ktoré definujú spôsob interakcie s~používateľom; a technike
+Retrieval-Augmented Generation (RAG), ktorá umožňuje modelu pracovať
+s~externými znalosťami bez nutnosti pretrénovávania.
+
+
+\subsection{Veľké jazykové modely (LLM)}
+
+\subsubsection{Definícia a princíp fungovania}
+
+Veľké jazykové modely (angl. Large Language Models, LLM) sú neurónové siete
+založené na architektúre Transformer, ktoré sú trénované na rozsiahlych
+textových korpusoch s~cieľom modelovať štatistické rozloženie jazyka.
+Základným princípom je predikcia nasledujúceho tokenu -- model na základe
+doterajšieho kontextu odhaduje pravdepodobnosť každého možného pokračovania
+a generuje text token po tokene.
+
+Architektúra Transformer, predstavená v~práci \textit{Attention Is All You Need}
+(Vaswani et al., 2017), priniesla mechanizmus self-attention, ktorý umožňuje
+modelu pri spracovaní každého tokenu zohľadniť vzťahy ku všetkým ostatným
+tokenom vo vstupnej sekvencii. Na rozdiel od rekurentných sietí (RNN, LSTM),
+ktoré spracúvajú sekvenciu sekvenčne a trpia problémom zanikajúceho gradientu
+pri dlhých závislostiach, Transformer spracúva celú sekvenciu paralelne.
+To umožňuje efektívne trénovanie na masívnych dátových sadách a zachytenie
+dlhodobých kontextových závislostí.
+
+Proces trénovania LLM prebieha typicky v~dvoch fázach:
+
+\begin{enumerate}
+    \item \textbf{Predtrénovanie (pre-training):} Model sa trénuje na
+          obrovských objemoch neoznačeného textu (stovky miliárd až bilióny
+          tokenov) úlohou predikcie nasledujúceho tokenu (causal language
+          modeling). V~tejto fáze model získava jazykové znalosti,
+          faktické informácie a schopnosť uvažovania. Predtrénovanie
+          vyžaduje enormné výpočtové zdroje -- trénovanie najväčších
+          modelov spotrebuje tisíce GPU-hodín.
+    \item \textbf{Doladenie (fine-tuning):} Predtrénovaný model sa ďalej
+          prispôsobuje na špecifickú úlohu alebo správanie. Najčastejšie
+          sa využíva \textit{instruction tuning}, kde sa model trénuje
+          na pároch inštrukcia--odpoveď, a \textit{RLHF} (Reinforcement
+          Learning from Human Feedback), kde ľudskí hodnotitelia posudzujú
+          kvalitu odpovedí a model sa učí generovať odpovede preferované
+          ľuďmi.
+\end{enumerate}
+
+\subsubsection{Kľúčové parametre a vlastnosti}
+
+Výkon a správanie LLM determinuje niekoľko kľúčových parametrov:
+
+\begin{itemize}
+    \item \textbf{Počet parametrov:} Označuje celkový počet trénovateľných
+          váh v~neurónovej sieti. Modely sa pohybujú od jednotiek miliárd
+          (napr. Llama~3.2 s~3B) cez desiatky miliárd (Gemma~2 s~9B,
+          Mistral Small s~24B) až po stovky miliárd parametrov
+          (GPT-4, Claude). Vo všeobecnosti platí, že väčší model má
+          vyššiu kapacitu pre zachytenie jazykových a faktických vzorcov,
+          avšak tento vzťah nie je lineárny -- kvalita trénovacích dát
+          a architektúra môžu tento efekt výrazne modulovať.
+
+    \item \textbf{Kontextové okno (context window):} Maximálny počet
+          tokenov, ktoré model dokáže spracovať v~jednej výzve (prompt).
+          Tento parameter je kritický pre aplikácie typu RAG, pretože
+          priamo limituje objem kontextu, ktorý je možné modelu poskytnúť
+          spolu s~otázkou. Testované modely v~tejto práci disponujú
+          kontextovými oknami od 16\,000 tokenov (phi4:14b) po
+          128\,000 tokenov (mistral-nemo:12b).
+
+    \item \textbf{Tokenizácia:} Spôsob, akým model rozdeľuje vstupný
+          text na tokeny, priamo ovplyvňuje jeho efektívnosť pri rôznych
+          jazykoch. Modely využívajúce tokenizéry s~väčším slovníkom
+          (napr. Tekken s~131\,000 tokenmi pri Mistral Small) typicky
+          efektívnejšie kódujú ne-anglické jazyky vrátane slovenčiny,
+          pretože potrebujú menej tokenov na reprezentáciu rovnakého textu.
+
+    \item \textbf{Teplota (temperature):} Parameter ovplyvňujúci mieru
+          náhodnosti pri generovaní. Nízka teplota (blízka 0) produkuje
+          deterministické, fakticky konzistentné odpovede, zatiaľ čo
+          vyššia teplota (0,7--1,0) zvyšuje kreativitu a variabilitu.
+          Pre technického asistenta v~priemyselnom prostredí je žiaduca
+          nízka teplota, pretože prioritou je faktická presnosť.
+\end{itemize}
+
+\subsubsection{Otvorené vs. proprietárne modely}
+
+Z~hľadiska dostupnosti a nasadenia rozlišujeme dve kategórie LLM:
+
+\textbf{Proprietárne modely} (GPT-4 od OpenAI, Claude od Anthropic,
+Gemini od Google) sú prístupné výhradne prostredníctvom cloudových API.
+Ponúkajú spravidla najvyšší výkon, avšak ich používanie vyžaduje
+odosielanie dát na externé servery, čo môže byť v~priemyselnom prostredí
+neprijateľné z~hľadiska bezpečnosti a ochrany dát. Prevádzka je viazaná
+na internetové pripojenie a spoplatňovaná podľa objemu spracovaných tokenov.
+
+\textbf{Otvorené modely} (Llama od Meta, Gemma od Google, Mistral,
+Phi od Microsoft) je možné stiahnuť a prevádzkovať lokálne na vlastnom
+hardvéri. Tento prístup eliminuje závislosť od externých služieb,
+zabezpečuje, že citlivé prevádzkové dáta neopúšťajú lokálnu sieť,
+a umožňuje prevádzku bez internetového pripojenia. Nevýhodou sú vyššie
+nároky na hardvér (najmä GPU s~dostatočnou VRAM) a spravidla nižší
+výkon v~porovnaní s~najväčšími proprietárnymi modelmi.
+
+Pre priemyselnú aplikáciu PLEXO boli z~uvedených dôvodov zvolené
+výhradne lokálne spustiteľné otvorené modely, prevádzkované
+prostredníctvom platformy Ollama na edge zariadení v~lokálnej sieti.
+
+\subsubsection{Platforma Ollama}
+
+Ollama je open-source platforma pre lokálne spúšťanie a správu
+veľkých jazykových modelov. Poskytuje jednotné rozhranie pre stiahnutie,
+spustenie a komunikáciu s~modelmi rôznych architektúr prostredníctvom
+REST API kompatibilného s~formátom OpenAI. Ollama automaticky spravuje
+kvantizáciu modelov, alokáciu pamäte medzi GPU a systémovou RAM
+a poskytuje jednoduché CLI rozhranie pre správu modelov.
+
+Z~pohľadu integrácie do aplikačného stacku je kľúčovou vlastnosťou
+Ollama práve REST API -- backend v~Pythone (FastAPI) komunikuje
+s~modelom cez HTTP požiadavky na lokálny endpoint, čo umožňuje
+jednoduché prepínanie medzi modelmi bez zmeny aplikačného kódu.
+Knižnice ako LangChain poskytujú natívnu integráciu s~Ollama,
+čo ďalej zjednodušuje implementáciu RAG pipeline.
+
+\subsection{Virtuálni AI asistenti}
+
+\subsubsection{Definícia a klasifikácia}
+
+Virtuálny AI asistent je softvérový systém schopný viesť konverzáciu
+v~prirodzenom jazyku s~cieľom poskytnúť používateľovi informácie,
+vykonať úlohy alebo asistovať pri rozhodovaní. Na rozdiel od tradičných
+chatbotov založených na pravidlách (rule-based), moderní AI asistenti
+využívajú veľké jazykové modely, čo im umožňuje rozumieť kontextu,
+spracovať neštruktúrované otázky a generovať koherentné odpovede
+aj na otázky, ktoré neboli explicitne naprogramované.
+
+Podľa architektúry a schopností je možné AI asistentov klasifikovať
+do niekoľkých úrovní:
+
+\begin{enumerate}
+    \item \textbf{Retrieval-based asistenti:} Odpoveď vyberajú
+          z~predpripravenej databázy odpovedí na základe podobnosti
+          s~otázkou. Sú spoľahliví, ale obmedzení na vopred definované
+          scenáre.
+    \item \textbf{Generatívni asistenti:} Využívajú LLM na generovanie
+          odpovedí. Sú flexibilní, ale môžu produkovať fakticky
+          nesprávne informácie (halucinácie).
+    \item \textbf{RAG-augmentovaní asistenti:} Kombinujú generatívny
+          model s~vyhľadávaním v~externej znalostnej báze. Tento
+          prístup výrazne znižuje halucinácie a umožňuje pracovať
+          s~aktuálnymi, doménovo špecifickými informáciami.
+    \item \textbf{Agentní asistenti:} Okrem generovania textu dokážu
+          vykonávať akcie -- volať API, spúšťať nástroje, pristupovať
+          k~databázam. Reprezentujú najvyspelejšiu kategóriu.
+\end{enumerate}
+
+Asistent PLEXO implementovaný v~tejto práci spadá do tretej kategórie
+-- RAG-augmentovaný asistent, ktorý generuje odpovede na základe
+technickej dokumentácie nahratej pre konkrétne zariadenie výrobnej linky.
+
+\subsubsection{Architektúra konverzačného AI asistenta}
+
+Typická architektúra konverzačného AI asistenta pozostáva z~niekoľkých
+vrstiev, ktoré spolupracujú pri spracovaní každej používateľskej otázky:
+
+\textbf{Vstupná vrstva} prijíma otázku od používateľa a vykonáva
+jej predspracovanie -- normalizáciu textu, detekciu jazyka a prípadnú
+reformuláciu otázky pre lepšie vyhľadávanie v~znalostnej báze.
+
+\textbf{Retrieval vrstva} na základe spracovanej otázky vyhľadá
+relevantné dokumenty alebo fragmenty textu z~externej znalostnej bázy.
+Táto vrstva je kľúčová pre RAG architektúru a jej kvalita priamo
+determinuje kvalitu výslednej odpovede.
+
+\textbf{Generatívna vrstva} prijíma pôvodnú otázku spolu
+s~nájdenými dokumentmi ako kontext a prostredníctvom LLM generuje
+odpoveď. Systémový prompt definuje správanie asistenta -- jazyk
+odpovede, rozsah tém, formát a inštrukcie pre prípad, keď znalostná
+báza neobsahuje relevantnú odpoveď.
+
+\textbf{Výstupná vrstva} formátuje odpoveď pre zobrazenie
+v~používateľskom rozhraní a prípadne vykonáva post-processing
+ako filtrovanie nevhodného obsahu alebo pridanie referencií
+na zdrojové dokumenty.
+
+\subsubsection{Systémový prompt a kontrola správania}
+
+Systémový prompt (system prompt) je inštrukcia predradená pred
+používateľskú otázku, ktorá definuje identitu, správanie a obmedzenia
+asistenta. V~kontexte priemyselného asistenta systémový prompt plní
+niekoľko kritických funkcií:
+
+\begin{itemize}
+    \item \textbf{Vymedzenie rozsahu:} Inštruuje model, aby odpovedal
+          výhradne na základe poskytnutého kontextu a odmietol otázky
+          mimo rozsahu znalostnej bázy. Tým sa predchádza generovaniu
+          fakticky nesprávnych informácií, ktoré by v~priemyselnom
+          prostredí mohli viesť k~nesprávnym rozhodnutiam obsluhy.
+    \item \textbf{Jazyková konzistencia:} Definuje, v~akom jazyku má
+          asistent odpovedať, prípadne inštruuje model, aby odpovedal
+          v~rovnakom jazyku, v~akom bola položená otázka.
+    \item \textbf{Bezpečnostné ohraničenie:} Zabraňuje modelu
+          poskytovať rady, ktoré by mohli viesť k~poškodeniu zariadenia
+          alebo ohrozeniu bezpečnosti obsluhy, a smeruje operátora
+          na kontaktovanie technika v~prípade neistoty.
+    \item \textbf{Formát odpovede:} Špecifikuje požadovanú štruktúru
+          odpovede -- stručnosť, používanie odrážok, prípadne krokové
+          inštrukcie pre procedurálne otázky.
+\end{itemize}
+
+\subsubsection{Výzvy a obmedzenia v priemyselnom prostredí}
+
+Nasadenie AI asistenta v~priemyselnom prostredí prináša špecifické
+výzvy, ktoré sa v~bežných konverzačných scenároch nevyskytujú:
+
+\textbf{Faktická spoľahlivosť} je v~priemysle kritická. Nesprávna
+odpoveď o~postupe údržby alebo nastavení parametrov stroja môže viesť
+k~materiálnym škodám alebo bezpečnostným incidentom. Preto je nevyhnutné
+implementovať mechanizmy na minimalizáciu halucinácií -- najmä techniku
+RAG a striktný systémový prompt.
+
+\textbf{Jazyková diverzita} predstavuje výzvu v~multijazyčnom
+priemyselnom prostredí. Technická dokumentácia môže byť v~angličtine,
+zatiaľ čo operátori komunikujú v~slovenčine. Model musí byť schopný
+pracovať s~viacjazyčným kontextom a odpovedať v~jazyku otázky.
+
+\textbf{Latencia} je dôležitým faktorom pri interaktívnom použití.
+Operátor na výrobnej linke očakáva odpoveď v~rádoch sekúnd,
+nie minút. To kladie požiadavky na výber dostatočne rýchleho modelu
+a optimalizáciu retrieval pipeline.
+
+\textbf{Bezpečnosť dát} vyžaduje, aby citlivé prevádzkové informácie
+(parametre procesov, údaje o~poruchách, postupy údržby) neopúšťali
+lokálnu sieť. To vylučuje použitie cloudových LLM služieb a vyžaduje
+lokálne nasadenie modelu.
+
+
+\subsection{Retrieval-Augmented Generation (RAG)}
+
+\subsubsection{Motivácia a princíp}
+
+Veľké jazykové modely disponujú rozsiahlymi znalosťami získanými
+počas predtrénovania, avšak tieto znalosti majú niekoľko zásadných
+obmedzení: sú zmrazené k~dátumu ukončenia trénovania (knowledge
+cutoff), nemusia pokrývať úzko špecializované domény a model nemá
+možnosť rozlíšiť, kedy si je odpoveďou istý a kedy halucinuje.
+
+Retrieval-Augmented Generation (RAG) je technika, ktorá tieto
+obmedzenia adresuje doplnením externého zdroja znalostí
+do inferenčného procesu. Namiesto spolieha sa výhradne na
+parametrické znalosti modelu, RAG systém pred generovaním odpovede
+vyhľadá relevantné dokumenty z~externej znalostnej bázy
+a poskytne ich modelu ako súčasť vstupného kontextu. Model tak
+generuje odpoveď na základe kombinácie svojich jazykových
+schopností a aktuálnych, overiteľných informácií.
+
+Formálne je možné RAG opísať ako dvojfázový proces: pre vstupnú
+otázku~$q$ retrieval funkcia~$R$ najprv nájde množinu relevantných
+dokumentov $D = R(q, \mathcal{K})$ zo znalostnej bázy $\mathcal{K}$
+a následne generatívny model~$G$ produkuje odpoveď
+$a = G(q, D)$ podmienenú otázkou aj nájdenými dokumentmi.
+
+\subsubsection{Architektúra RAG pipeline}
+
+Kompletný RAG systém pozostáva z~niekoľkých komponentov, ktoré
+spolupracujú v~dvoch fázach: offline príprava znalostnej bázy
+(indexácia) a online spracovanie otázky (inferencia).
+
+\paragraph{Fáza indexácie}
+
+\begin{enumerate}
+    \item \textbf{Načítanie dokumentov (document loading):}
+          Zdrojové dokumenty (technické manuály, prevádzkové predpisy,
+          schémy zapojenia) sa načítajú z~rôznych formátov -- PDF,
+          TXT, DOCX, HTML. V~kontexte priemyselného asistenta je
+          kritické zachovať štruktúru dokumentov (nadpisy, sekcie,
+          tabuľky), pretože táto štruktúra nesie sémantickú informáciu.
+
+    \item \textbf{Delenie na fragmenty (chunking):}
+          Dokumenty sa rozdelia na menšie časti (chunks) vhodné
+          pre vektorové vyhľadávanie. Veľkosť fragmentu je
+          kľúčovým parametrom -- príliš malé fragmenty strácajú
+          kontext, príliš veľké znižujú presnosť retrieval vrstvy
+          a zaberajú väčšiu časť kontextového okna modelu.
+          Bežne sa používajú fragmenty o~veľkosti 256--1024 tokenov
+          s~prekryvom (overlap) 10--20\,\% pre zachovanie kontextu
+          na hraniciach.
+
+    \item \textbf{Vektorizácia (embedding):}
+          Každý fragment sa transformuje na viacrozmerný číselný
+          vektor (embedding) pomocou embedding modelu. Embedding model
+          je špecializovaná neurónová sieť trénovaná tak, aby sémanticky
+          podobné texty mali blízke vektory v~priestore. Výsledný vektor
+          typicky obsahuje 384--1536 dimenzií. V~tejto práci je použitý
+          model \texttt{nomic-embed-text}, ktorý produkuje 768-rozmerné
+          vektory a~je optimalizovaný pre viacjazyčné texty.
+
+    \item \textbf{Uloženie do vektorovej databázy:}
+          Vektory spolu s~pôvodným textom fragmentov sa uložia
+          do vektorovej databázy, ktorá umožňuje efektívne vyhľadávanie
+          najbližších susedov (nearest neighbor search). V~tejto práci
+          je použitá databáza ChromaDB, ktorá podporuje perzistentné
+          uloženie, filtrovanie podľa metadát a integráciu
+          s~frameworkom LangChain.
+\end{enumerate}
+
+\paragraph{Fáza inferencie}
+
+Pri prijatí otázky od používateľa prebieha spracovanie
+v~nasledujúcich krokoch:
+
+\begin{enumerate}
+    \item \textbf{Vektorizácia otázky:} Otázka sa transformuje
+          na vektor rovnakým embedding modelom, aký bol použitý
+          pri indexácii dokumentov. Konzistencia embedding modelu
+          medzi indexáciou a dopytovaním je nevyhnutná pre správne
+          fungovanie vyhľadávania.
+
+    \item \textbf{Vyhľadanie relevantných fragmentov:}
+          Vo vektorovej databáze sa vyhľadajú fragmenty, ktorých
+          vektory sú najbližšie k~vektoru otázky, podľa zvolenej
+          metriky podobnosti (kosínusová podobnosť, euklidovská
+          vzdialenosť). Počet vrátených fragmentov (parameter~$k$)
+          je kompromis medzi pokrytím informácií a efektívnym
+          využitím kontextového okna modelu. V~tejto práci sa
+          používajú $k = 3$ najrelevantnejšie dokumenty.
+
+    \item \textbf{Zostavenie promptu:} Systémový prompt, nájdené
+          fragmenty (ako kontext) a pôvodná otázka sa zostavia
+          do finálneho promptu pre jazykový model. Typický formát:
+
+          \begin{verbatim}
+[Systémový prompt: Si technický asistent PLEXO...]
+[Kontext: {fragment_1} {fragment_2} {fragment_3}]
+[Otázka: {otázka_používateľa}]
+          \end{verbatim}
+
+    \item \textbf{Generovanie odpovede:} Jazykový model spracuje
+          zostavený prompt a vygeneruje odpoveď. Vďaka poskytnutému
+          kontextu model nemusí spoliehať na svoje parametrické
+          znalosti, ale odpovedá na základe konkrétnych informácií
+          z~dokumentácie.
+\end{enumerate}
+
+\subsubsection{Vektorové databázy a embedding modely}
+
+Vektorová databáza je špecializovaný databázový systém optimalizovaný
+pre ukladanie a vyhľadávanie viacrozmerných vektorov. Na rozdiel
+od relačných databáz, kde sa vyhľadáva podľa presných hodnôt alebo
+rozsahov, vektorové databázy vyhľadávajú podľa \textit{podobnosti}
+-- nájdu záznamy, ktorých vektory sú najbližšie k~vektoru dopytu.
+
+Najpoužívanejšie algoritmy pre aproximované vyhľadávanie najbližších
+susedov (Approximate Nearest Neighbor, ANN) zahŕňajú:
+
+\begin{itemize}
+    \item \textbf{HNSW} (Hierarchical Navigable Small World) --
+          grafový algoritmus s~logaritmickou zložitosťou vyhľadávania,
+          používaný v~ChromaDB, Qdrant a Weaviate.
+    \item \textbf{IVF} (Inverted File Index) -- rozdeľuje vektorový
+          priestor na klastry a vyhľadáva len v~najbližších klastroch,
+          používaný v~FAISS od Meta.
+    \item \textbf{Product Quantization} -- komprimuje vektory
+          pre úsporu pamäte pri zachovaní prijateľnej presnosti.
+\end{itemize}
+
+\textbf{ChromaDB}, použitý v~tejto práci, je open-source vektorová
+databáza navrhnutá pre jednoduchú integráciu s~LLM aplikáciami.
+Podporuje perzistentné uloženie na disk, filtrovanie výsledkov
+podľa metadát (napr. typ dokumentu, jazyk, dátum) a priamu
+integráciu s~frameworkom LangChain. Pre priemyselného asistenta
+je výhodou jej nízka prevádzková náročnosť -- beží ako knižnica
+v~rámci Python procesu bez nutnosti prevádzkovať samostatný server.
+
+\textbf{Embedding model} transformuje text na hustý vektor s~pevnou
+dimenziou. Kvalita embedding modelu priamo ovplyvňuje kvalitu
+retrieval vrstvy -- ak model nedokáže zachytiť sémantickú podobnosť
+medzi otázkou a~relevantným dokumentom, RAG systém zlyhá
+bez ohľadu na kvalitu jazykového modelu. Model \texttt{nomic-embed-text},
+použitý v~tejto práci, je otvorený embedding model prevádzkovaný
+lokálne cez platformu Ollama, čím sa zachováva konzistentnosť
+s~princípom lokálneho nasadenia bez závislosti na cloudových službách.
+
+\subsubsection{Framework LangChain}
+
+LangChain je open-source framework pre budovanie aplikácií
+založených na jazykových modeloch. Poskytuje abstrakcie
+pre všetky komponenty RAG pipeline -- načítanie dokumentov
+(document loaders), delenie textu (text splitters), vektorizáciu
+(embeddings), vektorové databázy (vector stores) a reťazenie
+operácií (chains).
+
+Kľúčovou výhodou LangChain je modulárna architektúra, ktorá
+umožňuje zameniť ľubovoľný komponent bez zmeny zvyšku pipeline.
+Napríklad prechod z~embedding modelu \texttt{nomic-embed-text}
+na iný model vyžaduje zmenu jedného riadku konfigurácie.
+Rovnako je možné zmeniť vektorovú databázu z~ChromaDB na Qdrant
+alebo FAISS bez prepísania retrieval logiky.
+
+Pre integráciu s~Ollama poskytuje LangChain triedu
+\texttt{ChatOllama}, ktorá komunikuje s~lokálne bežiacim modelom
+cez REST API. V~kombinácii s~triedou \texttt{OllamaEmbeddings}
+pre vektorizáciu a \texttt{Chroma} pre vektorovú databázu
+je možné celý RAG pipeline zostaviť v~niekoľkých riadkoch kódu.
+
+\subsubsection{Výhody a obmedzenia RAG}
+
+\textbf{Výhody} techniky RAG v~porovnaní s~čistým generatívnym prístupom:
+
+\begin{itemize}
+    \item \textbf{Redukcia halucinácií:} Model generuje odpovede
+          na základe konkrétnych dokumentov, nie len na základe
+          parametrických znalostí. Ak znalostná báza neobsahuje
+          relevantnú informáciu, správne nakonfigurovaný systém
+          túto skutočnosť prizná.
+    \item \textbf{Aktualizovateľnosť:} Pridanie novej dokumentácie
+          nevyžaduje pretrénovanie modelu -- stačí pridať dokumenty
+          do vektorovej databázy. V~priemyselnom kontexte to znamená,
+          že pri inštalácii nového zariadenia postačí nahrať jeho
+          manuál.
+    \item \textbf{Transparentnosť:} Je možné zobraziť, z~ktorých
+          dokumentov asistent čerpal, čo zvyšuje dôveryhodnosť
+          odpovede a umožňuje operátorovi overiť informáciu
+          v~pôvodnom zdroji.
+    \item \textbf{Doménová špecializácia:} Bez RAG by model odpovedal
+          na základe všeobecných znalostí z~predtrénovania. S~RAG
+          odpovedá na základe konkrétnej technickej dokumentácie
+          relevantnej pre dané zariadenie a prevádzku.
+\end{itemize}
+
+\textbf{Obmedzenia} RAG, ktoré je potrebné zohľadniť pri návrhu systému:
+
+\begin{itemize}
+    \item \textbf{Kvalita retrieval vrstvy:} Ak vyhľadávanie
+          nevráti relevantné dokumenty, model nemá k~dispozícii
+          správny kontext a kvalita odpovede klesá. Kvalita závisí
+          od embedding modelu, stratégie delenia dokumentov
+          a formulácie otázky.
+    \item \textbf{Obmedzenosť kontextového okna:} Počet fragmentov,
+          ktoré je možné poskytnúť modelu, je limitovaný veľkosťou
+          kontextového okna. Pri veľkých znalostných bázach môže
+          byť potrebné sofistikovanejšie stratégie (re-ranking,
+          hierarchický retrieval).
+    \item \textbf{Závislosť na kvalite dokumentácie:} RAG systém
+          je len taký dobrý, aká je znalostná báza. Nekompletná,
+          zastaraná alebo nekonzistentná dokumentácia sa prejaví
+          v~kvalite odpovedí asistenta.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Typy identifikátorov a ich použitie}
 
 \subsection{QR kódy}
@@ -275,6 +998,33 @@ Hlavné technické výhody tohto riešenia sú:
   \item \textbf{Odolnosť voči falšovaniu:} Vďaka komplexnej vnútornej členitosti a 3D geometrii sú tieto identifikátory výrazne náročnejšie na replikáciu než bežné 2D identifikátory.
   \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
 \end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Špecifikácia požiadaviek systému}
 
@@ -489,6 +1239,121 @@ Požiadavky plynúce z priemyselného prostredia a použitých technológií.
   \item [DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
   \item [DP3:] Systém musí pracovať v hybridnom režime – plná funkčnosť ovládania v lokálnej sieti aj pri výpadku pripojenia k internetu.
 \end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Voľba technológií}
+
+Výber technologického stacku bol výsledkom posúdenia viacerých faktorov: požiadaviek konkrétneho hardvéru v prevádzke, charakteru komunikačných tokov, integračných potrieb AI vrstvy a praktických skúseností vývojového tímu. Táto kapitola zdôvodňuje každé kľúčové rozhodnutie.
+
+\subsection{Komunikácia s PLC -- S7 protokol}
+
+Riadiaci systém v prevádzke tvorí PLC Siemens S7-1200, pre ktorý je natívnym komunikačným protokolom S7. Práve táto skutočnosť bola primárnym dôvodom jeho výberu -- S7 protokol umožňuje priame čítanie a zápis dátových blokov, merkerov a vstupno-výstupných obrazov bez nutnosti konfigurovať ďalšiu middleware vrstvu priamo na PLC.
+
+Alternatívou by bolo aktivovanie servera OPC~UA priamo v~S7-1200, čo je síce technicky možné, avšak prináša niekoľko nevýhod: vyšší nápor na výpočtové zdroje PLC s obmedzenou pamäťou, potrebu licencie v~niektorých konfiguráciách a výrazne komplexnejší konfiguračný proces. S7 protokol cez knižnicu \texttt{node-red-contrib-s7} poskytuje priamy a odľahčený prístup k~dátam PLC bez týchto obmedzení.
+
+\begin{itemize}
+    \item \textbf{Výhody:} Natívna podpora pre Siemens S7-1200, priamy prístup k~dátovým blokom, nízka réžia, jednoduchá konfigurácia v~Node-RED.
+    \item \textbf{Nevýhody:} Viazanosť na platformu Siemens, absencia štandardizovaného informačného modelu (oproti OPC~UA).
+\end{itemize}
+
+\subsection{Komunikačná middleware vrstva -- Node-RED}
+
+Medzi PLC a zvyškom systému stojí Node-RED -- vizuálny, tokovým programovaním riadený nástroj bežiaci ako Docker kontajner na edge zariadení v~prevádzke. Node-RED periodicky číta hodnoty z~PLC prostredníctvom S7 protokolu a publikuje ich do MQTT brokera, čím premosťuje svet OT (PLC, S7) a IT (MQTT, backend).
+
+Táto vrstva bola zvolená z~niekoľkých dôvodov. Disponuje natívnym uzlom \texttt{node-red-contrib-s7} pre priamu komunikáciu so Siemens PLC a rovnako natívnou podporou MQTT. Toková vizuálna paradigma umožňuje definovať, transformovať a smerovať dátové toky bez potreby písať rozsiahly kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda periodické dotazovanie (polling) PLC a podmienené spúšťanie akcií.
+
+\begin{itemize}
+    \item \textbf{Výhody:} Vizuálne toky, natívna S7 a MQTT podpora, jednoduchý deployment v~Dockeri, aktívna komunita s~rozsiahlou knižnicou uzlov.
+    \item \textbf{Nevýhody:} Nie je vhodný pre komplexnú biznis logiku -- tú je lepšie presunúť do backendovej vrstvy; vizuálne toky môžu byť pri väčšom rozsahu ťažšie udržiavateľné.
+\end{itemize}
+
+\subsection{Transportný protokol -- MQTT namiesto OPC UA}
+
+Pre transport dát medzi edge vrstvou a backendom bol zvolený protokol MQTT. Kľúčovým argumentom je jeho nenáročnosť -- protokol bol navrhnutý pre zariadenia s~obmedzenými zdrojmi a nestabilné siete, čo presne zodpovedá podmienkam edge zariadenia v~priemyselnej prevádzke.
+
+OPC~UA je komplexný štandard s~bohatým informačným modelom, vstavanou bezpečnosťou a sémantickým popisom dát. Pre scenár, kde Node-RED číta hodnoty zo Siemens PLC a odovzdáva ich ďalej na spracovanie, táto komplexnosť nepredstavuje pridanú hodnotu, ale zbytočnú záťaž. MQTT broker (Mosquitto) nasadený v~Dockeri zvládne rovnakú úlohu s~minimálnou pamäťovou a CPU réžiou, pričom model publish-subscribe prirodzene zodpovedá reaktívnemu charakteru priemyselných dát -- backend odberá len témy, ktoré ho zaujímajú.
+
+\begin{itemize}
+    \item \textbf{Výhody MQTT:} Nízka réžia, jednoduchá architektúra pub/sub, výborná podpora v~Node-RED aj Pythone, QoS úrovne pre spoľahlivosť doručenia, voľne dostupný broker Mosquitto.
+    \item \textbf{Kedy by bol OPC UA lepšou voľbou:} Pri požiadavke na štandardizovaný sémantický popis dát, pri integrácii viacerých heterogénnych zariadení od rôznych výrobcov alebo pri prísnych bezpečnostných požiadavkách na úrovni transportnej vrstvy.
+\end{itemize}
+
+\subsection{Backendový framework -- FastAPI}
+
+Backend systému PLEXO bol implementovaný v~Pythone s~využitím frameworku FastAPI. Rozhodnutie pre Python bolo determinované predovšetkým požiadavkou na integráciu RAG pipeline -- knižnice LangChain, ChromaDB a Ollama sú súčasťou pythonovského ekosystému a ich integrácia do toho istého procesu eliminuje potrebu medziprocesovej komunikácie.
+
+FastAPI bol zvolený spomedzi pythonovských frameworkov z~viacerých dôvodov. Asynchrónna architektúra (ASGI) umožňuje efektívne obsluhovať súbežné požiadavky mobilnej aplikácie bez blokovania počas čakania na odpoveď jazykového modelu. Automatické generovanie interaktívnej OpenAPI dokumentácie (Swagger UI) výrazne uľahčuje vývoj a testovanie API. Validácia vstupných dát cez Pydantic znižuje množstvo boilerplate kódu. V~neposlednom rade hrali rolu aj existujúce skúsenosti s~týmto frameworkom, čo priamo skracuje čas vývoja.
+
+\begin{itemize}
+    \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, priama integrácia s~AI knižnicami, rýchly vývoj.
+    \item \textbf{Nevýhody:} Interpretovaný Python je pomalší oproti kompilovaným jazykom pri CPU-intenzívnych operáciách; pre čistý REST API bez AI vrstvy by bol Go výkonnejší.
+\end{itemize}
+
+\subsection{Mobilný frontend -- Flutter}
+
+Pre mobilnú aplikáciu bol zvolený framework Flutter od spoločnosti Google. Primárnou cieľovou platformou je Android, avšak Flutter umožňuje z~jednej kódovej základne generovať aj webovú aplikáciu, čo otvára možnosť implementácie administrátorského panelu bez nutnosti udržiavať samostatný projekt.
+
+Oproti natívnemu vývoju v~Kotline Flutter ponúka výrazne rýchlejší vývojový cyklus vďaka funkciám hot reload a hot restart. Vlastný vykresľovací engine (Impeller) zaručuje vizuálnu konzistenciu rozhrania naprieč zariadeniami a operačnými systémami. Bohatá štandardná knižnica widgetov pokrýva väčšinu potrieb priemyselného ovládacieho rozhrania vrátane dynamických grafov, stavových indikátorov a formulárov.
+
+\begin{itemize}
+    \item \textbf{Výhody:} Jedna kódová základňa pre Android aj web, rýchly vývojový cyklus, konzistentné UI, silná podpora od Google a rastúca komunita.
+    \item \textbf{Nevýhody:} Väčšia veľkosť výslednej aplikácie oproti natívnym riešeniam; pri požiadavke na plnohodnotnú iOS aplikáciu by bolo potrebné doplniť testovanie na Apple zariadeniach.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Experimentálne porovnanie a výber jazykových modelov}
 
