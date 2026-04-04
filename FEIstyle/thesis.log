@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  4 APR 2026 14:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  4 APR 2026 21:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1117,12 +1117,22 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 312.
 \cftbeforeprititleskip=\skip137
 \cftafterprititleskip=\skip138
 )
+\glswrite=\write4
+\glo@main@file=\write5
+\openout5 = `thesis.glo'.
+
+Package glossaries Info: Writing glossary file thesis.glo on input line 38.
+\glo@acronym@file=\write6
+\openout6 = `thesis.acn'.
+
+Package glossaries Info: Writing glossary file thesis.acn on input line 38.
+ (includes/glossary.tex)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 43.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (thesis.aux
 Package babel Info: 'slovak' activates 'slovak' shorthands.
-(babel)             Reported on input line 16.
+(babel)             Reported on input line 20.
 )
 \openout1 = `thesis.aux'.
 
@@ -1146,8 +1156,8 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 Package hyperref Info: Link coloring ON on input line 43.
  (thesis.out) (thesis.out)
-\@outlinefile=\write4
-\openout4 = `thesis.out'.
+\@outlinefile=\write7
+\openout7 = `thesis.out'.
 
 LaTeX Info: Redefining \microtypecontext on input line 43.
 Package microtype Info: Applying patch `toc' on input line 43.
@@ -1354,6 +1364,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
+\openout4 = `thesis.ist'.
+
 
 
 {C:/Users/jakub/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
@@ -1395,7 +1407,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=494, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=534, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf>
 Package pdftex.def Info: includes/assignment.pdf  used on input line 55.
@@ -1406,7 +1418,7 @@ pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found 
 
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=496, page=1, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=536, page=1, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf, page 1>
 Package pdftex.def Info: includes/assignment.pdf , page1 used on input line 55.
@@ -1433,7 +1445,7 @@ Package pdftex.def Info: includes/assignment.pdf , page1 used on input line 55.
  <./includes/assignment.pdf>]
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=529, page=2, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=569, page=2, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf, page 2>
 Package pdftex.def Info: includes/assignment.pdf , page2 used on input line 55.
@@ -1488,26 +1500,25 @@ File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 
 ] (thesis.toc [7
 
-] [8] [9])
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
+] [8] [9] [10])
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
 
- [10] (includes/manual_glossary.tex
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 9.
- (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
-File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <12> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 9.
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <8> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 9.
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <6> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 9.
-) [11{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (thesis.loa)
-\tf@loa=\write6
-\openout6 = `thesis.loa'.
+ [11] (thesis.acr
+Underfull \hbox (badness 2384) in paragraph at lines 19--19
+\T1/lmr/m/n/12 (+20) ven-sky ^^Rasynch-rónne ro-z-hra-nie ser-ve-ro-vej
+ []
 
- [12] (thesis.lol
+
+Underfull \hbox (badness 1888) in paragraph at lines 51--52
+[]|\T1/lmr/m/n/12 (+20) Information Tech-no-logy (slo-ven-sky ^^Rin-for-
+ []
+
+thesis.acr:132: ignored: Infinite glue shrinkage found in box being split [12]) [13] (thesis.loa)
+\tf@loa=\write9
+\openout9 = `thesis.loa'.
+
+ [14{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (thesis.lol
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1517,55 +1528,102 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 )
-\tf@lol=\write7
-\openout7 = `thesis.lol'.
+\tf@lol=\write10
+\openout10 = `thesis.lol'.
 
- [13] (includes/introduction.tex
+ [15] (includes/introduction.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 32.
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 32.
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <7> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 32.
-LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <5> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 32.
- [14
+ [16
 
 
 
 
-]) [15] (includes/core.tex
+]) [17] (includes/core.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 40.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [16{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
-Overfull \hbox (63.86713pt too wide) in paragraph at lines 1287--1288
+) [18{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [19] [20] [21] [22]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 198.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 217.
+
+[23] [24] [25] [26] [27]
+Overfull \hbox (220.667pt too wide) in paragraph at lines 381--397
+ [][] 
+ []
+
+[28] [29]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 441.
+
+[30] [31]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 554.
+
+[32] [33]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 665.
+
+[34]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 688.
+
+[35{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [36] [37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 827.
+
+[38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 1136.
+
+
+Overfull \hbox (63.86713pt too wide) in paragraph at lines 1163--1169
 []\T1/lmr/m/n/12 (-20) Táto vrstva bola zvo-lená z nie-ko©-kých dô-vo-dov. Dis-po-nuje na-tív-nym uzlom \T1/lmtt/m/n/12 node-red-contrib-s7
  []
 
-[44] [45] [46]
-
-LaTeX Warning: Citation 'ollama_llama32' on page 47 undefined on input line 1378.
-
-
-LaTeX Warning: Citation 'ollama_gemma2' on page 47 undefined on input line 1388.
-
-
-LaTeX Warning: Citation 'ollama_mistralnemo' on page 47 undefined on input line 1398.
-
-[47]
-
-LaTeX Warning: Citation 'ollama_phi4' on page 48 undefined on input line 1409.
-
-
-LaTeX Warning: Citation 'ollama_mistralsmall' on page 48 undefined on input line 1417.
-
 [48]
-Overfull \hbox (31.87218pt too wide) in paragraph at lines 1496--1514
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 1175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 1175.
+
+[49] [50]
+
+LaTeX Warning: Citation 'ollama_llama32' on page 51 undefined on input line 1260.
+
+
+LaTeX Warning: Citation 'ollama_gemma2' on page 51 undefined on input line 1270.
+
+
+LaTeX Warning: Citation 'ollama_mistralnemo' on page 51 undefined on input line 1280.
+
+[51]
+
+LaTeX Warning: Citation 'ollama_phi4' on page 52 undefined on input line 1291.
+
+
+LaTeX Warning: Citation 'ollama_mistralsmall' on page 52 undefined on input line 1299.
+
+[52]
+Overfull \hbox (31.87218pt too wide) in paragraph at lines 1378--1396
  [][] 
  []
 
@@ -1575,90 +1633,108 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
+[53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[70] [71{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [72]
-<img/Measurement.png, id=1104, 210.5685pt x 158.0085pt>
+[75]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2333.
+ (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <12> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2333.
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <8> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2333.
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <6> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2333.
+ [76{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <10> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2405.
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <7> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2405.
+LaTeX Font Info:    Font shape `OML/cmr/bx/it' in size <5> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2405.
+ [77]
+<img/Measurement.png, id=1409, 210.5685pt x 158.0085pt>
 File: img/Measurement.png Graphic file (type png)
 <use img/Measurement.png>
-Package pdftex.def Info: img/Measurement.png  used on input line 2538.
+Package pdftex.def Info: img/Measurement.png  used on input line 2444.
 (pdftex.def)             Requested size: 210.56796pt x 158.00809pt.
- [73] [74 <./img/Measurement.png>]
-<img/Graph1.pdf, id=1122, 817.0525pt x 574.145pt>
+ [78] [79 <./img/Measurement.png>]
+<img/Graph1.pdf, id=1428, 817.0525pt x 574.145pt>
 File: img/Graph1.pdf Graphic file (type pdf)
 <use img/Graph1.pdf>
-Package pdftex.def Info: img/Graph1.pdf  used on input line 2616.
+Package pdftex.def Info: img/Graph1.pdf  used on input line 2522.
 (pdftex.def)             Requested size: 292.50548pt x 205.54439pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[75] [76 <./img/Graph1.pdf>] [77] [78] [79] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[80] [81 <./img/Graph1.pdf>] [82] [83] [84] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 2802.
- [80] [81] [82] [83] [84] [85]
-Overfull \hbox (1.38701pt too wide) in paragraph at lines 3082--3087
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 2708.
+ [85] [86] [87] [88] [89] [90]
+Overfull \hbox (1.38701pt too wide) in paragraph at lines 2988--2993
 \T1/lmr/m/n/12 (-20) 2023[]01[]10]. Do-stupné z: \T1/lmtt/m/n/12 http://southernlibrarianship.icaap.org/content/
  []
 
-[86] [87] [88] [89]
-Overfull \hbox (1.65959pt too wide) in paragraph at lines 3269--3270
+[91] [92] [93] [94]
+Overfull \hbox (1.65959pt too wide) in paragraph at lines 3175--3176
 []\T1/lmr/m/it/12 (-20) Why len-ses can't make per-fect ima-ges \T1/lmr/m/n/12 (-20) [on-line]. You-tube, 2017[]10[]18 [cit. 2024[]08[]25].
  []
 
-[90]) [91] (includes/conclusion.tex) [92
+[95]) [96] (includes/conclusion.tex) [97
 
 
-] [93]
+] [98]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [94
+ [99
 
 
-] (includes/ai_declaration.tex) [95] (includes/attachmentA.tex
+] (includes/ai_declaration.tex) [100] (includes/attachmentA.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 2.
-) [96
+) [101
 
 
 
 
 ] (includes/attachmentB.tex (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-) (includes/listings/generate_thesis_tex.py [97
+) (includes/listings/generate_thesis_tex.py [102
 
 
-] [98] [99])) [100] (includes/attachmentC.tex [101
+] [103] [104])) [105] (includes/attachmentC.tex [106
 
 
-]) [102] (thesis.aux)
+]) [107] (thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F8366B520360A9CD6A4BA8F8611FB21B;22995.
+(rerunfilecheck)             Checksum: 0C88CE4F98C8F8508659696064CE5791;24162.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38165 strings out of 467866
- 706679 string characters out of 5418325
- 2011668 words of memory out of 5000000
- 65547 multiletter control sequences out of 15000+600000
- 807450 words of font info for 338 fonts, out of 8000000 for 9000
+ 39318 strings out of 467866
+ 723173 string characters out of 5418325
+ 2029330 words of memory out of 5000000
+ 66649 multiletter control sequences out of 15000+600000
+ 807256 words of font info for 336 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,17n,131p,2529b,3139s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,17n,131p,2529b,3137s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (103 pages, 1862764 bytes).
+Output written on thesis.pdf (108 pages, 1940390 bytes).
 PDF statistics:
- 1752 PDF objects out of 2073 (max. 8388607)
- 479 named destinations out of 1000 (max. 500000)
- 98271 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2067 PDF objects out of 2073 (max. 8388607)
+ 529 named destinations out of 1000 (max. 500000)
+ 98351 words of extra memory for PDF output out of 106986 (max. 10000000)
 

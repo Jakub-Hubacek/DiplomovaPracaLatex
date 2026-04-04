@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
+      "Bash(makeglossaries thesis:*)"
+    ]
+  }
+}
