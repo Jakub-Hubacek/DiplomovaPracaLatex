@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
-      "Bash(makeglossaries thesis:*)"
+      "Bash(makeglossaries thesis:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(python -c ':*)"
     ]
   }
 }
