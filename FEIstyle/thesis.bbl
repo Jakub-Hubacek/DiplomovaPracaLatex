@@ -19,35 +19,448 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{Rybicka2003Latex}{book}{}{}
+    \entry{t00}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=0ffdecc0ca95fef177011cf56523bd85}{%
-           family={Rybička},
-           familyi={R\bibinitperiod},
-           given={Jiří},
-           giveni={J\bibinitperiod}}}%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Konvoj}%
+        {Siemens}%
       }
-      \strng{namehash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{fullhash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{fullhashraw}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{bibnamehash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{authorbibnamehash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{authornamehash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{authorfullhash}{0ffdecc0ca95fef177011cf56523bd85}
-      \strng{authorfullhashraw}{0ffdecc0ca95fef177011cf56523bd85}
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SIMATIC WinCC Unified PC}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.siemens.com/en-us/products/simatic-hmi/wincc-unified-software/
+      \endverb
+      \verb{url}
+      \verb https://www.siemens.com/en-us/products/simatic-hmi/wincc-unified-software/
+      \endverb
+    \endentry
+    \entry{t01}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Siemens}%
+      }
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Engineering Copilot TIA Standard (Managed Service)}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.siemens.com/en-us/products/tia-portal/engineering-copilot-tia-standard/
+      \endverb
+      \verb{url}
+      \verb https://www.siemens.com/en-us/products/tia-portal/engineering-copilot-tia-standard/
+      \endverb
+    \endentry
+    \entry{t02}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c17e16aef2804219525c51cb2a8f4f14}{%
+           family={{Inductive Automation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Inductive Automation}%
+      }
+      \strng{namehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{fullhash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{fullhashraw}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{bibnamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorbibnamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authornamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorfullhash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorfullhashraw}{c17e16aef2804219525c51cb2a8f4f14}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ignition SCADA Software}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://inductiveautomation.com/scada-software/
+      \endverb
+      \verb{url}
+      \verb https://inductiveautomation.com/scada-software/
+      \endverb
+    \endentry
+    \entry{t03}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c17e16aef2804219525c51cb2a8f4f14}{%
+           family={{Inductive Automation}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Inductive Automation}%
+      }
+      \strng{namehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{fullhash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{fullhashraw}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{bibnamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorbibnamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authornamehash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorfullhash}{c17e16aef2804219525c51cb2a8f4f14}
+      \strng{authorfullhashraw}{c17e16aef2804219525c51cb2a8f4f14}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ignition Edge}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://inductiveautomation.com/ignition/edge
+      \endverb
+      \verb{url}
+      \verb https://inductiveautomation.com/ignition/edge
+      \endverb
+    \endentry
+    \entry{t04}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8fb092614242521d34808dad0932e491}{%
+           family={{Tulip Interfaces}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Tulip Interfaces}%
+      }
+      \strng{namehash}{8fb092614242521d34808dad0932e491}
+      \strng{fullhash}{8fb092614242521d34808dad0932e491}
+      \strng{fullhashraw}{8fb092614242521d34808dad0932e491}
+      \strng{bibnamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authorbibnamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authornamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authorfullhash}{8fb092614242521d34808dad0932e491}
+      \strng{authorfullhashraw}{8fb092614242521d34808dad0932e491}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pricing and Plans}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://tulip.co/plans/
+      \endverb
+      \verb{url}
+      \verb https://tulip.co/plans/
+      \endverb
+    \endentry
+    \entry{t05}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8fb092614242521d34808dad0932e491}{%
+           family={{Tulip Interfaces}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Tulip Interfaces}%
+      }
+      \strng{namehash}{8fb092614242521d34808dad0932e491}
+      \strng{fullhash}{8fb092614242521d34808dad0932e491}
+      \strng{fullhashraw}{8fb092614242521d34808dad0932e491}
+      \strng{bibnamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authorbibnamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authornamehash}{8fb092614242521d34808dad0932e491}
+      \strng{authorfullhash}{8fb092614242521d34808dad0932e491}
+      \strng{authorfullhashraw}{8fb092614242521d34808dad0932e491}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{23}
+      \field{month}{4}
+      \field{title}{Tulip Signs Strategic Collaboration Agreement With AWS to Build Generative AI Capabilities Empowering Frontline Workers}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://tulip.co/press/tulip-signs-strategic-collaboration-agreement-with-aws-to-build-generative-ai-capabilities-empowering-frontline-workers/
+      \endverb
+      \verb{url}
+      \verb https://tulip.co/press/tulip-signs-strategic-collaboration-agreement-with-aws-to-build-generative-ai-capabilities-empowering-frontline-workers/
+      \endverb
+    \endentry
+    \entry{t06}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0929d6cff898b375ff6900bc8e2ca1d4}{%
+           family={{AVEVA Solutions Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AVEVA}%
+      }
+      \strng{namehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{fullhash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{fullhashraw}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{bibnamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorbibnamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authornamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorfullhash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorfullhashraw}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AVEVA™ Edge}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.aveva.com/en/products/edge/
+      \endverb
+      \verb{url}
+      \verb https://www.aveva.com/en/products/edge/
+      \endverb
+    \endentry
+    \entry{t07}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0929d6cff898b375ff6900bc8e2ca1d4}{%
+           family={{AVEVA Solutions Limited}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AVEVA}%
+      }
+      \strng{namehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{fullhash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{fullhashraw}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{bibnamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorbibnamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authornamehash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorfullhash}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \strng{authorfullhashraw}{0929d6cff898b375ff6900bc8e2ca1d4}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Industrial AI for Operations}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.aveva.com/en/solutions/digital-transformation/artificial-intelligence/industrial-ai-for-operations/
+      \endverb
+      \verb{url}
+      \verb https://www.aveva.com/en/solutions/digital-transformation/artificial-intelligence/industrial-ai-for-operations/
+      \endverb
+    \endentry
+    \entry{t08}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=046a640b9d2f219693ce26e5bf1bd447}{%
+           family={{EitBiz - Extrovert Information Technology}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Medium}%
+      }
+      \strng{namehash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{fullhash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{fullhashraw}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{bibnamehash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{authorbibnamehash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{authornamehash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{authorfullhash}{046a640b9d2f219693ce26e5bf1bd447}
+      \strng{authorfullhashraw}{046a640b9d2f219693ce26e5bf1bd447}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{isbn}{80-7302-049-1}
-      \field{title}{\LaTeX{} pro začatečníky}
-      \field{year}{2003}
+      \field{day}{23}
+      \field{month}{12}
+      \field{title}{Top App Development Frameworks to Build High-Performance Apps in 2026}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://medium.com/@eitbiz/top-app-development-frameworks-for-high-performance-apps-in-2026-2db28c6c0a33
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@eitbiz/top-app-development-frameworks-for-high-performance-apps-in-2026-2db28c6c0a33
+      \endverb
+    \endentry
+    \entry{t09}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d8f20779d9ae698395eef153d95e4c61}{%
+           family={Nadarajan},
+           familyi={N\bibinitperiod},
+           given={Chandni},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ThinkPalm Technologies}%
+      }
+      \strng{namehash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{fullhash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{fullhashraw}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{bibnamehash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{authorbibnamehash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{authornamehash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{authorfullhash}{d8f20779d9ae698395eef153d95e4c61}
+      \strng{authorfullhashraw}{d8f20779d9ae698395eef153d95e4c61}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{12}
+      \field{title}{How to Choose the Best Backend Frameworks in 2026 for AI-Powered Software: A Business Leader's Guide}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://thinkpalm.com/blogs/how-to-choose-the-right-backend-framework-for-ai-powered-software-a-business-leaders-guide/
+      \endverb
+      \verb{url}
+      \verb https://thinkpalm.com/blogs/how-to-choose-the-right-backend-framework-for-ai-powered-software-a-business-leaders-guide/
+      \endverb
+    \endentry
+    \entry{t10}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=115b84db6332570003d8a6d6e5a041e9}{%
+           family={Garai},
+           familyi={G\bibinitperiod},
+           given={Kastab},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Medium}%
+      }
+      \strng{namehash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{fullhash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{fullhashraw}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{bibnamehash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{authorbibnamehash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{authornamehash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{authorfullhash}{115b84db6332570003d8a6d6e5a041e9}
+      \strng{authorfullhashraw}{115b84db6332570003d8a6d6e5a041e9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{month}{3}
+      \field{title}{From Cloud to Edge: How Technology Is Redefining Data Processing}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://medium.com/@kastab/from-cloud-to-edge-how-technology-is-redefining-data-processing-43b66acde782
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@kastab/from-cloud-to-edge-how-technology-is-redefining-data-processing-43b66acde782
+      \endverb
+    \endentry
+    \entry{t11}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=4bd3b392874c74fba4ed57a24eae0ac1}{%
+           family={{Docker Inc.}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Docker Documentation}%
+      }
+      \strng{namehash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{fullhash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{fullhashraw}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{bibnamehash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{authorbibnamehash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{authornamehash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{authorfullhash}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \strng{authorfullhashraw}{4bd3b392874c74fba4ed57a24eae0ac1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Docker Overview}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.docker.com/get-started/docker-overview/
+      \endverb
+      \verb{url}
+      \verb https://docs.docker.com/get-started/docker-overview/
+      \endverb
     \endentry
   \enddatalist
+  \missing{Rybicka2003Latex}
   \missing{ollama_gemma4}
   \missing{ollama_llama32}
   \missing{ollama_mistralnemo}
