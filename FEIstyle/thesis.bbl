@@ -459,6 +459,149 @@
       \verb https://docs.docker.com/get-started/docker-overview/
       \endverb
     \endentry
+    \entry{t12}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9d864dea1569426ce9a70e908ac80907}{%
+           family={{OPC Foundation}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OPC Foundation}%
+      }
+      \strng{namehash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{fullhash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{fullhashraw}{9d864dea1569426ce9a70e908ac80907}
+      \strng{bibnamehash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{authorbibnamehash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{authornamehash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{authorfullhash}{9d864dea1569426ce9a70e908ac80907}
+      \strng{authorfullhashraw}{9d864dea1569426ce9a70e908ac80907}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{OPC Unified Architecture}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://opcfoundation.org/about/opc-technologies/opc-ua/
+      \endverb
+      \verb{url}
+      \verb https://opcfoundation.org/about/opc-technologies/opc-ua/
+      \endverb
+    \endentry
+    \entry{t15}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Siemens TIA Portal Documentation}%
+      }
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{S7 Communication}
+      \field{urlday}{9}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.tia.siemens.cloud/r/simatic_et_200clean_manual_collection_zhcn_20/function-manuals/communication-function-manuals/communication/s7-communication/s7-communication
+      \endverb
+      \verb{url}
+      \verb https://docs.tia.siemens.cloud/r/simatic_et_200clean_manual_collection_zhcn_20/function-manuals/communication-function-manuals/communication/s7-communication/s7-communication
+      \endverb
+    \endentry
+    \entry{t13}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=6ec60ab9ce327f5a12fbab109e691c73}{%
+           family={{OASIS}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OASIS}%
+      }
+      \strng{namehash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{fullhash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{fullhashraw}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{bibnamehash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{authorbibnamehash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{authornamehash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{authorfullhash}{6ec60ab9ce327f5a12fbab109e691c73}
+      \strng{authorfullhashraw}{6ec60ab9ce327f5a12fbab109e691c73}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{7}
+      \field{month}{3}
+      \field{title}{MQTT Version 5.0}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html
+      \endverb
+      \verb{url}
+      \verb https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html
+      \endverb
+    \endentry
+    \entry{t14}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d549d030b44e2ac21c00bfa3a5a09d5f}{%
+           family={{Modbus Organization}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Modbus Organization}%
+      }
+      \strng{namehash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{fullhash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{fullhashraw}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{bibnamehash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{authorbibnamehash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{authornamehash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{authorfullhash}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \strng{authorfullhashraw}{d549d030b44e2ac21c00bfa3a5a09d5f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Modbus FAQ}
+      \field{urlday}{7}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.modbus.org/faq.php
+      \endverb
+      \verb{url}
+      \verb https://www.modbus.org/faq.php
+      \endverb
+    \endentry
   \enddatalist
   \missing{Rybicka2003Latex}
   \missing{ollama_gemma4}

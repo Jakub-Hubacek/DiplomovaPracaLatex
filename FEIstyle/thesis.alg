@@ -1,7 +1,7 @@
 This is makeindex, version 2.18 [MiKTeX 26.1].
 Scanning style file ./thesis.ist...........................done (27 attributes redefined, 0 ignored).
-Scanning input file thesis.acn....done (131 entries accepted, 0 rejected).
-Sorting entries....done (1017 comparisons).
-Generating output file thesis.acr....done (112 lines written, 0 warnings).
+Scanning input file thesis.acn....done (149 entries accepted, 0 rejected).
+Sorting entries....done (1129 comparisons).
+Generating output file thesis.acr....done (119 lines written, 0 warnings).
 Output written in thesis.acr.
 Transcript written in thesis.alg.

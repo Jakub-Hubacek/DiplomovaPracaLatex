@@ -2412,11 +2412,15 @@
     <bcf:citekey order="13" intorder="1">t09</bcf:citekey>
     <bcf:citekey order="14" intorder="1">t10</bcf:citekey>
     <bcf:citekey order="15" intorder="1">t11</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">ollama_llama32</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">ollama_gemma4</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">ollama_mistralnemo</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">ollama_phi4</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">ollama_mistralsmall</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">t12</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">t15</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">t13</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">t14</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">ollama_llama32</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">ollama_gemma4</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">ollama_mistralnemo</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">ollama_phi4</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">ollama_mistralsmall</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

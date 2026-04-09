@@ -375,7 +375,7 @@ PC v~prevádzke. Kontajnery využívajú izoláciu na úrovni jadra Linuxu
 viacero izolovaných aplikácií na jednom hosťovom systéme súčasne.
 
 Zmena v~kóde si vyžaduje prenos len zmenenej vrstvy obrazu, nie celého
-systému — čo je kľúčové pri aktualizáciách cez obmedzené priemyselné
+systému, čo je kľúčové pri aktualizáciách cez obmedzené priemyselné
 pripojenia. Docker Compose rozširuje tento koncept na celý aplikačný
 stack: backend, \acrshort{mqtt} broker, vektorová databáza a ďalšie
 služby sú definované v~jednom konfiguračnom súbore a spúšťajú sa
@@ -385,11 +385,112 @@ jedným príkazom.
 
 \subsubsection{\acrshort{opcua}}
 
+\acrshort{opcua} (OPC Unified Architecture) je platformovo nezávislá,
+servisne orientovaná architektúra vydaná v~roku 2008, ktorá integruje
+funkcionalitu predchádzajúcich OPC Classic špecifikácií do jedného
+rozšíriteľného rámca~\cite{t12}. Štandard beží na rôznych hardvérových
+platformách, od priemyselných PC a \acrshort{plc} až po mikrokontroléry
+a cloudovú infraštruktúru. Podporuje operačné systémy Windows, Linux,
+Android a ďalšie.
+
+Informačný model \acrshort{opcua} je objektovo-orientovaný: dáta sú
+reprezentované hierarchicky ako uzly, objekty a premenné s~plnou
+sémantickou popisnosťou. Prístup k~dátam zahŕňa čítanie a zápis,
+odoberanie zmien, notifikácie udalostí a volanie metód.
+Komunikácia je možná v~modeli klient-server aj publish-subscribe (\acrshort{pubsub}).
+
+Bezpečnosť je súčasťou návrhu štandardu: \acrshort{opcua} podporuje
+šifrovanie správ, podpisovanie, X.509 certifikáty pre autentifikáciu,
+sekvenčné pakety proti replay útokom a auditný log aktivít.
+
+\begin{itemize}
+  \item \textbf{Výhody:} Vstavaná kybernetická bezpečnosť, sémantický
+        popis dát, podpora klient-server aj \acrshort{pubsub} komunikácie,
+        spätná kompatibilita a platformová nezávislosť.
+  \item \textbf{Nevýhody:} Vysoká komplexnosť stacku a nároky na
+        \acrshort{ram}/\acrshort{cpu} limitujú nasadenie na jednoduchších \acrshort{plc}.
+\end{itemize}
+
 \subsubsection{S7 Protokol}
+
+S7 komunikácia je proprietárny protokol spoločnosti Siemens určený na výmenu
+dát medzi \acrshort{plc} rady SIMATIC \cite{t15}. Ide o~natívny komunikačný
+mechanizmus ekosystému TIA Portal, ktorý pracuje nad sieťami PROFINET
+(Industrial Ethernet) alebo PROFIBUS DP. Na rozdiel od otvorených štandardov
+nie je S7 protokol verejne špecifikovaný — zariadenia tretích strán ho
+implementujú reverzným inžinierstvom.
+
+Komunikácia prebieha na princípe klient-server s~jednosmerne konfigurovanými
+alebo obojstranne konfigurovanými spojeniami. 
+
+\begin{itemize}
+  \item \textbf{Výhody:} Jednoduchá konfigurácia v~prostredí TIA Portal,
+        natívna podpora v~celom ekosystéme SIMATIC, nízka latencia
+        v~homogénnych Siemens sieťach.
+  \item \textbf{Nevýhody:} Uzavretý, nestandardizovaný protokol bez
+        verejnej špecifikácie; obmedzená interoperabilita so zariadeniami
+        iných výrobcov.
+\end{itemize}
 
 \subsubsection{\acrshort{mqtt}}
 
+\acrshort{mqtt}, Message Queuing Telemetry Transport je ľahký, otvorený
+protokol typu klient-server s~modelom publish/subscribe, navrhnutý
+pre jednoduché použitie v~obmedzených prostrediach ako \acrshort{iot}
+a komunikácia medzi strojmi~\cite{t13}. Protokol beží nad TCP/IP
+a poskytuje obojsmerný tok správ s~minimálnou réžiou.
+
+Správy sa neposielajú priamo medzi zariadeniami. Klienti publikujú správy
+na témy (topics) na brokeri, ostatní klienti sa môžu na tieto témy
+prihlásiť (subscribe) a dostávať správy bez potreby poznať ich pôvod.
+
+Protokol definuje tri úrovne \acrshort{qos} pre doručenie správ:
+\begin{itemize}
+  \item \textbf{\acrshort{qos} 0} — správa je doručená najviac raz, bez potvrdenia
+  \item \textbf{\acrshort{qos} 1} — správa je doručená aspoň raz, môžu nastať duplikáty
+  \item \textbf{\acrshort{qos} 2} — správa je doručená práve raz, s~plným handshake protokolom
+\end{itemize}
+
+Ďalšou vlastnosťou je mechanizmus „Last Will and Testament" — správa,
+ktorú broker automaticky odošle ostatným klientom v~prípade neštandardného
+odpojenia klienta. Verzia \acrshort{mqtt} 5.0 pridáva rozšírené vlastnosti
+ako expiracia správ, aliasy tém a zlepšené hlásenie chýb.
+
+\begin{itemize}
+  \item \textbf{Výhody:} Minimálna réžia (2-bajtová pevná hlavička),
+        tri úrovne \acrshort{qos}, podpora „Last Will", vhodnosť pre zariadenia
+        s~obmedzeným výkonom a sieťou.
+  \item \textbf{Nevýhody:} Nutnosť udržiavať bežiaci broker ako centrálny
+        bod zlyhania.
+\end{itemize}
+
+
 \subsubsection{Modbus \acrshort{tcp}}
+
+Modbus je komunikačný protokol vyvinutý spoločnosťou Modicon (dnes Schneider
+Electric) v~roku 1979 pre potreby priemyselných programovateľných automatov.
+Dnes je de facto štandardom v~priemyselnej automatizácii s~odhadovaných
+7~miliónmi nasadených uzlov~\cite{t14}. Modbus TCP/IP prenáša správy protokolu
+Modbus zabalené do TCP/IP rámcov na porte 502, čím umožňuje nasadenie
+v~štandardných ethernetových sieťach bez potreby špeciálneho hardvéru.
+
+Protokol pracuje na princípe klient-server. Klient
+iniciuje požiadavky a server odpovedá. Dáta sú organizované
+do štyroch základných typov registrov:
+\begin{itemize}
+  \item \textbf{Coils} — jednobitové, čítanie aj zápis (digitálne výstupy)
+  \item \textbf{Discrete Inputs} — jednobitové, iba čítanie (digitálne vstupy)
+  \item \textbf{Holding Registers} — 16-bitové, čítanie aj zápis (analógové veličiny, nastavenia)
+  \item \textbf{Input Registers} — 16-bitové, iba čítanie (analógové vstupy)
+\end{itemize}
+
+\begin{itemize}
+  \item \textbf{Výhody:} Jednoduchý a otvorený štandard bez licenčných poplatkov,
+        rozšírená podpora zariadení, minimálne nároky na zdroje, jednoduché ladenie.
+  \item \textbf{Nevýhody:} Chýba zabudovaná autentifikácia a šifrovanie,
+        obmedzený dátový model, žiadny mechanizmus notifikácie, teda
+        klient musí aktívne dopytovať server.
+\end{itemize}
 
 
 \section{Prehľad technológií pre inteligentných asistentov}
