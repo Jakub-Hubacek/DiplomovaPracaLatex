@@ -602,13 +602,375 @@
       \verb https://www.modbus.org/faq.php
       \endverb
     \endentry
+    \entry{t16}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3ad6590e5b4a21e93d302b7e0bf0d768}{%
+           family={Stryker},
+           familyi={S\bibinitperiod},
+           given={Cole},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IBM Think}%
+      }
+      \strng{namehash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{fullhash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{fullhashraw}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{bibnamehash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{authorbibnamehash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{authornamehash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{authorfullhash}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \strng{authorfullhashraw}{3ad6590e5b4a21e93d302b7e0bf0d768}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What are large language models (LLMs)?}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/large-language-models
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/large-language-models
+      \endverb
+    \endentry
+    \entry{t17}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a65894b864a4056158acdf72bcb84931}{%
+           family={Ullah},
+           familyi={U\bibinitperiod},
+           given={Irfan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Medium}%
+      }
+      \strng{namehash}{a65894b864a4056158acdf72bcb84931}
+      \strng{fullhash}{a65894b864a4056158acdf72bcb84931}
+      \strng{fullhashraw}{a65894b864a4056158acdf72bcb84931}
+      \strng{bibnamehash}{a65894b864a4056158acdf72bcb84931}
+      \strng{authorbibnamehash}{a65894b864a4056158acdf72bcb84931}
+      \strng{authornamehash}{a65894b864a4056158acdf72bcb84931}
+      \strng{authorfullhash}{a65894b864a4056158acdf72bcb84931}
+      \strng{authorfullhashraw}{a65894b864a4056158acdf72bcb84931}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{month}{8}
+      \field{title}{API vs. Self-Hosted LLM: Which Path Is Right for Your Enterprise?}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://theirfan.medium.com/api-vs-self-hosted-llm-which-path-is-right-for-your-enterprise-82c60a7795fa
+      \endverb
+      \verb{url}
+      \verb https://theirfan.medium.com/api-vs-self-hosted-llm-which-path-is-right-for-your-enterprise-82c60a7795fa
+      \endverb
+    \endentry
+    \entry{t18}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IBM Think}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is retrieval augmented generation (RAG)?}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/retrieval-augmented-generation
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/retrieval-augmented-generation
+      \endverb
+    \endentry
+    \entry{t19}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=27dfb131d202cd3b437bbb57e95bfcb7}{%
+           family={Ricadela},
+           familyi={R\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oracle}%
+      }
+      \strng{namehash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{fullhash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{fullhashraw}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{bibnamehash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{authorbibnamehash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{authornamehash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{authorfullhash}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \strng{authorfullhashraw}{27dfb131d202cd3b437bbb57e95bfcb7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{month}{4}
+      \field{title}{What Is Chroma? An Open Source Embedded Database}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.oracle.com/anz/database/vector-database/chromadb/
+      \endverb
+      \verb{url}
+      \verb https://www.oracle.com/anz/database/vector-database/chromadb/
+      \endverb
+    \endentry
+    \entry{t20}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=07d29e6e5342b4366486041ac7e647ab}{%
+           family={Kuntz},
+           familyi={K\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Training Industry}%
+      }
+      \strng{namehash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{fullhash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{fullhashraw}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{bibnamehash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{authorbibnamehash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{authornamehash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{authorfullhash}{07d29e6e5342b4366486041ac7e647ab}
+      \strng{authorfullhashraw}{07d29e6e5342b4366486041ac7e647ab}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{month}{4}
+      \field{title}{The New Industrial Evolution: How AI Assistants and Agents Are Transforming Manufacturing Knowledge}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://trainingindustry.com/articles/workforce-development/the-new-industrial-evolution-how-ai-assistants-and-agents-are-transforming-manufacturing-knowledge/
+      \endverb
+      \verb{url}
+      \verb https://trainingindustry.com/articles/workforce-development/the-new-industrial-evolution-how-ai-assistants-and-agents-are-transforming-manufacturing-knowledge/
+      \endverb
+    \endentry
+    \entry{t21}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca43b8b2bdf82aa380c9fed8712d8db8}{%
+           family={{Meta AI}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ollama}%
+      }
+      \strng{namehash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{fullhash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{fullhashraw}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{bibnamehash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{authorbibnamehash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{authornamehash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{authorfullhash}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \strng{authorfullhashraw}{ca43b8b2bdf82aa380c9fed8712d8db8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{llama3.2}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ollama.com/library/llama3.2
+      \endverb
+      \verb{url}
+      \verb https://ollama.com/library/llama3.2
+      \endverb
+    \endentry
+    \entry{t22}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0f98f9c132af315a916cf1272843fc7b}{%
+           family={{Google DeepMind}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ollama}%
+      }
+      \strng{namehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{fullhash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{fullhashraw}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{bibnamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorbibnamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authornamehash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorfullhash}{0f98f9c132af315a916cf1272843fc7b}
+      \strng{authorfullhashraw}{0f98f9c132af315a916cf1272843fc7b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{gemma4}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ollama.com/library/gemma4
+      \endverb
+      \verb{url}
+      \verb https://ollama.com/library/gemma4
+      \endverb
+    \endentry
+    \entry{t23}{online}{}{}
+      \name{author}{2}{}{%
+        {{hash=5f46782611de55f109003b4dac1b83e0}{%
+           family={{Mistral AI}},
+           familyi={M\bibinitperiod}}}%
+        {{hash=a2fe9051fe051f819bd739ef3e340377}{%
+           family={{NVIDIA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ollama}%
+      }
+      \strng{namehash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{fullhash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{fullhashraw}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{bibnamehash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{authorbibnamehash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{authornamehash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{authorfullhash}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \strng{authorfullhashraw}{2c2a8da215c9184b2fec2f6c12dbba5d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{mistral-nemo}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ollama.com/library/mistral-nemo
+      \endverb
+      \verb{url}
+      \verb https://ollama.com/library/mistral-nemo
+      \endverb
+    \endentry
+    \entry{t24}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ollama}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhashraw}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{phi4}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ollama.com/library/phi4
+      \endverb
+      \verb{url}
+      \verb https://ollama.com/library/phi4
+      \endverb
+    \endentry
+    \entry{t25}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=5f46782611de55f109003b4dac1b83e0}{%
+           family={{Mistral AI}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ollama}%
+      }
+      \strng{namehash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{fullhash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{fullhashraw}{5f46782611de55f109003b4dac1b83e0}
+      \strng{bibnamehash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{authorbibnamehash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{authornamehash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{authorfullhash}{5f46782611de55f109003b4dac1b83e0}
+      \strng{authorfullhashraw}{5f46782611de55f109003b4dac1b83e0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{mistral-small}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ollama.com/library/mistral-small
+      \endverb
+      \verb{url}
+      \verb https://ollama.com/library/mistral-small
+      \endverb
+    \endentry
   \enddatalist
   \missing{Rybicka2003Latex}
-  \missing{ollama_gemma4}
-  \missing{ollama_llama32}
-  \missing{ollama_mistralnemo}
-  \missing{ollama_mistralsmall}
-  \missing{ollama_phi4}
 \endrefsection
 \endinput
 

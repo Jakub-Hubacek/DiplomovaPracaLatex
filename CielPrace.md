@@ -12,3 +12,8 @@ Cieľom tejto práce je navrhnúť a implementovať mobilnú aplikáciu umožňu
 3. Integrujte aplikáciu s riadiacim systémom výrobnej linky.
 4. Navrhnite a implementujte funkcie na vzdialené ovládanie výrobnej linky cez mobilné zariadenie.
 5. Otestujte aplikáciu v laboratórnom prostredí a vyhodnoťte jej spoľahlivosť a efektivitu.
+
+
+
+TODO: 
+- [ ] Ako odcitovat 3d identifikatory

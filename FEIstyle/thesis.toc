@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {1.4}AVEVA InTouch Edge HMI}{6}{subsection.8}%
 \contentsline {section}{\numberline {2}Prehľad technológií pre vývoj aplikácií a priemyselnú komunikáciu}{9}{section.10}%
 \contentsline {subsection}{\numberline {2.1}Frontendové technológie}{9}{subsection.11}%
-\contentsline {subsection}{\numberline {2.2}Backendové technológie}{10}{subsection.12}%
+\contentsline {subsection}{\numberline {2.2}Backendové frameworky}{10}{subsection.12}%
 \contentsline {subsection}{\numberline {2.3}Kontajnerizácia a Edge architektúra}{10}{subsection.14}%
 \contentsline {subsubsection}{\numberline {2.3.1}Docker a Docker Compose}{11}{subsubsection.15}%
 \contentsline {subsection}{\numberline {2.4}Priemyselné komunikačné protokoly}{11}{subsection.16}%
@@ -17,43 +17,46 @@
 \contentsline {subsubsection}{\numberline {2.4.3}\acrshort {mqtt}}{12}{subsubsection.19}%
 \contentsline {subsubsection}{\numberline {2.4.4}Modbus \acrshort {tcp}}{13}{subsubsection.20}%
 \contentsline {section}{\numberline {3}Prehľad technológií pre inteligentných asistentov}{14}{section.21}%
-\contentsline {section}{\numberline {4}Typy identifikátorov a ich použitie}{15}{section.22}%
-\contentsline {subsection}{\numberline {4.1}QR kódy}{15}{subsection.23}%
-\contentsline {subsection}{\numberline {4.2}Fiduciálne markery - AprilTag, ArUco, STag}{15}{subsection.24}%
-\contentsline {subsection}{\numberline {4.3}3D identifikátory}{15}{subsection.25}%
-\contentsline {subsubsection}{\numberline {4.3.1}Princíp a štruktúra}{16}{subsubsection.26}%
-\contentsline {section}{\numberline {5}Špecifikácia požiadaviek systému}{17}{section.27}%
-\contentsline {subsection}{\numberline {5.1}Prehľad systému}{17}{subsection.28}%
-\contentsline {subsection}{\numberline {5.2}Popis používateľských rolí}{18}{subsection.29}%
-\contentsline {subsection}{\numberline {5.3}Use-case scenáre}{18}{subsection.30}%
-\contentsline {subsection}{\numberline {5.4}Funkcionálne požiadavky}{20}{subsection.31}%
-\contentsline {subsection}{\numberline {5.5}Nefunkcionálne požiadavky}{21}{subsection.32}%
-\contentsline {subsection}{\numberline {5.6}Doménové požiadavky}{22}{subsection.33}%
-\contentsline {section}{\numberline {6}Voľba technológií}{23}{section.34}%
-\contentsline {subsection}{\numberline {6.1}Komunikácia s \acrshort {plc} -- S7 protokol}{23}{subsection.35}%
-\contentsline {subsection}{\numberline {6.2}Komunikačná middleware vrstva -- Node-RED}{23}{subsection.36}%
-\contentsline {subsection}{\numberline {6.3}Transportný protokol -- \acrshort {mqtt} namiesto \acrshort {opcua}}{24}{subsection.37}%
-\contentsline {subsection}{\numberline {6.4}Backendový framework -- FastAPI}{24}{subsection.38}%
-\contentsline {subsection}{\numberline {6.5}Mobilný frontend -- Flutter}{25}{subsection.39}%
-\contentsline {subsection}{\numberline {6.6}TODO: Identifikátor - ArUco}{25}{subsection.40}%
-\contentsline {section}{\numberline {7}Experimentálne porovnanie a výber jazykových modelov}{26}{section.41}%
-\contentsline {subsection}{\numberline {7.1}Popis testovaných modelov}{26}{subsection.42}%
-\contentsline {subsection}{\numberline {7.2}Metodika testovania}{27}{subsection.48}%
-\contentsline {subsection}{\numberline {7.3}Výsledky porovnania}{28}{subsection.49}%
-\contentsline {subsection}{\numberline {7.4}Analýza výsledkov a výber modelu}{28}{subsection.52}%
-\contentsline {subsubsection}{\numberline {7.4.1}Overenie na cloudovom hardvéri}{29}{subsubsection.53}%
-\contentsline {subsubsection}{\numberline {7.4.2}Záverečné rozhodnutie o architektúre AI asistenta}{30}{subsubsection.54}%
-\contentsline {section}{\numberline {8}TOOD: Aplikácia a jej funkcionality}{31}{section.55}%
-\contentsline {subsection}{\numberline {8.1}Skener Aruco kodov}{31}{subsection.56}%
-\contentsline {subsection}{\numberline {8.2}Generátor Aruco kódov}{31}{subsection.57}%
-\contentsline {subsection}{\numberline {8.3}Monitoring a ovládanie zariadení}{31}{subsection.58}%
-\contentsline {subsection}{\numberline {8.4}Virtuálny asistent PLEXO}{31}{subsection.59}%
-\contentsline {subsection}{\numberline {8.5}Správa používateľov}{31}{subsection.60}%
-\contentsline {subsection}{\numberline {8.6}Správa zariadení}{31}{subsection.61}%
-\contentsline {subsection}{\numberline {8.7}Správa Knowledgebase}{32}{subsection.62}%
-\contentsline {subsection}{\numberline {8.8}Nastavenia}{32}{subsection.63}%
-\contentsline {section}{Z\'{a}ver}{33}{section*.64}%
-\contentsline {section}{Literatúra}{35}{section*.65}%
+\contentsline {subsection}{\numberline {3.1}Veľké jazykové modely a možnosti nasadenia}{14}{subsection.22}%
+\contentsline {subsection}{\numberline {3.2}Retrieval-Augmented Generation}{14}{subsection.23}%
+\contentsline {subsection}{\numberline {3.3}AI asistenti v priemyselnom prostredí}{15}{subsection.24}%
+\contentsline {section}{\numberline {4}Typy identifikátorov a ich použitie}{16}{section.25}%
+\contentsline {subsection}{\numberline {4.1}QR kódy}{16}{subsection.26}%
+\contentsline {subsection}{\numberline {4.2}Fiduciálne markery -- AprilTag, ArUco, STag}{16}{subsection.27}%
+\contentsline {subsection}{\numberline {4.3}3D identifikátory}{16}{subsection.28}%
+\contentsline {subsubsection}{\numberline {4.3.1}Princíp a štruktúra}{17}{subsubsection.29}%
+\contentsline {section}{\numberline {5}Špecifikácia požiadaviek systému}{18}{section.30}%
+\contentsline {subsection}{\numberline {5.1}Prehľad systému}{18}{subsection.31}%
+\contentsline {subsection}{\numberline {5.2}Popis používateľských rolí}{19}{subsection.32}%
+\contentsline {subsection}{\numberline {5.3}Use-case scenáre}{19}{subsection.33}%
+\contentsline {subsection}{\numberline {5.4}Funkcionálne požiadavky}{21}{subsection.34}%
+\contentsline {subsection}{\numberline {5.5}Nefunkcionálne požiadavky}{22}{subsection.35}%
+\contentsline {subsection}{\numberline {5.6}Doménové požiadavky}{23}{subsection.36}%
+\contentsline {section}{\numberline {6}Voľba technológií}{24}{section.37}%
+\contentsline {subsection}{\numberline {6.1}Komunikácia s \acrshort {plc} -- S7 protokol}{24}{subsection.38}%
+\contentsline {subsection}{\numberline {6.2}Komunikačná middleware vrstva -- Node-RED}{24}{subsection.39}%
+\contentsline {subsection}{\numberline {6.3}Transportný protokol -- \acrshort {mqtt}}{25}{subsection.40}%
+\contentsline {subsection}{\numberline {6.4}Backend -- FastAPI}{25}{subsection.41}%
+\contentsline {subsection}{\numberline {6.5}Frontend -- Flutter}{26}{subsection.42}%
+\contentsline {subsection}{\numberline {6.6}Výber identifikátora -- ArUco}{26}{subsection.43}%
+\contentsline {section}{\numberline {7}Experimentálne porovnanie a výber jazykových modelov}{28}{section.44}%
+\contentsline {subsection}{\numberline {7.1}Popis testovaných modelov}{28}{subsection.45}%
+\contentsline {subsection}{\numberline {7.2}Metodika testovania}{29}{subsection.51}%
+\contentsline {subsection}{\numberline {7.3}Výsledky porovnania}{30}{subsection.52}%
+\contentsline {subsection}{\numberline {7.4}Analýza výsledkov a výber modelu}{30}{subsection.55}%
+\contentsline {subsubsection}{\numberline {7.4.1}Overenie na cloudovom hardvéri}{31}{subsubsection.56}%
+\contentsline {subsubsection}{\numberline {7.4.2}Záverečné rozhodnutie o architektúre AI asistenta}{32}{subsubsection.57}%
+\contentsline {section}{\numberline {8}Aplikácia a jej funkcionality}{33}{section.58}%
+\contentsline {subsection}{\numberline {8.1}Skener ArUco identifikátorov}{33}{subsection.59}%
+\contentsline {subsection}{\numberline {8.2}Generátor ArUco identifikátorov}{33}{subsection.60}%
+\contentsline {subsection}{\numberline {8.3}Monitoring a ovládanie zariadení}{33}{subsection.61}%
+\contentsline {subsection}{\numberline {8.4}Virtuálny asistent PLEXO}{33}{subsection.62}%
+\contentsline {subsection}{\numberline {8.5}Správa používateľov}{34}{subsection.63}%
+\contentsline {subsection}{\numberline {8.6}Správa zariadení}{34}{subsection.64}%
+\contentsline {subsection}{\numberline {8.7}Správa znalostnej bázy}{34}{subsection.65}%
+\contentsline {subsection}{\numberline {8.8}Nastavenia}{34}{subsection.66}%
+\contentsline {section}{Z\'{a}ver}{36}{section*.67}%
+\contentsline {section}{Literatúra}{38}{section*.68}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -150,7 +153,67 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{36}{section*.66}%
-\contentsline {section}{\numberline {A}Algoritmus}{37}{section.68}%
-\contentsline {section}{\numberline {B}Výpis dlhého kódu}{38}{section.89}%
-\contentsline {section}{\numberline {C}Slovníček pojmov}{42}{section.220}%
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{40}{section*.69}%
+\contentsline {section}{\numberline {A}Algoritmus}{41}{section.71}%
+\contentsline {section}{\numberline {B}Výpis dlhého kódu}{42}{section.92}%
+\contentsline {section}{\numberline {C}Slovníček pojmov}{46}{section.223}%
