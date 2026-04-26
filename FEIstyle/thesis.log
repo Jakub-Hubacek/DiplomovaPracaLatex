@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  12 APR 2026 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  26 APR 2026 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,14 +1106,33 @@ File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 ) (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/nowidow\nowidow.sty
 Package: nowidow 2011/09/20 1.0 Easily prevent widows and orphans
 Package: nowidow 
+) (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/dirtree\dirtree.sty
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+ (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/generic/dirtree\dirtree.tex `dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen303
+\DT@width=\dimen304
+\DT@sep=\dimen305
+\DT@all=\dimen306
+\DT@rulewidth=\dimen307
+\DT@dotwidth=\dimen308
+\DTbaselineskip=\dimen309
+\DT@counti=\count535
+\DT@countii=\count536
+\DT@countiii=\count537
+\DT@countiv=\count538
+\DT@indent=\dimen310
+\DT@parskip=\dimen311
+\DT@baselineskip=\dimen312
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 312.
-\c@listOfAppendix=\count535
-\c@priloh=\count536
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 313.
+\c@listOfAppendix=\count539
+\c@priloh=\count540
 \cftbeforeprilohskip=\skip134
 \cftprilohindent=\skip135
 \cftprilohnumwidth=\skip136
-\c@pridepth=\count537
+\c@pridepth=\count541
 \cftbeforeprititleskip=\skip137
 \cftafterprititleskip=\skip138
 )
@@ -1230,16 +1249,16 @@ Package biblatex Info: Reference section=0 on input line 43.
 Package biblatex Info: Reference segment=0 on input line 43.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count538
-\scratchdimen=\dimen303
+\scratchcounter=\count542
+\scratchdimen=\dimen313
 \scratchbox=\box74
-\nofMPsegments=\count539
-\nofMParguments=\count540
+\nofMPsegments=\count543
+\nofMParguments=\count544
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count541
-\MPscratchDim=\dimen304
-\MPnumerator=\count542
-\makeMPintoPDFobject=\count543
+\MPscratchCnt=\count545
+\MPscratchDim=\dimen314
+\MPnumerator=\count546
+\makeMPintoPDFobject=\count547
 \everyMPtoPDFconversion=\toks61
 ) (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1281,7 +1300,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count544
+\c@lstlisting=\count548
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1379,7 +1398,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=258, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=366, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf>
 Package pdftex.def Info: includes/assignment.pdf  used on input line 55.
@@ -1390,7 +1409,7 @@ pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found 
 
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=260, page=1, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=368, page=1, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf, page 1>
 Package pdftex.def Info: includes/assignment.pdf , page1 used on input line 55.
@@ -1417,7 +1436,7 @@ Package pdftex.def Info: includes/assignment.pdf , page1 used on input line 55.
  <./includes/assignment.pdf>]
 
 pdfTeX warning: pdflatex (file ./includes/assignment.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<includes/assignment.pdf, id=293, page=2, 597.55246pt x 845.07718pt>
+<includes/assignment.pdf, id=401, page=2, 597.55246pt x 845.07718pt>
 File: includes/assignment.pdf Graphic file (type pdf)
 <use includes/assignment.pdf, page 2>
 Package pdftex.def Info: includes/assignment.pdf , page2 used on input line 55.
@@ -1472,11 +1491,11 @@ File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 
 ] (thesis.toc [7
 
-])
+] [8])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [8] (thesis.acr
+ [9] (thesis.acr
 Underfull \hbox (badness 2384) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (+20) ven-sky ^^Rasynch-rónne ro-z-hra-nie ser-ve-ro-vej
  []
@@ -1486,12 +1505,12 @@ Underfull \hbox (badness 1888) in paragraph at lines 45--45
 []|\T1/lmr/m/n/12 (+20) Information Tech-no-logy (slo-ven-sky ^^Rin-for-
  []
 
-thesis.acr:120: ignored: Infinite glue shrinkage found in box being split [9]) [10] (thesis.loa)
+thesis.acr:120: ignored: Infinite glue shrinkage found in box being split [10]) [11] (thesis.loa)
 \tf@loa=\write9
 \openout9 = `thesis.loa'.
 
- [11{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (thesis.lol
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1.
+ [12{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (thesis.lol
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1503,7 +1522,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 \tf@lol=\write10
 \openout10 = `thesis.lol'.
 
- [12] (includes/introduction.tex
+ [13] (includes/introduction.tex
 
 LaTeX Warning: Citation 'Rybicka2003Latex' on page 1 undefined on input line 27.
 
@@ -1574,34 +1593,70 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30] [31] [32] [33] [34]) [35] (includes/conclusion.tex) [36
+[30] [31] [32]
 
+pdfTeX warning: pdflatex (file ./img/architektura_systemu.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<img/architektura_systemu.pdf, id=963, 673.55638pt x 442.53331pt>
+File: img/architektura_systemu.pdf Graphic file (type pdf)
+<use img/architektura_systemu.pdf>
+Package pdftex.def Info: img/architektura_systemu.pdf  used on input line 1226.
+(pdftex.def)             Requested size: 441.01773pt x 289.75677pt.
 
-] [37] [38
-
-
-] [39] (includes/ai_declaration.tex
-
-LaTeX Warning: Reference `sec:utilizingAI' on page 40 undefined on input line 3.
-
-) [40] (includes/attachmentA.tex
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 2.
-) [41
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
+pdfTeX warning: pdflatex (file ./img/fyzicka_architektura.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<img/fyzicka_architektura.pdf, id=965, 623.44919pt x 237.7683pt>
+File: img/fyzicka_architektura.pdf Graphic file (type pdf)
+<use img/fyzicka_architektura.pdf>
+Package pdftex.def Info: img/fyzicka_architektura.pdf  used on input line 1248.
+(pdftex.def)             Requested size: 441.01773pt x 168.19263pt.
+[33] [34 <./img/architektura_systemu.pdf> <./img/fyzicka_architektura.pdf>]
+Overfull \hbox (30.87627pt too wide) in paragraph at lines 1288--1302
+ [][] 
+ []
 
-] (includes/attachmentB.tex (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[35] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 13.
- (includes/listings/generate_thesis_tex.py [42
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1341.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1342.
+
+Overfull \hbox (15.82959pt too wide) in paragraph at lines 1352--1369
+[][] 
+ []
+
+[36] [37]
+Overfull \hbox (32.72823pt too wide) in paragraph at lines 1477--1487
+[]\T1/lmr/m/n/12 (-20) Po va-li-dá-cii bac-kend pub-li-kuje správu na MQTT tému \T1/lmtt/m/n/12 plc/device_{id}/commands/{cmd}\T1/lmr/m/n/12 (-20) .
+ []
+
+[38] [39] [40] [41] [42] [43]) [44] (includes/conclusion.tex) [45
 
 
-] [43] [44])) [45] (includes/attachmentC.tex [46
+] [46] [47
 
 
-]) [47] (thesis.aux)
+] [48] (includes/ai_declaration.tex
+
+LaTeX Warning: Reference `sec:utilizingAI' on page 49 undefined on input line 3.
+
+) [49] (includes/attachmentA.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 2.
+) [50
+
+
+
+
+] (includes/attachmentB.tex (includes/listings/generate_thesis_tex.py [51
+
+
+] [52] [53])) [54] (includes/attachmentC.tex [55
+
+
+]) [56] (thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1611,23 +1666,23 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A001A97487C0A6C213D5CD74B28347FE;11410.
+(rerunfilecheck)             Checksum: 5B36FD988FBFAF992350068CE84A65F6;15885.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38795 strings out of 467866
- 716181 string characters out of 5418325
- 2037585 words of memory out of 5000000
- 66462 multiletter control sequences out of 15000+600000
- 741546 words of font info for 253 fonts, out of 8000000 for 9000
+ 38986 strings out of 467866
+ 719570 string characters out of 5418325
+ 2038825 words of memory out of 5000000
+ 66595 multiletter control sequences out of 15000+600000
+ 742185 words of font info for 255 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,17n,131p,2529b,3138s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on thesis.pdf (60 pages, 1072666 bytes).
+<C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on thesis.pdf (70 pages, 1407620 bytes).
 PDF statistics:
- 1234 PDF objects out of 1440 (max. 8388607)
- 343 named destinations out of 1000 (max. 500000)
- 67069 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1480 PDF objects out of 1728 (max. 8388607)
+ 392 named destinations out of 1000 (max. 500000)
+ 68319 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -135,17 +135,53 @@
 \newlabel{tab:model_detail}{{5}{31}{Priemerná relevancia podľa typu otázky a jazyka}{table.caption.54}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Overenie na cloudovom hardvéri}{31}{subsubsection.56}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}Záverečné rozhodnutie o architektúre AI asistenta}{32}{subsubsection.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Aplikácia a jej funkcionality}{33}{section.58}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Skener ArUco identifikátorov}{33}{subsection.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Generátor ArUco identifikátorov}{33}{subsection.60}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Monitoring a ovládanie zariadení}{33}{subsection.61}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Virtuálny asistent PLEXO}{33}{subsection.62}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Správa používateľov}{34}{subsection.63}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.6}Správa zariadení}{34}{subsection.64}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.7}Správa znalostnej bázy}{34}{subsection.65}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.8}Nastavenia}{34}{subsection.66}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Z\'{a}ver}{36}{section*.67}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Literatúra}{38}{section*.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Návrh architektúry systému}{33}{section.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Architektúra komponentov systému}{33}{subsection.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Fyzická topológia systému}{33}{subsection.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Diagram architektúry systému a komunikácia medzi komponentmi}}{34}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:architecture}{{1}{34}{Diagram architektúry systému a komunikácia medzi komponentmi}{figure.caption.60}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Fyzická topológia systému}}{34}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:fyzicka_architektura}{{2}{34}{Fyzická topológia systému}{figure.caption.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Štruktúra MQTT tém}{35}{subsection.63}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Prehľad MQTT tém}}{35}{table.caption.64}\protected@file@percent }
+\newlabel{tab:mqtt_topics}{{6}{35}{Prehľad MQTT tém}{table.caption.64}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Implementácia backendu}{36}{section.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Autentifikácia a RBAC}{36}{subsection.66}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Závislosti pre kontrolu rolí}}{36}{lstlisting.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}API endpointy}{37}{subsection.75}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Prehľad API endpointov}}{37}{table.caption.76}\protected@file@percent }
+\newlabel{tab:api_endpoints}{{7}{37}{Prehľad API endpointov}{table.caption.76}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Mechanizmus relácií}{38}{subsection.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Command lifecycle}{38}{subsection.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Idempotencia príkazov}{38}{subsection.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Generátor ArUco + STL export}{38}{subsection.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Implementácia AI assistenta}{39}{section.81}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}RAG pipeline diagram}{39}{subsection.82}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Embedovací model}{39}{subsection.83}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}System prompt}{39}{subsection.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Správa konverzácie}{39}{subsection.85}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}KB management}{39}{subsection.86}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Implementácia frontendu}{40}{section.87}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Stavový manažment}{40}{subsection.88}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}ArUco skenovanie}{40}{subsection.89}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.3}WebSocket pripojenie}{40}{subsection.90}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Role based UI}{40}{subsection.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Aplikácia a jej funkcionality}{41}{section.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Skener ArUco identifikátorov}{41}{subsection.93}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Generátor ArUco identifikátorov}{41}{subsection.94}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3}Monitoring a ovládanie zariadení}{41}{subsection.95}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.4}Virtuálny asistent PLEXO}{41}{subsection.96}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.5}Správa používateľov}{42}{subsection.97}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.6}Správa zariadení}{42}{subsection.98}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.7}Správa znalostnej bázy}{42}{subsection.99}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.8}Nastavenia}{42}{subsection.100}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Testovanie a meranie}{44}{section.101}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}Overenie splnenia špecifikácie}{44}{subsection.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2}Latencia vykonania príkazov}{44}{subsection.103}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.3}ArUco detekcia}{44}{subsection.104}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.4}Kvalita odpovedí asistenta}{44}{subsection.105}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Z\'{a}ver}{45}{section*.106}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Literatúra}{47}{section*.107}\protected@file@percent }
 \babel@aux{slovak}{}
 \babel@aux{slovak}{}
 \babel@aux{slovak}{}
@@ -302,20 +338,20 @@
 \babel@aux{slovak}{}
 \babel@aux{slovak}{}
 \babel@aux{slovak}{}
-\@writefile{toc}{\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{40}{section*.69}\protected@file@percent }
-\newlabel{att:algorithms}{{A}{41}{Algoritmus\label {att:algorithms}}{section.71}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Algoritmus}{41}{section.71}\protected@file@percent }
-\@writefile{pri}{\contentsline {priloh}{\numberline {A} Algoritmus}{41}{priloh.72}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Vypočítaj $y = x^n$}}{41}{algorithm.73}\protected@file@percent }
-\newlabel{alg:calculation-1}{{1}{41}{Vypočítaj $y = x^n$}{algorithm.73}{}}
-\newlabel{att:listings}{{B}{42}{Výpis dlhého kódu\label {att:listings}}{section.92}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Výpis dlhého kódu}{42}{section.92}\protected@file@percent }
-\@writefile{pri}{\contentsline {priloh}{\numberline {B} Výpis dlhého kódu}{42}{priloh.93}\protected@file@percent }
-\newlabel{lst:sublime}{{1}{42}{Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt {\textbackslash lstinputlisting}}{lstlisting.94}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt  {\textbackslash lstinputlisting}}}{42}{lstlisting.94}\protected@file@percent }
-\newlabel{att:dictionary}{{C}{46}{Slovníček pojmov\label {att:dictionary}}{section.223}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Slovníček pojmov}{46}{section.223}\protected@file@percent }
-\@writefile{pri}{\contentsline {priloh}{\numberline {C} Slovníček pojmov}{46}{priloh.224}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{49}{section*.108}\protected@file@percent }
+\newlabel{att:algorithms}{{A}{50}{Algoritmus\label {att:algorithms}}{section.110}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Algoritmus}{50}{section.110}\protected@file@percent }
+\@writefile{pri}{\contentsline {priloh}{\numberline {A} Algoritmus}{50}{priloh.111}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Vypočítaj $y = x^n$}}{50}{algorithm.112}\protected@file@percent }
+\newlabel{alg:calculation-1}{{1}{50}{Vypočítaj $y = x^n$}{algorithm.112}{}}
+\newlabel{att:listings}{{B}{51}{Výpis dlhého kódu\label {att:listings}}{section.131}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Výpis dlhého kódu}{51}{section.131}\protected@file@percent }
+\@writefile{pri}{\contentsline {priloh}{\numberline {B} Výpis dlhého kódu}{51}{priloh.132}\protected@file@percent }
+\newlabel{lst:sublime}{{2}{51}{Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt {\textbackslash lstinputlisting}}{lstlisting.133}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Ukážka výpisu kódu programu načítaného z~externého súboru pomocou makra \texttt  {\textbackslash lstinputlisting}}}{51}{lstlisting.133}\protected@file@percent }
+\newlabel{att:dictionary}{{C}{55}{Slovníček pojmov\label {att:dictionary}}{section.262}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Slovníček pojmov}{55}{section.262}\protected@file@percent }
+\@writefile{pri}{\contentsline {priloh}{\numberline {C} Slovníček pojmov}{55}{priloh.263}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{963435FAE2AF1A3DAD67EFA2E44348D6}
 \abx@aux@defaultrefcontext{0}{t00}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{t01}{none/global//global/global/global}
@@ -343,4 +379,4 @@
 \abx@aux@defaultrefcontext{0}{t23}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{t24}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{t25}{none/global//global/global/global}
-\gdef \@abspage@last{60}
+\gdef \@abspage@last{70}
