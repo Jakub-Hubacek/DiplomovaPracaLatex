@@ -1,5 +1,3 @@
-%% Casti oznacene ako %% MOZNE ODSTRANIT su casti ktore vieme vypustit ak by bola praca obsahovo prilis obsiahla
-
 \section{Analýza existujúcich riešení}
 
 Trh s~priemyselnými softvérovými platformami ponúka viacero riešení
@@ -7,9 +5,8 @@ umožňujúcich vizualizáciu a ovládanie výrobných zariadení. Väčšina z~
 vychádza z~tradičného modelu \acrshort{scada}/\acrshort{hmi} a postupne sa
 rozširuje o~mobilný prístup, cloudovú konektivitu a v~niektorých prípadoch aj
 o~prvky umelej inteligencie. Nasledujúci prehľad analyzuje štyri významné
-komerčné platformy z~pohľadu funkcionalít relevantných pre mobilné ovládanie
-priemyselných liniek: mobilný prístup k~zariadeniam, identifikácia fyzických
-zariadení, nasadenie na edge vrstvu, otvorenosť platformy a integrácia
+komerčné platformy. Posudzované sú nasledovné funkcionality: mobilný prístup k~zariadeniam, identifikácia fyzických
+zariadení, nasadenie na edge, otvorenosť platformy a integrácia
 inteligentného asistenta schopného pracovať s~technickou dokumentáciou.
 
 \subsection{Siemens WinCC Unified}
@@ -17,75 +14,72 @@ inteligentného asistenta schopného pracovať s~technickou dokumentáciou.
 \acrshort{scada} systém \textit{SIMATIC WinCC Unified PC} od spoločnosti Siemens je
 vizualizačná platforma integrovaná do prostredia TIA Portal, navrhnutá na
 zjednotenie \acrshort{ot} a \acrshort{it} dát v~rámci jedného konzistentného
-systému~\cite{t00}. Platforma je škálovateľná — od jednotlivého stroja
-až po rozsiahle distribuované systémy s~prakticky neobmedzeným počtom dátových
-bodov — a používa rovnakú inžiniersku bázu ako panely radu Unified, čo
-štandardizuje vývoj naprieč typmi zariadení.
+systému~\cite{t00}. Platforma je škálovateľná od jedného stroja
+až po rozsiahle distribuované systémy s~prakticky neobmedzeným počtom zariadení. 
 
 Prístup k~prevádzkovým dátam je zabezpečený cez webové rozhranie
 \acrshort{html}5, ktoré umožňuje vzdialené monitorovanie z~prehliadača bez
-inštalácie klienta. Platforma obsahuje vstavaný \acrshort{sql} archív pre
+inštalácie klientskej aplikácie. Platforma obsahuje archív pre
 dlhodobé ukladanie dát a podporuje redundanciu pre vysokú dostupnosť systému.
 
 Siemens v~rámci TIA Portal ekosystému ponúka aj nástroj \textit{Engineering
-      Copilot TIA Standard}~\cite{t01} — generatívneho \acrshort{ai} asistenta
+Copilot TIA Standard}~\cite{t01}. Ide o generatívneho \acrshort{ai} asistenta
 pripojeného priamo k~TIA Portal. Tento nástroj dokáže generovať kód
-\acrshort{plc} v~jazyku SCL, vytvárať testovacie prípady, konfigurovať
-\acrshort{hmi} obrazovky a odpovedať na inžinierske otázky na základe
+\acrshort{plc} v~jazyku SCL, vytvárať testy, konfigurovať
+\acrshort{hmi} obrazovky a odpovedať na otázky na základe
 dokumentácie TIA Portal. Jeho zameranie je však výlučne na fázu návrhu a pomáha
-automatizačnému inžinierovi pri programovaní a konfigurácii, nie operátorovi
+programátorom pri programovaní a konfigurácii, nie operátorovi
 počas prevádzky.
 
-Z~pohľadu tejto práce sú kľúčové tieto body:
+Z~pohľadu našej práce sú kľúčové tieto body:
 
 \begin{itemize}
       \item \textbf{Mobilný prístup:} Webové rozhranie je dostupné cez prehliadač,
             nie je to natívna mobilná aplikácia. Interakcia nie je optimalizovaná
-            pre dotykové ovládanie v~teréne.
+            pre dotykové ovládanie.
       \item \textbf{Identifikácia zariadení:} Platforma nepodporuje skenovanie
-            unikátnych identifikátorov (napr. ArUco, \acrshort{qr}); operátor naviguje
-            manuálne cez menu obrazoviek.
+            unikátnych identifikátorov, operátor sa naviguje
+            manuálne.
       \item \textbf{AI asistent pre obsluhu:} Engineering Copilot je nástroj pre
-            inžiniera, nie pre operátora. Neposkytuje kontextovú pomoc na základe
+            programátorov, nie pre operátorov. Neposkytuje kontextovú pomoc na základe
             znalostnej bázy zariadení počas prevádzky.
-      \item \textbf{Licenčný model:} Proprietárny, viazaný na ekosystém Siemens;
+      \item \textbf{Licenčný model:} Proprietárny, viazaný na ekosystém Siemens,
             vyžaduje TIA Portal licencie.
 \end{itemize}
 
 \subsection{Ignition Perspective}
 
 Ignition \acrshort{scada} od spoločnosti Inductive Automation je modulárna
-platforma postavená na otvorených \acrshort{it} štandardoch — \acrshort{sql},
+platforma postavená na otvorených \acrshort{it} štandardoch -- \acrshort{sql},
 Python, \acrshort{mqtt} a \acrshort{opcua}~\cite{t02}. Jej kľúčovou vlastnosťou
-je licenčný model bez obmedzenia počtu tagov, klientov ani pripojení, čo ju
-odlišuje od väčšiny konkurenčných riešení účtujúcich za každý bod alebo
-reláciu.
+je licenčný model bez obmedzenia počtu tagov, klientov a pripojení, čo ju
+odlišuje od väčšiny konkurenčných riešení účtujúcich za každé zariadenie.
 
-Platforma komunikuje s~\acrshort{plc} radu Allen-Bradley, Siemens, Mitsubishi,
+Platforma komunikuje s~\acrshort{plc} od Allen-Bradley, Siemens, Mitsubishi,
 Modbus a ďalšími prostredníctvom vstavaných ovládačov a zabudovaného
 \acrshort{opcua} servera. Ignition Gateway beží na štandardnom serveri
-(Windows, Linux, macOS) a škálovateľnosť je riešená architektúrou
-hub-and-spoke, kde centrálny Gateway koordinuje viaceré odľahčené inštancie.
+a škálovateľnosť je riešená architektúrou hub-and-spoke, 
+kde centrálny gateway koordinuje viaceré odľahčené inštancie.
 
 Modul \textit{Perspective} poskytuje plnohodnotné webové rozhranie na báze
-\acrshort{html}5, prístupné z~akéhokoľvek zariadenia bez inštalácie klienta.
+\acrshort{html}5, prístupné z~akéhokoľvek zariadenia bez inštalácie klientskej aplikácie.
 Vizualizačné komponenty sú responzívne a optimalizované pre dotykové ovládanie
-na tabletoch a smartfónoch. K~dispozícii je aj natívna mobilná aplikácia
+na tabletoch a smartfónoch. K~dispozícii je aj mobilná aplikácia
 \textit{Ignition Perspective App}.
 
-Pre nasadenie na okrajových zariadeniach (edge) Inductive Automation ponúka
-\textit{Ignition Edge}~\cite{t03}. Odľahčenú verziu so vstavaným archívom (35
+Pre nasadenie na edge zariadeniach Inductive Automation ponúka
+\textit{Ignition Edge}~\cite{t03}. Odľahčenú verziu so archívom (35
 dní lokálneho ukladania), podporou \acrshort{mqtt} Sparkplug pre synchronizáciu
-dát na centrálny Gateway a možnosťou behu skriptov a tvorby \acrshort{rest}
+dát na centrálny gateway a možnosťou tvorby \acrshort{rest}
 \acrshort{api} priamo na edge zariadení. Ignition Edge teda plní úlohu
-inteligentného priemyselného mosta medzi fyzickými zariadeniami a vyššími
+inteligentného premostenia medzi fyzickými zariadeniami a vyššími
 systémovými vrstvami.
 
-Z~pohľadu tejto práce sú kľúčové tieto body:
+Z~pohľadu našej práce sú kľúčové tieto body:
 
 \begin{itemize}
       \item \textbf{Mobilný prístup:} Modul Perspective poskytuje responzívne
-            webové rozhranie aj natívnu mobilnú aplikáciu; dotykové ovládanie
+            webové rozhranie aj mobilnú aplikáciu a teda dotykové ovládanie
             je plne podporované.
       \item \textbf{Identifikácia zariadení:} Platforma natívne nepodporuje
             skenovanie unikátnych identifikátorov. Navigácia cez \acrshort{qr} kódy je
@@ -93,14 +87,14 @@ Z~pohľadu tejto práce sú kľúčové tieto body:
             nejde o~štandardnú funkciu platformy.
       \item \textbf{Edge nasadenie:} Ignition Edge umožňuje distribuované
             nasadenie priamo na priemyselných zariadeniach s~lokálnou
-            historizáciou a synchronizáciou dát.
+            archiváciou a synchronizáciou dát.
       \item \textbf{AI asistent:} Platforma neobsahuje vstavanú funkciu
             inteligentného asistenta ani správu znalostnej bázy. Skriptovacie
             rozhranie v~Pythone by technicky umožnilo volanie externých
             \acrshort{llm} \acrshort{api}, avšak bez natívnej podpory.
       \item \textbf{Licenčný model:} Licencia na Gateway bez obmedzenia
-            počtu klientov a tagov; jednotlivé moduly (Perspective, Alarming,
-            Reporting) sa licencujú samostatne.
+            počtu klientov. Jednotlivé moduly ako Perspective, Alarming,
+            Reporting sa licencujú samostatne.
 \end{itemize}
 
 \subsection{Tulip}
@@ -108,21 +102,19 @@ Z~pohľadu tejto práce sú kľúčové tieto body:
 Tulip je cloudová no-code platforma pre frontline operácie vo výrobnom sektore,
 ktorá umožňuje vytvárať priemyselné aplikácie prostredníctvom vizuálneho
 drag-and-drop editora bez nutnosti programovania~\cite{t04}. Platforma je
-orientovaná na digitalizáciu manuálnych výrobných procesov — sledovanie
+orientovaná na digitalizáciu manuálnych výrobných procesov -- sledovanie
 výrobných krokov, zber dát z~pracovísk, kontrolu kvality, vizuálne pracovné
 inštrukcie a sledovateľnosť výroby.
 
-Licenčný model Tulip je odlišný od tradičných \acrshort{scada} systémov —
-účtuje sa per interface (zariadenie spúšťajúce Tulip Player), nie per
-používateľ. Základný plán \textit{Essentials} zahŕňa aplikácie na mobiloch,
+Licenčný model Tulip je účtovaný za interface (zariadenie spúšťajúce Tulip Player).
+Základný plán \textit{Essentials} zahŕňa aplikácie na mobiloch,
 tabletoch, dotykových obrazovkách a nositeľných zariadeniach, pričom vyššie
-plány (\textit{Professional}, \textit{Enterprise}) pridávajú edge konektivitu,
-pokročilú správu rolí a integrácie cez \acrshort{http} a \acrshort{sql}
-konektory.
+plány (\textit{Professional}, \textit{Enterprise}) pridávajú edge konektivitu či
+pokročilú správu rolí.
 
 Pripojenie k~priemyselným zariadeniam je realizované cez doplnkový modul
 \textit{Machine Monitoring} s~podporou \acrshort{opcua}, \acrshort{mqtt} a
-Node-RED. Aplikácie bežia vo webovom prehliadači (Tulip Player) na tabletoch a
+Node-RED. Aplikácia beží vo webovom prehliadači na tabletoch alebo
 iných zariadeniach umiestnených na pracoviskách.
 
 V~roku 2024 Tulip uzavrel strategickú spoluprácu s~Amazon Web Services a
@@ -132,7 +124,7 @@ výrobné dáta, hľadať v~nich vzory a vytvárať aplikácie bez kódu s~pomoc
 generatívnej \acrshort{ai}. Systém pracuje s~reálnymi výrobnými dátami
 zozbieranými v~rámci platformy.
 
-Z~pohľadu tejto práce sú kľúčové tieto body:
+Z~pohľadu našej práce sú kľúčové tieto body:
 
 \begin{itemize}
       \item \textbf{Mobilný prístup:} Aplikácie sú webové a responzívne,
@@ -142,22 +134,22 @@ Z~pohľadu tejto práce sú kľúčové tieto body:
             a produktov, avšak nie pre priame spárovanie s~konkrétnym
             zariadením výrobnej linky.
       \item \textbf{Edge nasadenie:} Edge konektivita (\acrshort{opcua}, \acrshort{mqtt},
-            Node-RED) je dostupná ako platený doplnok; aplikačná logika
+            Node-RED) je dostupná ako platený doplnok, aplikačná logika
             a dáta sú hostované v~cloude.
       \item \textbf{AI asistent:} Frontline Copilot poskytuje generatívnu
             \acrshort{ai} na analýzu výrobných dát a asistenciu operátorom.
             Nejde však o~asistenta s~vlastnou znalostnou bázou technickej
-            dokumentácie zariadení — funkcia pracuje primárne s~dátami
+            dokumentácie zariadení. Funkcia pracuje primárne s~dátami
             nazbieranými v~rámci platformy Tulip.
       \item \textbf{Licenčný model:} \acrshort{saas} model účtovaný mesačne
-            per interface; cloudová závislosť môže byť problematická
+            za interface, cloudová závislosť môže byť problematická
             v~prostrediach s~prísnymi požiadavkami na lokalizáciu dát.
 \end{itemize}
 
 \subsection{AVEVA InTouch Edge HMI}
 
 \textit{AVEVA Edge} je \acrshort{hmi}/\acrshort{scada} platforma od
-spoločnosti AVEVA, člen skupiny Schneider Electric, navrhnutá pre nasadenie
+spoločnosti AVEVA, člen skupiny Schneider Electric. Je navrhnutá pre nasadenie
 na priemyselných zariadeniach, priemyselných PC a edge zariadeniach
 s~minimálnymi hardvérovými nárokmi~\cite{t06}. Kľúčovým princípom platformy je
 heslo „develop once, deploy everywhere". Aplikácia sa navrhne raz v~prostredí
@@ -165,35 +157,35 @@ AVEVA Edge Studio a nasadí na Windows alebo Linux, od malých embedded zariaden
 
 Platforma je interoperabilná s~väčšinou priemyselných zariadení prostredníctvom
 vstavaných ovládačov a natívnej podpory \acrshort{opcua}. Vzdialený prístup je
-zabezpečený webovým publikovaním na báze \acrshort{html}5, čo umožňuje
-sledovanie a ovládanie aplikácie zo smartfónov, tabletov a priemyselných
+zabezpečený webovým rozhraním na založeným na \acrshort{html}5, čo umožňuje
+sledovanie a ovládanie zo smartfónov, tabletov a priemyselných
 panelov bez inštalácie klienta.
 
 V~oblasti priemyselnej \acrshort{ai} AVEVA rozvíja samostatnú platformu
-\textit{Industrial AI for Operations}~\cite{t07}, ktorá využíva živé aj
+\textit{Industrial AI for Operations}~\cite{t07}, ktorá využíva aktuálne aj
 historické dáta naprieč prevádzkou, dodávateľským reťazcom a plánovaním na
-odhaľovanie skrytých neefektivít a predikciu výpadkov. Platforma bola uznaná
+odhaľovanie skrytých nedostatkov v efektivite a predikciu výpadkov. Význam platformy bol uznaný
 v~rebríčkoch Gartner a Verdantix v~roku 2025. Táto \acrshort{ai} vrstva je však
-cielená na podnikovú úroveň — optimalizáciu procesov a prediktívnu údržbu — nie
-na kontextovú asistenciu obsluhe priamo pri zariadení.
+cielená na podnikovú úroveň, optimalizáciu procesov a prediktívnu údržbu. Nie je cieľom poskytovať
+kontextovú asistenciu obsluhe priamo pri zariadení.
 
-Z~pohľadu tejto práce sú kľúčové tieto body:
+Z~pohľadu našej práce sú kľúčové tieto body:
 
 \begin{itemize}
       \item \textbf{Mobilný prístup:} \acrshort{html}5 webové rozhranie prístupné
-            zo smartfónov a tabletov; nie je to natívna mobilná aplikácia.
+            zo smartfónov a tabletov, nie je to natívna mobilná aplikácia.
       \item \textbf{Identifikácia zariadení:} Platforma nepodporuje
             skenovanie unikátnych identifikátorov pre spárovanie
             operátora so zariadením.
-      \item \textbf{Edge nasadenie:} Natívna podpora; AVEVA Edge je
+      \item \textbf{Edge nasadenie:} Natívna podpora, AVEVA Edge je
             priamo navrhnutý pre beh na edge zariadeniach vrátane
-            Linux-based embedded systémov s~malou pamäťovou stopou.
+            Linux systémov s nižšími hardvérovými prostriedkami.
       \item \textbf{AI asistent:} Industrial AI for Operations je
             analytická platforma na podnikovej úrovni zameraná na
             prediktívnu údržbu a optimalizáciu procesov. Neposkytuje
             kontextovú asistenciu obsluhe na základe znalostnej bázy
             dokumentácie konkrétnych zariadení.
-      \item \textbf{Licenčný model:} Proprietárny; licencie sa aktivujú
+      \item \textbf{Licenčný model:} Proprietárny, licencie sa aktivujú
             cez AVEVA web portál na základe sériového čísla a hardvérového
             identifikátora.
 \end{itemize}
@@ -217,8 +209,8 @@ edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
             \textbf{Tulip}                              &
             \textbf{\shortstack{AVEVA\\InTouch}}                                                                \\
             \hline
-            Natívna mobilná aplikácia                   & Nie & Áno       & Nie\textsuperscript{*}        & Nie \\
-            Identifikácia zariadení                     & Nie & Nie       & Čiastočne\textsuperscript{**} & Nie \\
+            Natívna mobilná aplikácia                   & Nie & Áno       & Nie       & Nie \\
+            Identifikácia zariadení                     & Nie & Nie       & Čiastočne             & Nie \\
             Edge nasadenie                              & Áno & Áno       & Čiastočne                     & Áno \\
             AI asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie                           & Nie \\
             Otvorená platforma                          & Nie & Čiastočne & Nie                           & Nie \\
@@ -228,8 +220,6 @@ edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
 
       \raggedright
       \footnotesize
-      \textsuperscript{*} Webová aplikácia optimalizovaná pre tablety.
-      \textsuperscript{**} \acrshort{qr}/čiarové kódy pre materiály, nie pre zariadenia linky.
 \end{table}
 
 Z~porovnania vyplýva, že existujúce komerčné platformy poskytujú rôznu mieru
@@ -243,37 +233,36 @@ situácií prostredníctvom práce s~dokumentáciou, zostáva nepokrytou oblasť
 Rovnako identifikácia fyzických zariadení prostredníctvom vizuálnych markerov
 s~automatickým načítaním kontextu pre dané zariadenie nie je štandardnou
 funkciou žiadnej z~analyzovaných platforiem. Operátori sú naďalej odkázaní na
-manuálnu navigáciu cez menu a obrazovky, čo spomaľuje prístup k~informáciám a
+manuálnu navigáciu cez menu, čo spomaľuje prístup k~informáciám a
 zvyšuje pravdepodobnosť interakcie s~nesprávnym zariadením.
 
 Tieto identifikované medzery v~súčasnej ponuke komerčných riešení tvoria základ
-pre návrh systému prezentovaného v~ďalších kapitolách tejto práce.
+pre návrh systému prezentovaného v~neskorších kapitolách tejto práce.
 
 \section{Prehľad technológií pre vývoj aplikácií a priemyselnú komunikáciu}
 
 Moderné priemyselné aplikácie nestoja na jednej technológii. Sú výsledkom
-starostlivo zvolenej skladačky nástrojov, kde každá vrstva plní svoju úlohu:
-mobilné rozhranie reaguje na pokyny operátora a backendová vrstva spracúva
-množstvo súbežných udalostí z~výrobnej linky.
+starostlivo zvolenej skladačky nástrojov, kde každá vrstva plní svoju úlohu.
+Mobilné rozhranie reaguje na pokyny operátora, backendová vrstva spracúva
+množstvo súbežných udalostí z~výrobnej linky a pokyny prichádzajúce z mobilnej aplikácie.
 
 Kľúčovou výzvou je pritom premostenie dvoch oddelených svetov. \acrshort{ot}
 označuje svet priemyselného riadenia a teda \acrshort{plc} automaty, senzory,
-pohony a výrobné linky, ktoré fyzicky ovládajú stroje v~reálnom čase.
+pohony a výrobné linky.
 \acrshort{it} je naopak svet softvéru, sietí a aplikácií určených na
 spracovanie a prenos informácií. Tieto dva svety dlho fungovali oddelene, každý
 s~vlastnými protokolmi a prioritami. Priemyselné aplikácie v~kontexte
 Industry~4.0 ich spájajú práve prostredníctvom komunikačnej vrstvy, napríklad
 pomocou protokolov \acrshort{mqtt} alebo \acrshort{opcua}.
 
-Nasledujúci prehľad mapuje najpoužívanejšie technológie v~každej z~týchto
-vrstiev a ich typické uplatnenie v~priemyselnom prostredí.
+Nasledujúci prehľad mapuje najpoužívanejšie technológie a ich typické uplatnenie.
 
 \subsection{Frontendové technológie}
 
 Výber frameworku pre mobilnú aplikáciu patrí k~zásadným architektonickým
-rozhodnutiam. Podľa prehľadu moderných frameworkov~\cite{t08} nie je voľba len
+rozhodnutiam. Z prehľadu moderných frameworkov vyplíva, že voľba nie je len
 technická, ale priamo ovplyvňuje rýchlosť vývoja, výkon aplikácie, dlhodobé
-náklady na údržbu a dostupnosť vývojárov. Nasledujúci prehľad stručne
+náklady na údržbu a dostupnosť vývojárov~\cite{t08}. Nasledujúci prehľad stručne
 charakterizuje najrozšírenejšie prístupy.
 
 \textbf{Natívny vývoj} (Swift/SwiftUI pre iOS, Kotlin pre Android) poskytuje
@@ -283,7 +272,7 @@ základní, čo zvyšuje celkové náklady na vývoj.
 
 \textbf{React Native} od spoločnosti Meta umožňuje zdieľanie logiky aplikácie
 medzi platformami pomocou JavaScriptu, pričom \acrshort{ui} vykresľuje cez
-natívne komponenty systému. Prístup má silný ekosystém, avšak pri
+natívne komponenty systému. React Native má silný ekosystém, avšak pri
 výkonnostne náročných operáciách môžu nastať obmedzenia spôsobené
 prechodom cez natívne rozhranie.
 
@@ -300,7 +289,7 @@ ktorý sťažuje priamu komunikáciu s~lokálnym hardvérom a priemyselnými
 rozhraniami.
 
 \subsection{Backendové frameworky}
-
+%%% tu pokracovat v review
 Backend tvorí jadro systému, spracúva požiadavky, komunikuje s~databázami a
 sprostredkováva tok dát medzi \acrshort{plc} a klientskymi aplikáciami. Výber
 frameworku závisí od požiadaviek na výkon, dostupnosť
@@ -516,6 +505,13 @@ a~nemajú prístup k~aktuálnym ani doménovým informáciám.
 Retrieval-Augmented Generation (\acrshort{rag}) tento nedostatok rieši
 prepojením modelu s~externou znalostnou bázou bez nutnosti opätovného trénovania~\cite{t18}.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/basic_rag_pipeline.pdf}
+    \caption{Základný princíp RAG pipeline}
+    \label{fig:rag_pipeline}
+\end{figure}
+
 Princíp fungovania je taký, že pri každej otázke používateľa retrieval model
 vyhľadá v~znalostnej báze relevantné úseky dokumentov, tie sa vložia do
 kontextu \acrshort{llm} spolu s~pôvodnou otázkou a~model na ich základe
@@ -556,7 +552,7 @@ komplexnejších informácií napr. URL adresy, sériové čísla alebo konfigur
 parametre. Ich výhodou je silná korekcia chýba, ktorá umožňuje prečítať kód aj
 pri čiastočnom poškodení alebo znečistení povrchu.
 
-\subsection{Fiduciálne markery -- AprilTag, ArUco, STag}
+\subsection{Fiduciálne markery -- AprilTag, ArUco}
 Fiduciálne markery sú špeciálne navrhnuté pre potreby počítačového videnia a
 robotiky. Na rozdiel od QR kódov nie je ich primárnym cieľom prenos veľkého
 objemu dát, ale presná lokalizácia v 3D priestore.
@@ -569,7 +565,7 @@ ROS je ich integrácia štandardom pri vývoji:
       \item \textbf{Dronov v skladoch:} Kde umožňujú presné pristávanie na nabíjacích staniciach alebo navigáciu v priestoroch bez signálu GPS, pričom dron dokáže v reálnom čase určiť svoju polohu a náklon voči markeru.
       \item \textbf{Kolaboratívnych robotov:} Pri navádzaní na presnú pozíciu.
 \end{itemize}
-Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a perspektívnemu skresleniu, zatiaľ čo STag prináša zvýšenú stabilitu a presnosť pri určovaní orientácie.
+Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a perspektívnemu skresleniu.
 
 \subsection{3D identifikátory}
 V prostrediach priemyselných podnikov a logistických reťazcov, kde sú si entity
@@ -577,6 +573,13 @@ tvarovo a rozmerovo blízke, sa ako perspektívne riešenie javia unikátne 3D
 identifikátory. Na Fakulte elektrotechniky a informatiky STU bol vyvinutý
 systém programaticky generovaných 3D identifikátorov, ktoré sú optimalizované
 pre systémy zmiešanej a rozšírenej reality.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/3D_identifikator.jpg}
+    \caption{Fyzický 3D identifikátor vyrobený pomocou 3D tlače}
+    \label{fig:3d_identifikator}
+\end{figure}
 
 \subsubsection{Princíp a štruktúra}
 Navrhnutý 3D identifikátor má tvar kocky, ktorá je vnútorne vyskladaná z
@@ -589,6 +592,8 @@ Hlavné technické výhody tohto riešenia sú:
       \item \textbf{Odolnosť voči falšovaniu:} Vďaka komplexnej vnútornej členitosti a 3D geometrii sú tieto identifikátory výrazne náročnejšie na replikáciu než bežné 2D identifikátory.
       \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
 \end{itemize}
+
+
 
 \section{Špecifikácia požiadaviek systému}
 
@@ -1194,149 +1199,140 @@ naďalej vyhľadávané lokálne z~vektorovej databázy a odovzdávané modelu a
 súčasť promptu. Mení sa iba vrstva generovania odpovede, ktorá prechádza
 z~lokálne bežiaceho modelu na cloudové \acrshort{api}.
 
-
 \section{Návrh architektúry systému}
-Systém je navrhnutý ako distribuovaná aplikácia skladajúca sa z viacerých 
-vzájomne prepojených vrstiev. Každá vrstva plní špecifickú úlohu a komunikuje 
-so susednými vrstvami prostredníctvom jasne definovaných rozhraní. Jadro 
-systému beží na edge zariadení umiestenom priamo v prevádzke a zabezpečuje 
-plnú funkčnosť aj bez pripojenia k internetu. Mobilná aplikácia komunikuje 
-výhradne v rámci lokálnej siete závodu a v súčasnosti sa pripojenie na internet využíva
-len pre účely AI asistenta. Ak by sme využívali lokálne spustiteľný jazykový model, komunikácia
-s AI asistentom by prebiehala výhradne v rámci lokálnej siete a celý systém by bol izolovaný.
-Nasledujúce podkapitoly popisujú celkovú štruktúru systému, spôsob 
-nasadenia jednotlivých komponentov, ich vzájomnú komunikáciu a formát ukladania dát.
+Systém je navrhnutý ako distribuovaná aplikácia skladajúca sa z viacerých
+vzájomne prepojených vrstiev. Každá vrstva plní špecifickú úlohu a komunikuje
+so susednými vrstvami prostredníctvom jasne definovaných rozhraní. Jadro
+systému beží na edge zariadení umiestenom priamo v prevádzke a zabezpečuje plnú
+funkčnosť aj bez pripojenia k internetu. Mobilná aplikácia komunikuje výhradne
+v rámci lokálnej siete závodu a v súčasnosti sa pripojenie na internet využíva
+len pre účely AI asistenta. Ak by sme využívali lokálne spustiteľný jazykový
+model, komunikácia s AI asistentom by prebiehala výhradne v rámci lokálnej
+siete a celý systém by bol izolovaný. Nasledujúce podkapitoly popisujú celkovú
+štruktúru systému, spôsob nasadenia jednotlivých komponentov, ich vzájomnú
+komunikáciu a formát ukladania dát.
 
 \subsection{Architektúra komponentov systému}
-Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia 
-Flutter, ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová 
-vrstva tvorená dvoma službami FastAPI. Hlavnou službou zabezpečujúcou 
-autentifikáciu, správu relácií, riadenie zariadení a samostatnou službou 
-AI asistenta s RAG pipeline. Tretím komponentom je MQTT broker Mosquitto, 
-ktorý sprostredkúva asynchrónnu komunikáciu medzi backendom a Node-RED.
-Štvrtým je Node-RED, ktorý premosťuje svet priemyselnej komunikácie so 
-svetom IT a periodicky číta dáta z PLC prostredníctvom S7 protokolu. 
-Posledným komponentom je samotné PLC Siemens S7-1200, ktoré fyzicky 
-ovláda zariadenia na výrobnej linke. Všetky tieto komponenty okrem 
-mobilnej aplikácie bežia ako Docker kontajnery na edge zariadení. 
-Jediné externé volanie smeruje z AI služby na rozhranie Anthropic API.
+Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia
+Flutter, ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová
+vrstva tvorená dvoma službami FastAPI. Hlavnou službou zabezpečujúcou
+autentifikáciu, správu relácií, riadenie zariadení a samostatnou službou AI
+asistenta s RAG pipeline. Tretím komponentom je MQTT broker Mosquitto, ktorý
+sprostredkúva asynchrónnu komunikáciu medzi backendom a Node-RED. Štvrtým je
+Node-RED, ktorý premosťuje svet priemyselnej komunikácie so svetom IT a
+periodicky číta dáta z PLC prostredníctvom S7 protokolu. Posledným komponentom
+je samotné PLC Siemens S7-1200, ktoré fyzicky ovláda zariadenia na výrobnej
+linke. Všetky tieto komponenty okrem mobilnej aplikácie bežia ako Docker
+kontajnery na edge zariadení. Jediné externé volanie smeruje z AI služby na
+rozhranie Anthropic API.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{img/architektura_systemu.pdf}
-    \caption{Diagram architektúry systému a komunikácia medzi komponentmi}
-    \label{fig:architecture}
+      \centering
+      \includegraphics[width=\textwidth]{img/architektura_systemu.pdf}
+      \caption{Diagram architektúry systému a komunikácia medzi komponentmi}
+      \label{fig:architecture}
 \end{figure}
 
-Mobilná aplikácia komunikuje s hlavnou FastAPI službou cez REST API 
-a prijíma aktualizácie stavu zariadení cez WebSocket. Príkazy odoslané 
-z aplikácie putujú cez backend do MQTT brokera a ďalej do Node-RED, 
-ktorý ich zapíše do PLC. Spätná väzba prechádza tou istou cestou 
-v opačnom smere. Dáta zo senzorov PLC číta Node-RED periodicky 
-a publikuje ich do príslušných MQTT tém, odkiaľ ich backend preposiela 
-pripojeným klientom cez WebSocket.
+Mobilná aplikácia komunikuje s hlavnou FastAPI službou cez REST API a prijíma
+aktualizácie stavu zariadení cez WebSocket. Príkazy odoslané z aplikácie putujú
+cez backend do MQTT brokera a ďalej do Node-RED, ktorý ich zapíše do PLC.
+Spätná väzba prechádza tou istou cestou v opačnom smere. Dáta zo senzorov PLC
+číta Node-RED periodicky a publikuje ich do príslušných MQTT tém, odkiaľ ich
+backend preposiela pripojeným klientom cez WebSocket.
 
 \subsection{Fyzická topológia systému}
-Fyzická topológia systému vychádza z požiadavky na lokálnu prevádzku
-bez závislosti od externej infraštruktúry. Celá komunikácia prebieha
-v rámci lokálnej siete medzi mobilnými zariadeniami, edge zariadením
-a riadiacimi systémami výrobných liniek. Schéma fyzickej architektúry
-je znázornená na obrázku \ref{fig:fyzicka_architektura}.
+Fyzická topológia systému vychádza z požiadavky na lokálnu prevádzku bez
+závislosti od externej infraštruktúry. Celá komunikácia prebieha v rámci
+lokálnej siete medzi mobilnými zariadeniami, edge zariadením a riadiacimi
+systémami výrobných liniek. Schéma fyzickej architektúry je znázornená na
+obrázku \ref{fig:fyzicka_architektura}.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{img/fyzicka_architektura.pdf}
-    \caption{Fyzická topológia systému}
-    \label{fig:fyzicka_architektura}
+      \centering
+      \includegraphics[width=\textwidth]{img/fyzicka_architektura.pdf}
+      \caption{Fyzická topológia systému}
+      \label{fig:fyzicka_architektura}
 \end{figure}
 
-Mobilné zariadenia sa pripájajú k edge zariadeniu bezdrôtovo cez WiFi.
-Voľba bezdrôtového pripojenia vychádza z charakteru práce operátora,
-ktorý sa pohybuje po výrobnej hale a potrebuje mať prístup k systému
-kdekoľvek v jej dosahu. Edge zariadenie je prepojené s Ethernet switchom,
-na ktorý sú napojené riadiace systémy výrobných liniek. Edge zariadenie
-plní úlohu centrálneho uzla, beží na ňom backend aj AI asistent
-a všetka logika spracovania príkazov sa vykonáva lokálne (okrem LLM, v práci sme zvolili externé API). Architektúra
-počíta s pripojením viacerých riadiacich systémov, čo umožňuje rozšírenie
-na ďalšie výrobné linky bez zmeny základnej topológie. V súčasnej
-implementácii je na switch napojený jeden riadiaci systém Siemens S7-1200.
-
+Mobilné zariadenia sa pripájajú k edge zariadeniu bezdrôtovo cez WiFi. Voľba
+bezdrôtového pripojenia vychádza z charakteru práce operátora, ktorý sa
+pohybuje po výrobnej hale a potrebuje mať prístup k systému kdekoľvek v jej
+dosahu. Edge zariadenie je prepojené s Ethernet switchom, na ktorý sú napojené
+riadiace systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla,
+beží na ňom backend aj AI asistent a všetka logika spracovania príkazov sa
+vykonáva lokálne (okrem LLM, v práci sme zvolili externé API). Architektúra
+počíta s pripojením viacerých riadiacich systémov, čo umožňuje rozšírenie na
+ďalšie výrobné linky bez zmeny základnej topológie. V súčasnej implementácii je
+na switch napojený jeden riadiaci systém Siemens S7-1200.
 
 \subsection{Štruktúra MQTT tém}
 
-Komunikácia medzi backend službou, Node-RED a zariadeniami prebieha
-cez štruktúrované MQTT témy. Všetky témy zdieľajú spoločný prefix
-\texttt{plc}, za ktorým nasleduje identifikátor zariadenia vo formáte
-\texttt{device\_\{id\}}, kde \texttt{id} zodpovedá ArUco identifikátoru
-fyzického zariadenia. Táto štruktúra umožňuje systému jednoznačne
-smerovať správy na konkrétne zariadenie a zároveň odberateľom
-filtrovať témy.
+Komunikácia medzi backend službou, Node-RED a zariadeniami prebieha cez
+štruktúrované MQTT témy. Všetky témy zdieľajú spoločný prefix \texttt{plc}, za
+ktorým nasleduje identifikátor zariadenia vo formáte \texttt{device\_\{id\}},
+kde \texttt{id} zodpovedá ArUco identifikátoru fyzického zariadenia. Táto
+štruktúra umožňuje systému jednoznačne smerovať správy na konkrétne zariadenie
+a zároveň odberateľom filtrovať témy.
 
 \dirtree{%
-.1 plc/.
-.2 device\_\{id\}/.
-.3 data \DTcomment{stav zariadenia \quad Node-RED -> backend}.
-.3 status \DTcomment{online/offline \quad\quad Node-RED -> backend}.
-.3 commands/.
-.4 \{prikaz\} \DTcomment{riadiaci prikaz \quad backend -> Node-RED}.
+      .1 plc/.
+      .2 device\_\{id\}/.
+      .3 data \DTcomment{stav zariadenia \quad Node-RED -> backend}.
+      .3 status \DTcomment{online/offline \quad\quad Node-RED -> backend}.
+      .3 commands/.
+      .4 \{prikaz\} \DTcomment{riadiaci prikaz \quad backend -> Node-RED}.
 }
 
 \begin{table}[H]
-\centering
-\caption{Prehľad MQTT tém}
-\label{tab:mqtt_topics}
-\begin{tabular}{|l|l|l|p{5cm}|}
-\hline
-\textbf{Téma} & \textbf{Vydavateľ} & \textbf{Odberateľ} & \textbf{Popis} \\
-\hline
-\texttt{plc/device\_\{id\}/data}
-  & Node-RED & Backend & Aktuálne hodnoty premenných zariadenia \\
-\hline
-\texttt{plc/device\_\{id\}/status}
-  & Node-RED & Backend & Stav pripojenia zariadenia (online/offline) \\
-\hline
-\texttt{plc/device\_\{id\}/commands/\#}
-  & Backend & Node-RED & Riadiaci príkaz smerovaný na zariadenie \\
-\hline
-\end{tabular}
+      \centering
+      \caption{Prehľad MQTT tém}
+      \label{tab:mqtt_topics}
+      \begin{tabular}{|l|l|l|p{5cm}|}
+            \hline
+            \textbf{Téma} & \textbf{Vydavateľ} & \textbf{Odberateľ} & \textbf{Popis}                              \\
+            \hline
+            \texttt{plc/device\_\{id\}/data}
+                          & Node-RED           & Backend            & Aktuálne hodnoty premenných zariadenia      \\
+            \hline
+            \texttt{plc/device\_\{id\}/status}
+                          & Node-RED           & Backend            & Stav pripojenia zariadenia (online/offline) \\
+            \hline
+            \texttt{plc/device\_\{id\}/commands/\#}
+                          & Backend            & Node-RED           & Riadiaci príkaz smerovaný na zariadenie     \\
+            \hline
+      \end{tabular}
 \end{table}
 
-Backend pri štarte subscribuje na tému \texttt{plc/\#}, čím prijíma
-správy zo všetkých zariadení naraz. Node-RED subscribuje selektívne
-len na témy \texttt{commands} pre zariadenia, ktoré spravuje.
-Príkazy sú publikované s QoS 1, čím je zaručené doručenie aspoň raz.
-
-
-
-
+Backend pri štarte subscribuje na tému \texttt{plc/\#}, čím prijíma správy zo
+všetkých zariadení naraz. Node-RED subscribuje selektívne len na témy
+\texttt{commands} pre zariadenia, ktoré spravuje. Príkazy sú publikované s QoS
+1, čím je zaručené doručenie aspoň raz.
 
 \section{Implementácia backendu}
-Backend systému tvorí dvojica nezávislých FastAPI služieb bežiacich
-v prostredí Docker. Hlavná služba zabezpečuje autentifikáciu,
-správu zariadení a spracovanie príkazov. Druhá služba je určená
-výhradne pre AI asistenta. Obe služby komunikujú s mobilnou
-aplikáciou cez REST API, pričom hlavná služba poskytuje navyše
-WebSocket kanál pre aktualizácie stavu zariadení.
-V nasledujúcich podkapitolách popisujeme implementáciu jednotlivých funkcionalít backendu,
-začínajúc autentifikáciou a RBAC, cez API endpointy, mechanizmus relácií, command lifecycle, 
-idempotenciu príkazov až po generátor ArUco identifikátorov a export identifikátorov vo formáte STL vhodnom pre 3D tlač.
+Backend systému tvorí dvojica nezávislých FastAPI služieb bežiacich v prostredí
+Docker. Hlavná služba zabezpečuje autentifikáciu, správu zariadení a
+spracovanie príkazov. Druhá služba je určená výhradne pre AI asistenta. Obe
+služby komunikujú s mobilnou aplikáciou cez REST API, pričom hlavná služba
+poskytuje navyše WebSocket kanál pre aktualizácie stavu zariadení. V
+nasledujúcich podkapitolách popisujeme implementáciu jednotlivých funkcionalít
+backendu, začínajúc autentifikáciou a RBAC, cez API endpointy, mechanizmus
+relácií, životný cyklus príkazov a ochranu prístupu až po generátor ArUco
+identifikátorov a export identifikátorov vo formáte STL vhodnom pre 3D tlač.
 
 \subsection{Autentifikácia a RBAC}
 
-Systém používa autentifikáciu pomocou JWT tokenov podľa štandardu
-OAuth2. Po úspešnom prihlásení server vygeneruje
-token podpísaný zdieľaným tajným kľúčom algoritmom HS256. Token
-obsahuje identifikátor používateľa a čas vypršania platnosti.
-Heslá sú uložené výhradne ako bcrypt hash.
+Systém používa autentifikáciu pomocou JWT tokenov podľa štandardu OAuth2. Po
+úspešnom prihlásení server vygeneruje token podpísaný zdieľaným tajným kľúčom
+algoritmom HS256. Token obsahuje identifikátor používateľa a čas vypršania
+platnosti. Heslá sú uložené výhradne ako bcrypt hash.
 
-Registrácia je verejne dostupná, avšak nový účet je predvolene
-neaktívny. Prístup do systému získa až po schválení administrátorom,
-ktorý zároveň priradí rolu. Táto dvojfázová registrácia zabraňuje
-neoprávnenému vstupu do systému.
+Registrácia je verejne dostupná, avšak nový účet je predvolene neaktívny.
+Prístup do systému získa až po schválení administrátorom, ktorý zároveň priradí
+rolu. Táto dvojfázová registrácia zabraňuje neoprávnenému vstupu do systému.
 
-Oprávnenia sú riadené štyrmi rolami. Každý chránený endpoint
-deklaruje požadovanú rolu ako FastAPI závislosť, čo umožňuje
-jednotnú kontrolu prístupu bez duplicitnej logiky.
+Oprávnenia sú riadené štyrmi rolami. Každý chránený endpoint deklaruje
+požadovanú rolu ako FastAPI závislosť, čo umožňuje jednotnú kontrolu prístupu
+bez duplicitnej logiky.
 
 \begin{lstlisting}[language=Python, caption={Závislosti pre kontrolu rolí}]
 async def get_line_operator(user: User = Depends(get_current_user)):
@@ -1348,190 +1344,310 @@ async def get_manager_or_admin(user: User = Depends(get_current_user)):
     return user
 \end{lstlisting}
 
-
 \begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Funkcia} & \textbf{Operátor} & \textbf{Manažér} & \textbf{Údržbár} & \textbf{Admin} \\
-\hline
-Dashboard, nastavenia, AI asistent & \checkmark & \checkmark & \checkmark & \checkmark \\
-\hline
-ArUco skenovanie a ovládanie linky & \checkmark &            & \checkmark & \checkmark \\
-\hline
-Zoznam a správa zariadení          &            & \checkmark & \checkmark & \checkmark \\
-\hline
-Log príkazov                       &            & \checkmark & \checkmark & \checkmark \\
-\hline
-Znalostná báza                     &            & \checkmark & \checkmark & \checkmark \\
-\hline
-Správa používateľov                &            & \checkmark &            & \checkmark \\
-\hline
+      \hline
+      \textbf{Funkcia}                   & \textbf{Operátor} & \textbf{Manažér} & \textbf{Údržbár} & \textbf{Admin} \\
+      \hline
+      Dashboard, nastavenia, AI asistent & \checkmark        & \checkmark       & \checkmark       & \checkmark     \\
+      \hline
+      ArUco skenovanie a ovládanie linky & \checkmark        &                  & \checkmark       & \checkmark     \\
+      \hline
+      Zoznam a správa zariadení          &                   & \checkmark       & \checkmark       & \checkmark     \\
+      \hline
+      Log príkazov                       &                   & \checkmark       & \checkmark       & \checkmark     \\
+      \hline
+      Znalostná báza                     &                   & \checkmark       & \checkmark       & \checkmark     \\
+      \hline
+      Správa používateľov                &                   & \checkmark       &                  & \checkmark     \\
+      \hline
 \end{tabular}
 
-
-
 \subsection{API endpointy}
-Backend poskytuje REST API rozdelené do šiestich skupín podľa
-funkčnej oblasti. Endpointy pre AI asistenta sú dostupné na
-samostatnej službe počúvajúcej na porte 8100, ostatné na porte 8000.
-Okrem REST komunikácie poskytuje backend WebSocket endpoint
-pre real-time aktualizácie stavu zariadenia.
+Backend poskytuje REST API rozdelené do šiestich skupín podľa funkčnej oblasti.
+Endpointy pre AI asistenta sú dostupné na samostatnej službe počúvajúcej na
+porte 8100, ostatné na porte 8000. Okrem REST komunikácie poskytuje backend
+WebSocket endpoint pre real-time aktualizácie stavu zariadenia.
 
 \begin{table}[H]
-\centering
-\caption{Prehľad API endpointov}
-\label{tab:api_endpoints}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{Metóda} & \textbf{Endpoint} & \textbf{Popis} & \textbf{Rola} \\
-\hline
-\multicolumn{4}{|l|}{\textit{Autentifikácia — /auth}} \\
-\hline
-POST & /auth/login           & Prihlásenie, vracia JWT token     & — \\
-POST & /auth/register        & Registrácia nového účtu           & — \\
-GET  & /auth/me              & Aktuálny prihlásený používateľ    & všetci \\
-PUT  & /auth/me              & Úprava mena a priezviska          & všetci \\
-POST & /auth/change-password & Zmena hesla                       & všetci \\
-\hline
-\multicolumn{4}{|l|}{\textit{Zariadenia — /plc}} \\
-\hline
-GET    & /plc/devices                    & Zoznam zariadení          & všetci \\
-POST   & /plc/devices                    & Vytvorenie zariadenia     & admin, údržbár \\
-GET    & /plc/devices/\{id\}             & Detail zariadenia         & všetci \\
-PUT    & /plc/devices/\{id\}             & Úprava zariadenia         & admin, údržbár \\
-DELETE & /plc/devices/\{id\}             & Vymazanie zariadenia      & admin, údržbár \\
-POST   & /plc/devices/\{id\}/command/\{cmd\} & Odoslanie príkazu    & admin, údržbár, operátor \\
-GET    & /plc/stats                      & Dashboard štatistiky      & všetci \\
-WS     & /plc/ws/\{id\}                  & Real-time stav + príkazy  & všetci \\
-\hline
-\multicolumn{4}{|l|}{\textit{Relácie — /device-sessions}} \\
-\hline
-POST  & /device-sessions/\{id\}/join  & Prihlásenie na zariadenie  & admin, údržbár, operátor \\
-POST & /device-sessions/\{id\}/leave & Odhlásenie zo zariadenia   & všetci \\
-\hline
-\multicolumn{4}{|l|}{\textit{Logy — /command-logs}} \\
-\hline
-GET & /command-logs              & Logy s filtrami  & admin, manažér, údržbár \\
-GET & /command-logs/device/\{id\} & Logy zariadenia & admin, manažér, údržbár \\
-\hline
-\multicolumn{4}{|l|}{\textit{Používatelia — /users}} \\
-\hline
-GET    & /users                       & Zoznam používateľov    & admin, manažér \\
-POST   & /users/\{id\}/approve        & Schválenie + rola      & admin, manažér \\
-PUT    & /users/\{id\}                & Úprava účtu            & admin, manažér \\
-POST   & /users/\{id\}/reset-password & Reset hesla            & admin, manažér \\
-DELETE & /users/\{id\}                & Vymazanie účtu         & admin, manažér \\
-\hline
-\multicolumn{4}{|l|}{\textit{ArUco — /aruco}} \\
-\hline
-GET & /aruco/next-id        & Nasledujúce voľné ID        & všetci \\
-GET & /aruco/preview/\{id\} & Náhľad markera              & všetci \\
-GET & /aruco/png/\{id\}     & Stiahnutie markera ako PNG  & všetci \\
-GET & /aruco/stl/\{id\}     & Stiahnutie markera ako STL  & všetci \\
-\hline
-\multicolumn{4}{|l|}{\textit{AI asistent — port 8100}} \\
-\hline
-POST   & /chat       & Správa AI asistentovi          & všetci \\
-GET    & /kb         & Zoznam záznamov znalostnej bázy & admin, manažér, údržbár \\
-POST   & /kb         & Pridanie záznamu               & admin, manažér, údržbár \\
-POST   & /kb/upload  & Nahranie súboru do KB          & admin, manažér, údržbár \\
-DELETE & /kb/\{id\}  & Vymazanie záznamu              & admin, manažér, údržbár \\
-\hline
-\end{tabular}%
-}
+      \centering
+      \caption{Prehľad API endpointov}
+      \label{tab:api_endpoints}
+      \resizebox{\textwidth}{!}{%
+            \begin{tabular}{|l|l|l|l|}
+                  \hline
+                  \textbf{Metóda} & \textbf{Endpoint}                   & \textbf{Popis}                  & \textbf{Rola}            \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{Autentifikácia — /auth}}                                                              \\
+                  \hline
+                  POST            & /auth/login                         & Prihlásenie, vracia JWT token   & —                        \\
+                  POST            & /auth/register                      & Registrácia nového účtu         & —                        \\
+                  GET             & /auth/me                            & Aktuálny prihlásený používateľ  & všetci                   \\
+                  PUT             & /auth/me                            & Úprava mena a priezviska        & všetci                   \\
+                  POST            & /auth/change-password               & Zmena hesla                     & všetci                   \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{Zariadenia — /plc}}                                                                   \\
+                  \hline
+                  GET             & /plc/devices                        & Zoznam zariadení                & všetci                   \\
+                  POST            & /plc/devices                        & Vytvorenie zariadenia           & admin, údržbár           \\
+                  GET             & /plc/devices/\{id\}                 & Detail zariadenia               & všetci                   \\
+                  PUT             & /plc/devices/\{id\}                 & Úprava zariadenia               & admin, údržbár           \\
+                  DELETE          & /plc/devices/\{id\}                 & Vymazanie zariadenia            & admin, údržbár           \\
+                  POST            & /plc/devices/\{id\}/command/\{cmd\} & Odoslanie príkazu               & admin, údržbár, operátor \\
+                  GET             & /plc/stats                          & Dashboard štatistiky            & všetci                   \\
+                  WS              & /plc/ws/\{id\}                      & Real-time stav + príkazy        & všetci                   \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{Relácie — /device-sessions}}                                                          \\
+                  \hline
+                  POST            & /device-sessions/\{id\}/join        & Prihlásenie na zariadenie       & admin, údržbár, operátor \\
+                  POST            & /device-sessions/\{id\}/leave       & Odhlásenie zo zariadenia        & všetci                   \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{Logy — /command-logs}}                                                                \\
+                  \hline
+                  GET             & /command-logs                       & Logy s filtrami                 & admin, manažér, údržbár  \\
+                  GET             & /command-logs/device/\{id\}         & Logy zariadenia                 & admin, manažér, údržbár  \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{Používatelia — /users}}                                                               \\
+                  \hline
+                  GET             & /users                              & Zoznam používateľov             & admin, manažér           \\
+                  POST            & /users/\{id\}/approve               & Schválenie + rola               & admin, manažér           \\
+                  PUT             & /users/\{id\}                       & Úprava účtu                     & admin, manažér           \\
+                  POST            & /users/\{id\}/reset-password        & Reset hesla                     & admin, manažér           \\
+                  DELETE          & /users/\{id\}                       & Vymazanie účtu                  & admin, manažér           \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{ArUco — /aruco}}                                                                      \\
+                  \hline
+                  GET             & /aruco/next-id                      & Nasledujúce voľné ID            & všetci                   \\
+                  GET             & /aruco/preview/\{id\}               & Náhľad markera                  & všetci                   \\
+                  GET             & /aruco/png/\{id\}                   & Stiahnutie markera ako PNG      & všetci                   \\
+                  GET             & /aruco/stl/\{id\}                   & Stiahnutie markera ako STL      & všetci                   \\
+                  \hline
+                  \multicolumn{4}{|l|}{\textit{AI asistent — port 8100}}                                                             \\
+                  \hline
+                  POST            & /chat                               & Správa AI asistentovi           & všetci                   \\
+                  GET             & /kb                                 & Zoznam záznamov znalostnej bázy & admin, manažér, údržbár  \\
+                  POST            & /kb                                 & Pridanie záznamu                & admin, manažér, údržbár  \\
+                  POST            & /kb/upload                          & Nahranie súboru do KB           & admin, manažér, údržbár  \\
+                  DELETE          & /kb/\{id\}                          & Vymazanie záznamu               & admin, manažér, údržbár  \\
+                  \hline
+            \end{tabular}%
+      }
 \end{table}
 
-
-
 \subsection{Mechanizmus relácií}
-Pred ovládaním zariadenia sa musí používateľ na neho prihlásiť.
-Relácia je väzba medzi používateľom a zariadením, ktorá zabraňuje
-súčasnému ovládaniu jedného zariadenia viacerými používateľmi.
-Na každom zariadení môže byť aktívna práve jedna relácia.
+Pred ovládaním zariadenia sa musí používateľ na neho prihlásiť. Relácia je
+väzba medzi používateľom a zariadením, ktorá zabraňuje súčasnému ovládaniu
+jedného zariadenia viacerými používateľmi. Na každom zariadení môže byť aktívna
+práve jedna relácia.
 
-Prihlásenie prebieha volaním \texttt{POST /devices/\{id\}/login}.
-Backend overí, či je zariadenie voľné. Ak áno, vytvorí novú reláciu.
-Ak je zariadenie obsadené, správanie závisí od parametra
-\texttt{force} a od roly aktuálneho držiteľa relácie.
-Zariadenie obsadené používateľom s rolou údržbára nemôže byť
-prebraté žiadnym iným používateľom. Táto ochrana zabraňuje
-prerušeniu servisného zásahu operátorom. Vlastnú reláciu môže ukončiť 
-prihlásený používateľ odhlásením sa. Cudziu reláciu môže ukončiť výhradne
-administrátor.
+Prihlásenie prebieha volaním \texttt{POST /devices/\{id\}/login}. Backend
+overí, či je zariadenie voľné. Ak áno, vytvorí novú reláciu. Ak je zariadenie
+obsadené, správanie závisí od parametra \texttt{force} a od roly aktuálneho
+držiteľa relácie. Zariadenie obsadené používateľom s rolou údržbára nemôže byť
+prebraté žiadnym iným používateľom. Táto ochrana zabraňuje prerušeniu
+servisného zásahu operátorom. Vlastnú reláciu môže ukončiť prihlásený
+používateľ odhlásením sa. Cudziu reláciu môže ukončiť výhradne administrátor.
 
+\subsection{Životný cyklus príkazu}
 
+Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na fyzickom
+zariadení. Používateľ ho môže odoslať dvoma cestami: cez REST endpoint alebo
+cez WebSocket spojenie.
 
-
-\subsection{Command lifecycle}
-
-Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví
-na fyzickom zariadení. Používateľ ho môže odoslať dvoma cestami:
-cez REST endpoint alebo cez WebSocket spojenie.
-
-Pri WebSocket ceste backend príkaz najskôr overí voči konfigurácii
-zariadenia. Kontroluje sa existencia príkazu a pre numerické
-a výčtové typy aj platnosť hodnoty. Ak zariadenie nemá
-konfiguráciu definovanú, validácia sa preskočí. REST endpoint
-validáciu nevykonáva a príkaz odošle priamo.
+Pri WebSocket ceste backend príkaz najskôr overí voči konfigurácii zariadenia.
+Kontroluje sa existencia príkazu a pre numerické a výčtové typy aj platnosť
+hodnoty. Ak zariadenie nemá konfiguráciu definovanú, validácia sa preskočí.
+REST endpoint validáciu nevykonáva a príkaz odošle priamo.
 
 Po validácii backend publikuje správu na MQTT tému
-\texttt{plc/device\_\{id\}/commands/\{cmd\}}. Mosquitto broker
-správu doručí Node-RED, ktorý ju preloží do S7 protokolu
-a zapíše príslušnú premennú v PLC. Volajúci dostane späť
-potvrdenie \texttt{command\_ack} s príznakom úspechu doručenia
-na broker. Toto potvrdenie nezaručuje vykonanie príkazu na PLC.
-Skutočná zmena stavu sa prejaví v ďalšom cykle čítania,
-keď Node-RED publikuje aktualizované hodnoty na tému
-\texttt{plc/device\_\{id\}/data} a backend ich pošle
-cez WebSocket do aplikácie.
+\texttt{plc/device\_\{id\}/commands/\{cmd\}}. Mosquitto broker správu doručí
+Node-RED, ktorý ju preloží do S7 protokolu a zapíše príslušnú premennú v PLC.
+Volajúci dostane späť potvrdenie \texttt{command\_ack} s príznakom úspechu
+doručenia na broker. Toto potvrdenie nezaručuje vykonanie príkazu na PLC.
+Skutočná zmena stavu sa prejaví v ďalšom cykle čítania, keď Node-RED publikuje
+aktualizované hodnoty na tému \texttt{plc/device\_\{id\}/data} a backend ich
+pošle cez WebSocket do aplikácie.
 
-Každý príkaz je bez ohľadu na výsledok zaznamenávaný
-do tabuľky \texttt{command\_logs} s identifikátorom
-používateľa, zariadenia, zdrojovým kanálom a príznakom
-úspechu doručenia.
+Každý príkaz je bez ohľadu na výsledok zaznamenávaný do tabuľky
+\texttt{command\_logs} s identifikátorom používateľa, zariadenia, zdrojovým
+kanálom a príznakom úspechu doručenia.
 
+\subsection{Ochrana prístupu k zariadeniu}
 
+V priemyselnom prostredí je bezpečnosť kritická požiadavka. Aktivácia
+zariadenia počas servisného zásahu môže spôsobiť poranenie alebo poškodenie.
+Systém preto implementuje mechanizmus exkluzívneho prístupu, ktorý zabraňuje
+súčasnému ovládaniu zariadenia viacerými používateľmi.
 
+Na každom zariadení môže byť aktívna práve jedna relácia. Pokus o prihlásenie
+na obsadené zariadenie skončí chybou \texttt{409 occupied}, pričom odpoveď
+obsahuje informáciu o tom, kto zariadenie práve používa. Tým má nový používateľ
+možnosť kontaktovať aktuálneho držiteľa pred prípadným prevzatím.
 
-\subsection{Idempotencia príkazov}
+Osobitné postavenie má rola údržbára. Reláciu údržbára nemôže ukončiť ani
+prevziať žiadny iný používateľ bez ohľadu na parameter \texttt{force}. Táto
+ochrana vychádza z bezpečnostných požiadaviek priemyselného prostredia — ak
+údržbár pracuje pri zariadení, nikto iný nesmie zariadenie uviesť do chodu.
 
-\subsection{Generátor ArUco + STL export}
+\begin{lstlisting}[language=Python, caption={Ochrana relácie údržbára}]
+if active.user.role == "maintenance":
+    raise HTTPException(409, "maintenance_locked")
+\end{lstlisting}
 
+Pre ostatné roly systém umožňuje núdzové prevzatie zariadenia parametrom
+\texttt{force=true}. Táto možnosť je určená pre prípad, keď sa predošlý
+používateľ zabudol odhlásiť. Aktuálna relácia sa ukončí a vytvorí sa nová.
+Každé prevzatie je zaznamenané v logoch príkazov, čo umožňuje spätné dohľadanie
+zodpovednosti.
 
+\subsection{Generátor ArUco markerov a export do STL}
 
+Pre výrobu fyzických markerov bola implementovaná vlastná Python trieda
+\texttt{ArucoSTLGeneratorVoxelOptimized}, ktorá generuje STL súbor určený na
+dvojfarebnú 3D tlač. Model je navrhnutý tak, aby farebné priradenie v sliceri
+bolo čo najjednoduchšie.
 
-\section{Implementácia AI assistenta}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/ArUco3D.jpg}
+    \caption{ArUco marker tlačený z vygenerovaného STL modelu}
+    \label{fig:Aruco3D}
+\end{figure}
 
-\subsection{RAG pipeline diagram}
+Povrch modelu je rozdelený do troch výškových úrovní. Čierne bunky markera sú
+na základnej výške \texttt{base\_height\_mm}, ohraničovací rám je o
+\texttt{border\_height\_offset\_mm} vyšší a biele bunky sú vyvýšené o
+\texttt{white\_height\_mm}. Pri predvolených hodnotách dosahujú čierne bunky
+výšku 1\,mm a biele 3\,mm.
+
+\section{Implementácia AI asistenta}
+
+Asistent je implementovaný ako samostatná FastAPI služba bežiaca na porte 8100
+v rámci vlastného Docker stacku. Disponuje vlastnou PostgreSQL databázou pre
+záznamy znalostnej bázy a ChromaDB pre vektorové úložisko. Jediné externé
+sieťové volanie celej aplikácie smeruje na Anthropic API pre volanie jazykového
+modelu.
+
+\subsection{RAG pipeline}
+
+Spracovanie každej správy prebieha v niekoľkých krokoch. Najprv sa vykonajú dva
+vyhľadávacie dotazy do ChromaDB: zariadenie-špecifický s filtrom podľa
+\texttt{device\_aruco\_id} a všeobecný bez filtra, pričom každý vráti najviac
+tri najbližšie záznamy. Následne prebehne voliteľné vyhľadávanie na webe
+pomocou DuckDuckGo. Zo získaných kontextov, metadát relácie a histórie
+konverzácie sa zostaví systémový prompt, ktorý sa odošle na Claude API spolu s
+poslednou správou používateľa.
 
 \subsection{Embedovací model}
 
-\subsection{System prompt}
+Na generovanie vektorových reprezentácií textov sa používa model
+\texttt{nomic-embed-text} spúšťaný lokálne cez Ollama. Model beží v rámci
+Docker stacku na edge zariadení a nevyžaduje pripojenie na internet. ChromaDB
+využíva kosínusovú podobnosť ako metriku vyhľadávania. Každý záznam znalostnej
+bázy sa indexuje ako reťazec \texttt{title + content} pri vytvorení aj
+aktualizácii.
+
+\subsection{Systémový prompt}
+
+Asistent vystupuje pod menom PLEXO. Systémový prompt existuje v slovenskej aj
+anglickej verzii podľa jazyka relácie a pred každým volaním modelu sa naplní
+nasledujúcimi sekciami:
+
+\begin{itemize}
+      \item \textbf{AKTUÁLNA RELÁCIA} — meno a rola prihláseného používateľa, prípadne zariadenie na ktoré je prihlásený.
+      \item \textbf{KONTEXT PRE ZARIADENIE} — výsledky vyhľadávania z ChromaDB filtrované podľa ArUco ID zariadenia.
+      \item \textbf{VŠEOBECNÝ KONTEXT} — výsledky vyhľadávania bez filtra zariadenia.
+      \item \textbf{VÝSLEDKY Z INTERNETU} — výstupy z DuckDuckGo, ak boli nájdené.
+\end{itemize}
+
+Pravidlá v prompte zakazujú vymýšľanie faktov a nariaďujú asistentovi, aby sa
+pri prvej správe stručne predstavil. V ďalších správach konverzácie sa
+predstavenie preskakuje.
 
 \subsection{Správa konverzácie}
 
-\subsection{KB management}
+Server je bezstavový. História konverzácie sa neukladá na strane servera, ale
+je súčasťou každého požiadavku zo strany klienta. Služba prijíma pole správ vo
+formáte \texttt{\{role, content\}} a pri zostavovaní volania zahŕňa posledných
+desať výmen. Tento prístup nevyžaduje žiadne serverové úložisko relácií a
+zjednodušuje škálovanie.
 
+\subsection{Správa znalostnej bázy}
 
+Znalostná báza je tvorená textovými záznami uloženými v PostgreSQL. Každý
+záznam má názov, obsah a voliteľne priradené ArUco ID zariadenia. Toto
+priradenie umožňuje vyhľadávanie obsahu filtrovaného pre konkrétne zariadenie,
+čo zvyšuje presnosť odpovedí pri otázkach viazaných na konkrétny stroj.
 
-
+Pri každom vytvorení alebo úprave záznamu sa jeho vektorová reprezentácia
+synchronizuje do ChromaDB operáciou \texttt{upsert}. Mazanie záznamu zrkadlovo
+odstráni aj príslušný vektor. Okrem manuálneho zadania textu API podporuje
+nahranie súboru vo formáte \texttt{.txt}, čo umožňuje import existujúcej
+technickej dokumentácie.
 
 \section{Implementácia frontendu}
 
+Frontend je implementovaný vo Flutter s podporou platformy Android ako
+primárneho cieľa a webového prehliadača pre administrátorský panel. Zdieľa
+takmer všetok kód medzi platformami s výnimkou ArUco skenovania, kde sú použité
+platformovo špecifické implementácie.
+
 \subsection{Stavový manažment}
+
+Aplikácia používa knižnicu Riverpod so vzorcom \texttt{StateNotifier}.
+Centrálnym poskytovateľom je \texttt{authProvider}, ktorý uchováva JWT token,
+objekt prihláseného používateľa a príznaky stavu autentifikácie. Pri štarte
+aplikácie sa volá \texttt{tryRestoreSession}, ktorá overí uložený token volaním
+\texttt{/auth/me}. Ak je token platný, relácia sa obnoví. Pri chybe siete sa
+použijú záložné údaje z lokálneho úložiska, čo umožňuje obmedzený offline
+prístup.
+
+Chatový asistent má vlastného poskytovateľa \texttt{chatProvider}, ktorý
+udržiava zoznam správ a informáciu o práve aktívnom zariadení. Táto informácia
+sa nastavuje pri otvorení stránky ovládania zariadenia a vymazáva pri odchode.
 
 \subsection{ArUco skenovanie}
 
+Skenovanie prebieha v natívnom kóde prostredníctvom balíčka
+\texttt{opencv\_dart}. Každý snímok z kamery dorazí vo formáte YUV420, z
+ktorého sa extrahuje kanál Y ako grayscale obraz. Samotná detekcia beží v Dart
+izolovanom vlákne pomocou \texttt{Isolate.run}, čím sa zabráni blokovaniu
+vykresľovacieho vlákna.
+
+V izolante sa vytvorí detektor s predefinovaným slovníkom
+\texttt{DICT\_5X5\_250} a zavolá sa \texttt{detectMarkers}. Pre každý
+detekovaný marker sa vypočíta plocha Shoelaceovým vzorcom a stred ako relatívna
+poloha v obraze. Výstupom je zoznam detegovaných markerov zoradených od
+najväčšieho po najmenší, kde väčšia plocha znamená bližší marker. Príznak
+\texttt{\_isProcessing} zabraňuje spusteniu ďalšej detekcie kým prebieha
+predchádzajúca.
+
 \subsection{WebSocket pripojenie}
 
-\subsection{Role based UI}
+Po načítaní zariadenia sa nadväzuje WebSocket spojenie cez balíček
+\texttt{web\_socket\_channel}. Server posiela tri typy správ: heartbeat, ktorý
+sa ignoruje, potvrdenie príkazu \texttt{command\_ack} a aktualizáciu hodnôt
+premenných. Pri chybe alebo zatvorení spojenia sa po dvoch sekundách
+automaticky pokúsi o znovupripojenie.
 
+Odosielanie príkazu funguje tak, že sa na WebSocket pošle JSON správa
+\texttt{\{command, value\}} a spustí sa päťsekundový časovač. Ak sa do tohto
+času zmení sledovaná premenná na zariadení, používateľovi sa zobrazí snackbar s
+potvrdenou hodnotou a nameranou latenciou. Ak časovač vyprší skôr, zobrazí sa
+chybové hlásenie.
 
+\subsection{Používateľské rozhranie podľa roly}
 
+Viditeľnosť prvkov rozhrania je riadená pomocnými metódami triedy
+\texttt{AuthUser}. Každá metóda vracia booleovskú hodnotu na základe role
+prihláseného používateľa. Prehľad priradenia je uvedený v
+tabuľke~\ref{tab:rbac}.
 
-
-
-
+V bočnom paneli webového rozhrania sa položky navigácie filtrujú dynamicky.
+Napríklad položka správy zariadení sa zobrazí iba ak platí
+\texttt{canViewDevices}, tlačidlo konfigurácie zariadenia na stránke ovládania
+sa zobrazí iba ak platí \texttt{canManageDevices}. Týmto spôsobom sa rovnaká
+logika RBAC z backendu premietne aj do rozhrania bez potreby duplikovania
+podmienok na viacerých miestach.
 
 \section{Aplikácia a jej funkcionality}
 
@@ -1564,20 +1680,21 @@ prihlásení na zariadenie má používateľ k dispozícii prehľad aktuálneho 
 zariadenia v reálnom čase. Môže sledovať stavy senzorov, aktuálny režim
 prevádzky, stav v ktorom sa zariadenie nachádza, a iné. Okrem sledovania stavu
 môže používateľ zariadenie aj priamo ovládať, napríklad spustiť alebo zastaviť
-cyklus, zmeniť smer pohybu či vykonať reset. Všetky zmeny sa prejavia rádovo v desiatkach milisekúnd,
-čo umožňuje rýchlu reakciu na aktuálnu situáciu v prevádzke. Systém zároveň
-zaznamenáva históriu vykonaných príkazov pre potreby kontroly a auditu.
+cyklus, zmeniť smer pohybu či vykonať reset. Všetky zmeny sa prejavia rádovo v
+desiatkach milisekúnd, čo umožňuje rýchlu reakciu na aktuálnu situáciu v
+prevádzke. Systém zároveň zaznamenáva históriu vykonaných príkazov pre potreby
+kontroly a auditu.
 
 \subsection{Virtuálny asistent PLEXO}
 \textbf{Dostupné pre:} operátor, technik, manažér, administrátor
 
 Virtuálny asistent PLEXO je inteligentný pomocník dostupný priamo v aplikácii.
-Používatelia môžu klásť otázky prirodzeným jazykom, napríklad o aktuálnom
-stave zariadenia, postupe pri riešení poruchy alebo pokynoch na údržbu.
-Asistent odpovedá na základe znalostnej bázy vytvorenej pre konkrétne
-zariadenia a prevádzku. Vďaka tomu má operátor alebo technik potrebné
-informácie vždy po ruke, bez nutnosti listovať v technickej dokumentácii.
-Asistent komunikuje v jazyku nastavenom používateľom v nastaveniach aplikácie.
+Používatelia môžu klásť otázky prirodzeným jazykom, napríklad o aktuálnom stave
+zariadenia, postupe pri riešení poruchy alebo pokynoch na údržbu. Asistent
+odpovedá na základe znalostnej bázy vytvorenej pre konkrétne zariadenia a
+prevádzku. Vďaka tomu má operátor alebo technik potrebné informácie vždy po
+ruke, bez nutnosti listovať v technickej dokumentácii. Asistent komunikuje v
+jazyku nastavenom používateľom v nastaveniach aplikácie.
 
 \subsection{Správa používateľov}
 \textbf{Dostupné pre:} manažér, administrátor
@@ -1596,18 +1713,20 @@ prevádzky.
 Správa zariadení umožňuje udržiavať databázu zariadení aktuálnu a v súlade so
 skutočným stavom prevádzky. Oprávnený používateľ môže do systému pridať nové
 zariadenie, nastaviť jeho parametre a vygenerovať preň ArUco identifikátor.
-Existujúce zariadenia je možné upravovať, resp. meniť, čo sa zobrazuje v ovládacom paneli zariadenia. Taktiež je možné ich zo systému odstrániť, ak boli vyradené z
-prevádzky. Vďaka tejto funkcionalite systém vždy odráža reálny stav zariadení v podniku.
+Existujúce zariadenia je možné upravovať, resp. meniť, čo sa zobrazuje v
+ovládacom paneli zariadenia. Taktiež je možné ich zo systému odstrániť, ak boli
+vyradené z prevádzky. Vďaka tejto funkcionalite systém vždy odráža reálny stav
+zariadení v podniku.
 
 \subsection{Správa znalostnej bázy}
 \textbf{Dostupné pre:} technik, manažér, administrátor
 
 Znalostnú bázu tvorí súbor informácií, z ktorých čerpá virtuálny asistent PLEXO
 pri odpovedaní na otázky používateľov. Oprávnení používatelia môžu obsah
-znalostnej bázy priebežne pridávať nové dokumenty, upravovať existujúce záznamy alebo odstraňovať zastarané informácie.
-Kvalita a aktuálnosť znalostnej bázy priamo ovplyvňuje relevantnosť a presnosť
-odpovedí asistenta, preto je jej pravidelná údržba dôležitou súčasťou prevádzky
-systému.
+znalostnej bázy priebežne pridávať nové dokumenty, upravovať existujúce záznamy
+alebo odstraňovať zastarané informácie. Kvalita a aktuálnosť znalostnej bázy
+priamo ovplyvňuje relevantnosť a presnosť odpovedí asistenta, preto je jej
+pravidelná údržba dôležitou súčasťou prevádzky systému.
 
 \subsection{Nastavenia}
 \textbf{Dostupné pre:} operátor, technik, manažér, administrátor
@@ -1617,12 +1736,6 @@ preferencií. V nastaveniach môže zmeniť jazyk rozhrania, ktorý sa automatic
 uplatní aj na komunikáciu s virtuálnym asistentom PLEXO. Zároveň má možnosť
 zmeniť si svoje prístupové heslo. Tieto nastavenia sú viazané na konkrétny
 používateľský účet a zostávajú zachované aj po opätovnom prihlásení.
-
-
-
-
-
-
 
 \section{Testovanie a meranie}
 
