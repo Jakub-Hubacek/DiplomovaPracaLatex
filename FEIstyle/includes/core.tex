@@ -5,9 +5,10 @@ umožňujúcich vizualizáciu a ovládanie výrobných zariadení. Väčšina z~
 vychádza z~tradičného modelu \acrshort{scada}/\acrshort{hmi} a postupne sa
 rozširuje o~mobilný prístup, cloudovú konektivitu a v~niektorých prípadoch aj
 o~prvky umelej inteligencie. Nasledujúci prehľad analyzuje štyri významné
-komerčné platformy. Posudzované sú nasledovné funkcionality: mobilný prístup k~zariadeniam, identifikácia fyzických
-zariadení, nasadenie na edge, otvorenosť platformy a integrácia
-inteligentného asistenta schopného pracovať s~technickou dokumentáciou.
+komerčné platformy. Posudzované sú nasledovné funkcionality: mobilný prístup
+k~zariadeniam, identifikácia fyzických zariadení, nasadenie na edge, otvorenosť
+platformy a integrácia inteligentného asistenta schopného pracovať s~technickou
+dokumentáciou.
 
 \subsection{Siemens WinCC Unified}
 
@@ -15,21 +16,20 @@ inteligentného asistenta schopného pracovať s~technickou dokumentáciou.
 vizualizačná platforma integrovaná do prostredia TIA Portal, navrhnutá na
 zjednotenie \acrshort{ot} a \acrshort{it} dát v~rámci jedného konzistentného
 systému~\cite{t00}. Platforma je škálovateľná od jedného stroja
-až po rozsiahle distribuované systémy s~prakticky neobmedzeným počtom zariadení. 
+až po rozsiahle distribuované systémy s~prakticky neobmedzeným počtom zariadení.
 
 Prístup k~prevádzkovým dátam je zabezpečený cez webové rozhranie
 \acrshort{html}5, ktoré umožňuje vzdialené monitorovanie z~prehliadača bez
-inštalácie klientskej aplikácie. Platforma obsahuje archív pre
-dlhodobé ukladanie dát a podporuje redundanciu pre vysokú dostupnosť systému.
+inštalácie klientskej aplikácie. Platforma obsahuje archív pre dlhodobé
+ukladanie dát a podporuje redundanciu pre vysokú dostupnosť systému.
 
 Siemens v~rámci TIA Portal ekosystému ponúka aj nástroj \textit{Engineering
-Copilot TIA Standard}~\cite{t01}. Ide o generatívneho \acrshort{ai} asistenta
+      Copilot TIA Standard}~\cite{t01}. Ide o generatívneho \acrshort{ai} asistenta
 pripojeného priamo k~TIA Portal. Tento nástroj dokáže generovať kód
-\acrshort{plc} v~jazyku SCL, vytvárať testy, konfigurovať
-\acrshort{hmi} obrazovky a odpovedať na otázky na základe
-dokumentácie TIA Portal. Jeho zameranie je však výlučne na fázu návrhu a pomáha
-programátorom pri programovaní a konfigurácii, nie operátorovi
-počas prevádzky.
+\acrshort{plc} v~jazyku SCL, vytvárať testy, konfigurovať \acrshort{hmi}
+obrazovky a odpovedať na otázky na základe dokumentácie TIA Portal. Jeho
+zameranie je však výlučne na fázu návrhu a pomáha programátorom pri
+programovaní a konfigurácii, nie operátorovi počas prevádzky.
 
 Z~pohľadu našej práce sú kľúčové tieto body:
 
@@ -57,23 +57,22 @@ odlišuje od väčšiny konkurenčných riešení účtujúcich za každé zaria
 
 Platforma komunikuje s~\acrshort{plc} od Allen-Bradley, Siemens, Mitsubishi,
 Modbus a ďalšími prostredníctvom vstavaných ovládačov a zabudovaného
-\acrshort{opcua} servera. Ignition Gateway beží na štandardnom serveri
-a škálovateľnosť je riešená architektúrou hub-and-spoke, 
-kde centrálny gateway koordinuje viaceré odľahčené inštancie.
+\acrshort{opcua} servera. Ignition Gateway beží na štandardnom serveri a
+škálovateľnosť je riešená architektúrou hub-and-spoke, kde centrálny gateway
+koordinuje viaceré odľahčené inštancie.
 
 Modul \textit{Perspective} poskytuje plnohodnotné webové rozhranie na báze
-\acrshort{html}5, prístupné z~akéhokoľvek zariadenia bez inštalácie klientskej aplikácie.
-Vizualizačné komponenty sú responzívne a optimalizované pre dotykové ovládanie
-na tabletoch a smartfónoch. K~dispozícii je aj mobilná aplikácia
+\acrshort{html}5, prístupné z~akéhokoľvek zariadenia bez inštalácie klientskej
+aplikácie. Vizualizačné komponenty sú responzívne a optimalizované pre dotykové
+ovládanie na tabletoch a smartfónoch. K~dispozícii je aj mobilná aplikácia
 \textit{Ignition Perspective App}.
 
-Pre nasadenie na edge zariadeniach Inductive Automation ponúka
-\textit{Ignition Edge}~\cite{t03}. Odľahčenú verziu so archívom (35
-dní lokálneho ukladania), podporou \acrshort{mqtt} Sparkplug pre synchronizáciu
-dát na centrálny gateway a možnosťou tvorby \acrshort{rest}
-\acrshort{api} priamo na edge zariadení. Ignition Edge teda plní úlohu
-inteligentného premostenia medzi fyzickými zariadeniami a vyššími
-systémovými vrstvami.
+Pre nasadenie na edge zariadeniach Inductive Automation ponúka \textit{Ignition
+      Edge}~\cite{t03}. Odľahčenú verziu so archívom (35 dní lokálneho ukladania),
+podporou \acrshort{mqtt} Sparkplug pre synchronizáciu dát na centrálny gateway
+a možnosťou tvorby \acrshort{rest} \acrshort{api} priamo na edge zariadení.
+Ignition Edge teda plní úlohu inteligentného premostenia medzi fyzickými
+zariadeniami a vyššími systémovými vrstvami.
 
 Z~pohľadu našej práce sú kľúčové tieto body:
 
@@ -106,16 +105,16 @@ orientovaná na digitalizáciu manuálnych výrobných procesov -- sledovanie
 výrobných krokov, zber dát z~pracovísk, kontrolu kvality, vizuálne pracovné
 inštrukcie a sledovateľnosť výroby.
 
-Licenčný model Tulip je účtovaný za interface (zariadenie spúšťajúce Tulip Player).
-Základný plán \textit{Essentials} zahŕňa aplikácie na mobiloch,
+Licenčný model Tulip je účtovaný za interface (zariadenie spúšťajúce Tulip
+Player). Základný plán \textit{Essentials} zahŕňa aplikácie na mobiloch,
 tabletoch, dotykových obrazovkách a nositeľných zariadeniach, pričom vyššie
-plány (\textit{Professional}, \textit{Enterprise}) pridávajú edge konektivitu či
-pokročilú správu rolí.
+plány (\textit{Professional}, \textit{Enterprise}) pridávajú edge konektivitu
+či pokročilú správu rolí.
 
 Pripojenie k~priemyselným zariadeniam je realizované cez doplnkový modul
 \textit{Machine Monitoring} s~podporou \acrshort{opcua}, \acrshort{mqtt} a
-Node-RED. Aplikácia beží vo webovom prehliadači na tabletoch alebo
-iných zariadeniach umiestnených na pracoviskách.
+Node-RED. Aplikácia beží vo webovom prehliadači na tabletoch alebo iných
+zariadeniach umiestnených na pracoviskách.
 
 V~roku 2024 Tulip uzavrel strategickú spoluprácu s~Amazon Web Services a
 predstavil funkciu \textit{Frontline Copilot}~\cite{t05}, postavenú na
@@ -158,16 +157,17 @@ AVEVA Edge Studio a nasadí na Windows alebo Linux, od malých embedded zariaden
 Platforma je interoperabilná s~väčšinou priemyselných zariadení prostredníctvom
 vstavaných ovládačov a natívnej podpory \acrshort{opcua}. Vzdialený prístup je
 zabezpečený webovým rozhraním na založeným na \acrshort{html}5, čo umožňuje
-sledovanie a ovládanie zo smartfónov, tabletov a priemyselných
-panelov bez inštalácie klienta.
+sledovanie a ovládanie zo smartfónov, tabletov a priemyselných panelov bez
+inštalácie klienta.
 
 V~oblasti priemyselnej \acrshort{ai} AVEVA rozvíja samostatnú platformu
 \textit{Industrial AI for Operations}~\cite{t07}, ktorá využíva aktuálne aj
 historické dáta naprieč prevádzkou, dodávateľským reťazcom a plánovaním na
-odhaľovanie skrytých nedostatkov v efektivite a predikciu výpadkov. Význam platformy bol uznaný
-v~rebríčkoch Gartner a Verdantix v~roku 2025. Táto \acrshort{ai} vrstva je však
-cielená na podnikovú úroveň, optimalizáciu procesov a prediktívnu údržbu. Nie je cieľom poskytovať
-kontextovú asistenciu obsluhe priamo pri zariadení.
+odhaľovanie skrytých nedostatkov v efektivite a predikciu výpadkov. Význam
+platformy bol uznaný v~rebríčkoch Gartner a Verdantix v~roku 2025. Táto
+\acrshort{ai} vrstva je však cielená na podnikovú úroveň, optimalizáciu
+procesov a prediktívnu údržbu. Nie je cieľom poskytovať kontextovú asistenciu
+obsluhe priamo pri zariadení.
 
 Z~pohľadu našej práce sú kľúčové tieto body:
 
@@ -207,13 +207,13 @@ edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
             \textbf{\shortstack{WinCC\\Unified}}        &
             \textbf{\shortstack{Ignition\\Perspective}} &
             \textbf{Tulip}                              &
-            \textbf{\shortstack{AVEVA\\InTouch}}                                                                \\
+            \textbf{\shortstack{AVEVA\\InTouch}}                                            \\
             \hline
             Natívna mobilná aplikácia                   & Nie & Áno       & Nie       & Nie \\
-            Identifikácia zariadení                     & Nie & Nie       & Čiastočne             & Nie \\
-            Edge nasadenie                              & Áno & Áno       & Čiastočne                     & Áno \\
-            AI asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie                           & Nie \\
-            Otvorená platforma                          & Nie & Čiastočne & Nie                           & Nie \\
+            Identifikácia zariadení                     & Nie & Nie       & Čiastočne & Nie \\
+            Edge nasadenie                              & Áno & Áno       & Čiastočne & Áno \\
+            AI asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie       & Nie \\
+            Otvorená platforma                          & Nie & Čiastočne & Nie       & Nie \\
             \hline
       \end{tabular}
       \vspace{0.3em}
@@ -233,8 +233,8 @@ situácií prostredníctvom práce s~dokumentáciou, zostáva nepokrytou oblasť
 Rovnako identifikácia fyzických zariadení prostredníctvom vizuálnych markerov
 s~automatickým načítaním kontextu pre dané zariadenie nie je štandardnou
 funkciou žiadnej z~analyzovaných platforiem. Operátori sú naďalej odkázaní na
-manuálnu navigáciu cez menu, čo spomaľuje prístup k~informáciám a
-zvyšuje pravdepodobnosť interakcie s~nesprávnym zariadením.
+manuálnu navigáciu cez menu, čo spomaľuje prístup k~informáciám a zvyšuje
+pravdepodobnosť interakcie s~nesprávnym zariadením.
 
 Tieto identifikované medzery v~súčasnej ponuke komerčných riešení tvoria základ
 pre návrh systému prezentovaného v~neskorších kapitolách tejto práce.
@@ -244,26 +244,29 @@ pre návrh systému prezentovaného v~neskorších kapitolách tejto práce.
 Moderné priemyselné aplikácie nestoja na jednej technológii. Sú výsledkom
 starostlivo zvolenej skladačky nástrojov, kde každá vrstva plní svoju úlohu.
 Mobilné rozhranie reaguje na pokyny operátora, backendová vrstva spracúva
-množstvo súbežných udalostí z~výrobnej linky a pokyny prichádzajúce z mobilnej aplikácie.
+množstvo súbežných udalostí z~výrobnej linky a pokyny prichádzajúce z mobilnej
+aplikácie.
 
 Kľúčovou výzvou je pritom premostenie dvoch oddelených svetov. \acrshort{ot}
 označuje svet priemyselného riadenia a teda \acrshort{plc} automaty, senzory,
-pohony a výrobné linky.
-\acrshort{it} je naopak svet softvéru, sietí a aplikácií určených na
-spracovanie a prenos informácií. Tieto dva svety dlho fungovali oddelene, každý
-s~vlastnými protokolmi a prioritami. Priemyselné aplikácie v~kontexte
-Industry~4.0 ich spájajú práve prostredníctvom komunikačnej vrstvy, napríklad
-pomocou protokolov \acrshort{mqtt} alebo \acrshort{opcua}.
+pohony a výrobné linky. \acrshort{it} je naopak svet softvéru, sietí a
+aplikácií určených na spracovanie a prenos informácií. Tieto dva svety dlho
+fungovali oddelene, každý s~vlastnými protokolmi a prioritami. Priemyselné
+aplikácie v~kontexte Industry~4.0 ich spájajú práve prostredníctvom
+komunikačnej vrstvy, napríklad pomocou protokolov \acrshort{mqtt} alebo
+\acrshort{opcua}.
 
-Nasledujúci prehľad mapuje najpoužívanejšie technológie a ich typické uplatnenie.
+Nasledujúci prehľad mapuje najpoužívanejšie technológie a ich typické
+uplatnenie.
 
 \subsection{Frontendové technológie}
 
 Výber frameworku pre mobilnú aplikáciu patrí k~zásadným architektonickým
 rozhodnutiam. Z prehľadu moderných frameworkov vyplíva, že voľba nie je len
 technická, ale priamo ovplyvňuje rýchlosť vývoja, výkon aplikácie, dlhodobé
-náklady na údržbu a dostupnosť vývojárov~\cite{t08}. Nasledujúci prehľad stručne
-charakterizuje najrozšírenejšie prístupy.
+náklady na údržbu a dostupnosť vývojárov~\cite{t08}. Nasledujúci prehľad
+stručne opisuje najrozšírenejšie spôsoby vývoja frontendu, resp. vybrané
+používané frameworky.
 
 \textbf{Natívny vývoj} (Swift/SwiftUI pre iOS, Kotlin pre Android) poskytuje
 maximálny výkon a priamy prístup k~hardvérovým funkciám zariadenia. Jeho
@@ -288,12 +291,13 @@ aplikácie je ich hlavným obmedzením bezpečnostný sandbox prehliadača,
 ktorý sťažuje priamu komunikáciu s~lokálnym hardvérom a priemyselnými
 rozhraniami.
 
-\subsection{Backendové frameworky}
-%%% tu pokracovat v review
+\subsection{Backendové technológie}
 Backend tvorí jadro systému, spracúva požiadavky, komunikuje s~databázami a
 sprostredkováva tok dát medzi \acrshort{plc} a klientskymi aplikáciami. Výber
-frameworku závisí od požiadaviek na výkon, dostupnosť
-\acrshort{ai}/\acrshort{ml} knižníc a dlhodobú udržateľnosť~\cite{t09}.
+frameworku pre tvorbu backendu závisí od požiadaviek na výkon, dostupnosť
+\acrshort{ai}/\acrshort{ml} knižníc a dlhodobú udržateľnosť~\cite{t09}. Pozrime
+sa na vybrané možnosti, ktoré sa často používajú pre ich jednoduchosť, výkon
+alebo ekosystém knižníc.
 
 \textbf{Django} je framework s~filozofiou „batteries included" a
 obsahuje vstavaný admin panel, správu relácií a ORM vrstvu. Je vhodný
@@ -310,8 +314,7 @@ väčšie projekty.
 LangChain. Flask je minimalistický a flexibilný, FastAPI využíva asynchrónne
 \acrshort{asgi} a automaticky generuje OpenAPI dokumentáciu na základe typových anotácií.
 
-\textbf{Go s Gin / Fiber} je kompilovaný jazyk s~vstavanou podporou
-konkurencie, nízkymi nárokmi na \acrshort{ram} a \acrshort{cpu} a predvídateľnou
+\textbf{Go s Gin / Fiber} je kompilovaný jazyk nízkymi nárokmi na \acrshort{ram} a \acrshort{cpu} a predvídateľnou
 latenciou. Je vhodný pre mikroslužby, edge nasadenia a výkonnostne
 kritické systémy, avšak jeho ekosystém pre \acrshort{ai}/\acrshort{ml} je výrazne
 menší oproti Pythonu.
@@ -332,20 +335,21 @@ menší oproti Pythonu.
       \end{tabular}
 \end{table}
 
-\subsection{Kontajnerizácia a Edge architektúra}
+\subsection{Kontajnerizácia a edge architektúra}
 
 Cloudové spracovanie dát, kde sa všetky informácie odosielajú na vzdialené
-servery, čelí rastúcim obmedzeniam v~podobe latencie, zaťaženia siete a
-bezpečnostných rizík pri prenose citlivých dát~\cite{t10}. Ako alternatíva sa
-presadzuje model \textit{edge computing}, kde sa dáta spracúvajú priamo pri
-zdroji a teda na lokálnom zariadení alebo v~blízkosti výrobnej linky. Edge
-zariadenia dokážu filtrovať a vyhodnocovať dáta lokálne, do cloudu sa
-odosielajú len relevantné výsledky, čo znižuje spotrebu prenosového pásma a
-zvyšuje odolnosť systému pri výpadku pripojenia.
+servery, čelí obmedzeniam v~podobe latencie, zaťaženia siete a bezpečnostných
+rizík pri prenose citlivých dát~\cite{t10}. Ako alternatíva sa presadzuje model
+\textit{edge computing}, kde sa dáta spracúvajú priamo pri zdroji a teda na
+lokálnom zariadení alebo v~blízkosti výrobnej linky. Edge zariadenia dokážu
+filtrovať a vyhodnocovať dáta lokálne, do cloudu sa odosielajú len relevantné
+výsledky, čo znižuje spotrebu prenosového pásma a zvyšuje odolnosť systému pri
+výpadku pripojenia.
 
 Edge computing a cloud sa navzájom nevylučujú, ale spolupracujú v~hybridnom
-modeli, kde edge zabezpečuje real-time spracovanie a cloud poskytuje dlhodobé
-ukladanie dát, pokročilú analytiku a globálnu koordináciu.
+modeli, kde edge zabezpečuje takmer real-time spracovanie a cloud poskytuje
+dlhodobé ukladanie dát, pokročilú analytiku alebo koordináciu v prípade
+viacerých edge uzlov.
 
 \subsubsection{Docker a Docker Compose}
 
@@ -353,44 +357,43 @@ Docker je otvorená platforma pre vývoj, distribúciu a spúšťanie aplikáci�
 ~\cite{t11}. Umožňuje baliť aplikáciu spolu so všetkými jej závislosťami do
 prenositeľného kontajnera, ktorý beží rovnako v~každom prostredí -- na
 vývojárskom počítači, v~testovacom prostredí aj na priemyselnom PC v~prevádzke.
-Kontajnery využívajú izoláciu na úrovni jadra Linuxu, sú výrazne ľahšie ako
-virtuálne stroje a umožňujú spúšťať viacero izolovaných aplikácií na jednom
-hosťovom systéme súčasne.
+Kontajnery využívajú izoláciu na úrovni jadra Linuxu, sú výrazne viac odľahčené
+ako virtuálne stroje a umožňujú spúšťať viacero izolovaných aplikácií na jednom
+hosťovskom systéme súčasne.
 
 Zmena v~kóde si vyžaduje prenos len zmenenej vrstvy obrazu, nie celého systému,
-čo je kľúčové pri aktualizáciách cez obmedzené priemyselné pripojenia. Docker
-Compose rozširuje tento koncept na celý aplikačný stack: backend,
-\acrshort{mqtt} broker, vektorová databáza a ďalšie služby sú definované
-v~jednom konfiguračnom súbore a spúšťajú sa jedným príkazom.
+čo môže byť kľúčové pri aktualizáciách cez obmedzené priemyselné pripojenia.
+Docker Compose rozširuje tento koncept na celý aplikačný stack: backend,
+\acrshort{mqtt} broker, vektorová databáza a ďalšie služby môžu byť definované
+v~jednom konfiguračnom súbore a môžu sa spúšťať jedným príkazom.
 
 \subsection{Priemyselné komunikačné protokoly}
 
 \subsubsection{\acrshort{opcua}}
 
-\acrshort{opcua} (OPC Unified Architecture) je platformovo nezávislá,
-servisne orientovaná architektúra vydaná v~roku 2008, ktorá integruje
+\acrshort{opcua} je platformovo nezávislá architektúra orientovaná na služby, vydaná v~roku 2008, ktorá integruje
 funkcionalitu predchádzajúcich OPC Classic špecifikácií do jedného
-rozšíriteľného rámca~\cite{t12}. Štandard beží na rôznych hardvérových
+rozšíriteľného frameworku. Štandard beží na rôznych hardvérových
 platformách, od priemyselných PC a \acrshort{plc} až po mikrokontroléry
 a cloudovú infraštruktúru. Podporuje operačné systémy Windows, Linux,
-Android a ďalšie.
+Android a ďalšie~\cite{t12}.
 
-Informačný model \acrshort{opcua} je objektovo-orientovaný: dáta sú
-reprezentované hierarchicky ako uzly, objekty a premenné s~plnou sémantickou
-popisnosťou. Prístup k~dátam zahŕňa čítanie a zápis, odoberanie zmien,
-notifikácie udalostí a volanie metód. Komunikácia je možná v~modeli
-klient-server aj publish-subscribe (\acrshort{pubsub}).
+Model \acrshort{opcua} je objektovo orientovaný: dáta sú reprezentované
+hierarchicky ako uzly, objekty a premenné s~plnou sémantickou popisnosťou.
+Prístup k~dátam zahŕňa čítanie a zápis, odoberanie zmien, notifikácie na
+udalosti a volanie metód. Komunikácia je možná v~modeli klient-server aj
+\acrshort{pubsub}.
 
-Bezpečnosť je súčasťou návrhu štandardu: \acrshort{opcua} podporuje šifrovanie
-správ, podpisovanie, X.509 certifikáty pre autentifikáciu, sekvenčné pakety
-proti replay útokom a auditný log aktivít.
+Bezpečnosť je súčasťou návrhu: \acrshort{opcua} podporuje šifrovanie správ,
+podpisovanie, X.509 certifikáty pre autentifikáciu, sekvenčné pakety proti
+replay útokom a auditný log aktivít.
 
 \begin{itemize}
       \item \textbf{Výhody:} Vstavaná kybernetická bezpečnosť, sémantický
             popis dát, podpora klient-server aj \acrshort{pubsub} komunikácie,
             spätná kompatibilita a platformová nezávislosť.
-      \item \textbf{Nevýhody:} Vysoká komplexnosť stacku a nároky na
-            \acrshort{ram}/\acrshort{cpu} limitujú nasadenie na jednoduchších \acrshort{plc}.
+      \item \textbf{Nevýhody:} Vysoká komplexnosť a vyššie nároky na
+            \acrshort{ram}/\acrshort{cpu} limitujú nasadenie.
 \end{itemize}
 
 \subsubsection{S7 Protokol}
@@ -407,30 +410,30 @@ alebo obojstranne konfigurovanými spojeniami.
 
 \begin{itemize}
       \item \textbf{Výhody:} Jednoduchá konfigurácia v~prostredí TIA Portal,
-            natívna podpora v~celom ekosystéme SIMATIC, nízka latencia
+            natívna podpora v~celom ekosystéme, nízka latencia
             v~homogénnych Siemens sieťach.
       \item \textbf{Nevýhody:} Uzavretý, neštandardizovaný protokol bez
-            verejnej špecifikácie; obmedzená interoperabilita so zariadeniami
+            verejnej špecifikácie, obmedzená interoperabilita so zariadeniami
             iných výrobcov.
 \end{itemize}
 
 \subsubsection{\acrshort{mqtt}}
 
-\acrshort{mqtt}, Message Queuing Telemetry Transport je ľahký, otvorený
+\acrshort{mqtt} je nenáročný a otvorený
 protokol typu klient-server s~modelom publish/subscribe, navrhnutý
 pre jednoduché použitie v~obmedzených prostrediach ako \acrshort{iot}
-a komunikácia medzi strojmi~\cite{t13}. Protokol beží nad TCP/IP
-a poskytuje obojsmerný tok správ s~minimálnou réžiou.
+a komunikácia medzi strojmi. Protokol beží nad TCP/IP
+a poskytuje obojsmerný tok správ s~minimálnou réžiou~\cite{t13}.
 
 Správy sa neposielajú priamo medzi zariadeniami. Klienti publikujú správy na
-témy (topics) na brokeri, ostatní klienti sa môžu na tieto témy prihlásiť
+témy (topics) na brokerovi, ostatní klienti sa môžu na tieto témy prihlásiť
 (subscribe) a dostávať správy bez potreby poznať ich pôvod.
 
 Protokol definuje tri úrovne \acrshort{qos} pre doručenie správ:
 \begin{itemize}
-      \item \textbf{\acrshort{qos} 0} — správa je doručená najviac raz, bez potvrdenia
-      \item \textbf{\acrshort{qos} 1} — správa je doručená aspoň raz, môžu nastať duplikáty
-      \item \textbf{\acrshort{qos} 2} — správa je doručená práve raz, s~plným handshake protokolom
+      \item \textbf{\acrshort{qos} 0} -- správa je doručená najviac raz, bez potvrdenia
+      \item \textbf{\acrshort{qos} 1} -- správa je doručená aspoň raz, môžu nastať duplikáty
+      \item \textbf{\acrshort{qos} 2} -- správa je doručená práve raz, s~plným handshake protokolom
 \end{itemize}
 
 Ďalšou vlastnosťou je mechanizmus „Last Will and Testament", správa,
@@ -439,10 +442,10 @@ odpojenia klienta. Verzia \acrshort{mqtt} 5.0 pridáva rozšírené vlastnosti
 ako expiracia správ, aliasy tém a zlepšené hlásenie chýb.
 
 \begin{itemize}
-      \item \textbf{Výhody:} Minimálna réžia (2-bajtová pevná hlavička),
-            tri úrovne \acrshort{qos}, podpora „Last Will", vhodnosť pre zariadenia
+      \item \textbf{Výhody:} Minimálna réžia,
+            tri úrovne \acrshort{qos}, podpora „Last Will and Testament", vhodnosť pre zariadenia
             s~obmedzeným výkonom a sieťou.
-      \item \textbf{Nevýhody:} Nutnosť udržiavať bežiaci broker ako centrálny
+      \item \textbf{Nevýhody:} Nutnosť udržiavať bežiaci broker čo môže byť centrálny
             bod zlyhania.
 \end{itemize}
 
@@ -452,29 +455,23 @@ Modbus je komunikačný protokol vyvinutý spoločnosťou Modicon (dnes Schneide
 Electric) v~roku 1979 pre potreby priemyselných programovateľných automatov.
 Dnes je de facto štandardom v~priemyselnej automatizácii s~odhadovaných
 7~miliónmi nasadených uzlov~\cite{t14}. Modbus TCP/IP prenáša správy protokolu
-Modbus zabalené do TCP/IP rámcov na porte 502, čím umožňuje nasadenie
-v~štandardných ethernetových sieťach bez potreby špeciálneho hardvéru.
+Modbus zabalené do TCP/IP rámcov, čím umožňuje nasadenie v~štandardných
+ethernetových sieťach bez potreby špeciálneho hardvéru.
 
 Protokol pracuje na princípe klient-server. Klient iniciuje požiadavky a server
-odpovedá. Dáta sú organizované do štyroch základných typov registrov:
-\begin{itemize}
-      \item \textbf{Coils} — jednobitové, čítanie aj zápis (digitálne výstupy)
-      \item \textbf{Discrete Inputs} — jednobitové, iba čítanie (digitálne vstupy)
-      \item \textbf{Holding Registers} — 16-bitové, čítanie aj zápis (analógové veličiny, nastavenia)
-      \item \textbf{Input Registers} — 16-bitové, iba čítanie (analógové vstupy)
-\end{itemize}
+odpovedá.
 
 \begin{itemize}
       \item \textbf{Výhody:} Jednoduchý a otvorený štandard bez licenčných poplatkov,
             rozšírená podpora zariadení, minimálne nároky na zdroje, jednoduché ladenie.
       \item \textbf{Nevýhody:} Chýba zabudovaná autentifikácia a šifrovanie,
             obmedzený dátový model, žiadny mechanizmus notifikácie, teda
-            klient musí aktívne dopytovať server.
+            klient sa musí aktívne dopytovať na server.
 \end{itemize}
 
 \section{Prehľad technológií pre inteligentných asistentov}
 
-\subsection{Veľké jazykové modely a možnosti nasadenia}
+\subsection{Veľké jazykové modely a možnosti použitia}
 Veľké jazykové modely (\acrshort{llm}) sú kategóriou modelov hlbokého učenia
 trénovaných na obrovských množstvách textových dát, vďaka čomu sú schopné
 porozumieť prirodzenému jazyku a generovať text pre široké spektrum úloh
@@ -486,14 +483,14 @@ Trénovanie prebieha na miliardách slov z~kníh, článkov a~webových stránok
 je rozdelený na tokeny, každý token je zakódovaný ako vektor čísel tzv.
 embedding a~sieť sa iteratívne učí predpovedať nasledujúci token v~sekvencii.
 Výsledkom je model, ktorý si osvojil gramatické pravidlá, faktické znalosti aj
-štruktúry uvažovania.
+spôsoby uvažovania.
 
-Z hľadiska nasadenia existujú dve základné možnosti~\cite{t17}. Prvou sú
+Z hľadiska použitia existujú dve základné možnosti~\cite{t17}. Prvou sú
 \textbf{cloudové modely prístupné cez \acrshort{api}} (napr.\ GPT‑4o, Claude,
-Gemini) — ide o~platené služby, kde poskytovateľ spravuje celú infraštruktúru
+Gemini). Ide o~platené služby, kde poskytovateľ spravuje celú infraštruktúru
 a~model je dostupný okamžite bez nutnosti vlastného hardvéru. Druhou možnosťou
 sú \textbf{open‑source modely nasadené lokálne} (napr.\ Llama~3, Mistral), kde
-organizácia prevádzkuje model na vlastných serveroch alebo zariadeniach.
+môže každý prevádzkovať model na vlastných serveroch alebo zariadeniach.
 Lokálne nasadenie je vhodné najmä v~prostrediach s~obmedzeným internetovým
 pripojením, prísnymi požiadavkami na ochranu dát alebo potrebou prevádzky bez
 závislosti od externých služieb.
@@ -506,51 +503,53 @@ Retrieval-Augmented Generation (\acrshort{rag}) tento nedostatok rieši
 prepojením modelu s~externou znalostnou bázou bez nutnosti opätovného trénovania~\cite{t18}.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{img/basic_rag_pipeline.pdf}
-    \caption{Základný princíp RAG pipeline}
-    \label{fig:rag_pipeline}
+      \centering
+      \includegraphics[width=\textwidth]{img/basic_rag_pipeline.pdf}
+      \caption{Základný princíp RAG pipeline}
+      \label{fig:rag_pipeline}
 \end{figure}
 
-Princíp fungovania je taký, že pri každej otázke používateľa retrieval model
+Princíp fungovania je taký, že pri každej otázke používateľa, retrieval model
 vyhľadá v~znalostnej báze relevantné úseky dokumentov, tie sa vložia do
 kontextu \acrshort{llm} spolu s~pôvodnou otázkou a~model na ich základe
 vygeneruje odpoveď. Znalostná báza je typicky uložená vo vektorovej databáze,
 kde sú dokumenty reprezentované ako číselné vektory (embeddingy) umožňujúce
-rýchle sémantické vyhľadávanie. Jednou z~populárnych open-source vektorových
-databáz je ChromaDB. Ľahká databáza licencovaná pod Apache~2.0, ktorú možno
-prevádzkovať lokálne na jednom zariadení aj v~cloudovom prostredí a~je priamo
-integrovaná s~frameworkmi LangChain a~LlamaIndex~\cite{t19}.
+rýchle vyhľadávanie. Jednou z~populárnych open-source vektorových databáz je
+ChromaDB. Ľahká databáza licencovaná pod Apache~2.0, ktorú možno prevádzkovať
+lokálne alebo aj v~cloudovom prostredí a~je priamo integrovaná s~frameworkmi
+LangChain a~LlamaIndex~\cite{t19}.
 
 Hlavné prínosy \acrshort{rag} oproti čistému \acrshort{llm} sú zníženie
-halucinácií ukotvením odpovedí v~konkrétnych zdrojoch, prístup k~aktuálnym
-a~doménovým dátam a~možnosť odkazovať na zdroj informácie priamo v~odpovedi.
+halucinácií dohľadaním odpovedí v~konkrétnych zdrojoch, prístup k~aktuálnym
+a~doménovým dátam a teda možnosť odkazovať na zdroj informácie priamo
+v~odpovedi.
 
 \subsection{AI asistenti v priemyselnom prostredí}
 
 Priemyselné podniky čelia rastúcemu nedostatku kvalifikovaných pracovníkov
-a~potrebe rýchleho prenosu znalostí na novú generáciu zamestnancov. Generatívni
-\acrshort{ai} asistenti predstavujú riešenie tohto problému. Fungujú ako
+a~potrebe rýchleho zaškolenia nových zamestnancov. Generatívni \acrshort{ai}
+asistenti môžu predstavovať súčasť riešenia tohto problému. Fungujú ako
 virtuálni mentori priamo na výrobnej linke, kde pracovníkom poskytujú okamžité
 odpovede v~prirodzenom jazyku na otázky o~postupoch, riešení porúch alebo
 špecifikáciách zariadení~\cite{t20}.
 
-Systém prepája viaceré zdroje dát ako podnikové systémy, tréningové databázy,
-prevádzkové dáta a syntetizuje z~nich kontextovo relevantnú odpoveď. Technická
-dokumentácia je tak prekladaná do zrozumiteľných pokynov prispôsobených
-skúsenostiam konkrétneho pracovníka. Výsledkom je skrátenie času zaškoľovania,
-zníženie závislosti od tzv.\ kmeňových znalostí a~vyššia adaptabilita
-pracovníkov pri zavádzaní nových technológií.
+Systém vie prepájať viaceré zdroje dát ako podnikové systémy, tréningové
+databázy, prevádzkové dáta a skladať z~nich kontextovo relevantnú odpoveď.
+Technická dokumentácia je tak prekladaná do zrozumiteľných pokynov
+prispôsobených skúsenostiam konkrétneho pracovníka. Výsledkom je potenciálne
+skrátenie času zaškoľovania, zníženie závislosti od rád seniornejších
+zamestnancov a~vyššia schopnosť prispôsobiť sa pri zavádzaní nových
+technológií.
 
 \section{Typy identifikátorov a ich použitie}
 
 \subsection{QR kódy}
 QR kódy sú dvojrozmerné maticové identifikátory optimalizované pre rýchle
-čítanie a vysokú hustotu dát. V kontexte priemyselnej automatizácie sa
-využívajú najmä na statickú identifikáciu objektov, kde sa vyžaduje uloženie
-komplexnejších informácií napr. URL adresy, sériové čísla alebo konfiguračné
-parametre. Ich výhodou je silná korekcia chýba, ktorá umožňuje prečítať kód aj
-pri čiastočnom poškodení alebo znečistení povrchu.
+čítanie a vysokú hustotu dát. V zmysle použitia v priemysle sa využívajú najmä
+na identifikáciu objektov, kde sa vyžaduje uloženie komplexnejších informácií
+napr. URL adresy, sériové čísla alebo konfiguračné parametre. Ich výhodou je
+silná korekcia chýba, ktorá umožňuje prečítať kód aj pri čiastočnom poškodení
+alebo znečistení povrchu.
 
 \subsection{Fiduciálne markery -- AprilTag, ArUco}
 Fiduciálne markery sú špeciálne navrhnuté pre potreby počítačového videnia a
@@ -561,24 +560,25 @@ Tieto identifikátory sa vyznačujú predovšetkým vysokou mierou interoperabil
 s modernými robotickými riešeniami. Vďaka existujúcim knižniciam napr. OpenCV,
 ROS je ich integrácia štandardom pri vývoji:
 \begin{itemize}
-      \item \textbf{Autonómnych upratovacích robotov:} Kde markery umiestnené v prostredí slúžia ako pevné referenčné body pre rekalibráciu lokalizácie a elimináciu kumulatívnej chyby v mapách.
+      \item \textbf{Autonómnych robotov:} Kde markery umiestnené v prostredí slúžia ako pevné referenčné body pre rekalibráciu lokalizácie a elimináciu kumulatívnej chyby v mapách.
       \item \textbf{Dronov v skladoch:} Kde umožňujú presné pristávanie na nabíjacích staniciach alebo navigáciu v priestoroch bez signálu GPS, pričom dron dokáže v reálnom čase určiť svoju polohu a náklon voči markeru.
       \item \textbf{Kolaboratívnych robotov:} Pri navádzaní na presnú pozíciu.
 \end{itemize}
 Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a perspektívnemu skresleniu.
 
 \subsection{3D identifikátory}
-V prostrediach priemyselných podnikov a logistických reťazcov, kde sú si entity
-tvarovo a rozmerovo blízke, sa ako perspektívne riešenie javia unikátne 3D
-identifikátory. Na Fakulte elektrotechniky a informatiky STU bol vyvinutý
-systém programaticky generovaných 3D identifikátorov, ktoré sú optimalizované
-pre systémy zmiešanej a rozšírenej reality.
+V prostrediach priemyselných podnikov a logistických reťazcov, kde môže prísť k
+jednoduchému znemožneniu snímania 2D identifikátorov (špinavé, poškodené,
+nedostatočné osvetlenie, odrazy svetla), sa ako perspektívne riešenie javia
+unikátne 3D identifikátory. Na Fakulte elektrotechniky a informatiky STU bol
+vyvinutý systém programaticky generovaných 3D identifikátorov, ktoré sú
+optimalizované pre systémy zmiešanej a rozšírenej reality.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.45\textwidth]{img/3D_identifikator.jpg}
-    \caption{Fyzický 3D identifikátor vyrobený pomocou 3D tlače}
-    \label{fig:3d_identifikator}
+      \centering
+      \includegraphics[width=0.45\textwidth]{img/3D_identifikator.jpg}
+      \caption{Fyzický 3D identifikátor vyrobený pomocou 3D tlače}
+      \label{fig:3d_identifikator}
 \end{figure}
 
 \subsubsection{Princíp a štruktúra}
@@ -592,8 +592,6 @@ Hlavné technické výhody tohto riešenia sú:
       \item \textbf{Odolnosť voči falšovaniu:} Vďaka komplexnej vnútornej členitosti a 3D geometrii sú tieto identifikátory výrazne náročnejšie na replikáciu než bežné 2D identifikátory.
       \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
 \end{itemize}
-
-
 
 \section{Špecifikácia požiadaviek systému}
 
@@ -614,23 +612,21 @@ zariadení otvára cestu k~bezpečnému a~intuitívnemu ovládaniu výrobnej lin
 
 Kľúčovou výzvou pri takomto prístupe je spoľahlivé a~jednoznačné spárovanie
 mobilného zariadenia s~konkrétnou fyzickou časťou výrobnej linky. Skenovaním
-vizuálneho identifikátora umiestneného priamo pri zariadení operátor okamžite
+jedinečného identifikátora umiestneného priamo pri zariadení operátor okamžite
 nadviaže spojenie a systém presne vie, kto a~ktoré zariadenie ovláda. Toto
-spojenie je základom pre bezpečné riadenie, auditovanie operácií a~správu
+spojenie je základom pre bezpečné riadenie, zaznamenávanie operácií a~správu
 prístupu viacerých používateľov k rovnakému zariadeniu.
 
 Ďalšou dôležitou oblasťou je správa prístupu pracovníkov s~rôznymi rolami.
-Operátor potrebuje priamy prístup k~riadeniu linky, manažér vyžaduje prehľad o~výkonnosti
-a~vyťaženosti, údržbár musí mať garantovaný exkluzívny, neprepisovateľný prístup pri servisnom zásahu
-a~administrátor spravuje celý systém vrátane registrácie nových používateľov.
+Operátor potrebuje priamy prístup k~riadeniu linky, manažér vyžaduje prehľad o dianí vo výrobe, údržbár musí mať garantovaný neprepisovateľný prístup pri servisnom zásahu
+a~administrátor spravuje celý systém vrátane schvaľovania registrácie nových používateľov.
 Bez jasne definovaného mechanizmu riadenia prístupu by mohlo dôjsť ku konfliktom príkazov
 alebo neoprávnenému zásahu do výrobného procesu.
 
 Celá komunikačná vrstva od \acrshort{plc} až po mobilnú aplikáciu prebieha cez
 štandardné priemyselné a~webové protokoly. Backendová infraštruktúra je plne
-kontajnerizovaná a to umožňuje rýchle nasadenie na ďalšie uzly v~rámci továrne.
-Ovládanie linky je obmedzené výhradne na lokálnu sieť továrne a~cloudová vrstva
-slúži len na vzdialený reporting a~zálohovanie agregovaných dát.
+kontajnerizovaná a to umožňuje rýchle nasadenie.
+Ovládanie linky je obmedzené výhradne na lokálnu sieť továrne.
 
 Neoddeliteľnou súčasťou systému je inteligentný technický asistent. Asistent
 odpovedá na technické otázky obsluhy výhradne na základe dokumentácie
@@ -642,28 +638,25 @@ problémov.
 
 Systém implementuje riadenie prístupu založené na rolách (\textit{Role-Based
       Access Control}, RBAC). Každý nový používateľ sa musí zaregistrovať a~pred
-prvým prihlásením čaká na schválenie administrátorom, ktorý mu zároveň priradí
+prvým prihlásením čaká na schválenie administrátorom alebo manažérom, ktorý mu zároveň priradí
 príslušnú rolu. Sú definované štyri roly:
 
 \begin{description}
       \item[Operátor:] Základná obsluha výrobnej linky. Prihlasuje sa na konkrétnu linku
-            skenovaním ArUco kódu, odosiela riadiace príkazy, upravuje prevádzkové
-            parametre a~sleduje aktuálny stav zariadenia v~reálnom čase. Nemá prístup
+            skenovaním ArUco kódu, odosiela riadiace príkazy a~sleduje aktuálny stav zariadenia v~reálnom čase. Nemá prístup
             k~reportom, správe vedomostnej bázy ani správe používateľov. Môže v prípade
             potreby využiť AI asistenta.
 
-      \item[Manažér:] Zameriava sa na sledovanie výkonnostných ukazovateľov. Má prístup
-            k~histórii prihlásení jednotlivých operátorov, dennému reportu o~vyťaženosti
-            a~agregovaným štatistikám pre všetky zariadenia. Linku priamo neovláda.
+      \item[Manažér:] Zameriava sa na sledovanie udalostí. Má prístup
+            k~histórii prihlásení jednotlivých operátorov, reportu s logmi a môže spravovať používateľské kontá. Takisto má prístup k~AI asistentovi a môže upravovať vedomostnú bázu.
+            Linku priamo neovláda no vidí kto je prihlásený a aké operácie vykonáva.
 
       \item[Údržbár:] Má exkluzívnu ochranu relácie a žiadny iný používateľ ho nemôže
             odhlásiť z~prihláseného zariadenia, čo zaručuje bezpečnosť počas servisného zásahu.
-            Spravuje vedomostnú bázu (KB) pre jednotlivé zariadenia,
-            pričom \acrshort{kb} tvorí znalostný zdroj pre \acrshort{ai} asistenta.
+            Spravuje vedomostnú bázu pre jednotlivé zariadenia, môže upravovať existujúce zariadenia a vytvárať nové.
 
       \item[Administrátor:] Spravuje celý systém, schvaľuje nové registrácie, priraďuje
-            roly, edituje a~odstraňuje používateľské kontá (s~výnimkou hlavného admina). Má
-            prístup ku všetkým logom a~taktiež spravuje vedomostnú bázu.
+            roly, edituje a~odstraňuje používateľské kontá. Má prístup prakticky ku všetkým funkciám systému.
 \end{description}
 
 \subsection{Use-case scenáre}
@@ -675,7 +668,7 @@ príslušnú rolu. Sú definované štyri roly:
       \textbf{Aktér} & Všetky roly                                \\
       \textbf{Popis} & Používateľ sa zaregistruje zadaním údajov.
       Kým administrátor neschváli konto, aplikácia zobrazí informáciu o~čakaní na schválenie.
-      Po schválení sa používateľ prihlási a~získa JWT token.      \\
+      Po schválení sa používateľ prihlási a~získa prístup.      \\
       \bottomrule
 \end{tabularx}
 
@@ -683,21 +676,21 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-02: Skenovanie ArUco kódu a spárovanie linky                             \\
-      \textbf{Aktér} & Operátor, údržbár                                                           \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                           \\
       \textbf{Popis} & Používateľ naskenuje ArUco kód pri zariadení.
       Ak je linka voľná, po potvrdení dialógu sa vytvorí relácia.
       Ak je obsadená, zobrazí sa identita a~rola prihláseného.
-      Reláciu neprítomného operátora je možné prevziať; reláciu údržbára prevziať nie je povolené. \\
+      Reláciu neprítomného operátora je možné prevziať, reláciu údržbára prevziať nie je povolené. \\
       \bottomrule
 \end{tabularx}
 
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-03: Ovládanie linky v reálnom čase                                                                                                                                                                                                  \\
-      \textbf{Aktér} & Operátor                                                                                                                                                                                                                               \\
-      \textbf{Popis} & Operátor odosiela príkazy z~ovládacieho panelu.
-      Každý príkaz má unikátny identifikátor a~prechádza stavmi: \textit{queued~$\to$~sent~$\to$~acknowledged~$\to$~applied} (resp.\ \textit{failed} / \textit{timeout}). Pri \textit{timeout} aplikácia upozorní používateľa s~možnosťou opakovania príkazu. \\
+      \textbf{ID}    & UC-03: Ovládanie linky                                                                                                                                                                                                  \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                                                                                                                                                                                               \\
+      \textbf{Popis} & Aktéri odosielajú príkazy z~ovládacieho panelu.
+      Vykonanie príkazu je potvrdené a je zobrazený čas od odoslania po prijatie príkazu zariadením. \\
       \bottomrule
 \end{tabularx}
 
@@ -705,7 +698,7 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-04: Monitorovanie stavu linky                                                                                        \\
-      \textbf{Aktér} & Operátor, manažér                                                                                                       \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                                                                      \\
       \textbf{Popis} & Dashboard zobrazuje procesné dáta z~PLC v~reálnom čase cez WebSocket. Stavy sú farebne kódované podľa normy IEC\,60073. \\
       \bottomrule
 \end{tabularx}
@@ -713,9 +706,9 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-05: Prezeranie logov a reportov                                                                                        \\
-      \textbf{Aktér} & Manažér, admin                                                                                                            \\
-      \textbf{Popis} & Po výbere zariadenia zo zoznamu sa zobrazí história prihlásení, denný report o~vyťaženosti operátorov a~prehľad udalostí. \\
+      \textbf{ID}    & UC-05: Prezeranie logov                                                                                        \\
+      \textbf{Aktér} & Manažér, údržbár, admin                                                                                                            \\
+      \textbf{Popis} & Je možné prezeranie logov a reportov s filtorvaním podľa časového obdobia a zariadenia. \\
       \bottomrule
 \end{tabularx}
 
@@ -723,18 +716,18 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-06: Správa vedomostnej bázy                                                                                          \\
-      \textbf{Aktér} & Údržbár, admin                                                                                                          \\
-      \textbf{Popis} & Prostredníctvom CRUD rozhrania sa nahrávajú, upravujú a~odstraňujú dokumenty KB (texty a~obrázky) pre každé zariadenie. \\
+      \textbf{Aktér} & Manažér, údržbár, admin                                                                                                          \\
+      \textbf{Popis} & Prostredníctvom CRUD operácií sa nahrávajú, upravujú a~odstraňujú dokumenty znalostnej bázy. \\
       \bottomrule
 \end{tabularx}
 
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-07: AI asistent (RAG chatbot)                                                                                   \\
+      \textbf{ID}    & UC-07: AI asistent                                                                                   \\
       \textbf{Aktér} & Všetky roly                                                                                                        \\
-      \textbf{Popis} & Tlačidlom v~pravom hornom rohu každej obrazovky (okrem prihlasovacej) sa spustí chatbot.
-      Odpovedá výhradne na základe KB daného zariadenia; ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
+      \textbf{Popis} & Tlačidlom v~rohu každej obrazovky sa spustí chatbot.
+      Odpovedá výhradne na základe vedomostnej bázy, či už všeobecnej alebo viazanej ku konkrétnemu zariadeniu. Ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
       \bottomrule
 \end{tabularx}
 
@@ -742,8 +735,8 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-08: Správa používateľov                                                                                                                \\
-      \textbf{Aktér} & Admin                                                                                                                                     \\
-      \textbf{Popis} & Admin schvaľuje registrácie, priraďuje roly, upravuje a~odstraňuje kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
+      \textbf{Aktér} & Manažér, admin                                                                                                                                     \\
+      \textbf{Popis} & Manažér a admin schvaľuje registrácie, priraďuje roly, upravuje a~odstraňuje kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
       \bottomrule
 \end{tabularx}
 
@@ -752,35 +745,24 @@ príslušnú rolu. Sú definované štyri roly:
       \toprule
       \textbf{ID}    & UC-09: Nastavenia aplikácie                                                                                        \\
       \textbf{Aktér} & Všetky roly                                                                                                        \\
-      \textbf{Popis} & V~nastaveniach je možné zmeniť jazyk (SK\,/\,EN) a~vlastné heslo. Jazyk je dostupný aj na prihlasovacej obrazovke. \\
+      \textbf{Popis} & V~nastaveniach je možné zmeniť jazyk (SK\,/\,EN) a~vlastné heslo. Zmena jazyka je dostupná aj na prihlasovacej obrazovke. \\
       \bottomrule
 \end{tabularx}
 
-\vspace{6pt}\noindent
-\begin{tabularx}{\textwidth}{@{}l X@{}}
-      \toprule
-      \textbf{ID}    & UC-10: Cloudová synchronizácia                                                                  \\
-      \textbf{Aktér} & Systém (automaticky)                                                                            \\
-      \textbf{Popis} & Agregované dáta sú periodicky synchronizované do cloudu.
-      Vzdialený prístup slúži výhradne na čítanie reportov a riadiace príkazy sú povolené iba v~lokálnej sieti závodu. \\
-      \bottomrule
-\end{tabularx}
 
 \subsection{Funkcionálne požiadavky}
 
 \begin{description}
       \item [FP1:] Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou časťou výrobnej linky.
-      \item [FP2:] Používateľ musí mať možnosť odosielať riadiace príkazy a modifikovať prevádzkové parametre v riadenom systéme.
+      \item [FP2:] Používateľ musí mať možnosť odosielať príkazy v riadenom systéme.
       \item [FP3:] Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
       \item [FP4:] Zobrazovanie aktuálnych stavov z PLC.
-      \item [FP5:] Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy.
+      \item [FP5:] Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy. Ak čerpá z iného zdoja, musí to jasne uviesť.
       \item [FP6:] Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
-      \item [FP7:] Agregované štatistické dáta  musia byť periodicky zálohované z lokálnej databázy do cloudu pre potreby vzdialeného prístupu.
-      \item [FP8:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej výrobnej linky. Po úspešnom prihlásení a spárovaní linky sa vytvorí aktívna relácia viazaná na používateľa. Relácia musí byť udržiavaná periodickým \textit{heartbeat} signálom a automaticky ukončená pri odhlásení alebo po prekročení časového limitu neaktivity.
-      \item [FP9:] Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (identifikátor používateľa/rola). Nútené ukončenie resp. prevzatie relácie musí byť umožnené v prípade neodhlásenia sa už neprítomnej obsluhy.
-      \item [FP10:] Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržbár, admin.
-      \item [FP11:] Každý odoslaný riadiaci príkaz musí mať unikátny identifikátor (\textit{command\_id}) a systém musí poskytovať stav príkazu minimálne v úrovniach: \textit{queued}, \textit{sent}, \textit{acknowledged}, \textit{applied}, \textit{failed}, \textit{timeout}. Aplikácia musí tieto stavy používateľovi vizualizovať.
-      \item [FP12:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér} a \textit{admin}.
+      \item [FP7:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej výrobnej linky. Po úspešnom prihlásení a spárovaní linky sa vytvorí aktívna relácia viazaná na používateľa. Relácia musí byť udržiavaná periodickým \textit{heartbeat} signálom a automaticky ukončená pri odhlásení.
+      \item [FP8:] Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (používateľa/rola). Nútené ukončenie resp. prevzatie relácie musí byť umožnené v prípade neodhlásenia sa už neprítomnej obsluhy.
+      \item [FP9:] Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržbár, admin.
+      \item [FP10:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér}, \textit{údržbár} a \textit{admin}.
 \end{description}
 
 \subsection{Nefunkcionálne požiadavky}
@@ -788,16 +770,14 @@ Definujú kvalitatívne atribúty, technologické obmedzenia a nároky na
 bezpečnosť.
 
 \begin{description}
-      \item [NFP1:] Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustená na edge zariadení.
-      \item [NFP2:] Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1 alebo QoS 2.
-      \item [NFP3:] Latencia riadiaceho cyklu nesmie presiahnuť 250~ms.
+      \item [NFP1:] Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustiteľná na edge zariadení.
+      \item [NFP2:] Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1.
+      \item [NFP3:] Latencia príkazov nesmie presiahnuť 250~ms.
       \item [NFP4:] Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
       \item [NFP5:] Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
-      \item [NFP6:] Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge uzly v rámci továrne.
-      \item [NFP7:] Systém musí zabrániť viacnásobnému vykonaniu toho istého príkazu v prípade opakovaného doručenia správy. Každý príkaz musí obsahovať unikátny identifikátor a backend musí zabezpečiť, že príkaz s rovnakým identifikátorom bude spracovaný najviac raz.
-      \item [NFP8:] Pri nedoručení potvrdenia (ACK) do 1{.}5~s musí aplikácia označiť príkaz ako \textit{timeout} a informovať používateľa o neúspechu vykonania s možnosťou opakovania požiadavky. Systém musí logovať dôvod zlyhania, ak je dostupný.
-      \item [NFP9:] Ovládacie príkazy z externých sietí mimo lokálnej siete závodu nesmú byť povolené. Vzdialený prístup (mimo LAN) môže byť použitý výhradne na prehliadanie agregovaných dát a reportov v cloude.
-      \item [NFP10:] Backendové služby musia poskytovať štruktúrované logy a základné prevádzkové metriky (napr. latencia riadiaceho cyklu, počet neúspešných príkazov, stav pripojenia k PLC) pre účely diagnostiky.
+      \item [NFP6:] Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge zariadenia napr. v iných závodoch.
+      \item [NFP9:] Ovládacie príkazy z môžu prichádzať výhradne z lokálnej siete továrne.
+      \item [NFP10:] Backendové služby musia poskytovať štruktúrované logy pre účely diagnostiky.
 \end{description}
 
 \subsection{Doménové požiadavky}
@@ -806,16 +786,16 @@ Požiadavky plynúce z priemyselného prostredia a použitých technológií.
 \begin{description}
       \item [DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
       \item [DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
-      \item [DP3:] Systém musí pracovať v hybridnom režime – plná funkčnosť ovládania v lokálnej sieti aj pri výpadku pripojenia k internetu.
+      \item [DP3:] Systém si musí zachovať kľúčovú funkcionalitu teda ovládanie linky aj v prípade výpadku pripojenia k internetu.
 \end{description}
 
 \section{Voľba technológií}
 
 Výber použitých technológií bol výsledkom posúdenia viacerých faktorov. Medzi
-kľúčové kritériá patrili kompatibilita s existujúcim hardvérom, jednoduchá
+kľúčové kritériá patrili kompatibilita s poskytnutým hardvérom, jednoduchá
 integrácia, nízka latencia a schopnosť fungovať v priemyselnom prostredí s
-omezenými zdroji. V neposlednom rade bola dôležitá aj dostupnosť knižníc a
-predchádzajúca skúsenosť s jednotlivými technológiami, čo zásadne urýchlilo
+omezenými zdrojmi. V neposlednom rade bola dôležitá aj dostupnosť knižníc a
+predchádzajúca skúsenosť s jednotlivými technológiami, čo zásadne urýchli
 vývoj.
 
 \subsection{Komunikácia s \acrshort{plc} -- S7 protokol}
@@ -840,15 +820,15 @@ výrazne komplexnejší konfiguračný proces. S7 protokol cez knižnicu
 \subsection{Komunikačná middleware vrstva -- Node-RED}
 
 Spojenie medzi \acrshort{plc} a zvyškom systému zabezpečuje Node-RED, nástroj
-na programovanie s využitím minima kódu, ktorý beží ako Docker kontajner priamo
+na programovanie s využitím minima kódu. Bbeží ako Docker kontajner priamo
 na edge zariadení v~prevádzke. Node-RED periodicky číta hodnoty
 z~\acrshort{plc} prostredníctvom S7 protokolu a publikuje ich do
 \acrshort{mqtt} brokera, čím spája svet \acrshort{ot} (\acrshort{plc}, S7) a
 \acrshort{it} (\acrshort{mqtt}, backend).
 
-Táto vrstva bola zvolená z~niekoľkých dôvodov. Disponuje natívnym uzlom
+Node-RED bol zvolený z~niekoľkých dôvodov. Disponuje uzlom
 \texttt{node-red-contrib-s7} pre priamu komunikáciu so Siemens \acrshort{plc} a
-rovnako natívnou podporou \acrshort{mqtt}. Toto riešenie bez potreby písať
+rovnako podporou \acrshort{mqtt}. Toto riešenie je bez potreby písať
 rozsiahly kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda
 periodické dotazovanie (polling) \acrshort{plc} a podmienené spúšťanie akcií.
 
@@ -866,7 +846,7 @@ navrhnutý pre zariadenia s~obmedzenými zdrojmi a nestabilné siete.
 \acrshort{opcua} je komplexný štandard s~bohatým informačným modelom, vstavanou
 bezpečnosťou a sémantickým popisom dát. Pre scenár, kde Node-RED číta hodnoty
 zo Siemens \acrshort{plc} a odovzdáva ich ďalej na spracovanie, táto komplexnosť
-nepredstavuje pridanú hodnotu, ale zbytočnú záťaž. \acrshort{mqtt} broker nasadený v~Dockeri zvládne rovnakú úlohu s~minimálnou pamäťovou a \acrshort{cpu} náročnosťou.
+nepredstavuje pridanú hodnotu, ale zbytočnú záťaž. \acrshort{mqtt} broker nasadený v~Dockeri zvládne rovnakú úlohu s~minimálnou náročnosťou na zdroje.
 
 \begin{itemize}
       \item \textbf{Výhody \acrshort{mqtt}:} Nízke nároky na zdroje, jednoduchá architektúra pub/sub, výborná podpora v~Node-RED aj Pythone, \acrshort{qos} úrovne pre spoľahlivosť doručenia.
@@ -879,19 +859,18 @@ Backend aplikácie bol implementovaný v~Pythone s~využitím frameworku FastAPI
 Tvorí \acrshort{api} pre celú mobilnú aplikáciu. Oddelené \acrshort{api}
 obsluhuje \acrshort{ai} asistenta vrátane \acrshort{rag} pipeline. Voľba
 Pythonu bola prirodzená, pretože knižnice LangChain, ChromaDB a~Ollama sú
-súčasťou python ekosystému a ich integrácia je bezproblémová.
-
-FastAPI bolo zvolené z~niekoľkých praktických dôvodov. Asynchrónna architektúra
+súčasťou python ekosystému a ich integrácia je bezproblémová.FastAPI bolo 
+zvolené ale aj z~ďaľších praktických dôvodov. Asynchrónna architektúra
 (\acrshort{asgi}) umožňuje súbežne obsluhovať požiadavky mobilnej aplikácie aj
 dlhotrvajúce volania jazykového modelu bez vzájomného blokovania. Automaticky
 generovaná OpenAPI dokumentácia uľahčuje ladenie \acrshort{api} počas vývoja.
 Validácia vstupov cez Pydantic redukuje množstvo pomocného kódu. Rolu zohrali
 aj predchádzajúce skúsenosti s~týmto frameworkom v bakalarskej práci, čo
 výrazne urýchlilo vývoj a umožnilo sa sústrediť na implementáciu biznis logiky
-a~integráciu s~AI knižnicami.
+a~integráciu AI asistenta.
 
 \begin{itemize}
-      \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, priama integrácia s~AI knižnicami, rýchly vývoj.
+      \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, AI knižnice, rýchly vývoj.
       \item \textbf{Nevýhody:} Interpretovaný Python je pomalší oproti kompilovaným jazykom pri \acrshort{cpu}-intenzívnych operáciách.
 \end{itemize}
 
@@ -899,15 +878,14 @@ a~integráciu s~AI knižnicami.
 
 Pre mobilnú aplikáciu bol zvolený framework Flutter od spoločnosti Google.
 Primárnou cieľovou platformou je Android, avšak Flutter umožňuje z~jednej
-kódovej základne generovať aj webovú aplikáciu, čo otvára možnosť implementácie
-administrátorského panelu bez nutnosti udržiavať samostatný projekt.
+kódovej základne generovať aj webovú aplikáciu, desktopovú aplikáciu a iOS aplikáciu, čo otvára možnosť implementácie
+administrátorského panelu, či vývoja pre iné platformy bez nutnosti udržiavať samostatný projekt.
 
 Oproti natívnemu vývoju v~Kotline, Flutter ponúka výrazne rýchlejší vývojový
 cyklus vďaka funkciám hot reload a hot restart. Vlastný vykresľovací engine
 Impeller zaručuje vizuálnu konzistenciu rozhrania naprieč zariadeniami a
 operačnými systémami. Bohatá štandardná knižnica widgetov pokrýva väčšinu
-potrieb priemyselného ovládacieho rozhrania vrátane dynamických grafov,
-stavových indikátorov a formulárov.
+potrieb priemyselného ovládacieho rozhrania.
 
 \begin{itemize}
       \item \textbf{Výhody:} Jedna kódová základňa pre Android, iOS aj web, rýchly vývojový cyklus, konzistentné \acrshort{ui}, silná podpora od Google.
@@ -934,7 +912,7 @@ Preto bolo otestovaných niekoľko prístupov k~ich rozpoznávaniu:
       \item \textbf{Analýza mriežky jamiek} -- priama detekcia binárneho
             vzoru v~19$\times$19 mriežke a~porovnanie matíc.
       \item \textbf{Porovnávanie histogramov} -- identifikácia na základe
-            distribúcie intenzít po perspektívnej korekcii.
+            distribúcie intenzít.
       \item \textbf{Siamese network} -- ľahká CNN extrahujúca
             128-dimenzionálne príznakové vektory, identifikácia
             na základe cosine similarity.
@@ -955,13 +933,13 @@ marker \textbf{ArUco}. Markery ArUco sú binárne štvorcové vzory s~kódovanou
 detekciu počítačovým videním za rôznych svetelných podmienok. Knižnica ArUco je
 súčasťou OpenCV a~poskytuje robustné algoritmy detekcie s~korekciou
 perspektívy. V~priemyselnom prostredí majú ArUco markery silné zastúpenie,
-využívajú ich napríklad automaticky riadené vozidlá (AGV), upratovacie
+využívajú ich napríklad automaticky navádzané vozidlá (AGV), upratovacie
 autonómne roboty a aj výskumné robotické platformy. Táto rozšírenosť je ďalším
 argumentom v~prospech voľby ArUco oproti 3D identifikátorom, ktoré by
-vyžadovali vlastnú infraštruktúru rozpoznávania. Prípadne by bolo možné
+vyžadovali vlastný spôsob rozpoznávania. Prípadne by bolo možné
 použitie frameworku ako Vuforia, čo by ale značne zvýšilo závislosť
-implementácie a údržby.
-
+implementácie a údržby a presne tomu sme sa chceli vyhnúť.
+%%%% tu pokracovat
 \section{Experimentálne porovnanie a výber jazykových modelov}
 
 \subsection{Popis testovaných modelov}
@@ -1507,10 +1485,10 @@ dvojfarebnú 3D tlač. Model je navrhnutý tak, aby farebné priradenie v slicer
 bolo čo najjednoduchšie.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.45\textwidth]{img/ArUco3D.jpg}
-    \caption{ArUco marker tlačený z vygenerovaného STL modelu}
-    \label{fig:Aruco3D}
+      \centering
+      \includegraphics[width=0.45\textwidth]{img/ArUco3D.jpg}
+      \caption{ArUco marker tlačený z vygenerovaného STL modelu}
+      \label{fig:Aruco3D}
 \end{figure}
 
 Povrch modelu je rozdelený do troch výškových úrovní. Čierne bunky markera sú
