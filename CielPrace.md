@@ -17,3 +17,4 @@ Cieľom tejto práce je navrhnúť a implementovať mobilnú aplikáciu umožňu
 
 TODO: 
 - [ ] Ako odcitovat 3d identifikatory
+- [ ] Pridat ako vyzera vstup do LLM co posielame na anthropic api

@@ -304,17 +304,17 @@ obsahuje vstavaný admin panel, správu relácií a ORM vrstvu. Je vhodný
 pre dátovo náročné aplikácie a rýchly vývoj, avšak jeho monolitická
 architektúra ho robí menej vhodným pre mikroslužby.
 
-\textbf{Node.js s~Express / NestJS} umožňuje použiť JavaScript aj pre backend.
+\textbf{Node.js s~Express/NestJS} umožňuje použiť JavaScript aj pre backend.
 Node.js vyniká pri aplikáciách s~vysokou frekvenciou krátkych I/O operácií, avšak nie je vhodný pre výpočtovo náročné úlohy
 blokujúce event loop. NestJS nadstavba pridáva štruktúru TypeScript pre
 väčšie projekty.
 
-\textbf{Python s~frameworkmi Flask / FastAPI} dominuje v~oblasti
+\textbf{Python s~frameworkmi Flask/FastAPI} dominuje v~oblasti
 \acrshort{ai} a \acrshort{ml} vďaka bohatému ekosystému knižníc ako PyTorch, Scikit-learn,
 LangChain. Flask je minimalistický a flexibilný, FastAPI využíva asynchrónne
 \acrshort{asgi} a automaticky generuje OpenAPI dokumentáciu na základe typových anotácií.
 
-\textbf{Go s Gin / Fiber} je kompilovaný jazyk nízkymi nárokmi na \acrshort{ram} a \acrshort{cpu} a predvídateľnou
+\textbf{Go s Gin/Fiber} je kompilovaný jazyk nízkymi nárokmi na \acrshort{ram} a \acrshort{cpu} a predvídateľnou
 latenciou. Je vhodný pre mikroslužby, edge nasadenia a výkonnostne
 kritické systémy, avšak jeho ekosystém pre \acrshort{ai}/\acrshort{ml} je výrazne
 menší oproti Pythonu.
@@ -327,10 +327,10 @@ menší oproti Pythonu.
             \hline
             \textbf{Scenár použitia}  & \textbf{Odporúčaný framework} \\
             \hline
-            MVP / Startup             & Node.js, Django, FastAPI      \\
+            MVP/Startup               & Node.js, Django, FastAPI      \\
             Podnikové mikroslužby     & Spring Boot, Go, NestJS       \\
             Aplikácie s~\acrshort{ai} & Django, FastAPI, Node.js      \\
-            Vysoká záťaž / real-time  & Gin, Fiber, Node.js           \\
+            Vysoká záťaž/real-time    & Gin, Fiber, Node.js           \\
             \hline
       \end{tabular}
 \end{table}
@@ -346,10 +346,10 @@ filtrovať a vyhodnocovať dáta lokálne, do cloudu sa odosielajú len relevant
 výsledky, čo znižuje spotrebu prenosového pásma a zvyšuje odolnosť systému pri
 výpadku pripojenia.
 
-Edge computing a cloud sa navzájom nevylučujú, ale spolupracujú v~hybridnom
-modeli, kde edge zabezpečuje takmer real-time spracovanie a cloud poskytuje
-dlhodobé ukladanie dát, pokročilú analytiku alebo koordináciu v prípade
-viacerých edge uzlov.
+Edge computing a cloud sa navzájom nevylučujú, ale môžu spolupracovať
+v~hybridnom modeli, kde edge zabezpečuje takmer real-time spracovanie a cloud
+poskytuje dlhodobé ukladanie dát, pokročilú analytiku alebo koordináciu v
+prípade viacerých edge uzlov.
 
 \subsubsection{Docker a Docker Compose}
 
@@ -551,10 +551,24 @@ napr. URL adresy, sériové čísla alebo konfiguračné parametre. Ich výhodou
 silná korekcia chýba, ktorá umožňuje prečítať kód aj pri čiastočnom poškodení
 alebo znečistení povrchu.
 
+\begin{figure}[h]
+      \centering
+      \includegraphics[width=0.35\textwidth]{img/qrcode.png}
+      \caption{QR kód so zakódovanou URL adresou fei.stuba.sk}
+      \label{fig:qrcode}
+\end{figure}
+
 \subsection{Fiduciálne markery -- AprilTag, ArUco}
 Fiduciálne markery sú špeciálne navrhnuté pre potreby počítačového videnia a
 robotiky. Na rozdiel od QR kódov nie je ich primárnym cieľom prenos veľkého
 objemu dát, ale presná lokalizácia v 3D priestore.
+
+\begin{figure}[h]
+      \centering
+      \includegraphics[width=0.45\textwidth]{img/AprilTagVsArUco.png}
+      \caption{Vizuálne porovnanie AprilTag a ArUco}
+      \label{fig:apriltag}
+\end{figure}
 
 Tieto identifikátory sa vyznačujú predovšetkým vysokou mierou interoperability
 s modernými robotickými riešeniami. Vďaka existujúcim knižniciam napr. OpenCV,
@@ -593,70 +607,63 @@ Hlavné technické výhody tohto riešenia sú:
       \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
 \end{itemize}
 
-\section{Špecifikácia požiadaviek systému}
+\section{Špecifikácia požiadaviek na systém}
 
 Práca predstavuje moderný prístup k priemyselnému internetu vecí
 (\acrshort{iiot}), kde mobilná aplikácia slúži ako primárne rozhranie pre
 obsluhu výrobnej linky, prepojené s riadiacim systémom prostredníctvom edge
 computing zariadenia umiestneného priamo v prevádzke.
 
-\subsection{Prehľad systému}
+\subsection{Opis systému}
 
-V moderných priemyselných prevádzkach narastá tlak na flexibilitu a mobilitu
-obsluhy výrobných zariadení. Tradičné riešenia sú spravidla viazané na pevne
-umiestnené operátorské panely alebo stolové počítače, čo obmedzuje pohyblivosť
-obsluhy a~zvyšuje reakčný čas pri riešení prevádzkových udalostí. Mobilné
-zariadenia ponúkajú možnosť prístupu k výrobným systémom odkiaľkoľvek v rámci
-areálu závodu. Ich použitie v~kombinácii s~jednoznačnou identifikáciou
-zariadení otvára cestu k~bezpečnému a~intuitívnemu ovládaniu výrobnej linky.
+Systém umožní obsluhe výrobnej linky ovládať PLC zariadenia prostredníctvom
+mobilnej aplikácie. Identifikácia zariadenia prebieha skenovaním ArUco markera
+umiestneného priamo na zariadení. Po naskenovaní sa aplikácia pripojí
+k~zariadeniu a~obsluha bude môcť odosielať príkazy a~sledovať aktuálny stav.
 
-Kľúčovou výzvou pri takomto prístupe je spoľahlivé a~jednoznačné spárovanie
-mobilného zariadenia s~konkrétnou fyzickou časťou výrobnej linky. Skenovaním
-jedinečného identifikátora umiestneného priamo pri zariadení operátor okamžite
-nadviaže spojenie a systém presne vie, kto a~ktoré zariadenie ovláda. Toto
-spojenie je základom pre bezpečné riadenie, zaznamenávanie operácií a~správu
-prístupu viacerých používateľov k rovnakému zariadeniu.
+Systém bude podporovať viacerých súčasne prihlásených používateľov s~rôznymi
+oprávneniami. Každý používateľ bude mať pridelenú rolu, ktorá určí, ku ktorým
+funkciám má prístup. Keďže ku jednému zariadeniu sa môže pokúsiť pripojiť
+viacero pracovníkov naraz, systém musí riešiť exkluzivitu pripojenia
+a~definovať pravidlá pre prípad konfliktu, pričom servisný zásah údržbára musí
+byť chránený pred prerušením.
 
-Ďalšou dôležitou oblasťou je správa prístupu pracovníkov s~rôznymi rolami.
-Operátor potrebuje priamy prístup k~riadeniu linky, manažér vyžaduje prehľad o dianí vo výrobe, údržbár musí mať garantovaný neprepisovateľný prístup pri servisnom zásahu
-a~administrátor spravuje celý systém vrátane schvaľovania registrácie nových používateľov.
-Bez jasne definovaného mechanizmu riadenia prístupu by mohlo dôjsť ku konfliktom príkazov
-alebo neoprávnenému zásahu do výrobného procesu.
+Systém bude zaznamenávať všetky odoslané príkazy vrátane informácie o~tom,
+ktorý používateľ príkaz vydal a~na ktoré zariadenie. Administrátor a manažér
+budú môcť spravovať používateľské účty a~schvaľovať nové registrácie.
 
-Celá komunikačná vrstva od \acrshort{plc} až po mobilnú aplikáciu prebieha cez
-štandardné priemyselné a~webové protokoly. Backendová infraštruktúra je plne
-kontajnerizovaná a to umožňuje rýchle nasadenie.
-Ovládanie linky je obmedzené výhradne na lokálnu sieť továrne.
+Súčasťou systému bude inteligentný asistent, ktorý bude odpovedať na technické
+otázky obsluhy na základe dokumentácie nahratej v~znalostnej báze. Obsah
+znalostnej bázy bude možné viazať na konkrétne zariadenie.
 
-Neoddeliteľnou súčasťou systému je inteligentný technický asistent. Asistent
-odpovedá na technické otázky obsluhy výhradne na základe dokumentácie
-a~manuálov nahratých pre konkrétne zariadenie, čím znižuje závislosť od
-papierových príručiek a~skracuje čas potrebný na riešenie prevádzkových
-problémov.
+Systém bude nasadený výhradne v~lokálnej sieti továrne. Backendové služby budú
+kontajnerizované a~nasadené na edge zariadení umiestenom v~sieti továrne.
 
 \subsection{Popis používateľských rolí}
 
 Systém implementuje riadenie prístupu založené na rolách (\textit{Role-Based
       Access Control}, RBAC). Každý nový používateľ sa musí zaregistrovať a~pred
-prvým prihlásením čaká na schválenie administrátorom alebo manažérom, ktorý mu zároveň priradí
-príslušnú rolu. Sú definované štyri roly:
+prvým prihlásením čaká na schválenie administrátorom alebo manažérom, ktorý mu
+zároveň priradí príslušnú rolu. Sú definované štyri roly:
 
 \begin{description}
       \item[Operátor:] Základná obsluha výrobnej linky. Prihlasuje sa na konkrétnu linku
-            skenovaním ArUco kódu, odosiela riadiace príkazy a~sleduje aktuálny stav zariadenia v~reálnom čase. Nemá prístup
-            k~reportom, správe vedomostnej bázy ani správe používateľov. Môže v prípade
-            potreby využiť AI asistenta.
+            skenovaním ArUco kódu, odosiela riadiace príkazy a~sleduje aktuálny stav
+            zariadenia v~reálnom čase. Nemá prístup k~reportom, správe vedomostnej bázy ani
+            správe používateľov. Môže v prípade potreby využiť AI asistenta.
 
-      \item[Manažér:] Zameriava sa na sledovanie udalostí. Má prístup
-            k~histórii prihlásení jednotlivých operátorov, reportu s logmi a môže spravovať používateľské kontá. Takisto má prístup k~AI asistentovi a môže upravovať vedomostnú bázu.
-            Linku priamo neovláda no vidí kto je prihlásený a aké operácie vykonáva.
+      \item[Manažér:] Zameriava sa na sledovanie udalostí. Má prístup k~histórii prihlásení
+            jednotlivých operátorov, reportu s logmi a môže spravovať používateľské kontá.
+            Takisto má prístup k~AI asistentovi a môže upravovať vedomostnú bázu. Linku
+            priamo neovláda no vidí kto je prihlásený a aké operácie vykonáva.
 
       \item[Údržbár:] Má exkluzívnu ochranu relácie a žiadny iný používateľ ho nemôže
             odhlásiť z~prihláseného zariadenia, čo zaručuje bezpečnosť počas servisného zásahu.
             Spravuje vedomostnú bázu pre jednotlivé zariadenia, môže upravovať existujúce zariadenia a vytvárať nové.
 
       \item[Administrátor:] Spravuje celý systém, schvaľuje nové registrácie, priraďuje
-            roly, edituje a~odstraňuje používateľské kontá. Má prístup prakticky ku všetkým funkciám systému.
+            roly, edituje a~odstraňuje používateľské kontá. Má prístup prakticky ku všetkým
+            funkciám systému.
 \end{description}
 
 \subsection{Use-case scenáre}
@@ -668,7 +675,7 @@ príslušnú rolu. Sú definované štyri roly:
       \textbf{Aktér} & Všetky roly                                \\
       \textbf{Popis} & Používateľ sa zaregistruje zadaním údajov.
       Kým administrátor neschváli konto, aplikácia zobrazí informáciu o~čakaní na schválenie.
-      Po schválení sa používateľ prihlási a~získa prístup.      \\
+      Po schválení sa používateľ prihlási a~získa prístup.        \\
       \bottomrule
 \end{tabularx}
 
@@ -676,7 +683,7 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-02: Skenovanie ArUco kódu a spárovanie linky                             \\
-      \textbf{Aktér} & Operátor, údržbár, admin                                                           \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                    \\
       \textbf{Popis} & Používateľ naskenuje ArUco kód pri zariadení.
       Ak je linka voľná, po potvrdení dialógu sa vytvorí relácia.
       Ak je obsadená, zobrazí sa identita a~rola prihláseného.
@@ -687,8 +694,8 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-03: Ovládanie linky                                                                                                                                                                                                  \\
-      \textbf{Aktér} & Operátor, údržbár, admin                                                                                                                                                                                                                               \\
+      \textbf{ID}    & UC-03: Ovládanie linky                                                        \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                      \\
       \textbf{Popis} & Aktéri odosielajú príkazy z~ovládacieho panelu.
       Vykonanie príkazu je potvrdené a je zobrazený čas od odoslania po prijatie príkazu zariadením. \\
       \bottomrule
@@ -698,7 +705,7 @@ príslušnú rolu. Sú definované štyri roly:
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
       \textbf{ID}    & UC-04: Monitorovanie stavu linky                                                                                        \\
-      \textbf{Aktér} & Operátor, údržbár, admin                                                                                                      \\
+      \textbf{Aktér} & Operátor, údržbár, admin                                                                                                \\
       \textbf{Popis} & Dashboard zobrazuje procesné dáta z~PLC v~reálnom čase cez WebSocket. Stavy sú farebne kódované podľa normy IEC\,60073. \\
       \bottomrule
 \end{tabularx}
@@ -706,8 +713,8 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-05: Prezeranie logov                                                                                        \\
-      \textbf{Aktér} & Manažér, údržbár, admin                                                                                                            \\
+      \textbf{ID}    & UC-05: Prezeranie logov                                                                 \\
+      \textbf{Aktér} & Manažér, údržbár, admin                                                                 \\
       \textbf{Popis} & Je možné prezeranie logov a reportov s filtorvaním podľa časového obdobia a zariadenia. \\
       \bottomrule
 \end{tabularx}
@@ -715,8 +722,8 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-06: Správa vedomostnej bázy                                                                                          \\
-      \textbf{Aktér} & Manažér, údržbár, admin                                                                                                          \\
+      \textbf{ID}    & UC-06: Správa vedomostnej bázy                                                               \\
+      \textbf{Aktér} & Manažér, údržbár, admin                                                                      \\
       \textbf{Popis} & Prostredníctvom CRUD operácií sa nahrávajú, upravujú a~odstraňujú dokumenty znalostnej bázy. \\
       \bottomrule
 \end{tabularx}
@@ -724,8 +731,8 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-07: AI asistent                                                                                   \\
-      \textbf{Aktér} & Všetky roly                                                                                                        \\
+      \textbf{ID}    & UC-07: AI asistent                                                                                                                                                        \\
+      \textbf{Aktér} & Všetky roly                                                                                                                                                               \\
       \textbf{Popis} & Tlačidlom v~rohu každej obrazovky sa spustí chatbot.
       Odpovedá výhradne na základe vedomostnej bázy, či už všeobecnej alebo viazanej ku konkrétnemu zariadeniu. Ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
       \bottomrule
@@ -734,8 +741,8 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-08: Správa používateľov                                                                                                                \\
-      \textbf{Aktér} & Manažér, admin                                                                                                                                     \\
+      \textbf{ID}    & UC-08: Správa používateľov                                                                                                                          \\
+      \textbf{Aktér} & Manažér, admin                                                                                                                                      \\
       \textbf{Popis} & Manažér a admin schvaľuje registrácie, priraďuje roly, upravuje a~odstraňuje kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
       \bottomrule
 \end{tabularx}
@@ -743,12 +750,11 @@ príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-09: Nastavenia aplikácie                                                                                        \\
-      \textbf{Aktér} & Všetky roly                                                                                                        \\
+      \textbf{ID}    & UC-09: Nastavenia aplikácie                                                                                               \\
+      \textbf{Aktér} & Všetky roly                                                                                                               \\
       \textbf{Popis} & V~nastaveniach je možné zmeniť jazyk (SK\,/\,EN) a~vlastné heslo. Zmena jazyka je dostupná aj na prihlasovacej obrazovke. \\
       \bottomrule
 \end{tabularx}
-
 
 \subsection{Funkcionálne požiadavky}
 
@@ -820,16 +826,16 @@ výrazne komplexnejší konfiguračný proces. S7 protokol cez knižnicu
 \subsection{Komunikačná middleware vrstva -- Node-RED}
 
 Spojenie medzi \acrshort{plc} a zvyškom systému zabezpečuje Node-RED, nástroj
-na programovanie s využitím minima kódu. Bbeží ako Docker kontajner priamo
-na edge zariadení v~prevádzke. Node-RED periodicky číta hodnoty
-z~\acrshort{plc} prostredníctvom S7 protokolu a publikuje ich do
-\acrshort{mqtt} brokera, čím spája svet \acrshort{ot} (\acrshort{plc}, S7) a
-\acrshort{it} (\acrshort{mqtt}, backend).
+na programovanie s využitím minima kódu. Beží v Docker kontajneri priamo na
+edge zariadení v~prevádzke. Node-RED periodicky číta hodnoty z~\acrshort{plc}
+prostredníctvom S7 protokolu a publikuje ich do \acrshort{mqtt} brokera, čím
+spája svet \acrshort{ot} (\acrshort{plc}, S7) a \acrshort{it} (\acrshort{mqtt},
+backend).
 
 Node-RED bol zvolený z~niekoľkých dôvodov. Disponuje uzlom
 \texttt{node-red-contrib-s7} pre priamu komunikáciu so Siemens \acrshort{plc} a
-rovnako podporou \acrshort{mqtt}. Toto riešenie je bez potreby písať
-rozsiahly kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda
+rovnako podporou \acrshort{mqtt}. Toto riešenie je bez potreby písať rozsiahly
+kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda
 periodické dotazovanie (polling) \acrshort{plc} a podmienené spúšťanie akcií.
 
 \begin{itemize}
@@ -859,7 +865,7 @@ Backend aplikácie bol implementovaný v~Pythone s~využitím frameworku FastAPI
 Tvorí \acrshort{api} pre celú mobilnú aplikáciu. Oddelené \acrshort{api}
 obsluhuje \acrshort{ai} asistenta vrátane \acrshort{rag} pipeline. Voľba
 Pythonu bola prirodzená, pretože knižnice LangChain, ChromaDB a~Ollama sú
-súčasťou python ekosystému a ich integrácia je bezproblémová.FastAPI bolo 
+súčasťou python ekosystému a ich integrácia je bezproblémová.FastAPI bolo
 zvolené ale aj z~ďaľších praktických dôvodov. Asynchrónna architektúra
 (\acrshort{asgi}) umožňuje súbežne obsluhovať požiadavky mobilnej aplikácie aj
 dlhotrvajúce volania jazykového modelu bez vzájomného blokovania. Automaticky
@@ -878,8 +884,9 @@ a~integráciu AI asistenta.
 
 Pre mobilnú aplikáciu bol zvolený framework Flutter od spoločnosti Google.
 Primárnou cieľovou platformou je Android, avšak Flutter umožňuje z~jednej
-kódovej základne generovať aj webovú aplikáciu, desktopovú aplikáciu a iOS aplikáciu, čo otvára možnosť implementácie
-administrátorského panelu, či vývoja pre iné platformy bez nutnosti udržiavať samostatný projekt.
+kódovej základne generovať aj webovú aplikáciu, desktopovú aplikáciu a iOS
+aplikáciu, čo otvára možnosť implementácie administrátorského panelu, či vývoja
+pre iné platformy bez nutnosti udržiavať samostatný projekt.
 
 Oproti natívnemu vývoju v~Kotline, Flutter ponúka výrazne rýchlejší vývojový
 cyklus vďaka funkciám hot reload a hot restart. Vlastný vykresľovací engine
@@ -936,15 +943,15 @@ perspektívy. V~priemyselnom prostredí majú ArUco markery silné zastúpenie,
 využívajú ich napríklad automaticky navádzané vozidlá (AGV), upratovacie
 autonómne roboty a aj výskumné robotické platformy. Táto rozšírenosť je ďalším
 argumentom v~prospech voľby ArUco oproti 3D identifikátorom, ktoré by
-vyžadovali vlastný spôsob rozpoznávania. Prípadne by bolo možné
-použitie frameworku ako Vuforia, čo by ale značne zvýšilo závislosť
-implementácie a údržby a presne tomu sme sa chceli vyhnúť.
-%%%% tu pokracovat
+vyžadovali vlastný spôsob rozpoznávania. Prípadne by bolo možné použitie
+frameworku ako Vuforia, čo by ale značne zvýšilo závislosť implementácie a
+údržby a presne tomu sme sa chceli vyhnúť.
+
 \section{Experimentálne porovnanie a výber jazykových modelov}
 
 \subsection{Popis testovaných modelov}
 
-Na účely porovnania bolo vybraných päť lokálne spustiteľných jazykových modelov
+Na porovnanie bolo vybraných päť lokálne spustiteľných jazykových modelov
 dostupných prostredníctvom platformy Ollama. Modely boli zámerne zvolené tak,
 aby pokrývali tri veľkostné kategórie: modely do 10 miliárd parametrov, modely
 v rozsahu 10 až 15 miliárd parametrov a model s 24 miliardami parametrov.
@@ -955,12 +962,12 @@ odpovedí a časom odozvy.
 
       \item \textbf{llama3.2:3b} \\
             Kompaktný model od spoločnosti Meta s~3 miliardami parametrov zo série Llama~3.2,
-            ktorá zahŕňa predtrénované aj inštrukčne doladené generatívne modely vo veľkostiach
-            1B a 3B parametrov. Inštrukčne doladené varianty sú optimalizované pre multijazyčné
+            ktorá zahŕňa predtrénované aj inštrukčne doladené generatívne modely vo veľkosti
+            3B parametrov. Inštrukčne doladené varianty sú optimalizované pre multijazyčné
             konverzačné úlohy vrátane agentického vyhľadávania a sumarizácie.
             Podľa oficiálnej dokumentácie model prekonáva modely Gemma~2 2.6B
-            a Phi~3.5-mini v~úlohách ako sledovanie inštrukcií, sumarizácia,
-            prepis promptov a používanie nástrojov~\cite{t21}.
+            a Phi~3.5-mini v~úlohách ako plnenie inštrukcií, sumarizácia,
+            prepisovanie promptov a používanie nástrojov~\cite{t21}.
             Do testovania bol zaradený ako zástupca najmenšej veľkostnej kategórie
             s~predpokladom najrýchlejšej odozvy.
 
@@ -989,27 +996,27 @@ odpovedí a časom odozvy.
             filtrovaných verejne dostupných webových zdrojov a akademických kníh
             a dátových sád otázok a odpovedí. Prešiel procesom doladenia pomocou
             supervised fine-tuningu a direct preference optimization s~dôrazom na presné
-            sledovanie inštrukcií a bezpečnosť. Podľa oficiálnej dokumentácie je určený
+            plnenie inštrukcií a bezpečnosť. Podľa oficiálnej dokumentácie je určený
             pre prostredia s~obmedzenými výpočtovými zdrojmi, scenáre s~požiadavkami
             na nízku latenciu a úlohy vyžadujúce uvažovanie a logiku~\cite{t24}.
             Do testovania bol zaradený ako druhý zástupca kategórie 10--15 miliárd parametrov.
 
       \item \textbf{mistral-small:24b} \\
             Model od spoločnosti Mistral AI s~24 miliardami parametrov a kontextovým oknom
-            32\,000 tokenov, ktorý stanovuje nový benchmark v~kategórii modelov do 70B parametrov.
+            32\,000 tokenov, ktorý stanovuje nový štandard v~kategórii modelov do 70B parametrov.
             Podľa oficiálnej dokumentácie dosahuje výkon porovnateľný s~modelmi trojnásobnej
-            veľkosti a proprietárnym modelom GPT-4o mini naprieč úlohami v~oblasti kódu,
-            matematiky, všeobecných znalostí a sledovania inštrukcií~\cite{t25}.
+            veľkosti a proprietárnym modelom GPT-4o mini naprieč úlohami v~oblasti programovania,
+            matematiky, všeobecných znalostí a plnenia inštrukcií~\cite{t25}.
             Model vyniká multijazyčnou podporou, natívnym volaním funkcií, \acrshort{json} výstupom
-            a silnou adherenciou k~systémovým promptom. Vďaka kompaktnej veľkosti je
-            nasaditeľný lokálne na bežnom spotrebiteľskom hardvéri a je licencovaný pod Apache~2.0.
+            a vysokým rešpektom k~systémovým promptom. Vďaka kompaktnej veľkosti je
+            nasaditeľný lokálne na výkonnejšom spotrebiteľskom hardvéri.
 
 \end{enumerate}
 
 \subsection{Metodika testovania}
 
-Testovanie prebiehalo formou automatizovaného benchmarku implementovaného
-v~jazyku Python s~využitím knižníc LangChain, ChromaDB a Ollama. Znalostná báza
+Testovanie prebiehalo formou automatizovaného testu implementovaného v~jazyku
+Python s~využitím knižníc LangChain, ChromaDB a Ollama. Znalostná báza
 asistenta vo formáte \texttt{.txt} bola rozdelená na sekcie podľa markerov
 \texttt{--- NÁZOV DOKUMENTU: ---} a uložená do vektorovej databázy ChromaDB
 s~využitím embedding modelu \texttt{nomic-embed-text}. Pre každú testovú otázku
@@ -1122,7 +1129,7 @@ v~tabuľke~\ref{tab:model_comparison}.
 Z~výsledkov testovania vyplýva, že model \textbf{gemma4:e4b} dosiahol najvyššie
 celkové skóre 4,92/5,0 spomedzi všetkých testovaných modelov. Model vykazoval
 konzistentne vysokú kvalitu odpovedí naprieč všetkými typmi otázok aj oboma
-testovacími jazykmi, pričom jeho priemerný čas odozvy 11\,165\,ms bol
+testovanými jazykmi, pričom jeho priemerný čas odozvy 11\,165\,ms bol
 v~podmienkach notebookového hardvéru prijateľný a takmer trojnásobne nižší
 v~porovnaní s~modelom mistral-small:24b.
 
@@ -1138,16 +1145,17 @@ z~hľadiska bezpečnosti systému.
 
 \subsubsection{Overenie na cloudovom hardvéri}
 
-V~nadväznosti na merania realizované lokálne bolo vybrané testovanie vykonaných
-aj na platforme RunPod.io, ktorá poskytuje prístup k~výkonným GPU serverom
-formou platby za využitý čas. Cieľom bolo overiť, do akej miery hardvérová
-limitácia skresľuje závery o~reálnej použiteľnosti modelov v~produkcii.
+V~nadväznosti na merania realizované lokálne boli vybrané modely testované aj
+na platforme RunPod.io, ktorá poskytuje prístup k~výkonným GPU serverom formou
+platby za využitý čas. Cieľom bolo overiť, do akej miery hardvérová limitácia
+skresľuje závery o~reálnej použiteľnosti modelov v~produkcii.
 
 Výsledky potvrdili predpoklad, na dedikovanom serverovom hardvéri s~dostatočnou
-\acrshort{vram} klesol priemerný čas odozvy na menej ako 8 sekúnd, čo je pre
-interaktívne použitie výrazne prijateľnejšia hodnota. Kvalita odpovedí pritom
-zostala nezmenená, čo je v~súlade s~očakávaním. Model generuje rovnaký výstup
-nezávisle od hardvéru, rozdiel sa prejaví iba v~latencii.
+\acrshort{vram} klesol priemerný čas odozvy na menej ako 8 sekúnd u všetkých
+modelov, čo je pre interaktívne použitie výrazne prijateľnejšia hodnota.
+Kvalita odpovedí pritom zostala nezmenená, čo je v~súlade s~očakávaním. Model
+generuje kvalitatívne rovnaký výstup nezávisle od hardvéru, rozdiel sa prejaví
+iba v~latencii.
 
 \subsubsection{Záverečné rozhodnutie o architektúre AI asistenta}
 
@@ -1162,8 +1170,8 @@ V prípade väčších organizácií s~vyšším objemom požiadaviek by mohlo b
 zmysluplné investovať do vlastného serverového hardvéru. Stále však bude
 výhodnosť vlastného servera s GPU závislá od konkrétneho objemu požiadaviek.
 Pre nízky až stredný objem požiadaviek, je určite ekonomicky výhodnejšie
-využívať cloudové \acrshort{api} s~modelom per-token, kde náklady sú
-priamoúmerné skutočnému využitiu a nevyžadujú si vysokú počiatočnú investíciu.
+využívať \acrshort{api} s~modelom per-token, kde náklady sú priamoúmerné
+skutočnému využitiu a nevyžadujú si vysokú počiatočnú investíciu.
 
 Z~týchto dôvodov bolo rozhodnuté opustiť prístup lokálnych \acrshort{llm} a
 prejsť na volanie externého \acrshort{api}. Na výber je niekoľko poskytovateľov
@@ -1186,27 +1194,27 @@ funkčnosť aj bez pripojenia k internetu. Mobilná aplikácia komunikuje výhra
 v rámci lokálnej siete závodu a v súčasnosti sa pripojenie na internet využíva
 len pre účely AI asistenta. Ak by sme využívali lokálne spustiteľný jazykový
 model, komunikácia s AI asistentom by prebiehala výhradne v rámci lokálnej
-siete a celý systém by bol izolovaný. Nasledujúce podkapitoly popisujú celkovú
-štruktúru systému, spôsob nasadenia jednotlivých komponentov, ich vzájomnú
-komunikáciu a formát ukladania dát.
+siete a celý systém by bol izolovaný. Nasledujúce podkapitoly popisujú
+podrobnejšie celkovú štruktúru systému, spôsob nasadenia jednotlivých
+komponentov, ich vzájomnú komunikáciu a spôsob ukladania dát.
 
 \subsection{Architektúra komponentov systému}
-Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia
-Flutter, ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová
-vrstva tvorená dvoma službami FastAPI. Hlavnou službou zabezpečujúcou
-autentifikáciu, správu relácií, riadenie zariadení a samostatnou službou AI
-asistenta s RAG pipeline. Tretím komponentom je MQTT broker Mosquitto, ktorý
-sprostredkúva asynchrónnu komunikáciu medzi backendom a Node-RED. Štvrtým je
-Node-RED, ktorý premosťuje svet priemyselnej komunikácie so svetom IT a
-periodicky číta dáta z PLC prostredníctvom S7 protokolu. Posledným komponentom
-je samotné PLC Siemens S7-1200, ktoré fyzicky ovláda zariadenia na výrobnej
-linke. Všetky tieto komponenty okrem mobilnej aplikácie bežia ako Docker
-kontajnery na edge zariadení. Jediné externé volanie smeruje z AI služby na
-rozhranie Anthropic API.
+Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia,
+ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová vrstva
+tvorená dvoma službami FastAPI. Hlavná služba zabezpečuje autentifikáciu,
+správu relácií, riadenie zariadení a samostatná služba rieši AI asistenta s RAG
+pipeline. Tretím komponentom je MQTT broker Mosquitto, ktorý sprostredkúva
+asynchrónnu komunikáciu medzi backendom a Node-RED. Štvrtým je Node-RED, ktorý
+premosťuje svet priemyselnej komunikácie so svetom IT a periodicky číta dáta z
+\acrshort{plc} prostredníctvom S7 protokolu. Posledným komponentom je samotné
+\acrshort{plc} Siemens S7-1200, ktoré riadi prvky výrobnej linky. Všetky tieto
+komponenty okrem mobilnej aplikácie a \acrshort{plc} bežia v Docker stacku na
+edge zariadení. Jediné externé volanie smeruje z AI služby na rozhranie
+Anthropic API.
 
-\begin{figure}[h]
+\begin{figure}[H]
       \centering
-      \includegraphics[width=\textwidth]{img/architektura_systemu.pdf}
+      \includegraphics[width=0.9\textwidth]{img/architektura_systemu.pdf}
       \caption{Diagram architektúry systému a komunikácia medzi komponentmi}
       \label{fig:architecture}
 \end{figure}
@@ -1234,10 +1242,10 @@ obrázku \ref{fig:fyzicka_architektura}.
 
 Mobilné zariadenia sa pripájajú k edge zariadeniu bezdrôtovo cez WiFi. Voľba
 bezdrôtového pripojenia vychádza z charakteru práce operátora, ktorý sa
-pohybuje po výrobnej hale a potrebuje mať prístup k systému kdekoľvek v jej
-dosahu. Edge zariadenie je prepojené s Ethernet switchom, na ktorý sú napojené
-riadiace systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla,
-beží na ňom backend aj AI asistent a všetka logika spracovania príkazov sa
+pohybuje po výrobnej hale a potrebuje mať prístup k systému kdekoľvek. Edge
+zariadenie je prepojené s Ethernet switchom, na ktorý sú napojené riadiace
+systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla, beží na
+ňom hlavný backend aj AI asistent a všetka logika spracovania príkazov sa
 vykonáva lokálne (okrem LLM, v práci sme zvolili externé API). Architektúra
 počíta s pripojením viacerých riadiacich systémov, čo umožňuje rozšírenie na
 ďalšie výrobné linky bez zmeny základnej topológie. V súčasnej implementácii je
@@ -1286,17 +1294,20 @@ všetkých zariadení naraz. Node-RED subscribuje selektívne len na témy
 \texttt{commands} pre zariadenia, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
+
 \section{Implementácia backendu}
+%% nasledujucich par viet mi pride ze sa opakuju co som uz pisal v \subsection{Architektúra komponentov systému}
 Backend systému tvorí dvojica nezávislých FastAPI služieb bežiacich v prostredí
-Docker. Hlavná služba zabezpečuje autentifikáciu, správu zariadení a
-spracovanie príkazov. Druhá služba je určená výhradne pre AI asistenta. Obe
-služby komunikujú s mobilnou aplikáciou cez REST API, pričom hlavná služba
-poskytuje navyše WebSocket kanál pre aktualizácie stavu zariadení. V
-nasledujúcich podkapitolách popisujeme implementáciu jednotlivých funkcionalít
+Docker, ako už bolo opísané v \subsection{Architektúra komponentov systému}. 
+Asistent je nasadený oddelene predovšetkým z dôvodu možného budúceho prechodu na 
+lokálne bežiaci jazykový model. V takom prípade by bolo možné presunúť tento stack
+na výkonnejší dedikovaný server bez akéhokoľvek zásahu do hlavného backendu.
+V nasledujúcich podkapitolách popisujeme implementáciu jednotlivých funkcionalít
 backendu, začínajúc autentifikáciou a RBAC, cez API endpointy, mechanizmus
 relácií, životný cyklus príkazov a ochranu prístupu až po generátor ArUco
 identifikátorov a export identifikátorov vo formáte STL vhodnom pre 3D tlač.
 
+%%%%% tu som skonicl pokracovat
 \subsection{Autentifikácia a RBAC}
 
 Systém používa autentifikáciu pomocou JWT tokenov podľa štandardu OAuth2. Po
