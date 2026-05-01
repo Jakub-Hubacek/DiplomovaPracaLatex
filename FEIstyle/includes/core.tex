@@ -1294,20 +1294,18 @@ všetkých zariadení naraz. Node-RED subscribuje selektívne len na témy
 \texttt{commands} pre zariadenia, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
-
 \section{Implementácia backendu}
 %% nasledujucich par viet mi pride ze sa opakuju co som uz pisal v \subsection{Architektúra komponentov systému}
 Backend systému tvorí dvojica nezávislých FastAPI služieb bežiacich v prostredí
-Docker, ako už bolo opísané v \subsection{Architektúra komponentov systému}. 
-Asistent je nasadený oddelene predovšetkým z dôvodu možného budúceho prechodu na 
+Docker, ako už bolo opísané v \subsection{Architektúra komponentov systému}.
+Asistent je nasadený oddelene predovšetkým z dôvodu možného budúceho prechodu na
 lokálne bežiaci jazykový model. V takom prípade by bolo možné presunúť tento stack
 na výkonnejší dedikovaný server bez akéhokoľvek zásahu do hlavného backendu.
 V nasledujúcich podkapitolách popisujeme implementáciu jednotlivých funkcionalít
 backendu, začínajúc autentifikáciou a RBAC, cez API endpointy, mechanizmus
-relácií, životný cyklus príkazov a ochranu prístupu až po generátor ArUco
+relácií, životný cyklus príkazov až po generátor ArUco
 identifikátorov a export identifikátorov vo formáte STL vhodnom pre 3D tlač.
 
-%%%%% tu som skonicl pokracovat
 \subsection{Autentifikácia a RBAC}
 
 Systém používa autentifikáciu pomocou JWT tokenov podľa štandardu OAuth2. Po
@@ -1355,7 +1353,7 @@ async def get_manager_or_admin(user: User = Depends(get_current_user)):
 Backend poskytuje REST API rozdelené do šiestich skupín podľa funkčnej oblasti.
 Endpointy pre AI asistenta sú dostupné na samostatnej službe počúvajúcej na
 porte 8100, ostatné na porte 8000. Okrem REST komunikácie poskytuje backend
-WebSocket endpoint pre real-time aktualizácie stavu zariadenia.
+WebSocket pre aktualizácie stavu zariadenia.
 
 \begin{table}[H]
       \centering
@@ -1423,18 +1421,29 @@ WebSocket endpoint pre real-time aktualizácie stavu zariadenia.
 \end{table}
 
 \subsection{Mechanizmus relácií}
-Pred ovládaním zariadenia sa musí používateľ na neho prihlásiť. Relácia je
-väzba medzi používateľom a zariadením, ktorá zabraňuje súčasnému ovládaniu
+Pred ovládaním zariadenia sa musí používateľ na zariadenie prihlásiť. Relácia
+je väzba medzi používateľom a zariadením, ktorá zabraňuje súčasnému ovládaniu
 jedného zariadenia viacerými používateľmi. Na každom zariadení môže byť aktívna
 práve jedna relácia.
 
-Prihlásenie prebieha volaním \texttt{POST /devices/\{id\}/login}. Backend
+Prihlásenie na zariadenie prebieha volaním \texttt{POST /devices/\{id\}/login}. Backend
 overí, či je zariadenie voľné. Ak áno, vytvorí novú reláciu. Ak je zariadenie
 obsadené, správanie závisí od parametra \texttt{force} a od roly aktuálneho
 držiteľa relácie. Zariadenie obsadené používateľom s rolou údržbára nemôže byť
 prebraté žiadnym iným používateľom. Táto ochrana zabraňuje prerušeniu
 servisného zásahu operátorom. Vlastnú reláciu môže ukončiť prihlásený
-používateľ odhlásením sa. Cudziu reláciu môže ukončiť výhradne administrátor.
+používateľ odhlásením sa. Cudziu reláciu môže ukončiť každý, ak sa nejedná o
+reláciu údržbára. Je to z dôvodu, aby sa zabránilo situáciám, keď sa operátor
+zabudne odhlásiť a zariadenie zostane zablokované. Každé prevzatie relácie je
+zaznamenané v logu príkazov, čo znamená dohľadateľnosť zodpovednosti. Pred
+prepísaním relácie systém informuje nového používateľa o tom, kto je aktuálne
+prihlásený. Následne je potrebné potvrdiť úmysel prevzatia, čím sa zabezpečí,
+že k prevzatiu nepríde náhodou.
+
+\begin{lstlisting}[language=Python, caption={Ochrana relácie údržbára}]
+if active.user.role == "maintenance":
+    raise HTTPException(409, "maintenance_locked")
+\end{lstlisting}
 
 \subsection{Životný cyklus príkazu}
 
@@ -1442,51 +1451,18 @@ Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na fyzickom
 zariadení. Používateľ ho môže odoslať dvoma cestami: cez REST endpoint alebo
 cez WebSocket spojenie.
 
-Pri WebSocket ceste backend príkaz najskôr overí voči konfigurácii zariadenia.
-Kontroluje sa existencia príkazu a pre numerické a výčtové typy aj platnosť
-hodnoty. Ak zariadenie nemá konfiguráciu definovanú, validácia sa preskočí.
-REST endpoint validáciu nevykonáva a príkaz odošle priamo.
-
-Po validácii backend publikuje správu na MQTT tému
+Backend publikuje správu na MQTT tému
 \texttt{plc/device\_\{id\}/commands/\{cmd\}}. Mosquitto broker správu doručí
 Node-RED, ktorý ju preloží do S7 protokolu a zapíše príslušnú premennú v PLC.
 Volajúci dostane späť potvrdenie \texttt{command\_ack} s príznakom úspechu
-doručenia na broker. Toto potvrdenie nezaručuje vykonanie príkazu na PLC.
-Skutočná zmena stavu sa prejaví v ďalšom cykle čítania, keď Node-RED publikuje
-aktualizované hodnoty na tému \texttt{plc/device\_\{id\}/data} a backend ich
-pošle cez WebSocket do aplikácie.
+doručenia na broker. Skutočná zmena stavu je viditeľná v ďalšom cykle čítania,
+keď Node-RED publikuje aktualizované hodnoty na tému
+\texttt{plc/device\_\{id\}/data} a backend ich pošle cez WebSocket do
+aplikácie.
 
 Každý príkaz je bez ohľadu na výsledok zaznamenávaný do tabuľky
 \texttt{command\_logs} s identifikátorom používateľa, zariadenia, zdrojovým
 kanálom a príznakom úspechu doručenia.
-
-\subsection{Ochrana prístupu k zariadeniu}
-
-V priemyselnom prostredí je bezpečnosť kritická požiadavka. Aktivácia
-zariadenia počas servisného zásahu môže spôsobiť poranenie alebo poškodenie.
-Systém preto implementuje mechanizmus exkluzívneho prístupu, ktorý zabraňuje
-súčasnému ovládaniu zariadenia viacerými používateľmi.
-
-Na každom zariadení môže byť aktívna práve jedna relácia. Pokus o prihlásenie
-na obsadené zariadenie skončí chybou \texttt{409 occupied}, pričom odpoveď
-obsahuje informáciu o tom, kto zariadenie práve používa. Tým má nový používateľ
-možnosť kontaktovať aktuálneho držiteľa pred prípadným prevzatím.
-
-Osobitné postavenie má rola údržbára. Reláciu údržbára nemôže ukončiť ani
-prevziať žiadny iný používateľ bez ohľadu na parameter \texttt{force}. Táto
-ochrana vychádza z bezpečnostných požiadaviek priemyselného prostredia — ak
-údržbár pracuje pri zariadení, nikto iný nesmie zariadenie uviesť do chodu.
-
-\begin{lstlisting}[language=Python, caption={Ochrana relácie údržbára}]
-if active.user.role == "maintenance":
-    raise HTTPException(409, "maintenance_locked")
-\end{lstlisting}
-
-Pre ostatné roly systém umožňuje núdzové prevzatie zariadenia parametrom
-\texttt{force=true}. Táto možnosť je určená pre prípad, keď sa predošlý
-používateľ zabudol odhlásiť. Aktuálna relácia sa ukončí a vytvorí sa nová.
-Každé prevzatie je zaznamenané v logoch príkazov, čo umožňuje spätné dohľadanie
-zodpovednosti.
 
 \subsection{Generátor ArUco markerov a export do STL}
 
@@ -1509,10 +1485,10 @@ na základnej výške \texttt{base\_height\_mm}, ohraničovací rám je o
 výšku 1\,mm a biele 3\,mm.
 
 \section{Implementácia AI asistenta}
-
+%%% tu som skoncil pokracovat
 Asistent je implementovaný ako samostatná FastAPI služba bežiaca na porte 8100
 v rámci vlastného Docker stacku. Disponuje vlastnou PostgreSQL databázou pre
-záznamy znalostnej bázy a ChromaDB pre vektorové úložisko. Jediné externé
+záznamy znalostnej bázy a ChromaDB ako úložisko vektorov. Jediné externé
 sieťové volanie celej aplikácie smeruje na Anthropic API pre volanie jazykového
 modelu.
 
@@ -1521,10 +1497,8 @@ modelu.
 Spracovanie každej správy prebieha v niekoľkých krokoch. Najprv sa vykonajú dva
 vyhľadávacie dotazy do ChromaDB: zariadenie-špecifický s filtrom podľa
 \texttt{device\_aruco\_id} a všeobecný bez filtra, pričom každý vráti najviac
-tri najbližšie záznamy. Následne prebehne voliteľné vyhľadávanie na webe
-pomocou DuckDuckGo. Zo získaných kontextov, metadát relácie a histórie
-konverzácie sa zostaví systémový prompt, ktorý sa odošle na Claude API spolu s
-poslednou správou používateľa.
+tri najbližšie záznamy. Zo získaných kontextov, metadát relácie a histórie
+konverzácie sa zostaví systémový prompt, ktorý sa odošle na Claude API.
 
 \subsection{Embedovací model}
 
@@ -1542,10 +1516,9 @@ anglickej verzii podľa jazyka relácie a pred každým volaním modelu sa napln
 nasledujúcimi sekciami:
 
 \begin{itemize}
-      \item \textbf{AKTUÁLNA RELÁCIA} — meno a rola prihláseného používateľa, prípadne zariadenie na ktoré je prihlásený.
-      \item \textbf{KONTEXT PRE ZARIADENIE} — výsledky vyhľadávania z ChromaDB filtrované podľa ArUco ID zariadenia.
-      \item \textbf{VŠEOBECNÝ KONTEXT} — výsledky vyhľadávania bez filtra zariadenia.
-      \item \textbf{VÝSLEDKY Z INTERNETU} — výstupy z DuckDuckGo, ak boli nájdené.
+      \item \textbf{AKTUÁLNA RELÁCIA} -- meno a rola prihláseného používateľa, prípadne zariadenie na ktoré je prihlásený.
+      \item \textbf{KONTEXT PRE ZARIADENIE} -- výsledky vyhľadávania z ChromaDB filtrované podľa ArUco ID zariadenia.
+      \item \textbf{VŠEOBECNÝ KONTEXT} -- výsledky vyhľadávania bez filtra zariadenia.
 \end{itemize}
 
 Pravidlá v prompte zakazujú vymýšľanie faktov a nariaďujú asistentovi, aby sa
@@ -1557,7 +1530,7 @@ predstavenie preskakuje.
 Server je bezstavový. História konverzácie sa neukladá na strane servera, ale
 je súčasťou každého požiadavku zo strany klienta. Služba prijíma pole správ vo
 formáte \texttt{\{role, content\}} a pri zostavovaní volania zahŕňa posledných
-desať výmen. Tento prístup nevyžaduje žiadne serverové úložisko relácií a
+desať správ. Tento prístup nevyžaduje žiadne serverové úložisko relácií a
 zjednodušuje škálovanie.
 
 \subsection{Správa znalostnej bázy}
