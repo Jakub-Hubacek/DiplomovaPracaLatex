@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {3.2}Retrieval-Augmented Generation}{13}{subsection.23}%
 \contentsline {subsection}{\numberline {3.3}AI asistenti v priemyselnom prostredí}{14}{subsection.25}%
 \contentsline {section}{\numberline {4}Typy identifikátorov a ich použitie}{15}{section.26}%
-\contentsline {subsection}{\numberline {4.1}QR kódy}{15}{subsection.27}%
+\contentsline {subsection}{\numberline {4.1}QR identifikátory}{15}{subsection.27}%
 \contentsline {subsection}{\numberline {4.2}Fiduciálne markery -- AprilTag, ArUco}{15}{subsection.29}%
 \contentsline {subsection}{\numberline {4.3}3D identifikátory}{16}{subsection.31}%
 \contentsline {subsubsection}{\numberline {4.3.1}Princíp a štruktúra}{16}{subsubsection.33}%
@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {7.1}Popis testovaných modelov}{27}{subsection.49}%
 \contentsline {subsection}{\numberline {7.2}Metodika testovania}{28}{subsection.55}%
 \contentsline {subsection}{\numberline {7.3}Výsledky porovnania}{29}{subsection.56}%
-\contentsline {subsection}{\numberline {7.4}Analýza výsledkov a výber modelu}{30}{subsection.59}%
+\contentsline {subsection}{\numberline {7.4}Analýza výsledkov a výber modelu}{29}{subsection.59}%
 \contentsline {subsubsection}{\numberline {7.4.1}Overenie na cloudovom hardvéri}{30}{subsubsection.60}%
 \contentsline {subsubsection}{\numberline {7.4.2}Záverečné rozhodnutie o architektúre AI asistenta}{31}{subsubsection.61}%
 \contentsline {section}{\numberline {8}Návrh architektúry systému}{32}{section.62}%
@@ -51,39 +51,38 @@
 \contentsline {subsection}{\numberline {8.2}Fyzická topológia systému}{33}{subsection.65}%
 \contentsline {subsection}{\numberline {8.3}Štruktúra MQTT tém}{34}{subsection.67}%
 \contentsline {section}{\numberline {9}Implementácia backendu}{36}{section.69}%
-\contentsline {subsection}{\numberline {9.1}Architektúra komponentov systému}{36}{subsection.70}%
-\contentsline {subsection}{\numberline {9.2}Autentifikácia a RBAC}{36}{subsection.71}%
-\contentsline {subsection}{\numberline {9.3}API endpointy}{37}{subsection.80}%
-\contentsline {subsection}{\numberline {9.4}Mechanizmus relácií}{38}{subsection.82}%
-\contentsline {subsection}{\numberline {9.5}Životný cyklus príkazu}{39}{subsection.86}%
-\contentsline {subsection}{\numberline {9.6}Generátor ArUco markerov a export do STL}{39}{subsection.87}%
-\contentsline {section}{\numberline {10}Implementácia AI asistenta}{41}{section.89}%
-\contentsline {subsection}{\numberline {10.1}RAG pipeline}{41}{subsection.90}%
-\contentsline {subsection}{\numberline {10.2}Embedovací model}{41}{subsection.91}%
-\contentsline {subsection}{\numberline {10.3}Systémový prompt}{41}{subsection.92}%
-\contentsline {subsection}{\numberline {10.4}Správa konverzácie}{42}{subsection.93}%
-\contentsline {subsection}{\numberline {10.5}Správa znalostnej bázy}{42}{subsection.94}%
-\contentsline {section}{\numberline {11}Implementácia frontendu}{43}{section.95}%
-\contentsline {subsection}{\numberline {11.1}Stavový manažment}{43}{subsection.96}%
-\contentsline {subsection}{\numberline {11.2}ArUco skenovanie}{43}{subsection.97}%
-\contentsline {subsection}{\numberline {11.3}WebSocket pripojenie}{43}{subsection.98}%
-\contentsline {subsection}{\numberline {11.4}Používateľské rozhranie podľa roly}{44}{subsection.99}%
-\contentsline {section}{\numberline {12}Aplikácia a jej funkcionality}{45}{section.100}%
-\contentsline {subsection}{\numberline {12.1}Skener ArUco identifikátorov}{45}{subsection.101}%
-\contentsline {subsection}{\numberline {12.2}Generátor ArUco identifikátorov}{45}{subsection.102}%
-\contentsline {subsection}{\numberline {12.3}Monitoring a ovládanie zariadení}{45}{subsection.103}%
-\contentsline {subsection}{\numberline {12.4}Virtuálny asistent PLEXO}{45}{subsection.104}%
-\contentsline {subsection}{\numberline {12.5}Správa používateľov}{46}{subsection.105}%
-\contentsline {subsection}{\numberline {12.6}Správa zariadení}{46}{subsection.106}%
-\contentsline {subsection}{\numberline {12.7}Správa znalostnej bázy}{46}{subsection.107}%
-\contentsline {subsection}{\numberline {12.8}Nastavenia}{46}{subsection.108}%
-\contentsline {section}{\numberline {13}Testovanie a meranie}{48}{section.109}%
-\contentsline {subsection}{\numberline {13.1}Overenie splnenia špecifikácie}{48}{subsection.110}%
-\contentsline {subsection}{\numberline {13.2}Latencia vykonania príkazov}{48}{subsection.111}%
-\contentsline {subsection}{\numberline {13.3}ArUco detekcia}{48}{subsection.112}%
-\contentsline {subsection}{\numberline {13.4}Kvalita odpovedí asistenta}{48}{subsection.113}%
-\contentsline {section}{Z\'{a}ver}{49}{section*.114}%
-\contentsline {section}{Literatúra}{51}{section*.115}%
+\contentsline {subsection}{\numberline {9.1}Autentifikácia a RBAC}{36}{subsection.70}%
+\contentsline {subsection}{\numberline {9.2}API endpointy}{36}{subsection.79}%
+\contentsline {subsection}{\numberline {9.3}Mechanizmus relácií}{37}{subsection.81}%
+\contentsline {subsection}{\numberline {9.4}Životný cyklus príkazu}{38}{subsection.85}%
+\contentsline {subsection}{\numberline {9.5}Generátor ArUco identifikátorov a export do STL}{38}{subsection.86}%
+\contentsline {section}{\numberline {10}Implementácia AI asistenta}{40}{section.88}%
+\contentsline {subsection}{\numberline {10.1}RAG pipeline}{40}{subsection.89}%
+\contentsline {subsection}{\numberline {10.2}Embedovací model}{40}{subsection.90}%
+\contentsline {subsection}{\numberline {10.3}Systémový prompt}{40}{subsection.91}%
+\contentsline {subsection}{\numberline {10.4}Správa konverzácie}{41}{subsection.105}%
+\contentsline {subsection}{\numberline {10.5}Správa znalostnej bázy}{41}{subsection.106}%
+\contentsline {section}{\numberline {11}Implementácia frontendu}{43}{section.107}%
+\contentsline {subsection}{\numberline {11.1}Stavový manažment}{43}{subsection.108}%
+\contentsline {subsection}{\numberline {11.2}ArUco skenovanie}{43}{subsection.109}%
+\contentsline {subsection}{\numberline {11.3}WebSocket pripojenie}{43}{subsection.110}%
+\contentsline {subsection}{\numberline {11.4}Používateľské rozhranie podľa roly}{44}{subsection.111}%
+\contentsline {section}{\numberline {12}Aplikácia a jej funkcionality}{45}{section.113}%
+\contentsline {subsection}{\numberline {12.1}Skener ArUco identifikátorov}{45}{subsection.114}%
+\contentsline {subsection}{\numberline {12.2}Generátor ArUco identifikátorov}{45}{subsection.115}%
+\contentsline {subsection}{\numberline {12.3}Monitoring a ovládanie zariadení}{45}{subsection.116}%
+\contentsline {subsection}{\numberline {12.4}Virtuálny asistent PLEXO}{45}{subsection.117}%
+\contentsline {subsection}{\numberline {12.5}Správa používateľov}{46}{subsection.118}%
+\contentsline {subsection}{\numberline {12.6}Správa zariadení}{46}{subsection.119}%
+\contentsline {subsection}{\numberline {12.7}Správa znalostnej bázy}{46}{subsection.120}%
+\contentsline {subsection}{\numberline {12.8}Nastavenia}{46}{subsection.121}%
+\contentsline {section}{\numberline {13}Testovanie a meranie}{48}{section.122}%
+\contentsline {subsection}{\numberline {13.1}Overenie splnenia špecifikácie}{48}{subsection.123}%
+\contentsline {subsection}{\numberline {13.2}Latencia vykonania príkazov}{48}{subsection.124}%
+\contentsline {subsection}{\numberline {13.3}ArUco detekcia}{48}{subsection.125}%
+\contentsline {subsection}{\numberline {13.4}Kvalita odpovedí asistenta}{48}{subsection.126}%
+\contentsline {section}{Z\'{a}ver}{49}{section*.127}%
+\contentsline {section}{Literatúra}{51}{section*.128}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -240,7 +239,7 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{53}{section*.116}%
-\contentsline {section}{\numberline {A}Algoritmus}{54}{section.118}%
-\contentsline {section}{\numberline {B}Výpis dlhého kódu}{55}{section.139}%
-\contentsline {section}{\numberline {C}Slovníček pojmov}{59}{section.270}%
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{53}{section*.129}%
+\contentsline {section}{\numberline {A}Algoritmus}{54}{section.131}%
+\contentsline {section}{\numberline {B}Výpis dlhého kódu}{55}{section.152}%
+\contentsline {section}{\numberline {C}Slovníček pojmov}{59}{section.283}%
