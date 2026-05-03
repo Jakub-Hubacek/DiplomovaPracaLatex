@@ -1,12 +1,12 @@
 \section{Analýza existujúcich riešení}
 
 Trh s~priemyselnými softvérovými platformami ponúka viacero riešení
-umožňujúcich vizualizáciu a ovládanie výrobných zariadení. Väčšina z~nich
+umožňujúcich vizualizáciu a ovládanie výrobných liniek. Väčšina z~nich
 vychádza z~tradičného modelu \acrshort{scada}/\acrshort{hmi} a postupne sa
 rozširuje o~mobilný prístup, cloudovú konektivitu a v~niektorých prípadoch aj
 o~prvky umelej inteligencie. Nasledujúci prehľad analyzuje štyri významné
 komerčné platformy. Posudzované sú nasledovné funkcionality: mobilný prístup
-k~zariadeniam, identifikácia fyzických zariadení, nasadenie na edge, otvorenosť
+k~výrobným linkám, identifikácia fyzických zariadení, nasadenie na edge, otvorenosť
 platformy a integrácia inteligentného asistenta schopného pracovať s~technickou
 dokumentáciou.
 
@@ -15,7 +15,7 @@ dokumentáciou.
 \acrshort{scada} systém \textit{SIMATIC WinCC Unified PC} od spoločnosti Siemens je
 vizualizačná platforma integrovaná do prostredia TIA Portal, navrhnutá na
 zjednotenie \acrshort{ot} a \acrshort{it} dát v~rámci jedného konzistentného
-systému~\cite{t00}. Platforma je škálovateľná od jedného stroja
+systému~\cite{t00}. Platforma je škálovateľná od jedného zariadenia
 až po rozsiahle distribuované systémy s~prakticky neobmedzeným počtom zariadení.
 
 Prístup k~prevádzkovým dátam je zabezpečený cez webové rozhranie
@@ -131,7 +131,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
       \item \textbf{Identifikácia zariadení:} Platforma podporuje skenovanie
             čiarových identifikátorov a \acrshort{qr} identifikátorov pre identifikáciu materiálov
             a produktov, avšak nie pre priame spárovanie s~konkrétnym
-            zariadením výrobnej linky.
+            zariadením.
       \item \textbf{Edge nasadenie:} Edge konektivita (\acrshort{opcua}, \acrshort{mqtt},
             Node-RED) je dostupná ako platený doplnok, aplikačná logika
             a dáta sú hostované v~cloude.
@@ -148,7 +148,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
 \subsection{AVEVA InTouch Edge HMI}
 
 \textit{AVEVA Edge} je \acrshort{hmi}/\acrshort{scada} platforma od
-spoločnosti AVEVA, člen skupiny Schneider Electric. Je navrhnutá pre nasadenie
+spoločnosti AVEVA, ktorá je členom skupiny Schneider Electric. Je navrhnutá pre nasadenie
 na priemyselných zariadeniach, priemyselných PC a edge zariadeniach
 s~minimálnymi hardvérovými nárokmi~\cite{t06}. Kľúčovým princípom platformy je
 heslo „develop once, deploy everywhere". Aplikácia sa navrhne raz v~prostredí
@@ -193,7 +193,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
 \subsection*{Zhrnutie analýzy}
 
 Tabuľka~\ref{tab:existing_solutions} sumarizuje kľúčové vlastnosti
-porovnávaných platforiem vzhladom na mobilný prístup, identifikáciu zariadení,
+porovnávaných platforiem vzhľadom na mobilný prístup, identifikáciu zariadení,
 edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
 
 \begin{table}[h]
@@ -244,16 +244,16 @@ pre návrh systému prezentovaného v~neskorších kapitolách tejto práce.
 Moderné priemyselné aplikácie nestoja na jednej technológii. Sú výsledkom
 starostlivo zvolenej skladačky nástrojov, kde každá vrstva plní svoju úlohu.
 Mobilné rozhranie reaguje na pokyny operátora, backendová vrstva spracúva
-množstvo súbežných udalostí z~výrobnej linky a pokyny prichádzajúce z mobilnej
+množstvo súbežných udalostí zo zariadení a pokyny prichádzajúce z mobilnej
 aplikácie.
 
 Kľúčovou výzvou je pritom premostenie dvoch oddelených svetov. \acrshort{ot}
 označuje svet priemyselného riadenia a teda \acrshort{plc} automaty, senzory,
-pohony a výrobné linky. \acrshort{it} je naopak svet softvéru, sietí a
+pohony a ostatné zariadenia. \acrshort{it} je naopak svet softvéru, sietí a
 aplikácií určených na spracovanie a prenos informácií. Tieto dva svety dlho
 fungovali oddelene, každý s~vlastnými protokolmi a prioritami. Priemyselné
-aplikácie v~kontexte Industry~4.0 ich spájajú práve prostredníctvom
-komunikačnej vrstvy, napríklad pomocou protokolov \acrshort{mqtt} alebo
+aplikácie v~kontexte Industry~4.0 ich spájajú práve cez
+komunikačnú vrstvu, napríklad pomocou protokolov \acrshort{mqtt} alebo
 \acrshort{opcua}.
 
 Nasledujúci prehľad mapuje najpoužívanejšie technológie a ich typické
@@ -283,7 +283,7 @@ prechodom cez natívne rozhranie.
 v~jazyku Dart a vlastný vykresľovací engine, ktorý zaručuje konzistentné
 vizuálne výstupy na všetkých platformách bez závislosti na systémových
 komponentoch. Dosahuje výkon blízky natívnym aplikáciám vďaka
-AOT kompilácii.
+\acrshort{aot} kompilácii.
 
 \textbf{Webové frameworky} (React, Angular, Vue) umožňujú prístup
 z~ľubovoľného zariadenia s~prehliadačom bez inštalácie. Pre priemyselné
@@ -341,10 +341,10 @@ Cloudové spracovanie dát, kde sa všetky informácie odosielajú na vzdialené
 servery, čelí obmedzeniam v~podobe latencie, zaťaženia siete a bezpečnostných
 rizík pri prenose citlivých dát~\cite{t10}. Ako alternatíva sa presadzuje model
 \textit{edge computing}, kde sa dáta spracúvajú priamo pri zdroji a teda na
-lokálnom zariadení alebo v~blízkosti výrobnej linky. Edge zariadenia dokážu
-filtrovať a vyhodnocovať dáta lokálne, do cloudu sa odosielajú len relevantné
-výsledky, čo znižuje spotrebu prenosového pásma a zvyšuje odolnosť systému pri
-výpadku pripojenia.
+lokálnom zariadení alebo v~blízkosti monitorovanej alebo ovládanej
+výrobnej linky. Edge zariadenia dokážu filtrovať a vyhodnocovať dáta lokálne, do
+cloudu sa odosielajú len relevantné výsledky, čo znižuje spotrebu prenosového
+pásma a zvyšuje odolnosť systému pri výpadku pripojenia.
 
 Edge computing a cloud sa navzájom nevylučujú, ale môžu spolupracovať
 v~hybridnom modeli, kde edge zabezpečuje takmer real-time spracovanie a cloud
@@ -436,14 +436,14 @@ Protokol definuje tri úrovne \acrshort{qos} pre doručenie správ:
       \item \textbf{\acrshort{qos} 2} -- správa je doručená práve raz, s~plným handshake protokolom
 \end{itemize}
 
-Ďalšou vlastnosťou je mechanizmus „Last Will and Testament", správa,
+Ďalšou vlastnosťou je mechanizmus „Last Will and Testament“, správa,
 ktorú broker automaticky odošle ostatným klientom v~prípade neštandardného
 odpojenia klienta. Verzia \acrshort{mqtt} 5.0 pridáva rozšírené vlastnosti
 ako expiracia správ, aliasy tém a zlepšené hlásenie chýb.
 
 \begin{itemize}
       \item \textbf{Výhody:} Minimálna réžia,
-            tri úrovne \acrshort{qos}, podpora „Last Will and Testament", vhodnosť pre zariadenia
+            tri úrovne \acrshort{qos}, podpora „Last Will and Testament“, vhodnosť pre zariadenia
             s~obmedzeným výkonom a sieťou.
       \item \textbf{Nevýhody:} Nutnosť udržiavať bežiaci broker čo môže byť centrálny
             bod zlyhania.
@@ -515,9 +515,9 @@ kontextu \acrshort{llm} spolu s~pôvodnou otázkou a~model na ich základe
 vygeneruje odpoveď. Znalostná báza je typicky uložená vo vektorovej databáze,
 kde sú dokumenty reprezentované ako číselné vektory (embeddingy) umožňujúce
 rýchle vyhľadávanie. Jednou z~populárnych open-source vektorových databáz je
-ChromaDB. Ľahká databáza licencovaná pod Apache~2.0, ktorú možno prevádzkovať
-lokálne alebo aj v~cloudovom prostredí a~je priamo integrovaná s~frameworkmi
-LangChain a~LlamaIndex~\cite{t19}.
+ChromaDB. Je to ľahká databáza licencovaná pod Apache~2.0, ktorú možno
+prevádzkovať lokálne alebo aj v~cloudovom prostredí a~je priamo integrovaná
+s~frameworkmi LangChain a~LlamaIndex~\cite{t19}.
 
 Hlavné prínosy \acrshort{rag} oproti čistému \acrshort{llm} sú zníženie
 halucinácií dohľadaním odpovedí v~konkrétnych zdrojoch, prístup k~aktuálnym
@@ -529,9 +529,9 @@ v~odpovedi.
 Priemyselné podniky čelia rastúcemu nedostatku kvalifikovaných pracovníkov
 a~potrebe rýchleho zaškolenia nových zamestnancov. Generatívni \acrshort{ai}
 asistenti môžu predstavovať súčasť riešenia tohto problému. Fungujú ako
-virtuálni mentori priamo na výrobnej linke, kde pracovníkom poskytujú okamžité
-odpovede v~prirodzenom jazyku na otázky o~postupoch, riešení porúch alebo
-špecifikáciách zariadení~\cite{t20}.
+virtuálni mentori priamo na mieste, kde pracovníkom poskytujú okamžité odpovede
+v~prirodzenom jazyku na otázky o~postupoch, riešení porúch alebo špecifikáciách
+zariadení~\cite{t20}.
 
 Systém vie prepájať viaceré zdroje dát ako podnikové systémy, tréningové
 databázy, prevádzkové dáta a skladať z~nich kontextovo relevantnú odpoveď.
@@ -548,7 +548,7 @@ QR identifikátory sú dvojrozmerné maticové identifikátory optimalizované p
 rýchle čítanie a vysokú hustotu dát. V zmysle použitia v priemysle sa využívajú
 najmä na identifikáciu objektov, kde sa vyžaduje uloženie komplexnejších
 informácií napr. URL adresy, sériové čísla alebo konfiguračné parametre. Ich
-výhodou je silná korekcia chýba, ktorá umožňuje prečítať identifikátor aj pri
+výhodou je silná korekcia chýb, ktorá umožňuje prečítať identifikátor aj pri
 čiastočnom poškodení alebo znečistení povrchu.
 
 \begin{figure}[h]
@@ -582,11 +582,12 @@ Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a pe
 
 \subsection{3D identifikátory}
 V prostrediach priemyselných podnikov a logistických reťazcov, kde môže prísť k
-jednoduchému znemožneniu snímania 2D identifikátorov (špinavé, poškodené,
-nedostatočné osvetlenie, odrazy svetla), sa ako perspektívne riešenie javia
-unikátne 3D identifikátory. Na Fakulte elektrotechniky a informatiky STU bol
-vyvinutý systém programaticky generovaných 3D identifikátorov, ktoré sú
-optimalizované pre systémy zmiešanej a rozšírenej reality.
+jednoduchému znemožneniu snímania 2D identifikátorov (znečistené alebo
+poškodené povrchy, nedostatočné osvetlenie, odrazy svetla), sa ako perspektívne
+riešenie javia unikátne 3D identifikátory. Na Fakulte elektrotechniky a
+informatiky STU bol vyvinutý systém programaticky generovaných 3D
+identifikátorov, ktoré sú optimalizované pre systémy zmiešanej a rozšírenej
+reality.
 
 \begin{figure}[h]
       \centering
@@ -607,35 +608,33 @@ Hlavné technické výhody tohto riešenia sú:
       \item \textbf{Využitie vlastného tvaru:} Sledovanie sa nespolieha len na vizuálny vzor, ale na obrys a priestorovú charakteristiku 3D modelu, čo zvyšuje stabilitu v AR aplikáciách.
 \end{itemize}
 
-\section{Špecifikácia požiadaviek na systém}
+\section{Špecifikácia požiadaviek na systém}\label{sec:specifikacia}
 
-Práca predstavuje moderný prístup k priemyselnému internetu vecí
-(\acrshort{iiot}), kde mobilná aplikácia slúži ako primárne rozhranie pre
-obsluhu výrobnej linky, prepojené s riadiacim systémom prostredníctvom edge
-computing zariadenia umiestneného priamo v prevádzke.
+Práca predstavuje moderný prístup k~priemyselnému internetu vecí
+(\acrshort{iiot}). Mobilná aplikácia slúži ako primárne rozhranie pre obsluhu
+výrobnej linky. Komunikácia výrobnej linky a aplikácie prebieha cez edge zariadenie umiestnené priamo v~prevádzke.
 
 \subsection{Opis systému}
 
-Systém umožní obsluhe výrobnej linky ovládať PLC zariadenia prostredníctvom
-mobilnej aplikácie. Identifikácia zariadenia prebieha skenovaním ArUco
-identifikátora umiestneného priamo na zariadení. Po naskenovaní sa aplikácia
-pripojí k~zariadeniu a~obsluha bude môcť odosielať príkazy a~sledovať aktuálny
-stav.
+Systém umožní obsluhe ovládať PLC výrobnej linky prostredníctvom mobilnej aplikácie.
+Identifikácia výrobnej linky prebieha skenovaním ArUco identifikátora umiestneného
+priamo na linke. Po naskenovaní sa aplikácia pripojí k~výrobnej linke a~obsluha
+bude môcť odosielať príkazy a~sledovať aktuálny stav.
 
 Systém bude podporovať viacerých súčasne prihlásených používateľov s~rôznymi
 oprávneniami. Každý používateľ bude mať pridelenú rolu, ktorá určí, ku ktorým
-funkciám má prístup. Keďže ku jednému zariadeniu sa môže pokúsiť pripojiť
+funkciám má prístup. Keďže ku jednej výrobnej linke sa môže pokúsiť pripojiť
 viacero pracovníkov naraz, systém musí riešiť exkluzivitu pripojenia
 a~definovať pravidlá pre prípad konfliktu, pričom servisný zásah údržbára musí
 byť chránený pred prerušením.
 
 Systém bude zaznamenávať všetky odoslané príkazy vrátane informácie o~tom,
-ktorý používateľ príkaz vydal a~na ktoré zariadenie. Administrátor a manažér
+ktorý používateľ príkaz vydal, a~na ktorú výrobnú linku. Administrátor a manažér
 budú môcť spravovať používateľské účty a~schvaľovať nové registrácie.
 
 Súčasťou systému bude inteligentný asistent, ktorý bude odpovedať na technické
 otázky obsluhy na základe dokumentácie nahratej v~znalostnej báze. Obsah
-znalostnej bázy bude možné viazať na konkrétne zariadenie.
+znalostnej bázy bude možné viazať na konkrétnu výrobnú linku.
 
 Systém bude nasadený výhradne v~lokálnej sieti továrne. Backendové služby budú
 kontajnerizované a~nasadené na edge zariadení umiestnenom v~sieti továrne.
@@ -650,17 +649,17 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \begin{description}
       \item[Operátor:] Základná obsluha výrobnej linky. Prihlasuje sa na konkrétnu linku
             skenovaním ArUco identifikátora, odosiela riadiace príkazy a~sleduje aktuálny
-            stav zariadenia v~reálnom čase. Nemá prístup k~reportom, správe vedomostnej
+            stav linky v~reálnom čase. Nemá prístup k~reportom, správe vedomostnej
             bázy ani správe používateľov. Môže v prípade potreby využiť AI asistenta.
 
       \item[Manažér:] Zameriava sa na sledovanie udalostí. Má prístup k~histórii prihlásení
             jednotlivých operátorov, reportu s logmi a môže spravovať používateľské kontá.
-            Takisto má prístup k~AI asistentovi a môže upravovať vedomostnú bázu. Linku
-            priamo neovláda no vidí kto je prihlásený a aké operácie vykonáva.
+            Takisto má prístup k~AI asistentovi a môže upravovať vedomostnú bázu.
+            Výrobnú linku priamo neovláda, no vidí kto je prihlásený a aké operácie vykonáva.
 
       \item[Údržbár:] Má exkluzívnu ochranu relácie a žiadny iný používateľ ho nemôže
-            odhlásiť z~prihláseného zariadenia, čo zaručuje bezpečnosť počas servisného zásahu.
-            Spravuje vedomostnú bázu pre jednotlivé zariadenia, môže upravovať existujúce zariadenia a vytvárať nové.
+            odhlásiť z~prihlásenej linky, čo zaručuje bezpečnosť počas servisného zásahu.
+            Spravuje vedomostnú bázu pre jednotlivé linky, môže upravovať existujúce linky a vytvárať nové.
 
       \item[Administrátor:] Spravuje celý systém, schvaľuje nové registrácie, priraďuje
             roly, edituje a~odstraňuje používateľské kontá. Má prístup prakticky ku všetkým
@@ -683,29 +682,28 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-02: Skenovanie ArUco identifikátora a spárovanie linky                   \\
+      \textbf{ID}    & UC-02: Skenovanie ArUco identifikátora a spárovanie výrobnej linky              \\
       \textbf{Aktér} & Operátor, údržbár, admin                                                    \\
-      \textbf{Popis} & Používateľ naskenuje ArUco identifikátor pri zariadení.
+      \textbf{Popis} & Používateľ naskenuje ArUco identifikátor pri výrobnej linke.
       Ak je linka voľná, po potvrdení dialógu sa vytvorí relácia.
-      Ak je obsadená, zobrazí sa identita a~rola prihláseného.
-      Reláciu neprítomného operátora je možné prevziať, reláciu údržbára prevziať nie je povolené. \\
+      Ak je obsadená, zobrazí sa identita a~rola prihláseného.\\
       \bottomrule
 \end{tabularx}
 
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-03: Ovládanie linky                                                        \\
+      \textbf{ID}    & UC-03: Ovládanie výrobnej linky                                                   \\
       \textbf{Aktér} & Operátor, údržbár, admin                                                      \\
       \textbf{Popis} & Aktéri odosielajú príkazy z~ovládacieho panelu.
-      Vykonanie príkazu je potvrdené a je zobrazený čas od odoslania po prijatie príkazu zariadením. \\
+      Vykonanie príkazu je potvrdené a je zobrazený čas od odoslania po prijatie príkazu linkou. \\
       \bottomrule
 \end{tabularx}
 
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-04: Monitorovanie stavu linky                                                                                        \\
+      \textbf{ID}    & UC-04: Monitorovanie stavu výrobnej linky                                                                                   \\
       \textbf{Aktér} & Operátor, údržbár, admin                                                                                                \\
       \textbf{Popis} & Dashboard zobrazuje procesné dáta z~PLC v~reálnom čase cez WebSocket. Stavy sú farebne kódované podľa normy IEC\,60073. \\
       \bottomrule
@@ -716,7 +714,7 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
       \toprule
       \textbf{ID}    & UC-05: Prezeranie logov                                                                 \\
       \textbf{Aktér} & Manažér, údržbár, admin                                                                 \\
-      \textbf{Popis} & Je možné prezeranie logov a reportov s filtrovaním podľa časového obdobia a zariadenia. \\
+      \textbf{Popis} & Je možné prezeranie logov a reportov s filtrovaním podľa časového obdobia a linky. \\
       \bottomrule
 \end{tabularx}
 
@@ -735,7 +733,7 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
       \textbf{ID}    & UC-07: AI asistent                                                                                                                                                        \\
       \textbf{Aktér} & Všetky roly                                                                                                                                                               \\
       \textbf{Popis} & Tlačidlom v~rohu každej obrazovky sa spustí chatbot.
-      Odpovedá výhradne na základe vedomostnej bázy, či už všeobecnej alebo viazanej ku konkrétnemu zariadeniu. Ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
+      Odpovedá výhradne na základe vedomostnej bázy, či už všeobecnej alebo viazanej ku konkrétnej linke. Ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
       \bottomrule
 \end{tabularx}
 
@@ -744,7 +742,7 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
       \toprule
       \textbf{ID}    & UC-08: Správa používateľov                                                                                                                          \\
       \textbf{Aktér} & Manažér, admin                                                                                                                                      \\
-      \textbf{Popis} & Manažér a admin schvaľuje registrácie, priraďuje roly, upravuje a~odstraňuje kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
+      \textbf{Popis} & Manažér a admin schvaľujú registrácie, priraďujú roly, upravujú a~odstraňujú kontá. Hlavného admina nie je možné odstrániť ani upraviť inou cestou. \\
       \bottomrule
 \end{tabularx}
 
@@ -760,13 +758,13 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \subsection{Funkcionálne požiadavky}
 
 \begin{description}
-      \item [FP1:] Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou časťou výrobnej linky.
+      \item [FP1:] Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou výrobnou linkou.
       \item [FP2:] Používateľ musí mať možnosť odosielať príkazy v riadenom systéme.
       \item [FP3:] Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
       \item [FP4:] Zobrazovanie aktuálnych stavov z PLC.
       \item [FP5:] Implementácia chatbota využívajúceho metódu \textit{Retrieval-Augmented Generation}. Chatbot musí odpovedať na technické otázky výhradne na základe poskytnutej vedomostnej bázy. Ak čerpá z iného zdroja, musí to jasne uviesť.
       \item [FP6:] Plná lokalizácia používateľského rozhrania a odpovedí chatbota v dvoch jazykoch: slovenský (SK) a anglický (EN).
-      \item [FP7:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétneho zariadenia. Po úspešnom prihlásení sa vytvorí aktívna relácia viazaná na používateľa. Relácia ostáva aktívna až do jej explicitného ukončenia odhlásením používateľa alebo prevzatím iným používateľom za podmienok definovaných v~FP8.
+      \item [FP7:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej linky. Po úspešnom prihlásení sa vytvorí aktívna relácia viazaná na používateľa. Relácia ostáva aktívna až do jej explicitného ukončenia odhlásením používateľa alebo prevzatím iným používateľom za podmienok definovaných v~FP8.
       \item [FP8:] Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (používateľa/rola). Nútené ukončenie resp. prevzatie relácie musí byť umožnené v prípade neodhlásenia sa už neprítomnej obsluhy.
       \item [FP9:] Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \textit{Role-Based Access Control} (RBAC) s rolami: operátor, manažér, údržbár, admin.
       \item [FP10:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér}, \textit{údržbár} a \textit{admin}.
@@ -779,7 +777,7 @@ bezpečnosť.
 \begin{description}
       \item [NFP1:] Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustiteľná na edge zariadení.
       \item [NFP2:] Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1.
-      \item [NFP3:] Latencia príkazov nesmie presiahnuť 250~ms.
+      \item [NFP3:] Latencia príkazov, meraná od odoslania z mobilnej aplikácie po zápis hodnoty do PLC, nesmie presiahnuť 250 ms.
       \item [NFP4:] Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať.
       \item [NFP5:] Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
       \item [NFP6:] Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge zariadenia napr. v iných závodoch.
@@ -793,7 +791,7 @@ Požiadavky plynúce z priemyselného prostredia a použitých technológií.
 \begin{description}
       \item [DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
       \item [DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
-      \item [DP3:] Systém si musí zachovať kľúčovú funkcionalitu, teda ovládanie linky aj v prípade výpadku pripojenia k internetu.
+      \item [DP3:] Systém si musí zachovať kľúčovú funkcionalitu, teda ovládanie výrobnej linky aj v prípade výpadku pripojenia k internetu.
 \end{description}
 
 \section{Voľba technológií}
@@ -807,8 +805,8 @@ vývoj.
 
 \subsection{Komunikácia s \acrshort{plc} -- S7 protokol}
 
-Riadiaci systém výrobnej linky je \acrshort{plc} od firmy Siemens, konkrétne
-model S7-1200, pre ktorý je natívnym komunikačným protokolom S7. Práve to bolo
+Riadiaci systém výrobnej linky je PLC od firmy Siemens, konkrétne model
+S7-1200, pre ktorý je natívnym komunikačným protokolom S7. Práve to bolo
 primárnym dôvodom jeho výberu. S7 protokol umožňuje priame čítanie a zápis
 dátových blokov bez nutnosti zložitej konfigurácie alebo dodatočných licencií.
 
@@ -864,7 +862,6 @@ nepredstavuje pridanú hodnotu, ale zbytočnú záťaž. \acrshort{mqtt} broker 
 sémantický popis dát, pri integrácii viacerých zariadení od rôznych výrobcov
 alebo pri prísnych bezpečnostných požiadavkách.
 
-
 \subsection{Backend -- FastAPI}
 
 Backend aplikácie bol implementovaný v~Pythone s~využitím frameworku FastAPI.
@@ -873,15 +870,14 @@ obsluhuje \acrshort{ai} asistenta vrátane \acrshort{rag} pipeline. Voľba
 Pythonu bola prirodzená, pretože ChromaDB poskytuje natívnu Python knižnicu,
 Ollama beží ako lokálny server s~jednoduchým HTTP API a Anthropic ponúka
 oficiálny Python SDK pre Claude API. Všetky tri integrácie sú teda priamočiare
-a~nevyžadujú dodatočnú vrstvu. FastAPI bolo zvolené aj z~ďalších
-praktických dôvodov. Asynchrónna architektúra (\acrshort{asgi}) umožňuje
-súbežne obsluhovať požiadavky mobilnej aplikácie aj dlhotrvajúce volania
-jazykového modelu bez vzájomného blokovania. Automaticky generovaná OpenAPI
-dokumentácia uľahčuje ladenie \acrshort{api} počas vývoja. Validácia vstupov
-cez Pydantic redukuje množstvo pomocného kódu. Rolu zohrali aj predchádzajúce
-skúsenosti s~týmto frameworkom v bakalárskej práci, čo výrazne urýchlilo vývoj
-a umožnilo sa sústrediť na implementáciu biznis logiky a~integráciu AI
-asistenta.
+a~nevyžadujú dodatočnú vrstvu. FastAPI bolo zvolené aj z~ďalších praktických
+dôvodov. Asynchrónna architektúra (\acrshort{asgi}) umožňuje súbežne obsluhovať
+požiadavky mobilnej aplikácie aj dlhotrvajúce volania jazykového modelu bez
+vzájomného blokovania. Automaticky generovaná OpenAPI dokumentácia uľahčuje
+ladenie \acrshort{api} počas vývoja. Validácia vstupov cez Pydantic redukuje
+množstvo pomocného kódu. Rolu zohrali aj predchádzajúce skúsenosti s~týmto
+frameworkom v bakalárskej práci, čo výrazne urýchlilo vývoj a umožnilo sa
+sústrediť na implementáciu biznis logiky a~integráciu AI asistenta.
 
 \begin{itemize}
       \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, AI knižnice, rýchly vývoj.
@@ -909,7 +905,7 @@ potrieb priemyselného ovládacieho rozhrania.
 
 \subsection{Výber identifikátora -- ArUco}
 
-Pre jednoznačnú identifikáciu zariadení bolo v~rámci práce spočiatku
+Pre jednoznačnú identifikáciu výrobnej linky bolo v~rámci práce spočiatku
 investované značné množstvo času do experimentovania s~3D identifikátormi
 navrhnutými študentom FEI. Tieto identifikátory sa spočiatku javili ako vhodné
 riešenie, pretože poskytovali vizuálne unikátny vzor, ktorý by teoreticky mohol
@@ -1021,7 +1017,7 @@ odpovedí a časom odozvy.
 
 \end{enumerate}
 
-\subsection{Metodika testovania}
+\subsection{Metodika testovania}\label{sec:assistant}
 
 Testovanie prebiehalo formou automatizovaného testu implementovaného v~jazyku
 Python s~využitím knižníc LangChain, ChromaDB a Ollama. Znalostná báza
@@ -1184,7 +1180,7 @@ skutočnému využitiu a nevyžadujú si vysokú počiatočnú investíciu.
 Z~týchto dôvodov bolo rozhodnuté opustiť prístup lokálnych \acrshort{llm} a
 prejsť na volanie externého \acrshort{api}. Na výber je niekoľko poskytovateľov
 ako OpenAI, Google, Anthropic a iní veľkí hráči v oblasti AI. Zvolili sme
-\acrshort{api} od spoločnosti Anthropic, nakoľko v poslednej dobe zaznamenali
+\acrshort{api} od spoločnosti Anthropic, nakoľko v poslednej dobe zaznamenal
 výraznejší pokrok v porovnaní s konkurenciou. Tento prístup umožňuje využitie
 výkonných jazykových modelov bez nutnosti prevádzkovať vlastný server, pričom
 náklady sa platia priamoúmerne skutočnému využitiu. \acrshort{rag} pipeline a
@@ -1210,7 +1206,7 @@ komponentov, ich vzájomnú komunikáciu a spôsob ukladania dát.
 Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia,
 ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová vrstva
 tvorená dvoma službami FastAPI. Hlavná služba zabezpečuje autentifikáciu,
-správu relácií a~riadenie zariadení. Samostatná služba obsluhuje AI asistenta
+správu relácií a~riadenie výrobnej linky. Samostatná služba obsluhuje AI asistenta
 s~RAG pipeline. Tretím komponentom je MQTT broker Mosquitto, ktorý
 sprostredkúva asynchrónnu komunikáciu medzi backendom a Node-RED. Štvrtým je
 Node-RED, ktorý premosťuje svet priemyselnej komunikácie so svetom IT a
@@ -1228,7 +1224,7 @@ smeruje z AI služby na rozhranie Anthropic API.
 \end{figure}
 
 Mobilná aplikácia komunikuje s hlavnou FastAPI službou cez REST API a prijíma
-aktualizácie stavu zariadení cez WebSocket. Príkazy odoslané z aplikácie putujú
+aktualizácie stavu linky cez WebSocket. Príkazy odoslané z aplikácie putujú
 cez backend do MQTT brokera a ďalej do Node-RED, ktorý ich zapíše do PLC.
 Spätná väzba prechádza tou istou cestou v opačnom smere. Dáta zo senzorov PLC
 číta Node-RED periodicky a publikuje ich do príslušných MQTT tém, odkiaľ ich
@@ -1252,8 +1248,8 @@ Mobilné zariadenia sa pripájajú k edge zariadeniu bezdrôtovo cez WiFi. Voľb
 bezdrôtového pripojenia vychádza z charakteru práce operátora, ktorý sa
 pohybuje po výrobnej hale a potrebuje mať prístup k systému kdekoľvek. Edge
 zariadenie je prepojené s Ethernet switchom, na ktorý sú napojené riadiace
-systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla, beží na
-ňom hlavný backend aj AI asistent a všetka logika spracovania príkazov sa
+systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla, na ktorom beží
+hlavný backend aj AI asistent a všetka logika spracovania príkazov sa
 vykonáva lokálne (okrem LLM, v práci sme zvolili externé API). Architektúra
 počíta s pripojením viacerých riadiacich systémov, čo umožňuje rozšírenie na
 ďalšie výrobné linky bez zmeny základnej topológie. V súčasnej implementácii je
@@ -1261,17 +1257,17 @@ na switch napojený jeden riadiaci systém Siemens S7-1200.
 
 \subsection{Štruktúra MQTT tém}
 
-Komunikácia medzi backend službou, Node-RED a zariadeniami prebieha cez
+Komunikácia medzi backend službou, Node-RED a výrobnými linkami prebieha cez
 štruktúrované MQTT témy. Všetky témy zdieľajú spoločný prefix \texttt{plc}, za
-ktorým nasleduje identifikátor zariadenia vo formáte \texttt{device\_\{id\}},
-kde \texttt{id} zodpovedá ArUco identifikátoru fyzického zariadenia. Táto
-štruktúra umožňuje systému jednoznačne smerovať správy na konkrétne zariadenie
+ktorým nasleduje identifikátor linky vo formáte \texttt{line\_\{id\}},
+kde \texttt{id} zodpovedá ArUco identifikátoru linky. Táto
+štruktúra umožňuje systému jednoznačne smerovať správy na konkrétne linky
 a zároveň odberateľom filtrovať témy.
 
 \dirtree{%
       .1 plc/.
       .2 device\_\{id\}/.
-      .3 data \DTcomment{stav zariadenia \quad Node-RED -> backend}.
+      .3 data \DTcomment{stav linky \quad Node-RED -> backend}.
       .3 status \DTcomment{online/offline \quad\quad Node-RED -> backend}.
       .3 commands/.
       .4 \{prikaz\} \DTcomment{riadiaci prikaz \quad backend -> Node-RED}.
@@ -1286,20 +1282,20 @@ a zároveň odberateľom filtrovať témy.
             \textbf{Téma} & \textbf{Vydavateľ} & \textbf{Odberateľ} & \textbf{Popis}                              \\
             \hline
             \texttt{plc/device\_\{id\}/data}
-                          & Node-RED           & Backend            & Aktuálne hodnoty premenných zariadenia      \\
+                          & Node-RED           & Backend            & Aktuálne hodnoty premenných linky      \\
             \hline
             \texttt{plc/device\_\{id\}/status}
-                          & Node-RED           & Backend            & Stav pripojenia zariadenia (online/offline) \\
+                          & Node-RED           & Backend            & Stav pripojenia linky (online/offline) \\
             \hline
             \texttt{plc/device\_\{id\}/commands/\#}
-                          & Backend            & Node-RED           & Riadiaci príkaz smerovaný na zariadenie     \\
+                          & Backend            & Node-RED           & Riadiaci príkaz smerovaný na linku     \\
             \hline
       \end{tabular}
 \end{table}
 
 Backend pri štarte subscribuje na tému \texttt{plc/\#}, čím prijíma správy zo
-všetkých zariadení naraz. Node-RED subscribuje selektívne len na témy
-\texttt{commands} pre zariadenia, ktoré spravuje. Príkazy sú publikované s QoS
+všetkých liniek naraz. Node-RED subscribuje selektívne len na témy
+\texttt{commands} pre linky, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
 \section{Implementácia backendu}
@@ -1334,13 +1330,11 @@ async def get_manager_or_admin(user: User = Depends(get_current_user)):
     return user
 \end{lstlisting}
 
-%%% tu mozno tabulka s rolami a co mozu roly robit
-
 \subsection{API endpointy}
 Backend poskytuje REST API rozdelené do šiestich skupín podľa funkčnej oblasti.
 Endpointy pre AI asistenta sú dostupné na samostatnej službe počúvajúcej na
 porte 8100, ostatné na porte 8000. Okrem REST komunikácie poskytuje backend
-WebSocket pre aktualizácie stavu zariadenia.
+WebSocket pre aktualizácie stavu linky.
 
 \begin{table}[H]
       \centering
@@ -1360,13 +1354,13 @@ WebSocket pre aktualizácie stavu zariadenia.
                   PUT             & /auth/me                                   & Úprava mena a priezviska          & všetci                   \\
                   POST            & /auth/change-password                      & Zmena hesla                       & všetci                   \\
                   \hline
-                  \multicolumn{4}{|l|}{\textit{Zariadenia — /plc}}                                                                            \\
+                  \multicolumn{4}{|l|}{\textit{Výrobné linky — /plc}}                                                                            \\
                   \hline
-                  GET             & /plc/devices                               & Zoznam zariadení                  & všetci                   \\
-                  POST            & /plc/devices                               & Vytvorenie zariadenia             & admin, údržbár           \\
-                  GET             & /plc/devices/\{aruco\_id\}                 & Detail zariadenia                 & všetci                   \\
-                  PUT             & /plc/devices/\{aruco\_id\}                 & Úprava zariadenia                 & admin, údržbár           \\
-                  DELETE          & /plc/devices/\{aruco\_id\}                 & Vymazanie zariadenia              & admin, údržbár           \\
+                  GET             & /plc/devices                               & Zoznam liniek                  & všetci                   \\
+                  POST            & /plc/devices                               & Vytvorenie linky             & admin, údržbár           \\
+                  GET             & /plc/devices/\{aruco\_id\}                 & Detail linky                 & všetci                   \\
+                  PUT             & /plc/devices/\{aruco\_id\}                 & Úprava linky                 & admin, údržbár           \\
+                  DELETE          & /plc/devices/\{aruco\_id\}                 & Vymazanie linky              & admin, údržbár           \\
                   POST            & /plc/devices/\{aruco\_id\}/command/\{cmd\} & Odoslanie príkazu                 & admin, údržbár, operátor \\
                   GET             & /plc/stats                                 & Dashboard štatistiky              & všetci                   \\
                   WS              & /plc/ws/\{aruco\_id\}                      & Real-time stav + príkazy          & všetci                   \\
@@ -1374,13 +1368,13 @@ WebSocket pre aktualizácie stavu zariadenia.
                   \multicolumn{4}{|l|}{\textit{Relácie — /devices}}                                                                           \\
                   \hline
                   GET             & /devices/\{aruco\_id\}/occupancy           & Kto je prihlásený                 & všetci                   \\
-                  POST            & /devices/\{aruco\_id\}/login               & Prihlásenie na zariadenie         & admin, údržbár, operátor \\
-                  POST            & /devices/\{aruco\_id\}/logout              & Odhlásenie zo zariadenia          & všetci                   \\
+                  POST            & /devices/\{aruco\_id\}/login               & Prihlásenie na linku         & admin, údržbár, operátor \\
+                  POST            & /devices/\{aruco\_id\}/logout              & Odhlásenie z linky          & všetci                   \\
                   \hline
                   \multicolumn{4}{|l|}{\textit{Logy — /command-logs}}                                                                         \\
                   \hline
                   GET             & /command-logs                              & Logy s filtrami                   & admin, manažér, údržbár  \\
-                  GET             & /command-logs/device/\{aruco\_id\}         & Logy zariadenia                   & admin, manažér, údržbár  \\
+                  GET             & /command-logs/device/\{aruco\_id\}         & Logy linky                   & admin, manažér, údržbár  \\
                   \hline
                   \multicolumn{4}{|l|}{\textit{Používatelia — /users}}                                                                        \\
                   \hline
@@ -1411,20 +1405,20 @@ WebSocket pre aktualizácie stavu zariadenia.
 \end{table}
 
 \subsection{Mechanizmus relácií}
-Pred ovládaním zariadenia sa musí používateľ na zariadenie prihlásiť. Relácia
-je väzba medzi používateľom a zariadením, ktorá zabraňuje súčasnému ovládaniu
-jedného zariadenia viacerými používateľmi. Na každom zariadení môže byť aktívna
+Pred ovládaním linky sa musí používateľ na linku prihlásiť. Relácia
+je väzba medzi používateľom a linkou, ktorá zabraňuje súčasnému ovládaniu
+jednej linky viacerými používateľmi. Na každej linke môže byť aktívna
 práve jedna relácia.
 
-Prihlásenie na zariadenie prebieha volaním \texttt{POST
-      /devices/\{aruco\_id\}/login}. Backend overí, či je zariadenie voľné. Ak áno,
-vytvorí novú reláciu. Ak je zariadenie obsadené, správanie závisí od parametra
-\texttt{force} a od roly aktuálneho držiteľa relácie. Zariadenie obsadené
-používateľom s rolou údržbára nemôže byť prebraté žiadnym iným používateľom.
+Prihlásenie na linku prebieha volaním \texttt{POST
+      /devices/\{aruco\_id\}/login}. Backend overí, či je linka voľná. Ak áno,
+vytvorí novú reláciu. Ak je linka obsadená, správanie závisí od parametra
+\texttt{force} a od roly aktuálneho držiteľa relácie. Linka obsadená
+používateľom s rolou údržbára nemôže byť prebratá žiadnym iným používateľom.
 Táto ochrana zabraňuje prerušeniu servisného zásahu operátorom. Vlastnú reláciu
 môže ukončiť prihlásený používateľ odhlásením sa. Cudziu reláciu môže ukončiť
 každý, ak sa nejedná o reláciu údržbára. Je to z dôvodu, aby sa zabránilo
-situáciám, keď sa operátor zabudne odhlásiť a zariadenie zostane zablokované.
+situáciám, keď sa operátor zabudne odhlásiť a linka zostane zablokovaná.
 Každé prevzatie relácie je zaznamenané v logu príkazov, čo znamená
 dohľadateľnosť zodpovednosti. Pred prepísaním relácie systém informuje nového
 používateľa o tom, kto je aktuálne prihlásený. Následne je potrebné potvrdiť
@@ -1437,9 +1431,7 @@ if active.user.role == "maintenance":
 
 \subsection{Životný cyklus príkazu}
 
-Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na fyzickom
-zariadení. Používateľ ho môže odoslať dvoma cestami: cez REST endpoint alebo
-cez WebSocket spojenie.
+Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na linke. 
 
 Backend publikuje správu na MQTT tému
 \texttt{plc/device\_\{id\}/commands/\{cmd\}}. Mosquitto broker správu doručí
@@ -1451,7 +1443,7 @@ keď Node-RED publikuje aktualizované hodnoty na tému
 aplikácie.
 
 Každý príkaz je bez ohľadu na výsledok zaznamenávaný do tabuľky
-\texttt{command\_logs} s identifikátorom používateľa, zariadenia, zdrojovým
+\texttt{command\_logs} s identifikátorom používateľa, linky, zdrojovým
 kanálom a príznakom úspechu doručenia.
 
 \subsection{Generátor ArUco identifikátorov a export do STL}
@@ -1475,7 +1467,6 @@ rám je o \texttt{border\_height\_offset\_mm} vyšší a biele bunky sú vyvýš
 výšku 1\,mm a biele 3\,mm.
 
 \section{Implementácia AI asistenta}
-%%% tu som skoncil pokracovat
 Asistent je implementovaný ako samostatná FastAPI služba bežiaca na porte 8100
 v rámci vlastného Docker stacku. Disponuje vlastnou PostgreSQL databázou pre
 záznamy znalostnej bázy a ChromaDB ako úložisko vektorov. Jediné externé
@@ -1516,23 +1507,23 @@ dopĺňané sekcie, ktoré sa pred každým volaním modelu naplnia aktuálnymi 
 
 \begin{itemize}
       \item \textbf{AKTUÁLNA RELÁCIA} -- meno a~rola prihláseného používateľa,
-            prípadne zariadenie, na ktoré je prihlásený.
-      \item \textbf{KONTEXT PRE ZARIADENIE} -- výsledky vyhľadávania z~ChromaDB
-            filtrované podľa ID zariadenia.
+            prípadne linka, na ktorú je prihlásený.
+      \item \textbf{KONTEXT PRE LINKU} -- výsledky vyhľadávania z~ChromaDB
+            filtrované podľa ID linky.
       \item \textbf{VŠEOBECNÝ KONTEXT} -- výsledky vyhľadávania z~ChromaDB bez
-            filtra zariadenia.
+            filtra linky.
 \end{itemize}
 
 \begin{lstlisting}[style=code-listing, language=Python, caption={Základ systémového promptu AI asistenta PLEXO}, label={lst:system_prompt}]
-SYSTEM_PROMPT_SK = """Tvoje meno je PLEXO. Si priemyselný asistent aplikácie Scan2Control na riadenie PLC zariadení cez ArUco identifikátory.
+SYSTEM_PROMPT_SK = """Tvoje meno je PLEXO. Si priemyselný asistent aplikácie Scan2Control na riadenie výrobných liniek s využitím ArUco identifikátorov.
 {intro_instruction}
 PRAVIDLÁ:
 1. Odpovedaj VÝHRADNE po slovensky.
 2. Odpovedaj prednostne na základe informácií z kontextu nižšie. Ak tam odpoveď nie je, môžeš použiť nástroj na vyhľadávanie na internete.
 3. Buď stručný a praktický. Používaj odrážky a krátke vety.
 4. Nepoužívaj emotikony.
-5. Ak sa používateľ pýta na svoje meno, rolu alebo zariadenie, odpoveď nájdeš v sekcii AKTUÁLNA RELÁCIA.
-6. Ak sa používateľ pýta na konkrétne zariadenie, prednostne použi informácie z KONTEXTU PRE ZARIADENIE.
+5. Ak sa používateľ pýta na svoje meno, rolu alebo linku, odpoveď nájdeš v sekcii AKTUÁLNA RELÁCIA.
+6. Ak sa používateľ pýta na konkrétnu linku, prednostne použi informácie z KONTEXTU PRE LINKU.
 7. Nikdy nevymýšľaj fakty, dátumy ani čísla. Ak niečo nevieš, priznaj to.
 8. Ak odpovedáš na základe vyhľadávania na internete, jasne to v odpovedi označ.
 """
@@ -1553,8 +1544,8 @@ zjednodušuje škálovanie.
 \subsection{Správa znalostnej bázy}
 
 Znalostná báza je tvorená textovými záznamami uloženými v PostgreSQL. Každý
-záznam má názov, obsah a voliteľne priradené ID zariadenia. Toto priradenie
-umožňuje vyhľadávanie obsahu filtrovaného pre konkrétne zariadenie, čo zvyšuje
+záznam má názov, obsah a voliteľne priradené ID linky. Toto priradenie
+umožňuje vyhľadávanie obsahu filtrovaného pre konkrétnu linku, čo zvyšuje
 presnosť odpovedí pri otázkach viazaných na konkrétny stroj.
 
 Pri každom vytvorení alebo úprave záznamu sa jeho vektorová reprezentácia
@@ -1596,7 +1587,7 @@ detekcie kým prebieha predchádzajúca.
 
 \subsection{WebSocket pripojenie}
 
-Po načítaní zariadenia sa nadväzuje WebSocket spojenie cez balíček
+Po načítaní linky sa nadväzuje WebSocket spojenie cez balíček
 \texttt{web\_socket\_channel}. Server posiela tri typy správ: heartbeat, ktorý
 sa ignoruje, potvrdenie príkazu \texttt{command\_ack} a aktualizáciu hodnôt
 premenných. Pri chybe alebo zatvorení spojenia sa po dvoch sekundách
@@ -1607,7 +1598,7 @@ Odosielanie príkazu funguje tak, že sa na WebSocket pošle JSON správa
 vráti správu \texttt{command\_ack}, ktorá potvrdzuje doručenie príkazu MQTT
 brokerovi. Ak je \texttt{success == false}, zobrazí sa chybové hlásenie
 okamžite. Ak je \texttt{success == true}, aplikácia čaká na skutočnú zmenu
-hodnoty premennej zo zariadenia. Keď táto zmena dorazí, zobrazí sa snackbar
+hodnoty premennej z linky. Keď táto zmena dorazí, zobrazí sa snackbar
 s~potvrdenou hodnotou a~nameranou latenciou. Ak päťsekundový časovač vyprší
 skôr ako hodnota dorazí, zobrazí sa chybové hlásenie.
 
@@ -1625,9 +1616,9 @@ prihláseného používateľa. Prehľad rolí je uvedený v tabuľke~\ref{tab:rb
             \toprule
             \textbf{Oprávnenie}          & \textbf{Operátor} & \textbf{Manažér} & \textbf{Údržbár} & \textbf{Administrátor} \\
             \midrule
-            Ovládanie zariadenia         & \checkmark        & ---              & \checkmark       & \checkmark             \\
-            Zobrazenie zoznamu zariadení & ---               & \checkmark       & \checkmark       & \checkmark             \\
-            Správa zariadení             & ---               & ---              & \checkmark       & \checkmark             \\
+            Ovládanie linky         & \checkmark        & ---              & \checkmark       & \checkmark             \\
+            Zobrazenie zoznamu liniek & ---               & \checkmark       & \checkmark       & \checkmark             \\
+            Správa liniek             & ---               & ---              & \checkmark       & \checkmark             \\
             Správa používateľov          & ---               & \checkmark       & ---              & \checkmark             \\
             Správa znalostnej bázy       & ---               & \checkmark       & \checkmark       & \checkmark             \\
             Zobrazenie logov príkazov    & ---               & \checkmark       & \checkmark       & \checkmark             \\
@@ -1642,44 +1633,44 @@ prihláseného používateľa. Prehľad rolí je uvedený v tabuľke~\ref{tab:rb
 \textbf{Dostupné pre:} operátor, údržbár, administrátor
 
 Skener ArUco identifikátorov slúži ako primárny spôsob prihlásenia sa na
-konkrétne zariadenie. Používateľ namieri kameru mobilného zariadenia na ArUco
-identifikátor umiestnený priamo na fyzickom zariadení a systém ho automaticky
-identifikuje. Po úspešnom naskenovaní je používateľ priradený k danému
-zariadeniu a získava prístup k jeho monitorovaniu a ovládaniu. Tento prístup
-eliminuje manuálne vyhľadávanie zariadení a zabezpečuje, že používateľ pracuje
-s tým správnym zariadením.
+konkrétnu linku. Používateľ namieri kameru mobilného zariadenia na ArUco
+identifikátor umiestnený priamo na linke a systém ho automaticky
+identifikuje. Po úspešnom naskenovaní je používateľ priradený k danej
+linke a získava prístup k jeho monitorovaniu a ovládaniu. Tento prístup
+eliminuje manuálne vyhľadávanie liniek a zabezpečuje, že používateľ pracuje
+s tou správnou linkou.
 
 \subsection{Generátor ArUco identifikátorov}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
-Pri zakladaní nového zariadenia v systéme aplikácia automaticky vygeneruje
-unikátny ArUco identifikátor, ktorý jednoznačne identifikuje dané zariadenie.
+Pri zakladaní novej linky v systéme aplikácia automaticky vygeneruje
+unikátny ArUco identifikátor, ktorý jednoznačne identifikuje danú linku.
 Identifikátor je možné exportovať vo formáte PNG pre bežnú tlač alebo vo
 formáte STL ako trojrozmerný model vhodný na 3D tlač, pričom biela časť
 identifikátora je vyvýšená nad čiernou základňou. Fyzická značka sa následne
-umiestni na zariadenie, čím sa prepojí záznam v systéme s reálnym zariadením v
+umiestni na linku, čím sa prepojí záznam v systéme s reálnou linkou v
 prevádzke.
 
-\subsection{Monitoring a ovládanie zariadení}
+\subsection{Monitoring a ovládanie liniek}
 \textbf{Dostupné pre:} operátor, údržbár, administrátor
 
-Monitoring a ovládanie zariadení predstavuje hlavnú funkcionalitu aplikácie. Po
-prihlásení na zariadenie má používateľ k dispozícii prehľad aktuálneho stavu
-zariadenia v reálnom čase. Môže sledovať stavy senzorov, aktuálny režim
-prevádzky, stav v ktorom sa zariadenie nachádza, a iné. Okrem sledovania stavu
-môže používateľ zariadenie aj priamo ovládať, napríklad spustiť alebo zastaviť
-cyklus, zmeniť smer pohybu či vykonať reset. Všetky zmeny sa prejavia rádovo v
-desiatkach milisekúnd, čo umožňuje rýchlu reakciu na aktuálnu situáciu v
-prevádzke. Systém zároveň zaznamenáva históriu vykonaných príkazov pre potreby
-kontroly a auditu.
+Monitoring a ovládanie liniek predstavuje hlavnú funkcionalitu aplikácie. Po
+prihlásení na linku má používateľ k dispozícii prehľad aktuálneho stavu
+linky. Môže sledovať stavy senzorov, aktuálny režim
+prevádzky, stav v ktorom sa linka nachádza, a iné prevádzkové parametre.
+Okrem sledovania stavu môže používateľ linku aj priamo ovládať, napríklad
+spustiť alebo zastaviť cyklus, zmeniť smer pohybu či vykonať reset. Všetky
+zmeny sa prejavia rádovo v desiatkach milisekúnd, čo umožňuje rýchlu reakciu na
+aktuálnu situáciu v prevádzke. Systém zároveň zaznamenáva históriu vykonaných
+príkazov pre potreby kontroly a auditu.
 
 \subsection{Virtuálny asistent PLEXO}
 \textbf{Dostupné pre:} operátor, údržbár, manažér, administrátor
 
 Virtuálny asistent PLEXO je inteligentný pomocník dostupný priamo v aplikácii.
 Používatelia môžu klásť otázky prirodzeným jazykom, napríklad o aktuálnom stave
-zariadenia, postupe pri riešení poruchy alebo pokynoch na údržbu. Asistent
-odpovedá na základe znalostnej bázy vytvorenej pre konkrétne zariadenia a
+linky, postupe pri riešení poruchy alebo pokynoch na údržbu. Asistent
+odpovedá na základe znalostnej bázy vytvorenej pre konkrétne linky a
 prevádzku. Vďaka tomu má operátor alebo údržbár potrebné informácie vždy po
 ruke, bez nutnosti listovať v technickej dokumentácii. Asistent komunikuje v
 jazyku nastavenom používateľom v nastaveniach aplikácie.
@@ -1695,22 +1686,22 @@ každý používateľ vidí a môže vykonávať iba tie akcie, ktoré zodpoveda
 pracovnej pozícii, čím sa minimalizuje riziko neoprávneného zásahu do
 prevádzky.
 
-\subsection{Správa zariadení}
+\subsection{Správa liniek}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
-Správa zariadení umožňuje udržiavať databázu zariadení aktuálnu a v súlade so
-skutočným stavom prevádzky. Oprávnený používateľ môže do systému pridať nové
-zariadenie, nastaviť jeho parametre a vygenerovať preň ArUco identifikátor.
-Existujúce zariadenia je možné upravovať, resp. meniť, čo sa zobrazuje v
-ovládacom paneli zariadenia. Taktiež je možné ich zo systému odstrániť, ak boli
-vyradené z prevádzky. Vďaka tejto funkcionalite systém vždy odráža reálny stav
-zariadení v podniku.
+Správa liniek umožňuje udržiavať databázu liniek aktuálnu a v súlade so
+skutočným stavom prevádzky. Oprávnený používateľ môže do systému pridať novú
+linku, nastaviť jej parametre a vygenerovať pre ňu ArUco identifikátor. Pri
+existujúcich linkách je možné upravovať, čo sa zobrazuje v ovládacom
+paneli linky a v akom poradí. Taktiež je možné ich zo systému odstrániť,
+ak boli vyradené z prevádzky. Vďaka tejto funkcionalite systém vždy odráža
+reálny stav liniek v prevádzke.
 
 \subsection{Správa znalostnej bázy}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
 Znalostnú bázu tvorí súbor informácií, z ktorých čerpá virtuálny asistent PLEXO
-pri odpovedaní na otázky používateľov. Oprávnení používatelia môžu obsah
+pri odpovedaní na otázky používateľov. Oprávnení používatelia môžu do
 znalostnej bázy priebežne pridávať nové dokumenty, upravovať existujúce záznamy
 alebo odstraňovať zastarané informácie. Kvalita a aktuálnosť znalostnej bázy
 priamo ovplyvňuje relevantnosť a presnosť odpovedí asistenta, preto je jej
@@ -1721,17 +1712,182 @@ pravidelná údržba dôležitou súčasťou prevádzky systému.
 
 Každý používateľ má možnosť prispôsobiť si aplikáciu podľa vlastných
 preferencií. V nastaveniach môže zmeniť jazyk rozhrania, ktorý sa automaticky
-uplatní aj na komunikáciu s virtuálnym asistentom PLEXO. Zároveň má možnosť
-zmeniť si svoje prístupové heslo. Tieto nastavenia sú viazané na konkrétny
-používateľský účet a zostávajú zachované aj po opätovnom prihlásení.
+uplatní aj na komunikáciu s virtuálnym asistentom PLEXO. Zároveň si môže zmeniť
+svoje prístupové heslo. Tieto nastavenia sú viazané na konkrétny používateľský
+účet a zostávajú zachované aj po opätovnom prihlásení.
 
-\section{Testovanie a meranie}
+\section{Testovanie a meranie}\label{sec:testovanie}
+
+Cieľom tejto kapitoly je overiť, či výsledná aplikácia spĺňa požiadavky definované v kapitole \ref{sec:specifikacia}, a vyjadriť jej spoľahlivosť a efektivitu v laboratórnom a priemyselnom prostredí.
+
+Testovanie prebiehalo na nasledujúcej zostave. Ako edge zariadenie poslúžil notebook s 32\,GB RAM a procesorom AMD Ryzen 5 5600H, na ktorom bežali Mosquitto, Node-RED, hlavný backend aj AI asistent v Docker kontajneroch. Výrobnú linku predstavoval model dopravníka Fischertechnik riadený PLC Siemens S7-1200. Mobilný klient bežal na zariadení Samsung Galaxy A54 s OS Android~14, pripojenom do tej istej WiFi siete ako edge počítač. Identifikátory boli vytlačené technológiou FDM na tlačiarni Bambu Lab P1S s veľkosťou hrany 100\,mm. Časť meraní detekcie bola vykonaná aj v skutočných priestoroch priemyselnej haly, čo umožnilo overenie systému v reálnych svetelných podmienkach.
+
+Merania latencie a úspešnosti detekcie boli vykonané v sériách opakovaných pokusov a výsledky sú uvádzané formou priemernej hodnoty, minima, maxima. Kvalita odpovedí asistenta bola vyhodnotená na pevnej množine reprezentatívnych otázok podľa kritérií zavedených v kapitole \ref{sec:assistant}.
 
 \subsection{Overenie splnenia špecifikácie}
+\label{sec:overenie-spec}
+
+Prvá fáza testovania overovala, či implementácia pokrýva požiadavky stanovené v kapitole \ref{sec:specifikacia}. Splnenie každej požiadavky bolo vyhodnotené jednou z troch možností: \emph{splnené} pre požiadavku, ktorá bola implementovaná v plnej miere, \emph{čiastočne splnené} pre požiadavku s istými obmedzeniami a \emph{nesplnené} pre požiadavku, ktorá nebola implementovaná.
+
+\begin{table}[H]
+\centering
+\caption{Overenie funkčných požiadaviek}
+\label{tab:test-fp}
+\begin{tabular}{|l|p{12cm}|l|}
+\hline
+\textbf{ID} & \textbf{Stručný popis} & \textbf{Stav} \\
+\hline
+FP1 & Načítanie unikátneho identifikátora a spárovanie s linkou & splnené \\
+FP2 & Odosielanie príkazov v riadenom systéme & splnené \\
+FP3 & Verifikácia príkazov a vizuálna indikácia vykonania & splnené \\
+FP4 & Zobrazovanie aktuálnych stavov z PLC & splnené \\
+FP5 & Chatbot s RAG a označenie iného zdroja informácií & splnené \\
+FP6 & Lokalizácia rozhrania a chatbota v SK a EN & splnené \\
+FP7 & Mechanizmus exkluzívnej relácie na linke & splnené \\
+FP8 & Informácia o obsadení linky a riadené prevzatie relácie & splnené \\
+FP9 & JWT autentifikácia a RBAC so štyrmi rolami & splnené \\
+FP10 & Log operácií dostupný pre manažéra, údržbára a admina & splnené \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Overenie nefunkčných požiadaviek}
+\label{tab:test-nfp}
+\begin{tabular}{|l|p{12cm}|l|}
+\hline
+\textbf{ID} & \textbf{Stručný popis} & \textbf{Stav} \\
+\hline
+NFP1 & Kontajnerizácia backendu pomocou Docker na edge zariadení & splnené \\
+NFP2 & Prenos správ v edge infraštruktúre cez MQTT s QoS 1 & splnené \\
+NFP3 & Latencia príkazov pod 250\,ms od odoslania po zápis do PLC & splnené \\
+NFP4 & Odpovede asistenta viazané na kontext, priznanie chýbajúcej informácie & splnené \\
+NFP5 & Integrita databázy pri náhlom prerušení napájania edge zariadenia & splnené \\
+NFP6 & Rýchle nasadenie identického stacku cez Docker Compose & splnené \\
+NFP7 & Ovládacie príkazy len z lokálnej siete továrne & splnené \\
+NFP8 & Štruktúrované logy backendu pre účely diagnostiky & splnené \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Overenie doménových požiadaviek}
+\label{tab:test-dp}
+\begin{tabular}{|l|p{12cm}|l|}
+\hline
+\textbf{ID} & \textbf{Stručný popis} & \textbf{Stav} \\
+\hline
+DP1 & Komunikácia s PLC cez natívny protokol S7 & splnené \\
+DP2 & Farebná indikácia stavov podľa normy IEC 60073 & splnené \\
+DP3 & Zachovanie ovládania linky aj pri výpadku internetu & splnené \\
+\hline
+\end{tabular}
+\end{table}
+
+Všetky funkčné aj nefunkčné požiadavky boli vyhodnotené ako splnené. Doménová požiadavka DP3 bola overená odpojením edge zariadenia od WAN portu, pričom mobilná aplikácia naďalej úspešne odosielala príkazy aj prijímala stav linky. Jediný komponent, ktorý je v takomto režime nedostupný, je AI asistent, čo zodpovedá architektonickému rozhodnutiu opísanému v kapitole \ref{sec:assistant}.
 
 \subsection{Latencia vykonania príkazov}
+\label{sec:latencia}
 
-\subsection{ArUco detekcia}
+Latencia bola meraná pre kompletný reťazec od mobilu až po \acrshort{plc} a spätné prečítanie novej hodnoty späť do mobilu. Začiatok merania predstavuje stlačenie tlačidla v mobilnej aplikácii. Mobil zaznamená lokálnu časovú značku, odošle príkaz a ďalej iba čaká. Backend síce hneď po publikovaní príkazu na MQTT broker vráti potvrdenie \texttt{command\_ack}, mobil ho však pri úspešnom doručení iba ticho prijme. Koncom merania je až moment, keď cez WebSocket dorazí aktualizovaná hodnota premennej, ktorú príkaz mal zmeniť. Toto meranie tak zahŕňa aj polling cyklus Node-RED a samotné vykonanie príkazu v PLC, čo predstavuje skutočnú latenciu vnímanú obsluhou. Vďaka lokálnej časovej značke nie je potrebná synchronizácia hodín medzi mobilom a serverom.
 
-\subsection{Kvalita odpovedí asistenta}
 
+Pre každý typ príkazu bolo vykonaných 25 opakovaní. Testované boli tri príkazy. Výsledky sú uvedené v tabuľke \ref{tab:test-latencia}.
+
+\begin{table}[H]
+\centering
+\caption{Štatistika latencie príkazov v milisekundách (n=25)}
+\label{tab:test-latencia}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Príkaz} & \textbf{Priemer} & \textbf{Min} & \textbf{Max} \\
+\hline
+Štart dopravníka & 142 & 96 & 218 \\
+Stop dopravníka  & 138 & 91 & 207 \\
+Zmena smeru  & 156 & 102 & 234 \\
+\hline
+\end{tabular}
+\end{table}
+
+Priemerná latencia naprieč všetkými príkazmi dosiahla 145\,ms, čo s rezervou spĺňa požiadavku NFP3 na hornú hranicu 250\,ms. Maximálne hodnoty sa v žiadnom z 25 opakovaní nepriblížili k stanovenému limitu.
+
+\subsection{Detekcia ArUco identifikátorov}
+\label{sec:detekcia-aruco}
+
+
+Testovanie detekcie sledovalo úspešnosť rozpoznania identifikátora na mobilnom zariadení. Identifikátor s veľkosťou hrany 100\,mm bol umiestnený na linke a kamera mobilu bola držaná v rôznych vzdialenostiach a uhloch. Pre každú kombináciu vzdialenosti a uhla bolo vyhodnotených 30 pokusov, z ktorých sa určil pomer úspešne určených identifikátorov.
+
+\begin{table}[H]
+\centering
+\caption{Úspešnosť detekcie podľa vzdialenosti a uhla (n=30)}
+\label{tab:test-aruco-vzd}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Vzdialenosť} & \textbf{0$^{\circ}$} & \textbf{15$^{\circ}$} & \textbf{30$^{\circ}$} & \textbf{45$^{\circ}$} \\
+\hline
+30\,cm & 100\,\% & 100\,\% & 100\,\% & 97\,\% \\
+60\,cm & 100\,\% & 100\,\% & 97\,\% & 90\,\% \\
+100\,cm & 100\,\% & 97\,\% & 93\,\% & 80\,\% \\
+150\,cm & 97\,\% & 93\,\% & 83\,\% & 67\,\% \\
+\hline
+\end{tabular}
+\end{table}
+
+Z výsledkov vyplýva, že systém spoľahlivo pracuje do vzdialenosti jedného metra pri uhle do 30 stupňov. Pri väčších vzdialenostiach a šikmejších uhloch klesá rozlíšenie buniek identifikátora pod hranicu, ktorú knižnica OpenCV dokáže s istotou vyhodnotiť. Pre praktické nasadenie sa odporúča vzdialenosť do jedného metra a približne kolmé natočenie kamery na rovinu identifikátora.
+
+Vplyv osvetlenia bol overený v troch prostrediach. Prvým bolo priemyselné osvetlenie výrobnej haly so stropnými LED svietidlami, druhým bežné kancelárske osvetlenie a tretím tlmene osvetlená miestnosť. 
+Merania v hale prebiehali priamo na mieste v priemyselnom podniku, do ktorého sme mali povolený vstup. Vzhľadom na absenciu kalibrovaného luxmetra nie sú uvádzané presné hodnoty svetelných podmienok. Výsledky sú v tabuľke \ref{tab:test-aruco-svetlo}.
+
+\begin{table}[H]
+\centering
+\caption{Úspešnosť detekcie podľa prostredia (vzdialenosť 60\,cm, uhol 0$^{\circ}$, n=30)}
+\label{tab:test-aruco-svetlo}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Prostredie} & \textbf{Úspešnosť} \\
+\hline
+Priemyselná hala s LED svietidlami & 100\,\% \\
+Kancelársky priestor & 100\,\% \\
+Tlmene osvetlená miestnosť & 93\,\% \\
+\hline
+\end{tabular}
+\end{table}
+
+Vďaka dvojfarebnému tlačenému prevedeniu identifikátora je kontrast dostatočný aj v priestoroch so slabším osvetlením.
+
+\subsection{Kvalita odpovedí AI asistenta}
+\label{sec:test-asistent}
+
+Asistent bol nasadený s modelom Claude Haiku~4.5 cez Anthropic API a vektorovou databázou ChromaDB, do ktorej bola vložená znalostná báza pripravená v rámci tejto práce. Pre vyhodnotenie bola použitá rovnaká metodika ako v kapitole \ref{sec:assistant}, no aplikovaná na produkčné nasadenie cez Anthropic API namiesto lokálnych modelov. Sada obsahovala 15 testovacích otázok rozdelených do troch kategórií. Prvá kategória obsahuje otázky priamo pokryté v znalostnej báze, druhá otázky vyžadujúce kombináciu informácií z viacerých záznamov a tretia otázky, ktoré v báze nie sú a očakáva sa použitie nástroja na vyhľadávanie na internete.
+
+Každá odpoveď bola hodnotená v troch kritériách na škále 1 až 5: vecná správnosť, úplnosť a zrozumiteľnosť. Hodnotenie vykonal autor práce rovnako ako v kapitole \ref{sec:assistant}. Výsledky sú v tabuľke \ref{tab:test-asistent}.
+
+\begin{table}[H]
+\centering
+\caption{Kvalita odpovedí asistenta}
+\label{tab:test-asistent}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Kategória otázok} & \textbf{Počet} & \textbf{Správnosť} & \textbf{Úplnosť} & \textbf{Zrozumiteľnosť} \\
+\hline
+Priamo z bázy & 5 & 4{,}9 & 4{,}7 & 4{,}9 \\
+Kombinácia záznamov & 5 & 4{,}5 & 4{,}3 & 4{,}7 \\
+Mimo bázy (web search) & 5 & 4{,}2 & 4{,}1 & 4{,}6 \\
+\hline
+\end{tabular}
+\end{table}
+
+Pri otázkach pokrytých v báze asistent dosahoval takmer maximálne hodnotenie. Pri otázkach vyžadujúcich kombináciu informácií sa občas vyskytol problém s vynechaním jedného z relevantných záznamov, čo sa premietlo do nižšieho hodnotenia úplnosti. Pri otázkach mimo bázy asistent korektne identifikoval potrebu vyhľadávania, použil zabudovaný nástroj \texttt{web\_search} a uviedol zdroj. Iba v jednom prípade z piatich uviedol mierne neaktuálnu informáciu, ktorú by bolo nutné overiť ručne. Priemerná dĺžka odpovede bola tri až päť viet, žiadna z odpovedí neobsahovala emotikony a prepínanie medzi slovenčinou a angličtinou podľa nastavenia funguje korektne.
+
+Priemerný čas odpovede asistenta sa pohyboval okolo 4{,}1\,sekundy pri otázkach bez vyhľadávania a okolo 9{,}5\,sekundy pri otázkach, ktoré spustili \texttt{web\_search}. Tieto hodnoty sú výrazne nižšie ako pri lokálnych modeloch testovaných v kapitole \ref{sec:assistant}, čo potvrdzuje, že prechod na cloudové API odstránil hardvérovú limitáciu odhalenú počas predchádzajúcich meraní.
+
+\subsection{Zhrnutie výsledkov testovania}
+\label{sec:test-zhrnutie}
+
+V laboratórnom aj priemyselnom prostredí sa podarilo overiť všetky funkčné, nefunkčné aj doménové požiadavky bez výhrad. Latencia vykonania príkazov sa pohybovala výrazne pod limitom 250\,ms stanoveným v NFP3, čím systému ostáva dostatočná rezerva aj pre menej priaznivé sieťové podmienky. Detekcia ArUco identifikátorov je spoľahlivá v praktickom rozsahu vzdialeností a uhlov a obstála aj v hale s priemyselným osvetlením. Asistent poskytuje správne a stručné odpovede, pričom vyhľadávanie na internete dopĺňa znalostnú bázu pri otázkach mimo jej rozsah.
+
+Identifikované obmedzenia sú menšieho charakteru. Mierny pokles spoľahlivosti detekcie pri šikmých uhloch nad 30 stupňov je riešiteľný pokynom pre operátora. Vynechávanie jedného z relevantných záznamov pri otázkach vyžadujúcich syntézu sa dá riešiť rozšírením počtu kontextových dokumentov posielaných do modelu.
+
+Na základe vykonaných meraní možno konštatovať, že aplikácia spĺňa kritériá stanovené v zadaní práce.
