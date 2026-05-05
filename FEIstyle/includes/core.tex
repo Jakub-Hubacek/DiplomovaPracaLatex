@@ -1298,6 +1298,24 @@ všetkých liniek naraz. Node-RED subscribuje selektívne len na témy
 \texttt{commands} pre linky, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
+\subsection{Dátový model}
+Dáta backendu sú uložené v~relačnej databáze PostgreSQL
+bežiacej v~hlavnom Docker kontajneri na edge zariadení spolu s ostatnými službami. Databáza uchováva používateľské
+účty s~priradenými rolami, definície výrobných liniek spolu s~ich ArUco
+identifikátormi a~históriu vykonaných príkazov. AI asistent bude nasadený ako
+samostatná služba vo vlastnom kontajneri, preto má aj vlastnú databázovú
+inštanciu, v~ktorej je uložená znalostná báza pre RAG pipeline. Štruktúra hlavnej databázy a~vzťahy medzi entitami sú znázornené na
+obrázku \ref{fig:erd}.
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{img/erd_diagram.pdf}
+      \caption{Entitno-relačný diagram databázy systému}
+      \label{fig:erd}
+\end{figure}
+
+
+
 \section{Implementácia backendu}
 Backend systému tvorí dvojica nezávislých FastAPI služieb bežiacich v~prostredí
 Docker, podrobnejšie opísaných v~sekcii~\ref{sec:system_architecture}.
