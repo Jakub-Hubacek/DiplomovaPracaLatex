@@ -1,1 +1,47 @@
-Navod na spustenie
+
+Aplikácia pozostáva z troch častí: backendu, AI asistenta a mobilnej aplikácie. Backend a asistent bežia v Docker kontajneroch, mobilná aplikácia sa nasadzuje na Android zariadenie.
+
+\subsection*{Predpoklady}
+
+Na hostiteľskom zariadení musí byť nainštalovaný \textbf{Docker} a \textbf{Docker Compose}. Pre buildovanie mobilnej aplikácie je potrebný \textbf{Flutter SDK} verzia 3.24 alebo novšia s nastaveným Android toolchainom. Edge zariadenie aj mobilný telefón musia byť pripojené v rovnakej lokálnej sieti.
+
+\subsection*{Konfigurácia citlivých údajov}
+
+Pred prvým spustením je nutné nastaviť dve hodnoty:
+
+\begin{itemize}
+      \item \texttt{JWT\_SECRET} v súbore \texttt{backend/.env} a v \texttt{assistant/docker-compose.yml} \textbf{musí byť rovnaká, dlhá náhodná hodnota}. Tento kľúč podpisuje JWT tokeny a zdieľajú ho obe služby na ich validáciu. Vygenerovať ho je možné napríklad cez \texttt{openssl rand -hex 32}.
+      \item \texttt{ANTHROPIC\_API\_KEY} v súbore \texttt{assistant/docker-compose.yml} musí obsahovať vlastný kľúč zo služby \url{https://console.anthropic.com/}, inak AI asistent nebude funkčný.
+\end{itemize}
+
+\subsection*{Spustenie backendu a asistenta}
+
+V dvoch oddelených termináloch spustite:
+
+\begin{lstlisting}[language=bash]
+cd backend && docker compose up -d --build
+cd assistant && docker compose up -d --build
+\end{lstlisting}
+
+Po prvom spustení asistenta je potrebné stiahnuť embedovací model:
+
+\begin{lstlisting}[language=bash]
+docker exec -it ollama-llm ollama pull nomic-embed-text
+\end{lstlisting}
+
+Backend bude dostupný na porte \textbf{8000}, asistent na porte \textbf{8100}. Backend pri prvom štarte automaticky vytvorí databázové tabuľky, založí preddefinované účty a zaregistruje testovaciu linku \emph{Dopravník} s ArUco~ID~1.
+
+\subsection*{Spustenie mobilnej aplikácie}
+
+Pripojte Android zariadenie cez USB s povoleným režimom \emph{USB debugging} a v priečinku \texttt{frontend/} spustite:
+
+\begin{lstlisting}[language=bash]
+flutter pub get
+flutter run --release
+\end{lstlisting}
+
+Po prvom otvorení aplikácie je potrebné v \emph{Nastaveniach} nastaviť IP adresu edge zariadenia pre backend (\texttt{http://<edge-ip>:8000}) aj pre asistenta (\texttt{http://<edge-ip>:8100}) a aplikáciu reštartovať.
+
+\subsection*{Prvé prihlásenie}
+
+Pre prvé prihlásenie sú dostupné preddefinované účty podľa hodnôt v \texttt{backend/.env} (predvolene admin: \texttt{admin@admin.com} / \texttt{admin}). Heslá je odporúčané po prvom prihlásení zmeniť v profile.

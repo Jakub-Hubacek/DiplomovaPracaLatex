@@ -791,6 +791,60 @@
       \verb https://trainingindustry.com/articles/workforce-development/the-new-industrial-evolution-how-ai-assistants-and-agents-are-transforming-manufacturing-knowledge/
       \endverb
     \endentry
+    \entry{michalovic2023}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=f1b6a2674726e6d9a937e3965500a12a}{%
+           family={Michalovič},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d285f20b10f9e8e139bd77c7f635b2d5}{%
+           family={Haffner},
+           familyi={H\bibinitperiod},
+           given={Oto},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=c1e1b092356469d851b84a039ed363c2}{%
+           family={Benko},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2b8c3dfd4e28a59b5989e27435e41cb7}{%
+           family={Sojak},
+           familyi={S\bibinitperiod},
+           given={Stanislav},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bratislava}%
+      }
+      \list{publisher}{1}{%
+        {Vydavateľstvo Spektrum STU}%
+      }
+      \strng{namehash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{fullhash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{fullhashraw}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{bibnamehash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{authorbibnamehash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{authornamehash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{authorfullhash}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{authorfullhashraw}{9cf913a5aa2d6af66a2e03f50d1ebab8}
+      \strng{editorbibnamehash}{a9d0f817ecd773ae8bd893598d3d3620}
+      \strng{editornamehash}{a9d0f817ecd773ae8bd893598d3d3620}
+      \strng{editorfullhash}{a9d0f817ecd773ae8bd893598d3d3620}
+      \strng{editorfullhashraw}{a9d0f817ecd773ae8bd893598d3d3620}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ŠVOČ 2023}
+      \field{isbn}{978-80-227-5307-4}
+      \field{title}{Programatické generovanie 3D identifikátora pre systémy zmiešanej reality}
+      \field{year}{2023}
+      \field{pages}{80\bibrangedash 85}
+      \range{pages}{6}
+    \endentry
     \entry{t21}{online}{}{}
       \name{author}{1}{}{%
         {{hash=ca43b8b2bdf82aa380c9fed8712d8db8}{%
@@ -951,8 +1005,8 @@
       \strng{authornamehash}{5f46782611de55f109003b4dac1b83e0}
       \strng{authorfullhash}{5f46782611de55f109003b4dac1b83e0}
       \strng{authorfullhashraw}{5f46782611de55f109003b4dac1b83e0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{mistral-small}

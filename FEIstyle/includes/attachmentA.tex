@@ -1,1 +1,38 @@
-Suborova struktura
+Projekt je rozdelený do troch hlavných častí: backend, AI asistent a mobilná aplikácia. Každá časť je samostatne nasaditeľná.
+
+\dirtree{%
+.1 Scan2Control/.
+.2 backend/ \DTcomment{hlavný backend, MQTT, Node-RED}.
+.3 app/ \DTcomment{zdrojový kód FastAPI služby}.
+.4 routers/ \DTcomment{REST a WebSocket endpointy}.
+.4 services/ \DTcomment{biznis logika, MQTT, autentifikácia}.
+.4 models.py \DTcomment{databázové modely}.
+.4 schemas.py \DTcomment{Pydantic schémy}.
+.3 mosquitto/ \DTcomment{konfigurácia MQTT brokera}.
+.3 node-red/ \DTcomment{Node-RED flows pre S7 komunikáciu}.
+.3 Dockerfile.
+.3 docker-compose.yml.
+.2 assistant/ \DTcomment{AI asistent PLEXO}.
+.3 app/ \DTcomment{zdrojový kód FastAPI služby}.
+.4 routers/ \DTcomment{REST endpointy chatu a znalostnej bázy}.
+.4 services/ \DTcomment{RAG pipeline, ChromaDB}.
+.4 seed\_kb.py \DTcomment{predvolený obsah znalostnej bázy}.
+.3 Dockerfile.
+.3 docker-compose.yml.
+.2 frontend/ \DTcomment{mobilná aplikácia Flutter}.
+.3 lib/.
+.4 features/ \DTcomment{obrazovky podľa funkčných oblastí}.
+.5 aruco\_scanner/ \DTcomment{skenovanie identifikátorov}.
+.5 plc/ \DTcomment{ovládanie a monitoring linky}.
+.5 assistant/ \DTcomment{rozhranie chatu s asistentom}.
+.5 auth/ \DTcomment{prihlásenie a registrácia}.
+.5 admin/ \DTcomment{správa používateľov a logov}.
+.5 dashboard/ \DTcomment{prehľad zariadení}.
+.5 settings/ \DTcomment{nastavenia aplikácie}.
+.4 l10n/ \DTcomment{lokalizácia (SK, EN)}.
+.4 state/ \DTcomment{Riverpod stavový manažment}.
+.4 routing/ \DTcomment{navigácia}.
+.4 main.dart.
+.3 android/ \DTcomment{Android konfigurácia}.
+.3 pubspec.yaml.
+}

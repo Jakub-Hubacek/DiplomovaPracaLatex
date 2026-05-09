@@ -1,1 +1,201 @@
-Prilohy k testovaniu
+\label{att:asistent_otazky}
+
+V tejto prílohe je uvedený úplný zoznam 14 testovacích otázok použitých pri
+hodnotení kvality odpovedí virtuálneho asistenta PLEXO v~sekcii
+\ref{sec:test-asistent}, spolu s~odpoveďami, ktoré asistent v~teste vrátil.
+Otázky sú rozdelené do troch kategórií podľa metodiky uvedenej v~kapitole
+\ref{sec:assistant}: faktické otázky priamo pokryté znalostnou bázou
+(10 otázok, z~toho 6 v~slovenčine a~4 v~angličtine), otázky vyžadujúce
+syntézu informácií z~viacerých záznamov (2 otázky) a~otázky mimo rozsahu
+znalostnej bázy (2 otázky).
+
+\subsection*{Faktické otázky -- slovenský jazyk}
+
+\textbf{Otázka 1:} Ako sa voláš?
+
+\textit{Odpoveď asistenta:}
+Volám sa PLEXO. Som inteligentný asistent určený na podporu obsluhy
+výrobných liniek riadených PLC systémami. Pomáham pri bežnej prevádzke,
+diagnostike problémov a~riešení porúch.
+
+\bigskip
+\noindent\textbf{Otázka 2:} Aký je postup mäkkého reštartu linky?
+
+\textit{Odpoveď asistenta:}
+Postup mäkkého reštartu:
+\begin{itemize}
+      \item Skontrolujte, či sa v~linke nenachádza žiadny produkt ani osoba.
+      \item Na HMI stlačte tlačidlo „STOP" alebo „Reset".
+      \item Počkajte 5 sekúnd.
+      \item Stlačte tlačidlo „START".
+      \item Sledujte, či linka spustí normálnu prevádzku.
+\end{itemize}
+Ak reštart nepomôže, zaznamenajte chybové hlásenie a~kontaktujte servisného
+technika.
+
+\bigskip
+\noindent\textbf{Otázka 3:} Čo znamená chybové hlásenie ,,Motor Overload" a~ako mám
+reagovať?
+
+\textit{Odpoveď asistenta:}
+,,Motor Overload" znamená preťaženie motora -- motor odoberá viac prúdu, ako
+je povolené. Najčastejšou príčinou je zaseknutý produkt alebo mechanická
+chyba. Postupujte takto:
+\begin{itemize}
+      \item Linku okamžite zastavte.
+      \item Skontrolujte pás a~trasu pohybu, či nie je niečo zaseknuté.
+      \item Privolajte technika -- nepokúšajte sa motor reštartovať bez kontroly.
+\end{itemize}
+
+\bigskip
+\noindent\textbf{Otázka 4:} Ako mám vyčistiť svetelnú bránu?
+
+\textit{Odpoveď asistenta:}
+Čistenie senzora môže vykonať obsluha:
+\begin{itemize}
+      \item Zastavte linku.
+      \item Suchou a~čistou handričkou (alebo stlačeným vzduchom) očistite
+            šošovku senzora.
+      \item Skontrolujte, či je senzor pevne uchytený a~smeruje správne.
+      \item Spustite linku a~skontrolujte funkciu.
+\end{itemize}
+Kontrolu káblov a~výmenu senzora smie vykonávať iba technik.
+
+\bigskip
+\noindent\textbf{Otázka 5:} Aké stavy môže linka LINKA-01 mať?
+
+\textit{Odpoveď asistenta:}
+LINKA-01 môže byť v~jednom z~nasledujúcich stavov:
+\begin{itemize}
+      \item \textbf{Čakanie} -- linka je zapnutá, dopravník stojí, čaká na produkt.
+      \item \textbf{Pohyb dopredu} -- dopravník sa pohybuje od Gate~1 ku Gate~2.
+      \item \textbf{Zdržanie na Gate~2} -- dopravník stojí, odpočítava sa
+            3-sekundový časovač.
+      \item \textbf{Pohyb dozadu} -- dopravník sa pohybuje od Gate~2 ku Gate~1.
+      \item \textbf{Výstup produktu} -- dopravník sa pohybuje dozadu ešte
+            1 sekundu po detekcii Gate~1.
+      \item \textbf{Chyba} -- linka sa zastavila z~dôvodu poruchy.
+\end{itemize}
+
+\bigskip
+\noindent\textbf{Otázka 6:} Ako dlho zostáva produkt zdržaný na Gate~2?
+
+\textit{Odpoveď asistenta:}
+Produkt zostáva pri Gate~2 zdržaný 3 sekundy. Počas tohto času dopravník
+stojí a~typicky prebieha spracovanie, skenovanie alebo kontrola produktu.
+Po uplynutí tejto doby sa dopravník rozbehne smerom dozadu k~Gate~1.
+
+\subsection*{Faktické otázky -- anglický jazyk}
+
+\textbf{Otázka 7:} What does HMI stand for and what is it used for?
+
+\textit{Odpoveď asistenta:}
+HMI stands for Human Machine Interface. It is a~touch panel or display
+through which the operator controls the production line. The HMI is one of
+the basic components of a~PLC system and allows the operator to start and
+stop the line, monitor its current state and view error messages.
+
+\bigskip
+\noindent\textbf{Otázka 8:} What is the purpose of the E-STOP button?
+
+\textit{Odpoveď asistenta:}
+The E-STOP (Emergency Stop) is a~red button used to immediately stop the
+line in case of danger. It must be pressed whenever there is a~risk to
+people or equipment. After the E-STOP has been pressed, the line must not
+be restarted before the cause of the stop has been checked. The button is
+released by turning it according to its type and confirming on the HMI.
+
+\bigskip
+\noindent\textbf{Otázka 9:} How does the LINKA-01 production cycle work?
+
+\textit{Odpoveď asistenta:}
+The LINKA-01 cycle consists of the following steps:
+\begin{enumerate}
+      \item A~product enters the belt and breaks the light beam of Gate~1.
+            The PLC starts the conveyor moving forward.
+      \item The product reaches Gate~2 and breaks its beam. The conveyor
+            stops and a~3-second timer starts.
+      \item After 3 seconds the conveyor starts moving in reverse, back
+            towards Gate~1.
+      \item When the product breaks Gate~1 again, the conveyor continues in
+            reverse for 1 more second so the product leaves the belt.
+      \item The conveyor stops and the line returns to the idle state,
+            waiting for the next product.
+\end{enumerate}
+
+\bigskip
+\noindent\textbf{Otázka 10:} What should I do if I see a~,,Communication Error" message?
+
+\textit{Odpoveď asistenta:}
+,,Communication Error" means that the PLC has lost connection with one of
+the connected devices (sensor, motor or another module). Try a~soft restart
+of the line first (STOP, wait 5 seconds, START). If the error persists,
+record the message and call a~service technician. Do not attempt to fix the
+issue with repeated restarts without consulting a~technician.
+
+\subsection*{Otázky vyžadujúce syntézu}
+
+\textbf{Otázka 11:} Produkt sa rozbehol na Gate~1, dopravník ide dopredu,
+ale produkt nedorazí na Gate~2 a~celá linka sa zasekne. Čo mám robiť?
+
+\textit{Odpoveď asistenta:}
+Tento problém má niekoľko možných príčin:
+\begin{itemize}
+      \item Produkt mohol vypadnúť z~pásu počas presunu -- zastavte linku,
+            odstráňte produkt z~okolia a~reštartujte.
+      \item Gate~2 môže byť znečistená a~nedeteguje produkt, takže linka
+            čaká donekonečna -- zastavte linku, suchou handričkou vyčistite
+            šošovku Gate~2 a~reštartujte.
+      \item Produkt môže byť príliš malý alebo ľahký na zachytenie senzorom
+            -- konzultujte nastavenie s~technológom.
+      \item Pás sa môže šmýkať a~produkt neprenášať -- v~tomto prípade
+            privolajte technika.
+\end{itemize}
+Ak sa po vyčistení senzora a~mäkkom reštarte (STOP, počkať 5 sekúnd, START)
+problém zopakuje, kontaktujte servisného technika.
+
+\bigskip
+\noindent\textbf{Otázka 12:} Aké kroky musím urobiť na začiatku smeny pred spustením
+linky LINKA-01 a~aký je postup pri jej zastavení na konci smeny?
+
+\textit{Odpoveď asistenta:}
+\textbf{Spustenie na začiatku smeny:}
+\begin{enumerate}
+      \item Skontrolujte, či je pás čistý a~nie sú na ňom žiadne produkty
+            ani cudzie predmety.
+      \item Vizuálne skontrolujte Gate~1 a~Gate~2 -- šošovky musia byť čisté
+            a~nepoškodené.
+      \item Skontrolujte, či nie je stlačený E-STOP. Ak áno, uvoľnite ho otočením.
+      \item Zapnite hlavný vypínač linky a~počkajte na spustenie HMI.
+      \item Skontrolujte, či nie sú aktívne žiadne chybové hlásenia.
+      \item Prepnite do automatického režimu a~stlačte ,,START".
+\end{enumerate}
+\textbf{Zastavenie na konci smeny:}
+\begin{enumerate}
+      \item Počkajte, kým aktuálny cyklus dokončí spracovanie a~produkt
+            opustí pás.
+      \item Na HMI stlačte ,,STOP".
+      \item Pre dlhšiu odstávku vypnite hlavný vypínač.
+\end{enumerate}
+
+\subsection*{Otázky mimo rozsahu znalostnej bázy}
+
+\textbf{Otázka 13:} Aká je aktuálna cena PLC Siemens S7-1200 v~Európe?
+
+\textit{Odpoveď asistenta} (s~použitím nástroja \texttt{web\_search}):
+Túto informáciu nemám priamo v~znalostnej báze, preto som ju vyhľadal na
+internete. Cena PLC Siemens S7-1200 sa pohybuje rádovo v~stovkách až nízkych
+tisíckach eur podľa konkrétnej konfigurácie CPU a~rozširujúcich modulov.
+Pre presnú aktuálnu cenu odporúčam kontaktovať autorizovaného distribútora
+Siemens. \textit{(Zdroj: vyhľadávanie cez web\_search)}
+
+\bigskip
+\noindent\textbf{Otázka 14:} What is the Modbus TCP protocol and what port does it use?
+
+\textit{Odpoveď asistenta} (s~použitím nástroja \texttt{web\_search}):
+This information is not in my knowledge base, so I~looked it up online.
+Modbus TCP is an industrial communication protocol that wraps the original
+Modbus messaging protocol over standard Ethernet using TCP/IP. It uses
+TCP port 502. Modbus TCP follows a~client-server model and is widely used
+for connecting PLCs, HMIs and SCADA systems in industrial automation.
+\textit{(Source: web\_search lookup)}

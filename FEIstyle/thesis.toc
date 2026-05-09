@@ -57,34 +57,36 @@
 \contentsline {subsection}{\numberline {9.3}Mechanizmus relácií}{37}{subsection.83}%
 \contentsline {subsection}{\numberline {9.4}Životný cyklus príkazu}{38}{subsection.87}%
 \contentsline {subsection}{\numberline {9.5}Generátor ArUco identifikátorov a export do STL}{38}{subsection.88}%
-\contentsline {section}{\numberline {10}Implementácia AI asistenta}{39}{section.90}%
-\contentsline {subsection}{\numberline {10.1}RAG pipeline}{39}{subsection.91}%
-\contentsline {subsection}{\numberline {10.2}Embedovací model}{39}{subsection.92}%
+\contentsline {section}{\numberline {10}Implementácia AI asistenta}{40}{section.90}%
+\contentsline {subsection}{\numberline {10.1}RAG pipeline}{40}{subsection.91}%
+\contentsline {subsection}{\numberline {10.2}Embedovací model}{40}{subsection.92}%
 \contentsline {subsection}{\numberline {10.3}Systémový prompt}{40}{subsection.93}%
 \contentsline {subsection}{\numberline {10.4}Správa konverzácie}{41}{subsection.107}%
 \contentsline {subsection}{\numberline {10.5}Správa znalostnej bázy}{41}{subsection.108}%
-\contentsline {section}{\numberline {11}Implementácia frontendu}{42}{section.109}%
-\contentsline {subsection}{\numberline {11.1}Stavový manažment}{42}{subsection.110}%
-\contentsline {subsection}{\numberline {11.2}ArUco skenovanie}{42}{subsection.111}%
-\contentsline {subsection}{\numberline {11.3}WebSocket pripojenie}{42}{subsection.112}%
-\contentsline {subsection}{\numberline {11.4}Používateľské rozhranie podľa roly}{43}{subsection.113}%
-\contentsline {section}{\numberline {12}Opis funkcionalít aplikácie pre používateľa}{44}{section.115}%
-\contentsline {subsection}{\numberline {12.1}Skener ArUco identifikátorov}{44}{subsection.116}%
-\contentsline {subsection}{\numberline {12.2}Generátor ArUco identifikátorov}{44}{subsection.117}%
-\contentsline {subsection}{\numberline {12.3}Monitoring a ovládanie liniek}{44}{subsection.118}%
-\contentsline {subsection}{\numberline {12.4}Virtuálny asistent PLEXO}{44}{subsection.119}%
-\contentsline {subsection}{\numberline {12.5}Správa používateľov}{45}{subsection.120}%
-\contentsline {subsection}{\numberline {12.6}Správa liniek}{45}{subsection.121}%
-\contentsline {subsection}{\numberline {12.7}Správa znalostnej bázy}{45}{subsection.122}%
-\contentsline {subsection}{\numberline {12.8}Nastavenia}{46}{subsection.123}%
-\contentsline {section}{\numberline {13}Testovanie a meranie}{47}{section.124}%
-\contentsline {subsection}{\numberline {13.1}Overenie splnenia špecifikácie}{47}{subsection.125}%
-\contentsline {subsection}{\numberline {13.2}Latencia vykonania príkazov}{49}{subsection.129}%
-\contentsline {subsection}{\numberline {13.3}Detekcia ArUco identifikátorov}{49}{subsection.131}%
-\contentsline {subsection}{\numberline {13.4}Kvalita odpovedí AI asistenta}{50}{subsection.134}%
-\contentsline {subsection}{\numberline {13.5}Zhrnutie výsledkov testovania}{51}{subsection.136}%
-\contentsline {section}{Z\'{a}ver}{53}{section*.137}%
-\contentsline {section}{Literatúra}{54}{section*.138}%
+\contentsline {section}{\numberline {11}Implementácia frontendu}{43}{section.109}%
+\contentsline {subsection}{\numberline {11.1}Stavový manažment}{43}{subsection.110}%
+\contentsline {subsection}{\numberline {11.2}ArUco skenovanie}{43}{subsection.111}%
+\contentsline {subsection}{\numberline {11.3}WebSocket pripojenie}{43}{subsection.112}%
+\contentsline {subsection}{\numberline {11.4}Používateľské rozhranie podľa roly}{44}{subsection.113}%
+\contentsline {section}{\numberline {12}Opis funkcionalít aplikácie pre používateľa}{45}{section.115}%
+\contentsline {subsection}{\numberline {12.1}Hlavné menu}{45}{subsection.116}%
+\contentsline {subsection}{\numberline {12.2}Skener ArUco identifikátorov}{46}{subsection.118}%
+\contentsline {subsection}{\numberline {12.3}Generátor ArUco identifikátorov}{46}{subsection.120}%
+\contentsline {subsection}{\numberline {12.4}Monitoring a ovládanie zariadení}{47}{subsection.122}%
+\contentsline {subsection}{\numberline {12.5}Virtuálny asistent PLEXO}{48}{subsection.124}%
+\contentsline {subsection}{\numberline {12.6}Správa používateľov}{49}{subsection.126}%
+\contentsline {subsection}{\numberline {12.7}Správa zariadení}{50}{subsection.128}%
+\contentsline {subsection}{\numberline {12.8}Správa znalostnej bázy}{51}{subsection.130}%
+\contentsline {subsection}{\numberline {12.9}Logy príkazov}{52}{subsection.132}%
+\contentsline {subsection}{\numberline {12.10}Nastavenia}{53}{subsection.134}%
+\contentsline {section}{\numberline {13}Testovanie a meranie}{55}{section.136}%
+\contentsline {subsection}{\numberline {13.1}Overenie splnenia špecifikácie}{55}{subsection.137}%
+\contentsline {subsection}{\numberline {13.2}Latencia vykonania príkazov}{57}{subsection.141}%
+\contentsline {subsection}{\numberline {13.3}Detekcia ArUco identifikátorov}{57}{subsection.143}%
+\contentsline {subsection}{\numberline {13.4}Kvalita odpovedí AI asistenta}{58}{subsection.146}%
+\contentsline {subsection}{\numberline {13.5}Zhrnutie výsledkov testovania}{59}{subsection.148}%
+\contentsline {section}{Z\'{a}ver}{61}{section*.149}%
+\contentsline {section}{Literatúra}{62}{section*.150}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -241,8 +243,11 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{56}{section*.139}%
-\contentsline {section}{\numberline {A}Súborová štruktúra}{57}{section.141}%
-\contentsline {section}{\numberline {B}Prílohy k testovaniu}{58}{section.144}%
-\contentsline {section}{\numberline {C}Návod na spustenie}{59}{section.147}%
-\contentsline {section}{\numberline {D}Opis funkcionalít aplikácie}{60}{section.150}%
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{64}{section*.151}%
+\contentsline {section}{\numberline {A}Súborová štruktúra}{65}{section.153}%
+\contentsline {section}{\numberline {B}Prílohy k testovaniu}{66}{section.156}%
+\contentsline {section}{\numberline {C}Návod na spustenie}{71}{section.173}%
