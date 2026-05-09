@@ -1314,6 +1314,126 @@ obrázku \ref{fig:erd}.
       \label{fig:erd}
 \end{figure}
 
+\section{Integrácia s riadiacim systémom linky}\label{sec:plc_integration}
+
+Riadiaci systém testovacej linky tvorí Siemens SIMATIC S7-1200
+(\acrshort{cpu} 1215C DC/DC/DC). Linka má dva fotoelektrické snímače na
+každom konci dopravníka a~jednosmerný motor dopravníkového
+pásu s~možnosťou pohybu v oboch smeroch. Cieľom integrácie bolo pripraviť \acrshort{plc}
+program tak, aby ho bolo možné ovládať z~mobilnej aplikácie cez
+backend, \acrshort{mqtt} broker a~Node-RED, a~aby všetka logika linky zostala
+v~\acrshort{plc}, backend len posiela príkazy a~číta stavy.
+
+\subsection{Štruktúra projektu v~TIA Portal}
+
+Projekt bol vytvorený v~prostredí \textit{Siemens TIA Portal V19}. Programová
+časť \acrshort{plc} pozostáva z~troch hlavných blokov:
+\begin{itemize}
+      \item \textbf{Main [OB1]} -- hlavný organizačný blok, ktorý
+            v~každom cykle volá funkčný blok \texttt{FB\_Conveyor}.
+      \item \textbf{FB\_Conveyor [FB1]} -- funkčný blok obsahujúci celú
+            riadiacu logiku linky.
+      \item \textbf{DB\_API [DB5]} -- dátový blok slúžiaci ako rozhranie
+            medzi \acrshort{plc} a~Node-RED.
+\end{itemize}
+
+\subsection{Dátový blok DB\_API}
+
+Kľúčovým návrhovým rozhodnutím bolo zaviesť samostatný dátový blok
+\texttt{DB\_API}, ktorý slúži ako jediné prepojenie medzi \acrshort{plc}
+a~zvyškom systému. Všetky premenné v~ňom sú deklarované ako
+\textit{accessible from HMI}, \textit{writable} a~\textit{visible}, čím sa
+sprístupňujú externým klientom cez S7 protokol. Vďaka tomuto oddeleniu je
+možné vnútornú logiku \texttt{FB\_Conveyor} kedykoľvek upraviť bez zásahu do
+Node-RED tokov alebo \acrshort{api} backendu, pokiaľ zostane zachovaná
+štruktúra \texttt{DB\_API}.
+
+Pomenovanie premenných sa drží jednotnej konvencie:
+\begin{itemize}
+      \item Prefix \texttt{St\_} (status) označuje stavové premenné, ktoré
+            \acrshort{plc} v~každom cykle aktualizuje a~Node-RED ich len
+            číta.
+      \item Prefix \texttt{Cmd\_} (command) označuje príkazové premenné,
+            ktoré zapisuje Node-RED a~\acrshort{plc} ich číta.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Premenné dátového bloku \texttt{DB\_API}}
+\label{tab:db_api}
+\begin{tabular}{|l|l|p{6cm}|}
+\hline
+\textbf{Premenná} &  \textbf{Popis} \\
+\hline
+\texttt{Cmd\_ModeAuto}     & Prepnutie medzi automatickým a~manuálnym režimom \\
+\texttt{Cmd\_StartCycle}   & Spustenie cyklu v~automatickom režime \\
+\texttt{Cmd\_Stop}         & Núdzové zastavenie linky (latch) \\
+\texttt{Cmd\_MoveForward}  & Pohyb pásu vpred (manuálny režim) \\
+\texttt{Cmd\_MoveBackward} & Pohyb pásu vzad (manuálny režim) \\
+\hline
+\texttt{St\_State}         & Aktuálny stav automatu (0/10/20/30/40) \\
+\texttt{St\_ModeAuto}      & Aktívny režim (auto/manual) \\
+\texttt{St\_StopLatched}   & Príznak núdzového zastavenia \\
+\texttt{St\_Running}       & Pás je v~pohybe \\
+\texttt{St\_Gate1}, \texttt{St\_Gate2} & Stavy snímačov \\
+\texttt{St\_MovingForward}, \texttt{St\_MovingBackward} & Smer aktuálneho pohybu \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Stavový automat riadiacej logiky}
+
+V~automatickom režime linka pracuje ako stavový automat s~piatimi stavmi.
+Číslovanie stavov skokom o~desať umožňuje prípadné neskoršie doplnenie
+medzistavov bez zmeny existujúcich, čo je bežná konvencia
+v~PLC programovaní.
+
+\begin{table}[H]
+\centering
+\caption{Stavy automatu \texttt{FB\_Conveyor}}
+\label{tab:fb_states}
+\begin{tabular}{|c|l|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Názov} & \textbf{Popis} \\
+\hline
+0  & Idle      & Pás stojí, čaká sa na detekciu objektu na Gate~1. \\
+10 & Forward   & Pás sa pohybuje dopredu, kým objekt nedorazí na Gate~2. \\
+20 & Dwell     & Trojsekundové držanie objektu pri Gate~2 (čas na spracovanie). \\
+30 & Backward  & Pás sa pohybuje vzad, kým objekt neopustí Gate~1. \\
+40 & Eject     & Jednosekundový dobeh vzad, ktorý zabezpečí vypadnutie objektu z~pásu. \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{lstlisting}[style=code-listing, language=Pascal, caption={Jadro stavového automatu \texttt{FB\_Conveyor}}, label={lst:fb_states}]
+CASE #state OF
+    0:
+        IF NOT #Gate1 THEN
+            #state := 10;
+        END_IF;
+    10:
+        #MotorForward := TRUE;
+        IF NOT #Gate2 THEN
+            #state := 20;
+        END_IF;
+    20:
+        IF #Dwell_Q THEN
+            #state := 30;
+        END_IF;
+    30:
+        #MotorBackward := TRUE;
+        IF NOT #Gate1 THEN
+            #state := 40;
+        END_IF;
+    40:
+        #MotorBackward := TRUE;
+        IF #Eject_Q THEN
+            #state := 0;
+        END_IF;
+END_CASE;
+\end{lstlisting}
 
 
 \section{Implementácia backendu}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  9 MAY 2026 20:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.20)  9 MAY 2026 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1390,7 +1390,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 ]
 
 pdfTeX warning: pdflatex (file ./img/zadanie.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/zadanie.pdf, id=378, 597.55246pt x 845.07724pt>
+<img/zadanie.pdf, id=394, 597.55246pt x 845.07724pt>
 File: img/zadanie.pdf Graphic file (type pdf)
 <use img/zadanie.pdf>
 Package pdftex.def Info: img/zadanie.pdf  used on input line 59.
@@ -1401,7 +1401,7 @@ pdfTeX warning: pdflatex (file ./img/zadanie.pdf): PDF inclusion: found PDF vers
 
 
 pdfTeX warning: pdflatex (file ./img/zadanie.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/zadanie.pdf, id=380, page=1, 597.55246pt x 845.07724pt>
+<img/zadanie.pdf, id=396, page=1, 597.55246pt x 845.07724pt>
 File: img/zadanie.pdf Graphic file (type pdf)
 <use img/zadanie.pdf, page 1>
 Package pdftex.def Info: img/zadanie.pdf , page1 used on input line 59.
@@ -1475,21 +1475,30 @@ File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- (thesis.lot [9])
+ (thesis.lot
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7.
+ (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [9])
 \tf@lot=\write10
 \openout10 = `thesis.lot'.
 
  [10{C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] (thesis.acr
-Underfull \hbox (badness 2384) in paragraph at lines 19--19
+Underfull \hbox (badness 2384) in paragraph at lines 20--20
 \T1/lmr/m/n/12 (+20) ven-sky ^^Rasynch-rónne ro-z-hra-nie ser-ve-ro-vej
  []
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 44--44
+Underfull \hbox (badness 1888) in paragraph at lines 46--46
 []|\T1/lmr/m/n/12 (+20) Information Tech-no-logy (slo-ven-sky ^^Rin-for-
  []
 
-thesis.acr:118: ignored: Infinite glue shrinkage found in box being split [11]) [12] (thesis.lol)
+thesis.acr:122: ignored: Infinite glue shrinkage found in box being split [11]) [12] (thesis.lol)
 \tf@lol=\write11
 \openout11 = `thesis.lol'.
 
@@ -1520,24 +1529,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [11]
 
 pdfTeX warning: pdflatex (file ./img/basic_rag_pipeline.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/basic_rag_pipeline.pdf, id=809, 814.00107pt x 183.8067pt>
+<img/basic_rag_pipeline.pdf, id=836, 814.00107pt x 183.8067pt>
 File: img/basic_rag_pipeline.pdf Graphic file (type pdf)
 <use img/basic_rag_pipeline.pdf>
 Package pdftex.def Info: img/basic_rag_pipeline.pdf  used on input line 507.
 (pdftex.def)             Requested size: 441.01773pt x 99.58789pt.
 [12 <./img/basic_rag_pipeline.pdf>] [13]
-<img/qrcode.png, id=843, 443.40656pt x 423.08063pt>
+<img/qrcode.png, id=870, 443.40656pt x 423.08063pt>
 File: img/qrcode.png Graphic file (type png)
 <use img/qrcode.png>
 Package pdftex.def Info: img/qrcode.png  used on input line 556.
 (pdftex.def)             Requested size: 154.35889pt x 147.28638pt.
-<img/AprilTagVsArUco.png, id=845, 803.25093pt x 444.91219pt>
+<img/AprilTagVsArUco.png, id=872, 803.25093pt x 444.91219pt>
 File: img/AprilTagVsArUco.png Graphic file (type png)
 <use img/AprilTagVsArUco.png>
 Package pdftex.def Info: img/AprilTagVsArUco.png  used on input line 568.
 (pdftex.def)             Requested size: 198.45662pt x 109.92432pt.
  [14 <./img/qrcode.png> <./img/AprilTagVsArUco.png>]
-<img/3D_identifikator.jpg, id=852, 728.2407pt x 728.2407pt>
+<img/3D_identifikator.jpg, id=879, 728.2407pt x 728.2407pt>
 File: img/3D_identifikator.jpg Graphic file (type jpg)
 <use img/3D_identifikator.jpg>
 Package pdftex.def Info: img/3D_identifikator.jpg  used on input line 594.
@@ -1547,14 +1556,6 @@ Package pdftex.def Info: img/3D_identifikator.jpg  used on input line 594.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 806.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 817.
-(C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
 Overfull \hbox (5.98436pt too wide) in paragraph at lines 834--839
 []\T1/lmr/m/n/12 (-20) Node-- RED bol zvo-lený z nie-ko©-kých dô-vo-dov. Dis-po-nuje uzlom \T1/lmtt/m/n/12 node-red-contrib-s7
@@ -1579,7 +1580,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [28] [29] [30]
 
 pdfTeX warning: pdflatex (file ./img/architektura_systemu.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/architektura_systemu.pdf, id=992, 673.55638pt x 442.53331pt>
+<img/architektura_systemu.pdf, id=1018, 673.55638pt x 442.53331pt>
 File: img/architektura_systemu.pdf Graphic file (type pdf)
 <use img/architektura_systemu.pdf>
 Package pdftex.def Info: img/architektura_systemu.pdf  used on input line 1221.
@@ -1587,7 +1588,7 @@ Package pdftex.def Info: img/architektura_systemu.pdf  used on input line 1221.
 [31]
 
 pdfTeX warning: pdflatex (file ./img/fyzicka_architektura.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/fyzicka_architektura.pdf, id=998, 623.44919pt x 237.7683pt>
+<img/fyzicka_architektura.pdf, id=1024, 623.44919pt x 237.7683pt>
 File: img/fyzicka_architektura.pdf Graphic file (type pdf)
 <use img/fyzicka_architektura.pdf>
 Package pdftex.def Info: img/fyzicka_architektura.pdf  used on input line 1242.
@@ -1600,144 +1601,157 @@ Overfull \hbox (30.87627pt too wide) in paragraph at lines 1280--1294
 [33 <./img/fyzicka_architektura.pdf>]
 
 pdfTeX warning: pdflatex (file ./img/erd_diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/erd_diagram.pdf, id=1037, 587.3142pt x 581.2917pt>
+<img/erd_diagram.pdf, id=1063, 587.3142pt x 581.2917pt>
 File: img/erd_diagram.pdf Graphic file (type pdf)
 <use img/erd_diagram.pdf>
 Package pdftex.def Info: img/erd_diagram.pdf  used on input line 1312.
 (pdftex.def)             Requested size: 441.01773pt x 436.49103pt.
-[34] [35 <./img/erd_diagram.pdf>] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[34] [35 <./img/erd_diagram.pdf>]
+Overfull \hbox (15.99994pt too wide) in paragraph at lines 1319--1326
+\T1/lmr/m/n/12 (-20) Riadiaci sys-tém tes-to-va-cej linky tvorí Sie-mens SI-MA-TIC S7[]1200 ([][][]CPU[][] 1215C DC/DC/DC).
+ []
+
+
+Overfull \hbox (77.62782pt too wide) in paragraph at lines 1364--1382
+ [][] 
+ []
+
+[36] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1341.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1410.
+ [37] [38] (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1342.
- [36] [37]
-<img/ArUco3D.jpg, id=1080, 728.2407pt x 728.2407pt>
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1462.
+ [39] [40]
+<img/ArUco3D.jpg, id=1154, 728.2407pt x 728.2407pt>
 File: img/ArUco3D.jpg Graphic file (type jpg)
 <use img/ArUco3D.jpg>
-Package pdftex.def Info: img/ArUco3D.jpg  used on input line 1476.
+Package pdftex.def Info: img/ArUco3D.jpg  used on input line 1596.
 (pdftex.def)             Requested size: 198.45662pt x 198.45pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] [39 <./img/ArUco3D.jpg>] [40] [41] [42]
-Overfull \hbox (5.51663pt too wide) in paragraph at lines 1608--1613
+[41] [42 <./img/ArUco3D.jpg>] [43] [44] [45]
+Overfull \hbox (5.51663pt too wide) in paragraph at lines 1728--1733
 \T1/lmr/m/n/12 (-20) Po na-£í-taní za-ria-de-nia sa nad-vä-zuje Web-Soc-ket spo-je-nie cez ba-lí-£ek \T1/lmtt/m/n/12 web_socket_channel\T1/lmr/m/n/12 (-20) .
  []
 
 
-Overfull \hbox (9.3365pt too wide) in paragraph at lines 1608--1613
+Overfull \hbox (9.3365pt too wide) in paragraph at lines 1728--1733
 \T1/lmr/m/n/12 (-20) Ser-ver po-siela tri typy správ: he-art-beat, ktorý sa ig-no-ruje, po-tvr-de-nie prí-kazu \T1/lmtt/m/n/12 command_ack
  []
 
-[43]
-Overfull \hbox (10.93338pt too wide) in paragraph at lines 1633--1646
+[46]
+Overfull \hbox (10.93338pt too wide) in paragraph at lines 1753--1766
  [][] 
  []
 
-[44]
-<img/appScreenshots/Dash.png, id=1127, 903.375pt x 1882.03125pt>
+[47]
+<img/appScreenshots/Dash.png, id=1201, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Dash.png Graphic file (type png)
 <use img/appScreenshots/Dash.png>
-Package pdftex.def Info: img/appScreenshots/Dash.png  used on input line 1662.
+Package pdftex.def Info: img/appScreenshots/Dash.png  used on input line 1782.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [45 <./img/appScreenshots/Dash.png>]
-<img/appScreenshots/ArucoScanner.png, id=1133, 903.375pt x 1882.03125pt>
+ [48 <./img/appScreenshots/Dash.png>]
+<img/appScreenshots/ArucoScanner.png, id=1207, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/ArucoScanner.png Graphic file (type png)
 <use img/appScreenshots/ArucoScanner.png>
-Package pdftex.def Info: img/appScreenshots/ArucoScanner.png  used on input line 1680.
+Package pdftex.def Info: img/appScreenshots/ArucoScanner.png  used on input line 1800.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [46 <./img/appScreenshots/ArucoScanner.png>]
-<img/appScreenshots/ArucoGen.png, id=1139, 903.375pt x 1882.03125pt>
+ [49 <./img/appScreenshots/ArucoScanner.png>]
+<img/appScreenshots/ArucoGen.png, id=1213, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/ArucoGen.png Graphic file (type png)
 <use img/appScreenshots/ArucoGen.png>
-Package pdftex.def Info: img/appScreenshots/ArucoGen.png  used on input line 1698.
+Package pdftex.def Info: img/appScreenshots/ArucoGen.png  used on input line 1818.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [47 <./img/appScreenshots/ArucoGen.png>]
-<img/appScreenshots/Monitor.png, id=1146, 903.375pt x 1882.03125pt>
+ [50 <./img/appScreenshots/ArucoGen.png>]
+<img/appScreenshots/Monitor.png, id=1219, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Monitor.png Graphic file (type png)
 <use img/appScreenshots/Monitor.png>
-Package pdftex.def Info: img/appScreenshots/Monitor.png  used on input line 1718.
+Package pdftex.def Info: img/appScreenshots/Monitor.png  used on input line 1838.
 (pdftex.def)             Requested size: 176.40439pt x 367.49718pt.
-<img/appScreenshots/Control.png, id=1147, 903.375pt x 1882.03125pt>
+<img/appScreenshots/Control.png, id=1220, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Control.png Graphic file (type png)
 <use img/appScreenshots/Control.png>
-Package pdftex.def Info: img/appScreenshots/Control.png  used on input line 1720.
+Package pdftex.def Info: img/appScreenshots/Control.png  used on input line 1840.
 (pdftex.def)             Requested size: 176.40439pt x 367.49718pt.
-<img/appScreenshots/Plexo.png, id=1148, 903.375pt x 1882.03125pt>
+<img/appScreenshots/Plexo.png, id=1221, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Plexo.png Graphic file (type png)
 <use img/appScreenshots/Plexo.png>
-Package pdftex.def Info: img/appScreenshots/Plexo.png  used on input line 1738.
+Package pdftex.def Info: img/appScreenshots/Plexo.png  used on input line 1858.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [48 <./img/appScreenshots/Monitor.png> <./img/appScreenshots/Control.png>]
-<img/appScreenshots/Users.png, id=1155, 903.375pt x 1882.03125pt>
+ [51 <./img/appScreenshots/Monitor.png> <./img/appScreenshots/Control.png>]
+<img/appScreenshots/Users.png, id=1228, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Users.png Graphic file (type png)
 <use img/appScreenshots/Users.png>
-Package pdftex.def Info: img/appScreenshots/Users.png  used on input line 1756.
+Package pdftex.def Info: img/appScreenshots/Users.png  used on input line 1876.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [49 <./img/appScreenshots/Plexo.png>]
-<img/appScreenshots/Devices.png, id=1161, 903.375pt x 1882.03125pt>
+ [52 <./img/appScreenshots/Plexo.png>]
+<img/appScreenshots/Devices.png, id=1234, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Devices.png Graphic file (type png)
 <use img/appScreenshots/Devices.png>
-Package pdftex.def Info: img/appScreenshots/Devices.png  used on input line 1774.
+Package pdftex.def Info: img/appScreenshots/Devices.png  used on input line 1894.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [50 <./img/appScreenshots/Users.png>]
-<img/appScreenshots/Knowledgebase.png, id=1167, 903.375pt x 1882.03125pt>
+ [53 <./img/appScreenshots/Users.png>]
+<img/appScreenshots/Knowledgebase.png, id=1241, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Knowledgebase.png Graphic file (type png)
 <use img/appScreenshots/Knowledgebase.png>
-Package pdftex.def Info: img/appScreenshots/Knowledgebase.png  used on input line 1791.
+Package pdftex.def Info: img/appScreenshots/Knowledgebase.png  used on input line 1911.
 (pdftex.def)             Requested size: 176.40439pt x 367.49718pt.
-<img/appScreenshots/EditKB.png, id=1168, 903.375pt x 1882.03125pt>
+<img/appScreenshots/EditKB.png, id=1242, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/EditKB.png Graphic file (type png)
 <use img/appScreenshots/EditKB.png>
-Package pdftex.def Info: img/appScreenshots/EditKB.png  used on input line 1793.
+Package pdftex.def Info: img/appScreenshots/EditKB.png  used on input line 1913.
 (pdftex.def)             Requested size: 176.40439pt x 367.49718pt.
- [51 <./img/appScreenshots/Devices.png>]
-<img/appScreenshots/Logs.png, id=1174, 903.375pt x 1882.03125pt>
+ [54 <./img/appScreenshots/Devices.png>]
+<img/appScreenshots/Logs.png, id=1248, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Logs.png Graphic file (type png)
 <use img/appScreenshots/Logs.png>
-Package pdftex.def Info: img/appScreenshots/Logs.png  used on input line 1809.
+Package pdftex.def Info: img/appScreenshots/Logs.png  used on input line 1929.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [52 <./img/appScreenshots/Knowledgebase.png> <./img/appScreenshots/EditKB.png>]
-<img/appScreenshots/Settings.png, id=1181, 903.375pt x 1882.03125pt>
+ [55 <./img/appScreenshots/Knowledgebase.png> <./img/appScreenshots/EditKB.png>]
+<img/appScreenshots/Settings.png, id=1255, 903.375pt x 1882.03125pt>
 File: img/appScreenshots/Settings.png Graphic file (type png)
 <use img/appScreenshots/Settings.png>
-Package pdftex.def Info: img/appScreenshots/Settings.png  used on input line 1824.
+Package pdftex.def Info: img/appScreenshots/Settings.png  used on input line 1944.
 (pdftex.def)             Requested size: 198.45662pt x 413.4451pt.
- [53 <./img/appScreenshots/Logs.png>] [54 <./img/appScreenshots/Settings.png>]
-Overfull \hbox (3.3544pt too wide) in paragraph at lines 1846--1862
+ [56 <./img/appScreenshots/Logs.png>] [57 <./img/appScreenshots/Settings.png>]
+Overfull \hbox (3.3544pt too wide) in paragraph at lines 1966--1982
  [][] 
  []
 
-[55]
-Overfull \hbox (6.28741pt too wide) in paragraph at lines 1868--1882
+[58]
+Overfull \hbox (6.28741pt too wide) in paragraph at lines 1988--2002
  [][] 
  []
 
-[56] [57] [58] [59]) [60] (includes/conclusion.tex) [61
+[59] [60] [61] [62]) [63] (includes/conclusion.tex) [64
 
 
-] [62
+] [65
 
 
-] [63]
+] [66]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- (includes/ai_declaration.tex) [64] (includes/attachmentA.tex) [65
+ (includes/ai_declaration.tex) [67] (includes/attachmentA.tex) [68
 
 
 
 
-] (includes/attachmentB.tex [66
+] (includes/attachmentB.tex [69
 
 
-] [67] [68]) [69] [70] (includes/attachmentC.tex (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+] [70] [71]) [72] [73] (includes/attachmentC.tex (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-) [71
+) [74
 
 
 ]
@@ -1745,29 +1759,29 @@ Overfull \hbox (6.15538pt too wide) in paragraph at lines 43--44
 \T1/lmr/m/n/12 (-20) de-nia pre bac-kend (\T1/lmtt/m/n/12 http://<edge-ip>:8000\T1/lmr/m/n/12 (-20) ) aj pre asis-tenta (\T1/lmtt/m/n/12 http://<edge-ip>:8100\T1/lmr/m/n/12 (-20) )
  []
 
-) [72] (thesis.aux)
+) [75] (thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3496682DB0CB390D41F147F9A9E200AE;16905.
+(rerunfilecheck)             Checksum: BD26EB5BCD4A174F6C63F80BE77A1385;17793.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38874 strings out of 467866
- 719886 string characters out of 5418325
- 1891255 words of memory out of 5000000
- 66577 multiletter control sequences out of 15000+600000
- 728311 words of font info for 228 fonts, out of 8000000 for 9000
+ 38993 strings out of 467866
+ 721353 string characters out of 5418325
+ 1891522 words of memory out of 5000000
+ 66655 multiletter control sequences out of 15000+600000
+ 728505 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,17n,131p,2529b,3365s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/jakub/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (86 pages, 12521746 bytes).
+Output written on thesis.pdf (89 pages, 12550711 bytes).
 PDF statistics:
- 1504 PDF objects out of 1728 (max. 8388607)
- 328 named destinations out of 1000 (max. 500000)
- 62284 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1584 PDF objects out of 1728 (max. 8388607)
+ 363 named destinations out of 1000 (max. 500000)
+ 62316 words of extra memory for PDF output out of 74296 (max. 10000000)
 
