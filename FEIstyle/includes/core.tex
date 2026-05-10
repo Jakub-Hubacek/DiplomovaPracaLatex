@@ -71,7 +71,7 @@ Pre nasadenie na edge zariadeniach Inductive Automation ponúka \textit{Ignition
       Edge}. Ide o odľahčenú verziu s archívom (35 dní lokálneho ukladania), podporou
 \acrshort{mqtt} Sparkplug pre synchronizáciu dát na centrálny gateway a
 možnosťou tvorby \acrshort{rest} \acrshort{api} priamo na edge zariadení.
-Ignition Edge teda plní úlohu AI premostenia medzi fyzickými
+Ignition Edge teda plní úlohu premostenia medzi fyzickými
 zariadeniami a vyššími systémovými vrstvami~\cite{t03}.
 
 Z~pohľadu našej práce sú kľúčové tieto body:
@@ -156,7 +156,7 @@ AVEVA Edge Studio a nasadí na Windows alebo Linux, od malých embedded zariaden
 
 Platforma je interoperabilná s~väčšinou priemyselných zariadení prostredníctvom
 vstavaných ovládačov a natívnej podpory \acrshort{opcua}. Vzdialený prístup je
-zabezpečený webovým rozhraním na založeným na \acrshort{html}5, čo umožňuje
+zabezpečený webovým rozhraním založeným na \acrshort{html}5, čo umožňuje
 sledovanie a ovládanie zo smartfónov, tabletov a priemyselných panelov bez
 inštalácie klienta.
 
@@ -452,7 +452,7 @@ ako expirácia správ, aliasy tém a zlepšené hlásenie chýb.
 
 Modbus je komunikačný protokol vyvinutý spoločnosťou Modicon (dnes Schneider
 Electric) v~roku 1979 pre potreby priemyselných programovateľných automatov.
-Dnes je de facto štandardom v~priemyselnej automatizácii s~odhadovaných
+Dnes je de facto štandardom v~priemyselnej automatizácii s~odhadovanými
 7~miliónmi nasadených uzlov~\cite{t14}. Modbus TCP/IP prenáša správy protokolu
 Modbus zabalené do TCP/IP rámcov, čím umožňuje nasadenie v~štandardných
 ethernetových sieťach bez potreby špeciálneho hardvéru.
@@ -598,7 +598,7 @@ reality.
 \subsubsection{Princíp a štruktúra}
 Navrhnutý 3D identifikátor má tvar kocky, ktorá je vnútorne vyskladaná z
 menších, unikátnych geometrických elementov. Tieto elementy sú usporiadané v
-originálnej štruktúre, ktorá v sebe nesie zakódované informácie\cite{michalovic2023}.
+originálnej štruktúre, ktorá v sebe nesie zakódované informácie~\cite{michalovic2023}.
 
 Hlavné technické výhody tohto riešenia sú:
 \begin{itemize}
@@ -789,7 +789,7 @@ Požiadavky plynúce z priemyselného prostredia a použitých technológií.
 \begin{description}
       \item [DP1:] Komunikácia s hardvérom PLC musí prebiehať cez natívny protokol S7.
       \item [DP2:] Grafické rozhranie musí dodržiavať priemyselné štandardy pre farebnú indikáciu stavov podľa normy IEC 60073.
-      \item [DP3:] Systém si musí zachovať kľúčovú funkcionalitu, teda ovládanie výrobej linky aj v prípade výpadku pripojenia k internetu.
+      \item [DP3:] Systém si musí zachovať kľúčovú funkcionalitu, teda ovládanie výrobnej linky aj v prípade výpadku pripojenia k internetu.
 \end{description}
 
 \section{Voľba technológií}
@@ -810,8 +810,8 @@ dátových blokov bez nutnosti zložitej konfigurácie alebo dodatočných licen
 
 Alternatívou by bolo aktivovanie servera \acrshort{opcua} priamo v~S7-1200, čo
 je síce technicky možné, avšak prináša niekoľko nevýhod. Tými sú vyšší nápor na
-výpočtové zdroje \acrshort{plc} s obmedzenou pamäťou, potrebu licencie a
-výrazne komplexnejší konfiguračný proces. S7 protokol cez knižnicu
+výpočtové zdroje \acrshort{plc} s obmedzenou pamäťou, potreba licencie a
+komplexnejší konfiguračný proces. S7 protokol cez knižnicu
 \texttt{node-red-contrib-s7} poskytuje priamy a jednoduchý prístup k~dátam
 \acrshort{plc} bez týchto obmedzení.
 
@@ -831,7 +831,7 @@ backend).
 
 Node-RED bol zvolený z~niekoľkých dôvodov. Disponuje uzlom
 \texttt{node-red-contrib-s7} pre priamu komunikáciu so Siemens \acrshort{plc} a
-rovnako podporou \acrshort{mqtt}. Toto riešenie je bez potreby písať rozsiahly
+rovnako podporou \acrshort{mqtt}. Toto riešenie nevyžaduje rozsiahly
 kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda
 periodické dotazovanie (polling) \acrshort{plc} a podmienené spúšťanie akcií.
 
@@ -946,7 +946,7 @@ silné zastúpenie, využívajú ich napríklad automaticky navádzané vozidlá
 upratovacie autonómne roboty a aj výskumné robotické platformy. Táto
 rozšírenosť je ďalším argumentom v~prospech voľby ArUco oproti 3D
 identifikátorom, ktoré by vyžadovali vlastný spôsob rozpoznávania. Prípadne by
-bolo možné použiť framework ako Vuforia, čo by ale značne zvýšilo závislosť
+bolo možné použiť framework ako Vuforia, čo by ale značne zvýšilo náročnosť
 implementácie a údržby a presne tomu sme sa chceli vyhnúť.
 
 \section{Experimentálne porovnanie a výber jazykových modelov}
@@ -1178,7 +1178,7 @@ skutočnému využitiu a nevyžadujú si vysokú počiatočnú investíciu.
 Z~týchto dôvodov bolo rozhodnuté opustiť prístup lokálnych \acrshort{llm} a
 prejsť na volanie externého \acrshort{api}. Na výber je niekoľko poskytovateľov
 ako OpenAI, Google, Anthropic a iní veľkí hráči v oblasti AI. Zvolili sme
-\acrshort{api} od spoločnosti Anthropic, nakoľko v poslednom čase zaznamenali
+\acrshort{api} od spoločnosti Anthropic, pretože v poslednom čase zaznamenali
 výraznejší pokrok v porovnaní s konkurenciou. Tento prístup umožňuje využitie
 výkonných jazykových modelov bez nutnosti prevádzkovať vlastný server, pričom
 náklady sa platia priamoúmerne skutočnému využitiu. \acrshort{rag} pipeline a
@@ -1289,8 +1289,8 @@ a zároveň odberateľom filtrovať témy.
       \end{tabular}
 \end{table}
 
-Backend pri štarte subscribuje na tému \texttt{plc/\#}, čím prijíma správy zo
-všetkých výrobných liniek naraz. Node-RED subscribuje selektívne len na témy
+Backend sa pri štarte prihlasuje na odber témy \texttt{plc/\#}, čím prijíma správy zo
+všetkých výrobných liniek naraz. Node-RED sa odoberá selektívne len témy
 \texttt{commands} pre výrobné linky, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
@@ -1551,7 +1551,7 @@ vytvorí novú reláciu. Ak je linka obsadená, správanie závisí od parametra
 používateľom s rolou údržbára nemôže byť prebratá žiadnym iným používateľom.
 Táto ochrana zabraňuje prerušeniu servisného zásahu operátorom. Vlastnú reláciu
 môže ukončiť prihlásený používateľ odhlásením sa. Cudziu reláciu môže ukončiť
-každý, ak sa nejedná o reláciu údržbára. Cieľom je zabrániť
+každý, ak nejde o reláciu údržbára. Cieľom je zabrániť
 situáciám, keď sa operátor zabudne odhlásiť a linka zostane zablokovaná.
 Každé prevzatie relácie je zaznamenané v logu príkazov, čo znamená
 dohľadateľnosť zodpovednosti. Pred prepísaním relácie systém informuje nového
@@ -1957,7 +1957,7 @@ Prvá fáza testovania overovala, či implementácia pokrýva požiadavky stanov
 
 \begin{table}[H]
 \centering
-\caption{Overenie funkčných požiadaviek}
+\caption{Overenie funkcionálnych požiadaviek}
 \label{tab:test-fp}
 \begin{tabular}{|l|p{12cm}|l|}
 \hline
@@ -1979,7 +1979,7 @@ FP10 & Log operácií dostupný pre manažéra, údržbára a administrátora & 
 
 \begin{table}[H]
 \centering
-\caption{Overenie nefunkčných požiadaviek}
+\caption{Overenie nefunkcionálnych požiadaviek}
 \label{tab:test-nfp}
 \begin{tabular}{|l|p{12cm}|l|}
 \hline
@@ -2012,7 +2012,7 @@ DP3 & Zachovanie možnosti ovládania linky aj pri výpadku internetu & splnené
 \end{tabular}
 \end{table}
 
-Všetky funkčné aj nefunkčné požiadavky boli vyhodnotené ako splnené. Doménová požiadavka DP3 bola overená odpojením edge zariadenia od WAN portu, pričom mobilná aplikácia naďalej úspešne odosielala príkazy aj prijímala stav linky. Jediný komponent, ktorý je v takomto režime nedostupný, je AI asistent, čo zodpovedá architektonickému rozhodnutiu opísanému v kapitole \ref{sec:assistant}.
+Všetky funkcionálne aj nefunkcionálne požiadavky boli vyhodnotené ako splnené. Doménová požiadavka DP3 bola overená odpojením edge zariadenia od WAN portu, pričom mobilná aplikácia naďalej úspešne odosielala príkazy aj prijímala stav linky. Jediný komponent, ktorý je v takomto režime nedostupný, je AI asistent, čo zodpovedá architektonickému rozhodnutiu opísanému v kapitole \ref{sec:assistant}.
 
 \subsection{Latencia vykonania príkazov}
 \label{sec:latencia}
@@ -2043,7 +2043,7 @@ Priemerná latencia naprieč všetkými príkazmi dosiahla 145\,ms, čo s rezerv
 \label{sec:detekcia-aruco}
 
 
-Testovanie detekcie sledovalo úspešnosť rozpoznania identifikátora na mobilnom zariadení. Identifikátor s veľkosťou hrany 100\,mm bol umiestnený na linke a kamera mobilu bola držaná v rôznych vzdialenostiach a uhloch. Uhol uvádzaný v~tabuľkách predstavuje uhol, ktorý kamera zvierala voči rovine identifikátora. Pre každú kombináciu vzdialenosti a uhla bolo vyhodnotených 30 pokusov, z ktorých sa určil pomer úspešne určených identifikátorov.
+Testovanie detekcie sledovalo úspešnosť rozpoznania identifikátora na mobilnom zariadení. Identifikátor s veľkosťou hrany 100\,mm bol umiestnený na linke a kamera mobilu bola držaná v rôznych vzdialenostiach a uhloch. Uhol uvádzaný v~tabuľkách predstavuje uhol, ktorý kamera zvierala voči rovine identifikátora. Pre každú kombináciu vzdialenosti a uhla bolo vyhodnotených 30 pokusov, z ktorých sa určil pomer úspešne rozpoznaných identifikátorov.
 
 \begin{table}[H]
 \centering
@@ -2081,7 +2081,7 @@ Tlmene osvetlená miestnosť & 93\,\% \\
 \end{tabular}
 \end{table}
 
-Vďaka dvojfarebnému tlačenému prevedeniu identifikátora je kontrast dostatočný aj v priestoroch so slabším osvetlením.
+Vďaka dvojfarebnému tlačenému vyhotoveniu identifikátora je kontrast dostatočný aj v priestoroch so slabším osvetlením.
 
 \subsection{Kvalita odpovedí AI asistenta}
 \label{sec:test-asistent}
@@ -2133,7 +2133,7 @@ Priemerný čas odpovede asistenta sa pohyboval okolo 4{,}1\,sekundy pri otázka
 \subsection{Zhrnutie výsledkov testovania}
 \label{sec:test-zhrnutie}
 
-V laboratórnom aj priemyselnom prostredí sa podarilo overiť všetky funkčné, nefunkčné aj doménové požiadavky bez výhrad. Latencia vykonania príkazov sa pohybovala výrazne pod limitom 250\,ms stanoveným v NFP3, čím systému ostáva dostatočná rezerva aj pre menej priaznivé sieťové podmienky. Detekcia ArUco identifikátorov je spoľahlivá v praktickom rozsahu vzdialeností a uhlov a obstála aj v hale s priemyselným osvetlením. Asistent poskytuje správne a stručné odpovede, pričom vyhľadávanie na internete dopĺňa znalostnú bázu pri otázkach mimo jej rozsah.
+V laboratórnom aj priemyselnom prostredí sa podarilo overiť všetky funkcionálne, nefunkcionálne aj doménové požiadavky bez výhrad. Latencia vykonania príkazov sa pohybovala výrazne pod limitom 250\,ms stanoveným v NFP3, čím systému ostáva dostatočná rezerva aj pre menej priaznivé sieťové podmienky. Detekcia ArUco identifikátorov je spoľahlivá v praktickom rozsahu vzdialeností a uhlov a obstála aj v hale s priemyselným osvetlením. Asistent poskytuje správne a stručné odpovede, pričom vyhľadávanie na internete dopĺňa znalostnú bázu pri otázkach mimo jej rozsah.
 
 Identifikované obmedzenia sú menšieho charakteru. Mierny pokles spoľahlivosti detekcie pri šikmých uhloch nad 30 stupňov je riešiteľný pokynom pre operátora. Vynechávanie jedného z relevantných záznamov pri otázkach vyžadujúcich syntézu sa dá riešiť rozšírením počtu kontextových dokumentov posielaných do modelu.
 

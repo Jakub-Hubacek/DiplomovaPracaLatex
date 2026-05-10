@@ -3,10 +3,10 @@ umožňuje rýchlu identifikáciu výrobnej linky, jej
 monitorovanie a~základné ovládanie. Zároveň poskytuje prístup k~doménovej
 technickej dokumentácii prostredníctvom inteligentného asistenta.
 Výsledkom je systém Scan2Control, ktorý všetky tieto funkcie spája do
-jedného celku. Mobilná aplikácia implementovaná vo frameworku Flutter pripojí operátora
+jedného celku. Mobilná aplikácia implementovaná vo frameworku Flutter pripája operátora
 ku konkrétnej linke naskenovaním ArUco identifikátora
-a~umožní mu odosielať príkazy.
-Backend tvorený dvojicou služieb FastAPI komunikuje s~\acrshort{plc}
+a~umožňuje mu odosielať príkazy.
+Backend je tvorený dvojicou služieb FastAPI komunikuje s~\acrshort{plc}
 Siemens S7-1200 cez Node-RED a~MQTT broker, pričom celá infraštruktúra je
 kontajnerizovaná pomocou Docker a~beží na edge zariadení v~prevádzke.
 
@@ -21,12 +21,12 @@ Access Control} so štyrmi rolami: operátor, manažér, údržbár
 a~administrátor.
 
 Všetky úlohy stanovené v~zadaní práce boli splnené. Možnosti načítania
-jedinečných identifikátorov boli porovnané a~zdôvodnili sme voľbu ArUco
+jedinečných identifikátorov boli porovnané a~zdôvodnená bola aj voľba ArUco
 identifikátorov po experimentovaní s~3D identifikátormi. Aplikácia je
 integrovaná s~\acrshort{plc} cez S7 protokol a~poskytuje funkcie
-vzdialeného ovládania s~potvrdením vykonania. Otestovanie v~laboratórnom
+vzdialeného ovládania s~potvrdením vykonania. Testovanie v~laboratórnom
 prostredí preukázalo, že priemerná latencia príkazov sa pohybuje výrazne
-pod hranicou 250\,ms stanovenou v~nefunkčných požiadavkách, detekcia ArUco
+pod hranicou 250\,ms stanovenou v~nefunkcionálnych požiadavkách, detekcia ArUco
 identifikátorov je spoľahlivá v~praktickom rozsahu vzdialeností a~uhlov
 a~odpovede asistenta dosahujú vysokú kvalitu naprieč všetkými testovanými
 kategóriami otázok.

@@ -8,8 +8,8 @@
 \contentsline {table}{\numberline {7}{\ignorespaces Stavy automatu \texttt {FB\_Conveyor}}}{38}{table.caption.76}%
 \contentsline {table}{\numberline {8}{\ignorespaces Prehľad API endpointov}}{41}{table.caption.114}%
 \contentsline {table}{\numberline {9}{\ignorespaces Oprávnenia podľa roly používateľa}}{47}{table.caption.146}%
-\contentsline {table}{\numberline {10}{\ignorespaces Overenie funkčných požiadaviek}}{59}{table.caption.170}%
-\contentsline {table}{\numberline {11}{\ignorespaces Overenie nefunkčných požiadaviek}}{59}{table.caption.171}%
+\contentsline {table}{\numberline {10}{\ignorespaces Overenie funkcionálnych požiadaviek}}{59}{table.caption.170}%
+\contentsline {table}{\numberline {11}{\ignorespaces Overenie nefunkcionálnych požiadaviek}}{59}{table.caption.171}%
 \contentsline {table}{\numberline {12}{\ignorespaces Overenie doménových požiadaviek}}{59}{table.caption.172}%
 \contentsline {table}{\numberline {13}{\ignorespaces Štatistika latencie príkazov v milisekundách (n=25)}}{60}{table.caption.174}%
 \contentsline {table}{\numberline {14}{\ignorespaces Úspešnosť detekcie podľa vzdialenosti a uhla (n=30)}}{61}{table.caption.176}%
