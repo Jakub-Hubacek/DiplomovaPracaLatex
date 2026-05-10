@@ -7,7 +7,7 @@ rozširuje o~mobilný prístup, cloudovú konektivitu a v~niektorých prípadoch
 o~prvky umelej inteligencie. Nasledujúci prehľad analyzuje štyri významné
 komerčné platformy. Posudzované sú nasledujúce funkcionality: mobilný prístup
 k~výrobným linkám, identifikácia fyzických liniek, nasadenie na edge, otvorenosť
-platformy a integrácia AI asistenta schopného pracovať s~technickou
+platformy a integrácia \acrshort{ai} asistenta schopného pracovať s~technickou
 dokumentáciou.
 
 \subsection{Siemens WinCC Unified}
@@ -40,7 +40,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
       \item \textbf{Identifikácia zariadení:} Platforma nepodporuje skenovanie
             unikátnych identifikátorov, operátor sa naviguje
             manuálne.
-      \item \textbf{AI asistent pre obsluhu:} Engineering Copilot je nástroj pre
+      \item \textbf{\acrshort{ai} asistent pre obsluhu:} Engineering Copilot je nástroj pre
             programátorov, nie pre operátorov. Neposkytuje kontextovú pomoc na základe
             znalostnej bázy zariadení počas prevádzky.
       \item \textbf{Licenčný model:} Proprietárny, viazaný na ekosystém Siemens,
@@ -87,8 +87,8 @@ Z~pohľadu našej práce sú kľúčové tieto body:
       \item \textbf{Edge nasadenie:} Ignition Edge umožňuje distribuované
             nasadenie priamo na priemyselných zariadeniach s~lokálnou
             archiváciou a synchronizáciou dát.
-      \item \textbf{AI asistent:} Platforma neobsahuje vstavanú funkciu
-            AI asistenta ani správu znalostnej bázy. Skriptovacie
+      \item \textbf{\acrshort{ai} asistent:} Platforma neobsahuje vstavanú funkciu
+            \acrshort{ai} asistenta ani správu znalostnej bázy. Skriptovacie
             rozhranie v~Pythone by technicky umožnilo volanie externých
             \acrshort{llm} \acrshort{api}, avšak bez natívnej podpory.
       \item \textbf{Licenčný model:} Licencia na Gateway bez obmedzenia
@@ -135,7 +135,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
       \item \textbf{Edge nasadenie:} Edge konektivita (\acrshort{opcua}, \acrshort{mqtt},
             Node-RED) je dostupná ako platený doplnok, aplikačná logika
             a dáta sú hostované v~cloude.
-      \item \textbf{AI asistent:} Frontline Copilot poskytuje generatívnu
+      \item \textbf{\acrshort{ai} asistent:} Frontline Copilot poskytuje generatívnu
             \acrshort{ai} na analýzu výrobných dát a asistenciu operátorom.
             Nejde však o~asistenta s~vlastnou znalostnou bázou technickej
             dokumentácie zariadení. Funkcia pracuje primárne s~dátami
@@ -179,7 +179,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
       \item \textbf{Edge nasadenie:} Natívna podpora, AVEVA Edge je
             priamo navrhnutý pre beh na edge zariadeniach vrátane
             Linux systémov s nižšími hardvérovými prostriedkami.
-      \item \textbf{AI asistent:} Industrial AI for Operations je
+      \item \textbf{\acrshort{ai} asistent:} Industrial AI for Operations je
             analytická platforma na podnikovej úrovni zameraná na
             prediktívnu údržbu a optimalizáciu procesov. Neposkytuje
             kontextovú asistenciu obsluhe na základe znalostnej bázy
@@ -193,7 +193,7 @@ Z~pohľadu našej práce sú kľúčové tieto body:
 
 Tabuľka~\ref{tab:existing_solutions} sumarizuje kľúčové vlastnosti
 porovnávaných platforiem vzhľadom na mobilný prístup, identifikáciu zariadení,
-edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
+edge nasadenie a integráciu \acrshort{ai} asistenta s~vlastnou znalostnou bázou.
 
 \begin{table}[h]
       \centering
@@ -211,7 +211,7 @@ edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
             Natívna mobilná aplikácia                   & Nie & Áno       & Nie       & Nie \\
             Identifikácia zariadení                     & Nie & Nie       & Čiastočne & Nie \\
             Edge nasadenie                              & Áno & Áno       & Čiastočne & Áno \\
-            AI asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie       & Nie \\
+            \acrshort{ai} asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie       & Nie \\
             Otvorená platforma                          & Nie & Čiastočne & Nie       & Nie \\
             \hline
       \end{tabular}
@@ -223,7 +223,7 @@ edge nasadenie a integráciu AI asistenta s~vlastnou znalostnou bázou.
 
 Z~porovnania vyplýva, že existujúce komerčné platformy poskytujú rôznu mieru
 mobilného prístupu k~priemyselným systémom, avšak ani jedna z~nich neintegruje
-AI asistenta schopného odpovedať na otázky obsluhy na základe
+\acrshort{ai} asistenta schopného odpovedať na otázky obsluhy na základe
 vlastnej znalostnej bázy technickej dokumentácie. Väčšina platforiem sa
 orientuje na vizualizáciu a vzdialený prístup k~procesným dátam. Pričom podpora
 operátora, teda schopnosť systému aktívne pomáhať pri riešení prevádzkových
@@ -468,7 +468,7 @@ odpovedá.
             klient sa musí aktívne dopytovať na server.
 \end{itemize}
 
-\section{Prehľad technológií pre AI asistentov}
+\section{Prehľad technológií pre \acrshort{ai} asistentov}
 
 \subsection{Veľké jazykové modely a možnosti použitia}
 Veľké jazykové modely (\acrshort{llm}) sú kategóriou modelov hlbokého učenia
@@ -523,7 +523,7 @@ halucinácií dohľadaním odpovedí v~konkrétnych zdrojoch, prístup k~aktuál
 a~doménovým dátam a teda možnosť odkazovať na zdroj informácie priamo
 v~odpovedi.
 
-\subsection{AI asistenti v priemyselnom prostredí}
+\subsection{\acrshort{ai} asistenti v priemyselnom prostredí}
 
 Priemyselné podniky čelia rastúcemu nedostatku kvalifikovaných pracovníkov
 a~potrebe rýchleho zaškolenia nových zamestnancov. Generatívni \acrshort{ai}
@@ -631,7 +631,7 @@ Systém bude zaznamenávať všetky odoslané príkazy vrátane informácie o~to
 ktorý používateľ príkaz vydal, a~na ktorú výrobnú linku. Administrátor a manažér
 budú môcť spravovať používateľské účty a~schvaľovať nové registrácie.
 
-Súčasťou systému bude AI asistent, ktorý bude odpovedať na technické
+Súčasťou systému bude \acrshort{ai} asistent, ktorý bude odpovedať na technické
 otázky obsluhy na základe dokumentácie nahratej v~znalostnej báze. Obsah
 znalostnej bázy bude možné viazať na konkrétnu výrobnú linku.
 
@@ -648,12 +648,12 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
       \item[Operátor:] Základná obsluha výrobnej linky. Prihlasuje sa na konkrétne linky
             skenovaním ArUco identifikátora, odosiela riadiace príkazy a~sleduje aktuálny
             stav linky. Nemá prístup k~reportom, správe znalostnej
-            bázy ani správe používateľov. Môže v prípade potreby využiť AI asistenta.
+            bázy ani správe používateľov. Môže v prípade potreby využiť \acrshort{ai} asistenta.
 
       \item[Manažér:] Zameriava sa na sledovanie udalostí. Má prístup k~histórii prihlásení
             jednotlivých operátorov, reportu s logmi a môže spravovať používateľské kontá.
-            Takisto má prístup k~AI asistentovi a môže upravovať znalostnú bázu.
-            Výrobné linky priamo neovláda, no vidí kto je prihlásený a aké operácie vykonáva.
+            Takisto má prístup k~\acrshort{ai} asistentovi a môže upravovať znalostnú bázu.
+            Výrobné linky priamo neovláda, no vidí, kto je prihlásený a aké operácie vykonáva.
 
       \item[Údržbár:] Má exkluzívnu ochranu relácie a žiadny iný používateľ ho nemôže
             odhlásiť z~prihlásenej linky, čo zaručuje bezpečnosť počas servisného zásahu.
@@ -728,9 +728,9 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \vspace{6pt}\noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
       \toprule
-      \textbf{ID}    & UC-07: AI asistent                                                                                                                                                        \\
+      \textbf{ID}    & UC-07: \acrshort{ai} asistent                                                                                                                                                       \\
       \textbf{Aktér} & Všetky roly                                                                                                                                                               \\
-      \textbf{Popis} & Tlačidlom v~rohu každej obrazovky sa spustí AI asistent.
+      \textbf{Popis} & Tlačidlom v~rohu každej obrazovky sa spustí \acrshort{ai} asistent.
       Odpovedá výhradne na základe znalostnej bázy, či už všeobecnej alebo viazanej ku konkrétnej výrobnej linke. Ak informácia chýba, prizná to. Rozhranie aj odpovede sú lokalizované v~SK a~EN. \\
       \bottomrule
 \end{tabularx}
@@ -760,12 +760,12 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
       \item [FP2:] Používateľ musí mať možnosť odosielať príkazy v riadenom systéme.
       \item [FP3:] Systém musí implementovať verifikáciu kritických príkazov. Po odoslaní požiadavky musí aplikácia čakať na potvrdenie z PLC a vizuálne indikovať úspešné vykonanie zmeny.
       \item [FP4:] Zobrazovanie aktuálnych stavov z PLC.
-      \item [FP5:] Implementácia AI asistenta využívajúceho metódu \textit{Retrieval-Augmented Generation}. 
-      \item [FP6:] Plná lokalizácia používateľského rozhrania a odpovedí AI asistenta v dvoch jazykoch: slovenský (SK) a anglický (EN).
+      \item [FP5:] Implementácia \acrshort{ai} asistenta využívajúceho metódu \textit{Retrieval-Augmented Generation}. 
+      \item [FP6:] Plná lokalizácia používateľského rozhrania a odpovedí \acrshort{ai} asistenta v dvoch jazykoch: slovenský (SK) a anglický (EN).
       \item [FP7:] Aplikácia musí implementovať mechanizmus exkluzívnej relácie pre ovládanie konkrétnej linky. Po úspešnom prihlásení sa vytvorí aktívna relácia viazaná na používateľa. Relácia ostáva aktívna až do jej explicitného ukončenia odhlásením používateľa alebo prevzatím iným používateľom za podmienok definovaných v~FP8.
       \item [FP8:] Pri pokuse o spárovanie linky, ktorá je už obsadená aktívnou reláciou, musí aplikácia používateľovi zobraziť informáciu o existujúcej relácii (používateľa/rola). Nútené ukončenie resp. prevzatie relácie musí byť umožnené v prípade neodhlásenia sa už neprítomnej obsluhy.
       \item [FP9:] Systém musí podporovať prihlásenie používateľov pomocou autentifikácie založenej na JWT. Aplikácia musí implementovať \acrshort{rbac} s rolami: operátor, manažér, údržbár, administrátor.
-      \item [FP10:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér}, \textit{údržbár} a \textit{admin}.
+      \item [FP10:] Systém musí ukladať základný log operácií obsahujúci minimálne: čas vykonania, identifikátor používateľa, identifikátor linky, typ akcie/príkazu a výsledok vykonania. Log musí byť dostupný pre roly \textit{manažér}, \textit{údržbár} a \textit{administrátor}.
 \end{description}
 
 \subsection{Nefunkcionálne požiadavky}
@@ -776,7 +776,7 @@ bezpečnosť.
       \item [NFP1:] Celá backendová infraštruktúra musí byť kontajnerizovaná pomocou nástroja Docker a spustiteľná na edge zariadení.
       \item [NFP2:] Prenos správ v edge infraštruktúre musí prebiehať cez MQTT s QoS 1.
       \item [NFP3:] Latencia príkazov, meraná od odoslania z mobilnej aplikácie po zápis hodnoty do PLC, nesmie presiahnuť 250 ms.
-      \item [NFP4:] Odpovede AI asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať a môže vyhľadať informáciu na internete, no musí to uviesť.
+      \item [NFP4:] Odpovede \acrshort{ai} asistenta musia byť striktne viazané na poskytnutý kontext. Ak informácia v materiáloch chýba, model musí túto skutočnosť priznať a môže vyhľadať informáciu na internete, no musí to uviesť.
       \item [NFP5:] Lokálna databáza musí byť konfigurovaná na zachovanie integrity dát aj v prípade náhleho prerušenia napájania edge zariadenia.
       \item [NFP6:] Využitie Docker Compose musí umožňovať rýchle nasadenie identického stacku na iné edge zariadenia napr. v iných závodoch.
       \item [NFP7:] Ovládacie príkazy môžu prichádzať výhradne z lokálnej siete továrne.
@@ -875,10 +875,10 @@ vzájomného blokovania. Automaticky generovaná OpenAPI dokumentácia uľahčuj
 ladenie \acrshort{api} počas vývoja. Validácia vstupov cez Pydantic redukuje
 množstvo pomocného kódu. Rolu zohrali aj predchádzajúce skúsenosti s~týmto
 frameworkom v bakalárskej práci, čo výrazne urýchlilo vývoj a umožnilo
-sústrediť sa na implementáciu biznis logiky a~integráciu AI asistenta.
+sústrediť sa na implementáciu biznis logiky a~integráciu \acrshort{ai} asistenta.
 
 \begin{itemize}
-      \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, AI knižnice, rýchly vývoj.
+      \item \textbf{Výhody:} Asynchrónne spracovanie požiadaviek, automatická OpenAPI dokumentácia, Pydantic validácia, \acrshort{ai} knižnice, rýchly vývoj.
       \item \textbf{Nevýhody:} Interpretovaný Python je pomalší oproti kompilovaným jazykom pri \acrshort{cpu}-intenzívnych operáciách.
 \end{itemize}
 
@@ -1159,7 +1159,7 @@ Kvalita odpovedí pritom zostala nezmenená, čo je v~súlade s~očakávaním. M
 generuje kvalitatívne rovnaký výstup nezávisle od hardvéru, rozdiel sa prejaví
 iba v~latencii.
 
-\subsubsection{Záverečné rozhodnutie o architektúre AI asistenta}
+\subsubsection{Záverečné rozhodnutie o architektúre \acrshort{ai} asistenta}
 
 Napriek tomu, že výsledky testovania lokálnych modelov boli z~kvalitatívneho
 hľadiska uspokojivé, cloudové overenie odhalilo zásadné ekonomické obmedzenie
@@ -1177,7 +1177,7 @@ skutočnému využitiu a nevyžadujú si vysokú počiatočnú investíciu.
 
 Z~týchto dôvodov bolo rozhodnuté opustiť prístup lokálnych \acrshort{llm} a
 prejsť na volanie externého \acrshort{api}. Na výber je niekoľko poskytovateľov
-ako OpenAI, Google, Anthropic a iní veľkí hráči v oblasti AI. Zvolili sme
+ako OpenAI, Google, Anthropic a iní veľkí hráči v oblasti \acrshort{ai}. Zvolili sme
 \acrshort{api} od spoločnosti Anthropic, pretože v poslednom čase zaznamenali
 výraznejší pokrok v porovnaní s konkurenciou. Tento prístup umožňuje využitie
 výkonných jazykových modelov bez nutnosti prevádzkovať vlastný server, pričom
@@ -1193,7 +1193,7 @@ vzájomne prepojených vrstiev. Každá vrstva plní špecifickú úlohu a komun
 so susednými vrstvami prostredníctvom jasne definovaných rozhraní. Jadro
 systému beží na edge zariadení umiestnenom priamo v prevádzke a zabezpečuje
 plnú funkčnosť aj bez pripojenia k internetu. Ak by sme využívali lokálne spustiteľný
-jazykový model, komunikácia s AI asistentom by prebiehala výhradne v rámci
+jazykový model, komunikácia s \acrshort{ai} asistentom by prebiehala výhradne v rámci
 lokálnej siete a celý systém by bol izolovaný. Nasledujúce podkapitoly popisujú
 podrobnejšie celkovú štruktúru systému, spôsob nasadenia jednotlivých
 komponentov, ich vzájomnú komunikáciu a spôsob ukladania dát.
@@ -1202,7 +1202,7 @@ komponentov, ich vzájomnú komunikáciu a spôsob ukladania dát.
 Systém sa skladá z piatich hlavných komponentov. Prvým je mobilná aplikácia,
 ktorá slúži ako primárne rozhranie pre obsluhu. Druhým je backendová vrstva
 tvorená dvoma službami FastAPI. Hlavná služba zabezpečuje autentifikáciu,
-správu relácií a~riadenie výrobnej linky. Samostatná služba obsluhuje AI asistenta
+správu relácií a~riadenie výrobnej linky. Samostatná služba obsluhuje \acrshort{ai} asistenta
 s~RAG pipeline. Tretím komponentom je MQTT broker Mosquitto, ktorý
 sprostredkúva asynchrónnu komunikáciu medzi backendom a Node-RED. Štvrtým je
 Node-RED, ktorý premosťuje svet priemyselnej komunikácie so svetom IT a
@@ -1210,7 +1210,7 @@ periodicky číta dáta z \acrshort{plc} prostredníctvom S7 protokolu. Posledn�
 komponentom je samotné \acrshort{plc} Siemens S7-1200, ktoré riadi prvky
 výrobnej linky. Všetky tieto komponenty okrem mobilnej aplikácie a
 \acrshort{plc} bežia v Docker stacku na edge zariadení. Jediné externé volanie
-smeruje z AI služby na rozhranie Anthropic API.
+smeruje z~\acrshort{ai} služby na rozhranie Anthropic API.
 
 \begin{figure}[H]
       \centering
@@ -1245,7 +1245,7 @@ bezdrôtového pripojenia vychádza z charakteru práce operátora, ktorý sa
 pohybuje po výrobnej hale a potrebuje mať prístup k systému kdekoľvek. Edge
 zariadenie je prepojené s Ethernet switchom, na ktorý sú napojené riadiace
 systémy výrobných liniek. Edge zariadenie plní úlohu centrálneho uzla, na ktorom beží
-hlavný backend aj AI asistent a všetka logika spracovania príkazov sa
+hlavný backend aj \acrshort{ai} asistent a~všetka logika spracovania príkazov sa
 vykonáva lokálne (okrem LLM, v práci sme zvolili externé API). Architektúra
 počíta s pripojením viacerých riadiacich systémov, čo umožňuje rozšírenie na
 ďalšie výrobné linky bez zmeny základnej topológie. V súčasnej implementácii je
@@ -1290,7 +1290,7 @@ a zároveň odberateľom filtrovať témy.
 \end{table}
 
 Backend sa pri štarte prihlasuje na odber témy \texttt{plc/\#}, čím prijíma správy zo
-všetkých výrobných liniek naraz. Node-RED sa odoberá selektívne len témy
+všetkých výrobných liniek naraz. Node-RED odoberá selektívne len témy
 \texttt{commands} pre výrobné linky, ktoré spravuje. Príkazy sú publikované s QoS
 1, čím je zaručené doručenie aspoň raz.
 
@@ -1298,7 +1298,7 @@ všetkých výrobných liniek naraz. Node-RED sa odoberá selektívne len témy
 Dáta backendu sú uložené v~relačnej databáze PostgreSQL
 bežiacej v~hlavnom Docker kontajneri na edge zariadení spolu s ostatnými službami. Databáza uchováva používateľské
 účty s~priradenými rolami, definície výrobných liniek spolu s~ich ArUco
-identifikátormi a~históriu vykonaných príkazov. AI asistent je nasadený ako
+identifikátormi a~históriu vykonaných príkazov. \acrshort{ai} asistent je nasadený ako
 samostatná služba vo vlastnom Docker stacku, preto má aj vlastnú databázovú
 inštanciu, v~ktorej je uložená znalostná báza pre RAG pipeline. Štruktúra hlavnej databázy a~vzťahy medzi entitami sú znázornené na
 obrázku \ref{fig:erd}.
@@ -1466,7 +1466,7 @@ async def get_manager_or_admin(user: User = Depends(get_current_user)):
 
 \subsection{API endpointy}
 Backend poskytuje REST API rozdelené do šiestich skupín podľa funkčnej oblasti.
-Endpointy pre AI asistenta sú dostupné na samostatnej službe počúvajúcej na
+Endpointy pre \acrshort{ai} asistenta sú dostupné na samostatnej službe počúvajúcej na
 porte 8100, ostatné na porte 8000. Okrem REST komunikácie poskytuje backend
 WebSocket pre aktualizácie stavu výrobnej linky.
 
@@ -1525,9 +1525,9 @@ WebSocket pre aktualizácie stavu výrobnej linky.
                   GET             & /aruco/png/\{aruco\_id\}                   & Stiahnutie identifikátora ako PNG & všetci                   \\
                   GET             & /aruco/stl/\{aruco\_id\}                   & Stiahnutie identifikátora ako STL & všetci                   \\
                   \hline
-                  \multicolumn{4}{|l|}{\textit{AI asistent — port 8100}}                                                                      \\
+                  \multicolumn{4}{|l|}{\textit{\acrshort{ai} asistent— port 8100}}                                                                      \\
                   \hline
-                  POST            & /chat                                      & Správa AI asistentovi             & všetci                   \\
+                  POST            & /chat                                      & Správa \acrshort{ai} asistentovi             & všetci                   \\
                   GET             & /kb                                        & Zoznam záznamov znalostnej bázy   & administrátor, manažér, údržbár  \\
                   POST            & /kb                                        & Pridanie záznamu                  & administrátor, manažér, údržbár  \\
                   POST            & /kb/upload                                 & Nahranie súboru do KB             & administrátor, manažér, údržbár  \\
@@ -1565,7 +1565,7 @@ if active.user.role == "maintenance":
 
 \subsection{Životný cyklus príkazu}
 
-Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na výrobnej inke. 
+Príkaz prechádza niekoľkými vrstvami systému, kým sa prejaví na výrobnej linke. 
 
 Backend publikuje správu na MQTT tému
 \texttt{plc/device\_\{id\}/commands/\{cmd\}}. Mosquitto broker správu doručí
@@ -1582,8 +1582,9 @@ kanálom a príznakom úspechu doručenia.
 
 \subsection{Generátor ArUco identifikátorov a export do STL}
 
-Na výrobu fyzických identifikátorov bola implementovaná vlastná Python trieda
-\texttt{ArucoSTLGeneratorVoxelOptimized}, ktorá generuje STL súbor určený na
+Na výrobu fyzických identifikátorov bola implementovaná vlastná Python
+trieda \texttt{ArucoSTL\-Generator\-Voxel\-Optimized}, ktorá generuje STL
+súbor určený na
 dvojfarebnú 3D tlač. Model je navrhnutý tak, aby farebné priradenie v sliceri
 bolo čo najjednoduchšie.
 
@@ -1600,7 +1601,7 @@ rám je o \texttt{border\_height\_offset\_mm} vyšší a biele bunky sú vyvýš
 \texttt{white\_height\_mm}. Pri predvolených hodnotách dosahujú čierne bunky
 výšku 1\,mm a biele 3\,mm.
 
-\section{Implementácia AI asistenta}
+\section{Implementácia \acrshort{ai} asistenta}
 Asistent je implementovaný ako samostatná FastAPI služba bežiaca na porte 8100
 v rámci vlastného Docker stacku. Disponuje vlastnou PostgreSQL databázou pre
 záznamy znalostnej bázy a ChromaDB ako úložisko vektorov. Jediné externé
@@ -1648,7 +1649,7 @@ dopĺňané sekcie, ktoré sa pred každým volaním modelu naplnia aktuálnymi 
             filtra linky.
 \end{itemize}
 
-\begin{lstlisting}[style=code-listing, language=Python, caption={Základ systémového promptu AI asistenta PLEXO}, label={lst:system_prompt}]
+\begin{lstlisting}[style=code-listing, language=Python, caption={Základ systémového promptu \acrshort{ai} asistenta PLEXO}, label={lst:system_prompt}]
 SYSTEM_PROMPT_SK = """Tvoje meno je PLEXO. Si priemyselný asistent aplikácie Scan2Control na riadenie výrobných liniek s využitím ArUco identifikátorov.
 {intro_instruction}
 PRAVIDLÁ:
@@ -1717,7 +1718,7 @@ detekovaný identifikátor sa vypočíta plocha Shoelaceovým vzorcom a stred ak
 relatívna poloha v obraze. Výstupom je zoznam detekovaných identifikátorov
 zoradených od najväčšieho po najmenší, kde väčšia plocha znamená bližší
 identifikátor. Príznak \texttt{\_isProcessing} zabraňuje spusteniu ďalšej
-detekcie kým prebieha predchádzajúca.
+detekcie, kým prebieha predchádzajúca.
 
 \subsection{WebSocket pripojenie}
 
@@ -1756,7 +1757,7 @@ prihláseného používateľa. Prehľad rolí je uvedený v tabuľke~\ref{tab:rb
             Správa používateľov          & ---               & \checkmark       & ---              & \checkmark             \\
             Správa znalostnej bázy       & ---               & \checkmark       & \checkmark       & \checkmark             \\
             Zobrazenie logov príkazov    & ---               & \checkmark       & \checkmark       & \checkmark             \\
-            AI asistent                  & \checkmark        & \checkmark       & \checkmark       & \checkmark             \\
+            \acrshort{ai} asistent                 & \checkmark        & \checkmark       & \checkmark       & \checkmark             \\
             \bottomrule
       \end{tabular}
 \end{table}
@@ -1838,10 +1839,10 @@ príkazov pre potreby kontroly a auditu.
       \label{fig:monitor_control}
 \end{figure}
 
-\subsection{AI asistent PLEXO}
+\subsection{\acrshort{ai} asistent PLEXO}
 \textbf{Dostupné pre:} operátor, údržbár, manažér, administrátor
 
-AI asistent PLEXO je inteligentný pomocník dostupný priamo v aplikácii.
+\acrshort{ai} asistent PLEXO je inteligentný pomocník dostupný priamo v aplikácii.
 Používatelia môžu klásť otázky prirodzeným jazykom, napríklad o aktuálnom stave
 linky, postupe pri riešení poruchy alebo pokynoch na údržbu. Asistent
 odpovedá na základe znalostnej bázy vytvorenej pre konkrétne linky a
@@ -1852,7 +1853,7 @@ jazyku, ktorý si používateľ zvolil v nastaveniach aplikácie.
 \begin{figure}[H]
       \centering
       \includegraphics[width=0.45\textwidth]{img/appScreenshots/Plexo.png}
-      \caption{Konverzačné rozhranie AI asistenta PLEXO}
+      \caption{Konverzačné rozhranie \acrshort{ai} asistenta PLEXO}
       \label{fig:plexo}
 \end{figure}
 
@@ -1895,7 +1896,7 @@ reálny stav výrobných liniek v prevádzke.
 \subsection{Správa znalostnej bázy}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
-Znalostnú bázu tvorí súbor informácií, z ktorých čerpá AI asistent PLEXO
+Znalostnú bázu tvorí súbor informácií, z ktorých čerpá \acrshort{ai} asistent PLEXO
 pri odpovedaní na otázky používateľov. Oprávnení používatelia môžu do
 znalostnej bázy priebežne pridávať nové dokumenty, upravovať existujúce záznamy
 alebo odstraňovať zastarané informácie. Kvalita a aktuálnosť znalostnej bázy
@@ -1932,7 +1933,7 @@ kontrolu zásahov v prípade neštandardného správania linky.
 
 Každý používateľ má možnosť prispôsobiť si aplikáciu podľa vlastných
 preferencií. V nastaveniach môže zmeniť jazyk rozhrania, ktorý sa automaticky
-uplatní aj na komunikáciu s AI asistentom PLEXO. Zároveň si môže zmeniť
+uplatní aj na komunikáciu s \acrshort{ai} asistentom PLEXO. Zároveň si môže zmeniť
 svoje meno, priezvisko a prístupové heslo. Nastavenia jazyka zostávajú zachované aj po opätovnom prihlásení alebo reštarte aplikácie.
 
 \begin{figure}[H]
@@ -1946,9 +1947,16 @@ svoje meno, priezvisko a prístupové heslo. Nastavenia jazyka zostávajú zacho
 
 Cieľom tejto kapitoly je overiť, či výsledná aplikácia spĺňa požiadavky definované v kapitole \ref{sec:specifikacia}, a vyjadriť jej spoľahlivosť a efektivitu v laboratórnom a priemyselnom prostredí.
 
-Testovanie prebiehalo na nasledujúcej zostave. Ako edge zariadenie poslúžil notebook s 32\,GB RAM a procesorom AMD Ryzen 5 5600H, na ktorom bežali Mosquitto, Node-RED, hlavný backend aj AI asistent v Docker kontajneroch. Výrobnú linku predstavoval model dopravníka Fischertechnik riadený PLC Siemens S7-1200. Mobilný klient bežal na zariadení Samsung Galaxy A54 s OS Android~14, pripojenom do tej istej WiFi siete ako edge počítač. Identifikátory boli vytlačené technológiou FDM na tlačiarni Bambu Lab P1S s veľkosťou hrany 100\,mm. Časť meraní detekcie bola vykonaná aj v skutočných priestoroch priemyselnej haly, čo umožnilo overenie systému v reálnych svetelných podmienkach.
+Testovanie prebiehalo na nasledujúcej zostave. Ako edge zariadenie poslúžil notebook s 32\,GB RAM a procesorom AMD Ryzen 5 5600H, na ktorom bežali Mosquitto, Node-RED, hlavný backend aj \acrshort{ai} asistentv Docker kontajneroch. Výrobnú linku predstavoval model dopravníka Fischertechnik riadený PLC Siemens S7-1200. Mobilný klient bežal na zariadení Samsung Galaxy A54 s OS Android~14, pripojenom do tej istej WiFi siete ako edge počítač. Identifikátory boli vytlačené technológiou FDM na tlačiarni Bambu Lab P1S s veľkosťou hrany 100\,mm. Časť meraní detekcie bola vykonaná aj v skutočných priestoroch priemyselnej haly, čo umožnilo overenie systému v reálnych svetelných podmienkach.
 
 Merania latencie a úspešnosti detekcie boli vykonané v sériách opakovaných pokusov a výsledky sú uvádzané formou priemernej hodnoty, minima, maxima. Kvalita odpovedí asistenta bola vyhodnotená na pevnej množine reprezentatívnych otázok podľa kritérií zavedených v kapitole \ref{sec:assistant}.
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width=0.7\textwidth]{img/PLC_Line.png}
+      \caption{Model dopravníka Fischertechnik a~PLC Siemens S7-1200}
+      \label{fig:plc_line}
+\end{figure}
 
 \subsection{Overenie splnenia špecifikácie}
 \label{sec:overenie-spec}
@@ -1967,8 +1975,8 @@ FP1 & Načítanie unikátneho identifikátora a spárovanie so linkou & splnené
 FP2 & Odosielanie príkazov v riadenom systéme & splnené \\
 FP3 & Verifikácia príkazov a vizuálna indikácia vykonania & splnené \\
 FP4 & Zobrazovanie aktuálnych stavov z PLC & splnené \\
-FP5 & AI asistent s RAG  & splnené \\
-FP6 & Lokalizácia rozhrania a AI asistenta v SK a EN & splnené \\
+FP5 & \acrshort{ai} asistent s~RAG  & splnené \\
+FP6 & Lokalizácia rozhrania a \acrshort{ai} asistenta v SK a EN & splnené \\
 FP7 & Mechanizmus exkluzívnej relácie & splnené \\
 FP8 & Informácia o obsadení linky a riadené prevzatie relácie & splnené \\
 FP9 & JWT autentifikácia a \acrshort{rbac} so štyrmi rolami & splnené \\
@@ -2012,7 +2020,7 @@ DP3 & Zachovanie možnosti ovládania linky aj pri výpadku internetu & splnené
 \end{tabular}
 \end{table}
 
-Všetky funkcionálne aj nefunkcionálne požiadavky boli vyhodnotené ako splnené. Doménová požiadavka DP3 bola overená odpojením edge zariadenia od WAN portu, pričom mobilná aplikácia naďalej úspešne odosielala príkazy aj prijímala stav linky. Jediný komponent, ktorý je v takomto režime nedostupný, je AI asistent, čo zodpovedá architektonickému rozhodnutiu opísanému v kapitole \ref{sec:assistant}.
+Všetky funkcionálne aj nefunkcionálne požiadavky boli vyhodnotené ako splnené. Doménová požiadavka DP3 bola overená odpojením edge zariadenia od WAN portu, pričom mobilná aplikácia naďalej úspešne odosielala príkazy aj prijímala stav linky. Jediný komponent, ktorý je v takomto režime nedostupný, je \acrshort{ai} asistent, čo zodpovedá architektonickému rozhodnutiu opísanému v kapitole \ref{sec:assistant}.
 
 \subsection{Latencia vykonania príkazov}
 \label{sec:latencia}
@@ -2083,7 +2091,7 @@ Tlmene osvetlená miestnosť & 93\,\% \\
 
 Vďaka dvojfarebnému tlačenému vyhotoveniu identifikátora je kontrast dostatočný aj v priestoroch so slabším osvetlením.
 
-\subsection{Kvalita odpovedí AI asistenta}
+\subsection{Kvalita odpovedí \acrshort{ai} asistenta}
 \label{sec:test-asistent}
 
 Asistent bol nasadený s~modelom Claude Haiku~4.5 cez Anthropic API

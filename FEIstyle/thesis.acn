@@ -1,9 +1,17 @@
 \glossaryentry{OPC UA?\glossentry{opcua}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{MQTT?\glossentry{mqtt}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{TCP?\glossentry{tcp}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{MQTT?\glossentry{mqtt}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{8}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{8}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{9}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{OT?\glossentry{ot}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{IT?\glossentry{it}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{SCADA?\glossentry{scada}|setentrycounter[]{page}"\glsnumberformat}{1}
@@ -11,6 +19,7 @@
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{SCADA?\glossentry{scada}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{HMI?\glossentry{hmi}|setentrycounter[]{page}"\glsnumberformat}{3}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{SCADA?\glossentry{scada}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{OT?\glossentry{ot}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{IT?\glossentry{it}|setentrycounter[]{page}"\glsnumberformat}{3}
@@ -18,6 +27,7 @@
 \glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{HMI?\glossentry{hmi}|setentrycounter[]{page}"\glsnumberformat}{3}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{SCADA?\glossentry{scada}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{IT?\glossentry{it}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{SQL?\glossentry{sql}|setentrycounter[]{page}"\glsnumberformat}{4}
@@ -30,6 +40,8 @@
 \glossaryentry{REST?\glossentry{rest}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{QR?\glossentry{qr}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{OPC UA?\glossentry{opcua}|setentrycounter[]{page}"\glsnumberformat}{5}
@@ -38,6 +50,7 @@
 \glossaryentry{QR?\glossentry{qr}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{OPC UA?\glossentry{opcua}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{MQTT?\glossentry{mqtt}|setentrycounter[]{page}"\glsnumberformat}{5}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{5}
 \glossaryentry{SaaS?\glossentry{saas}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{HMI?\glossentry{hmi}|setentrycounter[]{page}"\glsnumberformat}{6}
@@ -48,7 +61,11 @@
 \glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{6}
 \glossaryentry{HTML?\glossentry{html}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{6}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{KB?\glossentry{kb}|setentrycounter[]{page}"\glsnumberformat}{7}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{OT?\glossentry{ot}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{8}
 \glossaryentry{IT?\glossentry{it}|setentrycounter[]{page}"\glsnumberformat}{8}
@@ -88,6 +105,7 @@
 \glossaryentry{MQTT?\glossentry{mqtt}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{QoS?\glossentry{qos}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{TCP?\glossentry{tcp}|setentrycounter[]{page}"\glsnumberformat}{12}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{13}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{13}
@@ -96,9 +114,18 @@
 \glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{14}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{14}
 \glossaryentry{IIoT?\glossentry{iiot}|setentrycounter[]{page}"\glsnumberformat}{18}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{18}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{18}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{18}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{19}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{20}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{20}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{21}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{21}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{21}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{21}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{23}
 \glossaryentry{OPC UA?\glossentry{opcua}|setentrycounter[]{page}"\glsnumberformat}{23}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{23}
@@ -128,6 +155,8 @@
 \glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{24}
 \glossaryentry{ASGI?\glossentry{asgi}|setentrycounter[]{page}"\glsnumberformat}{24}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{24}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{25}
 \glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}"\glsnumberformat}{25}
 \glossaryentry{UI?\glossentry{ui}|setentrycounter[]{page}"\glsnumberformat}{25}
 \glossaryentry{JSON?\glossentry{json}|setentrycounter[]{page}"\glsnumberformat}{28}
@@ -140,16 +169,23 @@
 \glossaryentry{VRAM?\glossentry{vram}|setentrycounter[]{page}"\glsnumberformat}{29}
 \glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{30}
 \glossaryentry{VRAM?\glossentry{vram}|setentrycounter[]{page}"\glsnumberformat}{30}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{VRAM?\glossentry{vram}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{RAG?\glossentry{rag}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{32}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{32}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{32}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{34}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{35}
 \glossaryentry{CPU?\glossentry{cpu}|setentrycounter[]{page}"\glsnumberformat}{37}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{37}
 \glossaryentry{MQTT?\glossentry{mqtt}|setentrycounter[]{page}"\glsnumberformat}{37}
@@ -162,8 +198,24 @@
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{37}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{40}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{40}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{40}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{41}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{43}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{44}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{47}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{51}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{51}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{52}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{54}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{56}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{58}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{59}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{59}
 \glossaryentry{RBAC?\glossentry{rbac}|setentrycounter[]{page}"\glsnumberformat}{59}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{60}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{60}
+\glossaryentry{AI?\glossentry{ai}|setentrycounter[]{page}"\glsnumberformat}{61}
 \glossaryentry{PLC?\glossentry{plc}|setentrycounter[]{page}"\glsnumberformat}{64}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{64}
 \glossaryentry{API?\glossentry{api}|setentrycounter[]{page}"\glsnumberformat}{64}
