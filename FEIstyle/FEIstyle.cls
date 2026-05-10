@@ -169,6 +169,7 @@
 \definecolor{codeviolet}{rgb}{0.58,0,0.82}
 \definecolor{codemagenta}{rgb}{0.839,0,0.494}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+\definecolor{codeframe}{rgb}{0.55,0.55,0.55}
 \lstdefinestyle{code-listing}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
@@ -187,12 +188,15 @@
     showtabs=false,
     tabsize=2,
     frame=single,
-    framesep=3pt,
-    framerule=0pt,
-    xleftmargin=4pt,
-    xrightmargin=4pt,
-    framexleftmargin=1pt,
-    framexrightmargin=1pt
+    framesep=5pt,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    xleftmargin=6pt,
+    xrightmargin=6pt,
+    framexleftmargin=3pt,
+    framexrightmargin=3pt,
+    aboveskip=10pt,
+    belowskip=10pt
 }
 
 \newboolean{isThesis}

@@ -1,1 +1,47 @@
-TODO: Napisat strucne co sme dosiahli, ze sme splnili ciele zadania a overili funkcnost
+Cieľom práce bolo navrhnúť a~implementovať mobilnú aplikáciu, ktorá obsluhe
+umožňuje rýchlu identifikáciu výrobnej linky, jej
+monitorovanie a~základné ovládanie. Zároveň poskytuje prístup k~doménovej
+technickej dokumentácii prostredníctvom inteligentného asistenta.
+Výsledkom je systém Scan2Control, ktorý všetky tieto funkcie spája do
+jedného celku. Mobilná aplikácia implementovaná vo frameworku Flutter pripojí operátora
+ku konkrétnej linke naskenovaním ArUco identifikátora
+a~umožní mu odosielať príkazy.
+Backend tvorený dvojicou služieb FastAPI komunikuje s~\acrshort{plc}
+Siemens S7-1200 cez Node-RED a~MQTT broker, pričom celá infraštruktúra je
+kontajnerizovaná pomocou Docker a~beží na edge zariadení v~prevádzke.
+
+Po experimentálnom porovnaní piatich lokálnych jazykových modelov bolo
+prijaté architektonické rozhodnutie opustiť lokálne nasadenie
+\acrshort{llm} a~prejsť na \acrshort{api} spoločnosti Anthropic,
+keďže náklady na dedikovaný GPU server presahujú možnosti projektu tohto
+rozsahu. \acrshort{rag} pipeline a~znalostná báza zostávajú lokálne, čím je
+zachovaná kontrola nad doménovými dátami. Bezpečnosť systému je riešená
+autentifikáciou pomocou JWT tokenov a~riadením prístupu cez \textit{Role-Based
+Access Control} so štyrmi rolami: operátor, manažér, údržbár
+a~administrátor.
+
+Všetky úlohy stanovené v~zadaní práce boli splnené. Možnosti načítania
+jedinečných identifikátorov boli porovnané a~zdôvodnili sme voľbu ArUco
+identifikátorov po experimentovaní s~3D identifikátormi. Aplikácia je
+integrovaná s~\acrshort{plc} cez S7 protokol a~poskytuje funkcie
+vzdialeného ovládania s~potvrdením vykonania. Otestovanie v~laboratórnom
+prostredí preukázalo, že priemerná latencia príkazov sa pohybuje výrazne
+pod hranicou 250\,ms stanovenou v~nefunkčných požiadavkách, detekcia ArUco
+identifikátorov je spoľahlivá v~praktickom rozsahu vzdialeností a~uhlov
+a~odpovede asistenta dosahujú vysokú kvalitu naprieč všetkými testovanými
+kategóriami otázok.
+
+Identifikované obmedzenia sú menšieho charakteru. V~laboratórnom nasadení
+nebolo aktivované TLS šifrovanie, ktoré by bolo potrebné doplniť pred
+produkčným nasadením. Detekcia vykazuje pokles spoľahlivosti pri snímaní ArUco identifikátora pod uhlom. 
+Pri otázkach vyžadujúcich syntézu informácií
+asistent niekedy vynechá jeden z~relevantných záznamov, čo je riešiteľné
+rozšírením počtu kontextových dokumentov posielaných do modelu. Potenciálnym
+rozšírením do budúcnosti je nasadenie viacerých výrobných liniek pripojených
+k~jednému edge zariadeniu, doplnenie hlasového ovládania asistenta alebo
+využitie rozšírenej reality.
+
+Diplomová práca preukázala, že kombinácia mobilnej aplikácie,
+vizuálnej identifikácie liniek a~kontextového \acrshort{ai} asistenta
+predstavuje použiteľný prístup k~ovládaniu výrobných liniek, ktorý
+dopĺňa medzeru v~ponuke súčasných komerčných platforiem.

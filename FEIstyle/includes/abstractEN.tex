@@ -1,1 +1,24 @@
-TODO: vlozit prelozeny abstrakt do anglictiny
+This master's thesis addresses the design and implementation of a~mobile
+application that enables operators of an~industrial production line to
+quickly identify a~specific device, monitor it, and remotely control it
+using a~unique visual identifier. An~analysis of available commercial
+platforms showed that none of them simultaneously integrate a~native
+mobile application, scanning of unique identifiers for pairing with
+a~device, and a~context-aware intelligent assistant with a~custom
+knowledge base. The thesis addresses these gaps by proposing the
+Scan2Control system, in which a~mobile application implemented in Flutter
+automatically connects the operator to a~specific line by scanning an
+ArUco identifier and subsequently allows them to send control commands.
+The backend layer, formed by a~pair of FastAPI
+services, communicates with a~Siemens S7-1200 programmable logic
+controller through Node-RED and an~MQTT broker, while the entire
+infrastructure is containerized using Docker and deployed on an~edge
+device in the production environment. The system includes the
+intelligent assistant PLEXO, built on the Retrieval-Augmented Generation
+architecture, which answers technical questions from operators based on
+a~knowledge base stored in the ChromaDB vector database. Testing in
+a~laboratory environment, and partially also in an~industrial setting,
+confirmed the fulfilment of all functional, non-functional and
+domain-specific requirements, including command latency significantly
+below the defined threshold and reliable detection of identifiers across
+a~practical range of distances, angles and lighting conditions.

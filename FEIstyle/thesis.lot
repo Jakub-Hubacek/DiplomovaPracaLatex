@@ -1,20 +1,20 @@
 \babel@toc {slovak}{}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Porovnanie existujúcich riešení}}{6}{table.caption.9}%
-\contentsline {table}{\numberline {3}{\ignorespaces Backendové frameworky podľa scenára nasadenia~\blx@tocontentsinit {0}\cite {t09}}}{8}{table.caption.13}%
-\contentsline {table}{\numberline {4}{\ignorespaces Výsledky porovnania jazykových modelov}}{29}{table.caption.57}%
-\contentsline {table}{\numberline {5}{\ignorespaces Priemerná relevancia podľa typu otázky a jazyka}}{29}{table.caption.58}%
-\contentsline {table}{\numberline {6}{\ignorespaces Prehľad MQTT tém}}{34}{table.caption.68}%
-\contentsline {table}{\numberline {7}{\ignorespaces Premenné dátového bloku \texttt {DB\_API}}}{37}{table.caption.74}%
-\contentsline {table}{\numberline {8}{\ignorespaces Stavy automatu \texttt {FB\_Conveyor}}}{37}{table.caption.76}%
-\contentsline {table}{\numberline {9}{\ignorespaces Prehľad API endpointov}}{40}{table.caption.114}%
-\contentsline {table}{\numberline {10}{\ignorespaces Oprávnenia podľa roly používateľa}}{47}{table.caption.146}%
-\contentsline {table}{\numberline {11}{\ignorespaces Overenie funkčných požiadaviek}}{59}{table.caption.170}%
-\contentsline {table}{\numberline {12}{\ignorespaces Overenie nefunkčných požiadaviek}}{59}{table.caption.171}%
-\contentsline {table}{\numberline {13}{\ignorespaces Overenie doménových požiadaviek}}{59}{table.caption.172}%
-\contentsline {table}{\numberline {14}{\ignorespaces Štatistika latencie príkazov v milisekundách (n=25)}}{60}{table.caption.174}%
-\contentsline {table}{\numberline {15}{\ignorespaces Úspešnosť detekcie podľa vzdialenosti a uhla (n=30)}}{61}{table.caption.176}%
-\contentsline {table}{\numberline {16}{\ignorespaces Úspešnosť detekcie podľa prostredia (vzdialenosť 60\,cm, uhol 0$^{\circ }$, n=30)}}{61}{table.caption.177}%
-\contentsline {table}{\numberline {17}{\ignorespaces Kvalita odpovedí asistenta}}{62}{table.caption.179}%
+\contentsline {table}{\numberline {1}{\ignorespaces Porovnanie existujúcich riešení}}{7}{table.caption.9}%
+\contentsline {table}{\numberline {2}{\ignorespaces Backendové frameworky podľa scenára nasadenia~\blx@tocontentsinit {0}\cite {t09}}}{9}{table.caption.13}%
+\contentsline {table}{\numberline {3}{\ignorespaces Výsledky porovnania jazykových modelov}}{30}{table.caption.57}%
+\contentsline {table}{\numberline {4}{\ignorespaces Priemerná relevancia podľa typu otázky a jazyka}}{30}{table.caption.58}%
+\contentsline {table}{\numberline {5}{\ignorespaces Prehľad MQTT tém}}{35}{table.caption.68}%
+\contentsline {table}{\numberline {6}{\ignorespaces Premenné dátového bloku \texttt {DB\_API}}}{38}{table.caption.74}%
+\contentsline {table}{\numberline {7}{\ignorespaces Stavy automatu \texttt {FB\_Conveyor}}}{38}{table.caption.76}%
+\contentsline {table}{\numberline {8}{\ignorespaces Prehľad API endpointov}}{41}{table.caption.114}%
+\contentsline {table}{\numberline {9}{\ignorespaces Oprávnenia podľa roly používateľa}}{47}{table.caption.146}%
+\contentsline {table}{\numberline {10}{\ignorespaces Overenie funkčných požiadaviek}}{59}{table.caption.170}%
+\contentsline {table}{\numberline {11}{\ignorespaces Overenie nefunkčných požiadaviek}}{59}{table.caption.171}%
+\contentsline {table}{\numberline {12}{\ignorespaces Overenie doménových požiadaviek}}{59}{table.caption.172}%
+\contentsline {table}{\numberline {13}{\ignorespaces Štatistika latencie príkazov v milisekundách (n=25)}}{60}{table.caption.174}%
+\contentsline {table}{\numberline {14}{\ignorespaces Úspešnosť detekcie podľa vzdialenosti a uhla (n=30)}}{61}{table.caption.176}%
+\contentsline {table}{\numberline {15}{\ignorespaces Úspešnosť detekcie podľa prostredia (vzdialenosť 60\,cm, uhol 0$^{\circ }$, n=30)}}{61}{table.caption.177}%
+\contentsline {table}{\numberline {16}{\ignorespaces Kvalita odpovedí asistenta}}{62}{table.caption.179}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 

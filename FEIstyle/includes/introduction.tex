@@ -1,1 +1,47 @@
-TODO: dopisat uvodnu kapitolu, ktora bude obsahovat motivaciu, ciele prace a strucnz prehlad obsahu jednotlivzch kapitol
+Moderné výrobné podniky prešli v~poslednom desaťročí výraznou digitalizáciou
+v~duchu konceptu Industry~4.0, ktorá priniesla prepojenie prevádzkových
+technológií (\acrshort{ot}) so svetom informačných technológií
+(\acrshort{it}) a~možnosti vzdialeného monitorovania a~zberu prevádzkových
+dát. Európska komisia v~roku 2021 publikovala nadväzujúcu víziu
+Industry~5.0, ktorá k~tomuto technologickému základu pridáva tri hodnotové
+piliere: zameranie na človeka, udržateľnosť a~odolnosť.
+Človek prestáva byť len obsluhou strojov a~stáva sa partnerom, pričom
+nasadenie nových technológií má rešpektovať jeho potreby a~slúžiť mu pri
+každodennej práci. Klasické \acrshort{scada}/\acrshort{hmi} systémy
+so~stacionárnymi dotykovými panelmi však tomuto
+smerovaniu vychádzajú v~ústrety len obmedzene. Operátor sa k~nim musí
+fyzicky presunúť a~prístup k~technickej dokumentácii býva oddelený v~ďalších systémoch, čo
+spomaľuje prácu.
+
+Mobilné zariadenia sú prirodzeným nástrojom na riešenie týchto problémov.
+Operátor ich nosí pri sebe, dokáže nimi snímať vizuálne identifikátory
+a~má ovládací panel stále so sebou. Analýza dostupných komerčných platforiem však ukázala, že
+časť ponúka len responzívne webové rozhrania bez optimalizácie
+pre dotykové zariadenia, časť podporuje skenovanie identifikátorov len pre účely inventarizácie,
+no nie pre priame spárovanie operátora so strojom. Žiadna z~komerčných platforiem
+neintegruje inteligentného asistenta odpovedajúceho na technické otázky na
+základe vlastnej dokumentácie linky. Práve kombinácia mobilného
+prístupu, vizuálnej identifikácie liniek a~kontextového asistenta
+postaveného na veľkom jazykovom modeli s~architektúrou
+\textit{Retrieval-Augmented Generation} tvorí priestor,
+ktorému sa venuje táto práca.
+
+Cieľom práce je preskúmať možnosti načítania
+jedinečných identifikátorov pomocou mobilných zariadení, navrhnúť
+a~implementovať mobilnú aplikáciu, ktorá pomocou takéhoto identifikátora
+automaticky spáruje operátora s~konkrétnou výrobnou linkou. Ďalším cieľom je integrovať
+aplikáciu s~riadiacim systémom výrobnej linky a~implementovať funkcie na
+jej vzdialené ovládanie. Ciele sú nad rámec zadania doplnené
+o~inteligentného asistenta, ktorý bude pomáhať obsluhe pri riešení technických
+otázok. Výsledný systém by mal byť otestovaný v~laboratórnom prostredí,
+kde sa overí jeho spoľahlivosť a~efektivita.
+
+Úvodné kapitoly rozoberajú existujúce
+komerčné platformy a~poskytujú prehľad relevantných technológií. V ďalších kapitolách je
+definovaná špecifikácia požiadaviek na systém a~zdôvodnenie voľby konkrétnych
+technológií. Experimentálna časť obsahuje porovnanie piatich lokálnych
+jazykových modelov a ich vhodnosť pre použitie na AI asistenta. Implementačné kapitoly opisujú návrh architektúry,
+integráciu s~\acrshort{plc} Siemens S7-1200, backend, asistenta a~mobilnú
+aplikáciu. Záver tvorí kapitola venovaná testovaniu a~meraniu, kde je
+overené splnenie požiadaviek a~vyhodnotené merania latencie, spoľahlivosti
+detekcie aj kvality odpovedí asistenta.

@@ -1,1 +1,22 @@
-TODO: dopisat abstrakt po dokonceni celej prace
+Diplomová práca sa zaoberá návrhom a~implementáciou mobilnej aplikácie, ktorá
+obsluhe priemyselnej výrobnej linky umožňuje rýchlu identifikáciu konkrétneho
+zariadenia, jeho monitorovanie a~vzdialené ovládanie pomocou jedinečného
+vizuálneho identifikátora. Analýza dostupných komerčných platforiem ukázala,
+že žiadna z~nich súčasne neintegruje natívnu mobilnú aplikáciu, skenovanie
+unikátnych identifikátorov pre spárovanie so zariadením a~kontextového
+inteligentného asistenta s~vlastnou znalostnou bázou. Práca tieto medzery
+adresuje návrhom systému Scan2Control, v~ktorom mobilná aplikácia
+implementovaná vo Flutter automaticky pripojí operátora ku konkrétnej linke
+naskenovaním ArUco identifikátora a~následne mu umožní odosielať riadiace
+príkazy. Backendová vrstva tvorená dvojicou
+služieb FastAPI komunikuje s~programovateľným logickým automatom Siemens
+S7-1200 cez Node-RED a~MQTT broker, pričom celá infraštruktúra je
+kontajnerizovaná pomocou Docker a~nasadená na edge zariadení v~prevádzke.
+Súčasťou systému je inteligentný asistent PLEXO postavený na architektúre
+Retrieval-Augmented Generation, ktorý odpovedá na technické otázky obsluhy
+na základe znalostnej bázy uloženej vo vektorovej databáze ChromaDB.
+Otestovanie v~laboratórnom a čiastočne aj v~priemyselnom prostredí potvrdilo splnenie
+všetkých funkčných, nefunkčných a~doménových požiadaviek vrátane latencie
+príkazov výrazne pod stanovenou hranicou a~spoľahlivej detekcie
+identifikátorov v~praktickom rozsahu vzdialeností, uhlov a~svetelných
+podmienok.

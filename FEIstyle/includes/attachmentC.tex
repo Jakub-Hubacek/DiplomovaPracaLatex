@@ -18,24 +18,24 @@ Pred prvým spustením je nutné nastaviť dve hodnoty:
 
 V dvoch oddelených termináloch spustite:
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[style=code-listing, language=bash]
 cd backend && docker compose up -d --build
 cd assistant && docker compose up -d --build
 \end{lstlisting}
 
 Po prvom spustení asistenta je potrebné stiahnuť embedovací model:
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[style=code-listing, language=bash]
 docker exec -it ollama-llm ollama pull nomic-embed-text
 \end{lstlisting}
 
-Backend bude dostupný na porte \textbf{8000}, asistent na porte \textbf{8100}. Backend pri prvom štarte automaticky vytvorí databázové tabuľky, založí preddefinované účty a zaregistruje testovaciu linku \emph{Dopravník} s ArUco~ID~1.
+Backend bude dostupný na porte \textbf{8000}, asistent na porte \textbf{8100}. Backend pri prvom štarte automaticky vytvorí databázové tabuľky, založí preddefinované účty a zaregistruje testovacie zariadenie \emph{Dopravník} s ArUco~ID~1.
 
 \subsection*{Spustenie mobilnej aplikácie}
 
 Pripojte Android zariadenie cez USB s povoleným režimom \emph{USB debugging} a v priečinku \texttt{frontend/} spustite:
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}[style=code-listing, language=bash]
 flutter pub get
 flutter run --release
 \end{lstlisting}
