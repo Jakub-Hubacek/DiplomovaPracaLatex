@@ -253,5 +253,5 @@
 \contentsline {subsection}{Použitie nástrojov umelej inteligencie}{67}{section*.183}%
 \contentsline {section}{Prílohy}{68}{section*.184}%
 \contentsline {section}{\numberline {A}Štruktúra elektronického nosiča}{69}{section.186}%
-\contentsline {section}{\numberline {B}Prílohy k testovaniu}{70}{section.189}%
+\contentsline {section}{\numberline {B}Testovacie otázky}{70}{section.189}%
 \contentsline {section}{\numberline {C}Návod na spustenie}{75}{section.206}%
