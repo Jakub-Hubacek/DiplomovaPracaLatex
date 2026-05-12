@@ -4,7 +4,9 @@
       "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
       "Bash(makeglossaries thesis:*)",
       "Bash(python3 -c ':*)",
-      "Bash(python -c ':*)"
+      "Bash(python -c ':*)",
+      "Bash(find \"C:/Users/jakub/Downloads/DP_Obrázky\" -type d 2>/dev/null | head -50)",
+      "Read(//c/Users/jakub/Downloads/DP_Obrázky/**)"
     ]
   }
 }

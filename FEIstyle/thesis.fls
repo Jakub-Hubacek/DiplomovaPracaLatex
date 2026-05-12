@@ -685,6 +685,12 @@ INPUT .\includes\ai_declaration.tex
 INPUT .\includes\ai_declaration.tex
 INPUT .\includes\ai_declaration.tex
 INPUT includes\ai_declaration.tex
+INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr17.tfm
+INPUT C:\Users\jakub\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT .\thesis.pri
+INPUT .\thesis.pri
+INPUT thesis.pri
+OUTPUT thesis.pri
 INPUT .\includes\attachmentA.tex
 INPUT .\includes\attachmentA.tex
 INPUT .\includes\attachmentA.tex

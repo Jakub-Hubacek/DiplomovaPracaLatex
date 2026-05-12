@@ -748,8 +748,8 @@
 
 \IfEqCase*{\FEIenglish}{
     {0}{
-        \def\@appendices{Dodatky}
-        \def\@appendix{Dodatok}
+        \def\@appendices{Prílohy}
+        \def\@appendix{Príloha}
     }
     {1}{
         \def\@appendices{Appendices}
