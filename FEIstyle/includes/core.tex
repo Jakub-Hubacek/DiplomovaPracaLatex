@@ -1,4 +1,4 @@
-\section{Analýza existujúcich riešení}
+\section{Analýza existujúcich riešení}\label{sec:existing_solutions}
 
 Trh s~priemyselnými softvérovými platformami ponúka viacero riešení
 umožňujúcich vizualizáciu a ovládanie výrobných liniek. Väčšina z~nich
@@ -212,7 +212,7 @@ edge nasadenie a integráciu \acrshort{ai} asistenta s~vlastnou znalostnou bázo
             Identifikácia zariadení                     & Nie & Nie       & Čiastočne & Nie \\
             Edge nasadenie                              & Áno & Áno       & Čiastočne & Áno \\
             \acrshort{ai} asistent s~vlastnou \acrshort{kb}        & Nie & Nie       & Nie       & Nie \\
-            Otvorená platforma                          & Nie & Čiastočne & Nie       & Nie \\
+            Open{-}source                          & Nie & Čiastočne & Nie       & Nie \\
             \hline
       \end{tabular}
       \vspace{0.3em}
@@ -368,6 +368,12 @@ v~jednom konfiguračnom súbore a môžu sa spúšťať jedným príkazom.
 
 \subsection{Priemyselné komunikačné protokoly}
 
+Priemyselné komunikačné protokoly definujú spôsob, akým si zariadenia
+v~prevádzke vymieňajú dáta. Voľba vhodného protokolu
+ovplyvňuje výkon, interoperabilitu aj bezpečnosť celého riešenia.
+V~nasledujúcich podkapitolách sú stručne predstavené štyri najčastejšie
+protokoly, s~ktorými je možné sa v~priemyselnej praxi stretnúť.
+
 \subsubsection{\acrshort{opcua}}
 
 \acrshort{opcua} je platformovo nezávislá architektúra orientovaná na služby, vydaná v~roku 2008, ktorá integruje
@@ -470,6 +476,14 @@ odpovedá.
 
 \section{Prehľad technológií pre \acrshort{ai} asistentov}
 
+Donedávna sa operátor musel pri riešení nečakanej situácie spoľahnúť
+na technickú dokumentáciu alebo skúsenosti kolegov. Pokrok v~oblasti
+veľkých jazykových modelov a~techník ich prepájania s~doménovou znalostnou
+bázou otvoril alternatívu. Tou je interaktívny asistent, ktorý dokáže rovnaký
+obsah sprostredkovať formou dialógu v~prirodzenom jazyku. Aby takéto
+riešenie mohlo vzniknúť, treba si vysvetliť dve technológie -- veľké
+jazykové modely a~spôsob, ako im sprístupniť doménové znalosti.
+
 \subsection{Veľké jazykové modely a možnosti použitia}
 Veľké jazykové modely (\acrshort{llm}) sú kategóriou modelov hlbokého učenia
 trénovaných na obrovských množstvách textových dát, vďaka čomu sú schopné
@@ -542,6 +556,15 @@ technológií.
 
 \section{Typy identifikátorov a ich použitie}
 
+Aby mohol používateľ mobilnej aplikácie pristupovať ku konkrétnej výrobnej
+linke, systém potrebuje spôsob, ako linku jednoznačne identifikovať.
+Manuálne vyhľadávanie zo zoznamu je v~prostredí s~väčším počtom takmer
+identických zariadení pomalé a~náchylné na omyl. Preto je vhodnejšie
+priradiť každej linke fyzický identifikátor umiestnený priamo na nej
+a~rozpoznať ho kamerou mobilného zariadenia. V~nasledujúcich podkapitolách
+sú zhrnuté tri kategórie identifikátorov, ktoré boli zvažované pri návrhu
+riešenia.
+
 \subsection{QR identifikátory}
 QR identifikátory sú dvojrozmerné maticové identifikátory optimalizované pre
 rýchle čítanie a vysokú hustotu dát. V zmysle použitia v priemysle sa využívajú
@@ -609,9 +632,12 @@ Hlavné technické výhody tohto riešenia sú:
 
 \section{Špecifikácia požiadaviek na systém}\label{sec:specifikacia}
 
-Práca predstavuje moderný prístup k~priemyselnému internetu vecí
-(\acrshort{iiot}). Mobilná aplikácia slúži ako primárne rozhranie pre obsluhu
-výrobnej linky. Komunikácia výrobnej linky a aplikácie prebieha cez edge zariadenie umiestnené priamo v~prevádzke.
+Aby výsledná aplikácia spĺňala očakávania prevádzky, musia byť požiadavky
+jasne pomenované ešte pred návrhom architektúry. Systém vychádza z~konceptu
+priemyselného internetu vecí (\acrshort{iiot}). Mobilná aplikácia slúži
+ako primárne rozhranie pre obsluhu výrobnej linky a~komunikácia s~riadiacim
+systémom prebieha cez edge zariadenie umiestnené priamo v~prevádzke.
+
 
 \subsection{Opis systému}
 
@@ -665,6 +691,10 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \end{description}
 
 \subsection{Use-case scenáre}
+
+Nasledujúce scenáre popisujú typické situácie, v~ktorých používatelia
+so~systémom pracujú. Každý scenár obsahuje identifikátor, aktéra
+a~stručný popis priebehu.
 
 \noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
@@ -754,6 +784,7 @@ zároveň priradí príslušnú rolu. Sú definované štyri roly:
 \end{tabularx}
 
 \subsection{Funkcionálne požiadavky}
+Definujú konkrétne schopnosti a~akcie, ktoré musí systém vedieť vykonať.
 
 \begin{description}
       \item [FP1:] Aplikácia musí umožniť načítanie unikátneho identifikátora na automatické spárovanie mobilného zariadenia s konkrétnou výrobnou linkou.
@@ -801,6 +832,35 @@ obmedzenými zdrojmi. V neposlednom rade bola dôležitá aj dostupnosť knižn�
 predchádzajúca skúsenosť s jednotlivými technológiami, čo zásadne urýchlilo
 vývoj.
 
+Tabuľka~\ref{tab:tech_choices} sumarizuje hlavné voľby technológií, zvážené
+alternatívy a~stručné odôvodnenie. Detailnejšie porovnanie každej voľby je
+v~príslušnej podsekcii.
+
+\begin{table}[H]
+      \centering
+      \caption{Súhrn zvolených technológií a~zvážených alternatív}
+      \label{tab:tech_choices}
+      \renewcommand{\arraystretch}{1.3}
+      \small
+      \begin{tabularx}{\textwidth}{|l|l|l|X|}
+            \hline
+            \textbf{Vrstva}              & \textbf{Alternatívy}         & \textbf{Voľba}     & \textbf{Hlavný dôvod}                                                  \\
+            \hline
+            Komunikácia s~\acrshort{plc} & \acrshort{opcua}             & S7 protokol        & Natívna podpora Siemens S7-1200, bez licencie, nízka záťaž PLC         \\
+            \hline
+            Middleware                   & Vlastný Python skript        & Node-RED           & Vizuálne programovanie, hotové uzly pre S7 a~\acrshort{mqtt}    \\
+            \hline
+            Transportný protokol         & \acrshort{opcua}             & \acrshort{mqtt}    & Nenáročnosť, pub/sub architektúra, QoS úrovne                          \\
+            \hline
+            Backend                      & Django, Node.js, Go          & FastAPI            & Asynchrónne ASGI spracovanie, Python ekosystém pre AI                  \\
+            \hline
+            Frontend                     & Natívny Kotlin, React Native & Flutter            & Jedna kódová základňa, rýchly vývoj, konzistentné UI                   \\
+            \hline
+            Identifikátor                & 3D identifikátor, Vuforia    & ArUco              & Robustná detekcia v~OpenCV, rozšírenosť v~priemysle (AGV, roboty)      \\
+            \hline
+      \end{tabularx}
+\end{table}
+
 \subsection{Komunikácia s \acrshort{plc} -- S7 protokol}
 
 Riadiaci systém výrobnej linky je PLC od firmy Siemens, konkrétne model
@@ -833,7 +893,7 @@ Node-RED bol zvolený z~niekoľkých dôvodov. Disponuje uzlom
 \texttt{node-red-contrib-s7} pre priamu komunikáciu so Siemens \acrshort{plc} a
 rovnako podporou \acrshort{mqtt}. Toto riešenie nevyžaduje rozsiahly
 kód, čo výrazne skracuje čas konfigurácie. Node-RED tiež dobre zvláda
-periodické dotazovanie (polling) \acrshort{plc} a podmienené spúšťanie akcií.
+periodické dotazovanie \acrshort{plc} a podmienené spúšťanie akcií.
 
 \begin{itemize}
       \item \textbf{Výhody:} Minimum kódu, natívna S7 a \acrshort{mqtt} podpora, jednoduchý deployment v~Dockeri, aktívna komunita s~rozsiahlou knižnicou uzlov.
@@ -950,6 +1010,13 @@ bolo možné použiť framework ako Vuforia, čo by ale značne zvýšilo náro�
 implementácie a údržby a presne tomu sme sa chceli vyhnúť.
 
 \section{Experimentálne porovnanie a výber jazykových modelov}
+
+Pre nasadenie \acrshort{ai} asistenta v~lokálnom prostredí je potrebné
+vybrať jazykový model, ktorý dokáže vrátiť kvalitné odpovede v~rozumnom
+čase aj na bežnom hardvéri. V~tejto kapitole je porovnaných päť kandidátov
+rôznej veľkosti dostupných cez platformu Ollama. Po popise testovaných
+modelov a~metodiky testovania nasledujú namerané výsledky a~záverečné
+rozhodnutie o~výbere.
 
 \subsection{Popis testovaných modelov}
 
@@ -1122,7 +1189,7 @@ boli výrazne nižšie.
 
 % ------------------------------------------------------------
 
-\subsection{Analýza výsledkov a výber modelu}
+\subsection{Analýza výsledkov a výber najvhodnejšieho modelu}
 
 Z~výsledkov testovania vyplýva, že model \textbf{gemma4:e4b} dosiahol najvyššie
 celkové skóre 4,92/5,0 spomedzi všetkých testovaných modelov. Model vykazoval
@@ -1762,7 +1829,7 @@ prihláseného používateľa. Prehľad rolí je uvedený v tabuľke~\ref{tab:rb
 
 V nasledujúcich podkapitolách je opísaná funkcionalita aplikácie pre netechnického
 používateľa. Postupne sú zobrazené a opísané jednotlivé obrazovky a~funkcionality,
-s~ktorými sa používateľ pri práci stretáva.
+s~ktorými sa používateľ pri práci s aplikáciou stretáva.
 
 \subsection{Hlavné menu}
 
@@ -1943,7 +2010,7 @@ svoje meno, priezvisko a prístupové heslo. Nastavenia jazyka zostávajú zacho
 
 Cieľom tejto kapitoly je overiť, či výsledná aplikácia spĺňa požiadavky definované v kapitole \ref{sec:specifikacia}, a vyjadriť jej spoľahlivosť a efektivitu v laboratórnom a priemyselnom prostredí.
 
-Testovanie prebiehalo na nasledujúcej zostave. Ako edge zariadenie poslúžil notebook s 32\,GB RAM a procesorom AMD Ryzen 5 5600H, na ktorom bežali Mosquitto, Node-RED, hlavný backend aj \acrshort{ai} asistentv Docker kontajneroch. Výrobnú linku predstavoval model dopravníka Fischertechnik riadený PLC Siemens S7-1200. Mobilný klient bežal na zariadení Samsung Galaxy A54 s OS Android~14, pripojenom do tej istej WiFi siete ako edge počítač. Identifikátory boli vytlačené technológiou FDM na tlačiarni Bambu Lab P1S s veľkosťou hrany 100\,mm. Časť meraní detekcie bola vykonaná aj v skutočných priestoroch priemyselnej haly, čo umožnilo overenie systému v reálnych svetelných podmienkach.
+Testovanie prebiehalo na nasledujúcej zostave. Ako edge zariadenie poslúžil notebook s 32\,GB RAM a procesorom AMD Ryzen 5 5600H, na ktorom bežali Mosquitto, \mbox{Node-RED}, hlavný backend aj \acrshort{ai} asistent v Docker kontajneroch. Výrobnú linku predstavoval model dopravníka Fischertechnik riadený PLC Siemens S7-1200. Mobilný klient bežal na zariadení Samsung Galaxy A54 s OS Android~14, pripojenom do tej istej WiFi siete ako edge počítač. Identifikátory boli vytlačené technológiou FDM na tlačiarni Bambu Lab P1S s veľkosťou hrany 100\,mm. Časť meraní detekcie bola vykonaná aj v skutočných priestoroch priemyselnej haly, čo umožnilo overenie systému v reálnych svetelných podmienkach.
 
 Merania latencie a úspešnosti detekcie boli vykonané v sériách opakovaných pokusov a výsledky sú uvádzané formou priemernej hodnoty, minima, maxima. Kvalita odpovedí asistenta bola vyhodnotená na pevnej množine reprezentatívnych otázok podľa kritérií zavedených v kapitole \ref{sec:assistant}.
 
@@ -2140,5 +2207,38 @@ Priemerný čas odpovede asistenta sa pohyboval okolo 4{,}1\,sekundy pri otázka
 V laboratórnom aj priemyselnom prostredí sa podarilo overiť všetky funkcionálne, nefunkcionálne aj doménové požiadavky bez výhrad. Latencia vykonania príkazov sa pohybovala výrazne pod limitom 250\,ms stanoveným v NFP3, čím systému ostáva dostatočná rezerva aj pre menej priaznivé sieťové podmienky. Detekcia ArUco identifikátorov je spoľahlivá v praktickom rozsahu vzdialeností a uhlov a obstála aj v hale s priemyselným osvetlením. Asistent poskytuje správne a stručné odpovede, pričom vyhľadávanie na internete dopĺňa znalostnú bázu pri otázkach mimo jej rozsah.
 
 Identifikované obmedzenia sú menšieho charakteru. Mierny pokles spoľahlivosti detekcie pri šikmých uhloch nad 30 stupňov je riešiteľný pokynom pre operátora. Vynechávanie jedného z relevantných záznamov pri otázkach vyžadujúcich syntézu sa dá riešiť rozšírením počtu kontextových dokumentov posielaných do modelu.
+
+Tabuľka~\ref{tab:final_comparison} sumarizuje, ako sa výsledná aplikácia
+Scan2Control radí medzi existujúce riešenia opísané v~kapitole~\ref{sec:existing_solutions}.
+Pôvodne identifikované medzery, najmä chýbajúca natívna mobilná aplikácia,
+identifikácia zariadení a~integrácia \acrshort{ai} asistenta s~vlastnou
+znalostnou bázou sú v~navrhnutom riešení pokryté.
+
+\newcommand{\ano}{\textcolor{green!55!black}{\textbf{Áno}}}
+\newcommand{\nie}{\textcolor{red!75!black}{\textbf{Nie}}}
+\newcommand{\ciast}{\textcolor{black}{\textbf{Čiastočne}}}
+
+\begin{table}[H]
+      \centering
+      \caption{Porovnanie Scan2Control s~existujúcimi riešeniami}
+      \label{tab:final_comparison}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{lccccc}
+            \hline
+            \textbf{Vlastnosť}                          &
+            \textbf{\shortstack{WinCC\\Unified}}        &
+            \textbf{\shortstack{Ignition\\Perspective}} &
+            \textbf{Tulip}                              &
+            \textbf{\shortstack{AVEVA\\InTouch}}        &
+            \textbf{Scan2Control}                                                                       \\
+            \hline
+            Natívna mobilná aplikácia                   & \nie & \ano   & \nie    & \nie & \ano      \\
+            Identifikácia zariadení                     & \nie & \nie   & \ciast  & \nie & \ano      \\
+            Edge nasadenie                              & \ano & \ano   & \ciast  & \ano & \ano      \\
+            \acrshort{ai} asistent s~vlastnou \acrshort{kb}        & \nie & \nie   & \nie    & \nie & \ano      \\
+            Open{-}source                          & \nie & \ciast & \nie    & \nie & \ano      \\
+            \hline
+      \end{tabular}
+\end{table}
 
 Na základe vykonaných meraní možno konštatovať, že aplikácia spĺňa kritériá stanovené v zadaní práce.
