@@ -508,26 +508,28 @@ Lokálne nasadenie je vhodné najmä v~prostrediach s~obmedzeným internetovým
 pripojením, prísnymi požiadavkami na ochranu dát alebo potrebou prevádzky bez
 závislosti od externých služieb.
 
+\newpage
 \subsection{Retrieval-Augmented Generation}
 
 \acrshort{llm} modely sú obmedzené na znalosti zachytené počas trénovania
 a~nemajú prístup k~aktuálnym ani doménovým informáciám.
 Retrieval-Augmented Generation (\acrshort{rag}) tento nedostatok rieši
 prepojením modelu s~externou znalostnou bázou bez nutnosti opätovného trénovania~\cite{t18}.
-
+\newline
 \begin{figure}[h]
       \centering
       \includegraphics[width=\textwidth]{img/basic_rag_pipeline.pdf}
       \caption{Základný princíp RAG pipeline}
       \label{fig:rag_pipeline}
 \end{figure}
-
+\newline
 Princíp fungovania je taký, že pri každej otázke používateľa retrieval model
 vyhľadá v~znalostnej báze relevantné úseky dokumentov, tie sa vložia do
 kontextu \acrshort{llm} spolu s~pôvodnou otázkou a~model na ich základe
 vygeneruje odpoveď. Znalostná báza je typicky uložená vo vektorovej databáze,
 kde sú dokumenty reprezentované ako číselné vektory (embeddingy) umožňujúce
-rýchle vyhľadávanie. Jednou z~populárnych open-source vektorových databáz je
+rýchle vyhľadávanie. Jednou z~populárnych \mbox{open-source}
+ vektorových databáz je
 ChromaDB. Je to ľahká databáza licencovaná pod Apache~2.0, ktorú možno
 prevádzkovať lokálne alebo aj v~cloudovom prostredí a~je priamo integrovaná
 s~frameworkmi LangChain a~LlamaIndex~\cite{t19}.
@@ -575,11 +577,11 @@ výhodou je silná korekcia chýb, ktorá umožňuje prečítať identifikátor 
 
 \begin{figure}[h]
       \centering
-      \includegraphics[width=0.35\textwidth]{img/qrcode.png}
+      \includegraphics[width=0.4\textwidth]{img/qrcode.png}
       \caption{QR identifikátor so zakódovanou URL adresou fei.stuba.sk}
       \label{fig:qrcode}
 \end{figure}
-
+\newpage
 \subsection{Fiduciálne markery -- AprilTag, ArUco}
 Fiduciálne markery sú špeciálne navrhnuté pre potreby počítačového videnia a
 robotiky. Na rozdiel od QR identifikátorov nie je ich primárnym cieľom prenos
@@ -587,7 +589,7 @@ veľkého objemu dát, ale presná lokalizácia v 3D priestore.
 
 \begin{figure}[h]
       \centering
-      \includegraphics[width=0.45\textwidth]{img/AprilTagVsArUco.png}
+      \includegraphics[width=0.50\textwidth]{img/AprilTagVsArUco.png}
       \caption{Vizuálne porovnanie AprilTag a ArUco}
       \label{fig:apriltag}
 \end{figure}
@@ -601,7 +603,7 @@ ROS je ich integrácia štandardom pri vývoji:
       \item \textbf{Kolaboratívnych robotov:} Pri navádzaní na presnú pozíciu.
 \end{itemize}
 Identifikátory ako AprilTag a ArUco sú robustné voči zmenám osvetlenia a perspektívnemu skresleniu.
-
+\newpage
 \subsection{3D identifikátory}
 V prostrediach priemyselných podnikov a logistických reťazcov, kde môže prísť k
 jednoduchému znemožneniu snímania 2D identifikátorov (znečistené alebo
@@ -1091,7 +1093,7 @@ asistenta vo formáte \texttt{.txt} bola rozdelená na sekcie podľa markerov
 s~využitím embedding modelu \texttt{nomic-embed-text}. Pre každú testovú otázku
 boli z~vektorovej databázy vytiahnuté tri najrelevantnejšie dokumenty, ktoré
 boli spolu s~otázkou odovzdané modelu ako kontext.
-
+\newpage
 Každý model bol otestovaný na sade 14 testovacích otázok rozdelených do troch
 kategórií:
 
@@ -1128,7 +1130,7 @@ kritérií:
 Celkové skóre bolo vypočítané ako vážený priemer jednotlivých kritérií:
 relevancia (30\,\%), úplnosť (25\,\%), zrozumiteľnosť (20\,\%) a jazyková
 správnosť (25\,\%).
-
+\newpage
 Okrem kvalitatívnych metrík bol pre každú odpoveď zaznamenaný čas odozvy
 v~milisekundách. Testovanie prebiehalo na notebookovom hardvéri (\acrshort{cpu}
 AMD Ryzen 5 5600H, \acrshort{ram} 32\,GB, \acrshort{gpu} NVIDIA RTX~3060 6\,GB
@@ -1526,7 +1528,7 @@ async def get_manager_or_admin(user: User = Depends(get_current_user)):
     _ensure_role(user, {"manager", "admin"})
     return user
 \end{lstlisting}
-
+\newpage
 \subsection{API endpointy}
 Backend poskytuje REST API rozdelené do šiestich skupín podľa funkčnej oblasti.
 Endpointy pre \acrshort{ai} asistenta sú dostupné na samostatnej službe počúvajúcej na
@@ -1642,7 +1644,7 @@ aplikácie.
 Každý príkaz je bez ohľadu na výsledok zaznamenávaný do tabuľky
 \texttt{command\_logs} s identifikátorom používateľa, linky, zdrojovým
 kanálom a príznakom úspechu doručenia.
-
+\newpage
 \subsection{Generátor ArUco identifikátorov a export do STL}
 
 Na výrobu fyzických identifikátorov bola implementovaná vlastná Python
@@ -1698,9 +1700,13 @@ metriku vyhľadávania. Každý záznam znalostnej bázy sa indexuje ako reťaze
 \subsection{Systémový prompt}
 
 Asistent vystupuje pod menom PLEXO. Systémový prompt existuje v slovenskej aj
-anglickej verzii podľa jazyka relácie. Pozostáva z dvoch častí. Prvou je sada
+anglickej verzii podľa jazyka relácie. Pozostáva z dvoch častí. 
+
+Prvou je sada
 pravidiel, ktorá určuje správanie asistenta, jazyk odpovede, formát, zákaz
-vymýšľania faktov a spôsob práce s kontextom. Druhú časť tvoria dynamicky
+vymýšľania faktov a spôsob práce s kontextom. 
+\newpage
+Druhú časť tvoria dynamicky
 dopĺňané sekcie, ktoré sa pred každým volaním modelu naplnia aktuálnymi údajmi:
 
 \begin{itemize}
@@ -1792,12 +1798,12 @@ premenných. Pri chybe alebo zatvorení spojenia sa po dvoch sekundách
 automaticky pokúsi o znovupripojenie.
 
 Odosielanie príkazu funguje tak, že sa na WebSocket pošle JSON správa
-\texttt{\{command, value\}} a~spustí sa päťsekundový časovač. Server najskôr
+\texttt{\{command, value\}} a~spustí sa 5 sekundový časovač. Server najskôr
 vráti správu \texttt{command\_ack}, ktorá potvrdzuje doručenie príkazu MQTT
 brokerovi. Ak je \texttt{success == false}, zobrazí sa chybové hlásenie
 okamžite. Ak je \texttt{success == true}, aplikácia čaká na skutočnú zmenu
 hodnoty premennej z výrobnej linky. Keď táto zmena dorazí, zobrazí sa snackbar
-s~potvrdenou hodnotou a~nameranou latenciou. Ak päťsekundový časovač vyprší
+s~potvrdenou hodnotou a~nameranou latenciou. Ak 5 sekundový časovač vyprší
 skôr ako hodnota dorazí, zobrazí sa chybové hlásenie.
 
 \subsection{Používateľské rozhranie podľa roly}
@@ -1861,7 +1867,7 @@ s tou správnou linkou.
       \caption{Obrazovka skenera ArUco identifikátorov s náhľadom z kamery}
       \label{fig:aruco_scanner}
 \end{figure}
-
+\newpage
 \subsection{Generátor ArUco identifikátorov}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
@@ -1879,7 +1885,7 @@ prevádzke.
       \caption{Obrazovka generátora ArUco identifikátorov s možnosťami exportu}
       \label{fig:aruco_gen}
 \end{figure}
-
+\newpage
 \subsection{Monitoring a ovládanie výrobných liniek}
 \textbf{Dostupné pre:} operátor, údržbár, administrátor
 
@@ -1901,7 +1907,7 @@ príkazov pre potreby kontroly a auditu.
       \caption{Obrazovky monitoringu a~ovládania výrobnej linky}
       \label{fig:monitor_control}
 \end{figure}
-
+\newpage
 \subsection{\acrshort{ai} asistent PLEXO}
 \textbf{Dostupné pre:} operátor, údržbár, manažér, administrátor
 
@@ -1919,7 +1925,7 @@ jazyku, ktorý si používateľ zvolil v nastaveniach aplikácie.
       \caption{Konverzačné rozhranie \acrshort{ai} asistenta PLEXO}
       \label{fig:plexo}
 \end{figure}
-
+\newpage
 \subsection{Správa používateľov}
 \textbf{Dostupné pre:} manažér, administrátor
 
@@ -1937,7 +1943,7 @@ prevádzky.
       \caption{Obrazovka správy používateľov}
       \label{fig:users}
 \end{figure}
-
+\newpage
 \subsection{Správa výrobných liniek}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
@@ -1955,7 +1961,7 @@ reálny stav výrobných liniek v prevádzke.
       \caption{Obrazovka správy výrobných liniek}
       \label{fig:devices}
 \end{figure}
-
+\newpage
 \subsection{Správa znalostnej bázy}
 \textbf{Dostupné pre:} údržbár, manažér, administrátor
 
@@ -1974,7 +1980,7 @@ pravidelná údržba dôležitou súčasťou prevádzky systému.
       \caption{Obrazovky správy znalostnej bázy}
       \label{fig:knowledgebase}
 \end{figure}
-
+\newpage
 \subsection{Logy príkazov}
 \textbf{Dostupné pre:} manažér, administrátor
 
@@ -1990,7 +1996,7 @@ kontrolu zásahov v prípade neštandardného správania linky.
       \caption{Obrazovka logov vykonaných príkazov}
       \label{fig:logs}
 \end{figure}
-
+\newpage
 \subsection{Nastavenia}
 \textbf{Dostupné pre:} operátor, údržbár, manažér, administrátor
 
@@ -2223,6 +2229,7 @@ znalostnou bázou sú v~navrhnutom riešení pokryté.
       \caption{Porovnanie Scan2Control s~existujúcimi riešeniami}
       \label{tab:final_comparison}
       \renewcommand{\arraystretch}{1.3}
+      \footnotesize
       \begin{tabular}{lccccc}
             \hline
             \textbf{Vlastnosť}                          &
